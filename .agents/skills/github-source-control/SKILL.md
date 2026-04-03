@@ -1,12 +1,11 @@
 ---
-
-## name: github-source-control
-
+name: github-source-control
 description: >-
   Manages Git branches, conventional commits, pushes, and pull requests on
   GitHub without pushing to protected branches. Use when the user confirms a
   work item is ready to commit, asks to commit or push changes, open a PR, or
   follow the project's GitHub source-control workflow.
+---
 
 # GitHub source control workflow
 
@@ -21,8 +20,8 @@ Follow this skill whenever the user states that a **work item is OK to commit**,
 
 ## Base branch for new work
 
-1. **Default:** create the new branch from `**main`** (update it first: `git fetch origin` and branch from `origin/main` unless the user is already on an up-to-date local `main`).
-2. **If `staging` exists and the user says it is required** (e.g. integration queue, release train): create the branch from `**staging`** or `**main`** as the user specifies; if unclear, ask once which base they want.
+1. **Default:** create the new branch from `main` (update it first: `git fetch origin` and branch from `origin/main` unless the user is already on an up-to-date local `main`).
+2. **If `staging` exists and the user says it is required** (e.g. integration queue, release train): create the branch from `staging` or `main` as the user specifies; if unclear, ask once which base they want.
 3. Do not assume `staging` exists; verify with `git branch -a` or `git ls-remote` when relevant.
 
 ## Branch naming
@@ -66,13 +65,23 @@ chore(deps): bump eslint to latest patch
 4. **Stage** only the intended files.
 5. **Commit** with a conventional message.
 6. **Push** the branch to `origin` (`git push -u origin <branch>`).
-7. **Open a pull request** targeting `main` (or `staging` if the user required that path). Set title and body per below.
+7. **Open a pull request** targeting `main` (or `staging` if the user required that path). Set title and body per below, and **assign the maintainer** (see below).
+
+## PR assignee
+
+- On **every** PR, add the **user's own GitHub account** (project maintainer) as **assignee**.
+- Resolve the login from `git remote get-url origin` unless the user gives a different handle:
+  - SSH: `git@github.com:OWNER/repo.git` → use `OWNER`
+  - HTTPS: `https://github.com/OWNER/repo.git` → use `OWNER`
+- With GitHub CLI: `gh pr create ... --assignee <login>` or after the fact `gh pr edit <number> --add-assignee <login>`. If `gh pr edit` fails (e.g. GraphQL noise), use the Issues API: `gh api repos/<owner>/<repo>/issues/<number> -X PATCH -f assignees[]=<login>`.
+- If opening the PR in the browser, set assignees in the PR sidebar to that same user.
 
 ## Pull requests (agent scope)
 
 **In scope:**
 
 - Create the branch, commit, push, and **open the PR**.
+- **Assign** the maintainer on every PR (see **PR assignee**).
 - Fill in **title** (aligned with conventional style, e.g. same as primary commit subject or a clear summary) and **body** documenting:
   - What was implemented or fixed (feature/fix summary).
   - How to verify (if useful).
@@ -83,7 +92,7 @@ chore(deps): bump eslint to latest patch
 - **Do not** request, wait for, or act on **review approvals** or merge decisions unless the user explicitly asks for something else in the moment.
 - **Do not** merge the PR unless the user explicitly instructs you to merge (merging may still be restricted by repo rules).
 
-Prefer `**gh pr create`** when GitHub CLI is available and authenticated; otherwise provide the **compare URL** (`https://github.com/<owner>/<repo>/compare/...`) and exact PR metadata so the user can open it in one step, or use another method the user has configured.
+Prefer **`gh pr create`** when GitHub CLI is available and authenticated; otherwise provide the **compare URL** (`https://github.com/<owner>/<repo>/compare/...`) and exact PR metadata (including **assignee = maintainer**) so the user can open it in one step, or use another method the user has configured.
 
 ## Quick checklist
 
@@ -91,5 +100,5 @@ Prefer `**gh pr create`** when GitHub CLI is available and authenticated; otherw
 - Branch name matches `feat/` / `fix/` / `chore/` (+ issue prefix if applicable)
 - No push to `main` or `staging`
 - Conventional commit message, brief
-- PR opened with documented feature/fix; no approval workflow handled by the agent
+- PR opened with documented feature/fix; **maintainer added as assignee**; no approval workflow handled by the agent
 
