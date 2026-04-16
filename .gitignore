@@ -40,8 +40,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# ncdai
-.ncdai
+# local dev (Portless screenshots, etc.)
+.leovferreira
 
 # Local desktop demo screenshots (regenerate with scripts/portfolio-demo-screenshots.mjs)
 docs/demo/*.png
