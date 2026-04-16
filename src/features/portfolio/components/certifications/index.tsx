@@ -5,6 +5,10 @@ import { Panel, PanelHeader, PanelTitle, PanelTitleSup } from "../panel"
 import { CertificationItem } from "./certification-item"
 
 export function Certifications() {
+  if (CERTIFICATIONS.length === 0) {
+    return null
+  }
+
   return (
     <Panel id="certs">
       <PanelHeader>

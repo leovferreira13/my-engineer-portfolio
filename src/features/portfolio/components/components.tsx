@@ -3,12 +3,17 @@ import Link from "next/link"
 
 import { Button } from "@/components/base/ui/button"
 import { ComponentIcon } from "@/components/icons"
+import { SHOW_PORTFOLIO_REGISTRY_SECTIONS } from "@/config/site"
 import { getDocsByCategory } from "@/features/doc/data/documents"
 import { cn } from "@/lib/utils"
 
 import { Panel, PanelHeader, PanelTitle, PanelTitleSup } from "./panel"
 
 export function Components() {
+  if (!SHOW_PORTFOLIO_REGISTRY_SECTIONS) {
+    return null
+  }
+
   const components = getDocsByCategory("components")
 
   return (

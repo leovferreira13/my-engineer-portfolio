@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 
-import { X_USERNAME } from "@/config/site"
 import { cn } from "@/lib/utils"
 
 import { BlocksNav } from "./blocks-nav"
@@ -26,12 +25,6 @@ export const metadata: Metadata = {
       height: 630,
       alt: title,
     },
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: X_USERNAME,
-    creator: X_USERNAME,
-    images: [ogImage],
   },
 }
 

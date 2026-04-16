@@ -2,7 +2,14 @@ import { RssIcon } from "lucide-react"
 
 import { Icons } from "@/components/icons"
 import { SiteFooterInteractiveLogotype } from "@/components/site-footer-brand"
-import { SITE_INFO, SOURCE_CODE_GITHUB_URL } from "@/config/site"
+import {
+  GITHUB_USERNAME,
+  LINKEDIN_PROFILE_PATH,
+  LINKEDIN_PROFILE_URL,
+  SITE_INFO,
+  SOURCE_CODE_GITHUB_URL,
+  UTM_PARAMS,
+} from "@/config/site"
 import { cn } from "@/lib/utils"
 
 export function SiteFooter() {
@@ -17,11 +24,11 @@ export function SiteFooter() {
           Built by{" "}
           <a
             className="link transition-[color] hover:text-foreground"
-            href="https://x.com/iamncdai"
+            href={`${LINKEDIN_PROFILE_URL}?utm_source=${encodeURIComponent(UTM_PARAMS.utm_source)}`}
             target="_blank"
             rel="noopener"
           >
-            ncdai
+            {SITE_INFO.name}
           </a>
           . The source code is available on{" "}
           <a
@@ -50,19 +57,7 @@ export function SiteFooter() {
 
             <a
               className="flex items-center text-muted-foreground transition-[color] hover:text-foreground"
-              href="https://x.com/iamncdai?utm_source=chanhdai.com"
-              target="_blank"
-              rel="noopener"
-            >
-              <Icons.x className="size-4" />
-              <span className="sr-only">X</span>
-            </a>
-
-            <Separator />
-
-            <a
-              className="flex items-center text-muted-foreground transition-[color] hover:text-foreground"
-              href="https://github.com/ncdai?utm_source=chanhdai.com"
+              href={`https://github.com/${GITHUB_USERNAME}?utm_source=${encodeURIComponent(UTM_PARAMS.utm_source)}`}
               target="_blank"
               rel="noopener"
             >
@@ -74,7 +69,7 @@ export function SiteFooter() {
 
             <a
               className="flex items-center text-muted-foreground transition-[color] hover:text-foreground"
-              href="https://www.linkedin.com/in/ncdai?utm_source=chanhdai.com"
+              href={`${LINKEDIN_PROFILE_URL}?utm_source=${encodeURIComponent(UTM_PARAMS.utm_source)}`}
               target="_blank"
               rel="noopener"
             >

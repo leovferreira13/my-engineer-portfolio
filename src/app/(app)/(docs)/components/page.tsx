@@ -17,7 +17,7 @@ import { ComponentIcon } from "@/components/icons"
 import { MDX } from "@/components/mdx"
 import { RegistryCommandAnimated } from "@/components/registry-command-animated"
 import { registryConfig } from "@/config/registry"
-import { UTM_PARAMS, X_USERNAME } from "@/config/site"
+import { UTM_PARAMS } from "@/config/site"
 import { getDocsByCategory } from "@/features/doc/data/documents"
 import { cn } from "@/lib/utils"
 import { addQueryParams } from "@/utils/url"
@@ -43,12 +43,6 @@ export const metadata: Metadata = {
       height: 630,
       alt: title,
     },
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: X_USERNAME,
-    creator: X_USERNAME,
-    images: [ogImage],
   },
 }
 

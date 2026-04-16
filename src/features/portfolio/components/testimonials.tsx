@@ -35,6 +35,15 @@ const FEATURED_TESTIMONIALS = [
 ].sort(compareFn)
 
 export function Testimonials() {
+  const hasAny =
+    TESTIMONIALS_1.length > 0 ||
+    TESTIMONIALS_2.length > 0 ||
+    FEATURED_TESTIMONIALS.length > 0
+
+  if (!hasAny) {
+    return null
+  }
+
   return (
     <Panel
       id="testimonials"
@@ -42,42 +51,57 @@ export function Testimonials() {
     >
       <h2 className="sr-only">Testimonials</h2>
 
-      <div className="grid gap-2 px-2 sm:grid-cols-2">
-        {FEATURED_TESTIMONIALS.map((item) => (
-          <a
-            key={item.url}
-            className="flex"
-            href={item.url}
-            target="_blank"
-            rel="noopener"
-          >
-            <TestimonialSpotlight className="flex-1 bg-accent-muted">
-              <TestimonialItem {...item} />
-            </TestimonialSpotlight>
-          </a>
-        ))}
-      </div>
+      {FEATURED_TESTIMONIALS.length > 0 && (
+        <>
+          <div className="grid gap-2 px-2 sm:grid-cols-2">
+            {FEATURED_TESTIMONIALS.map((item) => (
+              <a
+                key={item.url}
+                className="flex"
+                href={item.url}
+                target="_blank"
+                rel="noopener"
+              >
+                <TestimonialSpotlight className="flex-1 bg-accent-muted">
+                  <TestimonialItem {...item} />
+                </TestimonialSpotlight>
+              </a>
+            ))}
+          </div>
 
-      <div className="flex h-2 w-full" />
+          <div className="flex h-2 w-full" />
+        </>
+      )}
 
-      <TestimonialList data={TESTIMONIALS_1} />
+      {TESTIMONIALS_1.filter((item) => !item.isFeatured).length > 0 && (
+        <>
+          <TestimonialList data={TESTIMONIALS_1} />
+          <div className="flex h-2 w-full" />
+        </>
+      )}
 
-      <div className="flex h-2 w-full" />
+      {TESTIMONIALS_2.filter((item) => !item.isFeatured).length > 0 && (
+        <>
+          <TestimonialList data={TESTIMONIALS_2} direction="right" />
+          <div className="flex h-2 w-full" />
+        </>
+      )}
 
-      <TestimonialList data={TESTIMONIALS_2} direction="right" />
-
-      <div className="absolute right-0 bottom-0 z-10 -translate-x-2 rounded-lg bg-background ring-1 ring-background">
-        <Button className="size-7" variant="outline" size="icon-sm" asChild>
-          <a
-            href="/wall-of-love"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Wall of Love"
-          >
-            <ArrowUpRightIcon />
-          </a>
-        </Button>
-      </div>
+      {(TESTIMONIALS_1.filter((item) => !item.isFeatured).length > 0 ||
+        TESTIMONIALS_2.filter((item) => !item.isFeatured).length > 0) && (
+        <div className="absolute right-0 bottom-0 z-10 -translate-x-2 rounded-lg bg-background ring-1 ring-background">
+          <Button className="size-7" variant="outline" size="icon-sm" asChild>
+            <a
+              href="/wall-of-love"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Wall of Love"
+            >
+              <ArrowUpRightIcon />
+            </a>
+          </Button>
+        </div>
+      )}
     </Panel>
   )
 }

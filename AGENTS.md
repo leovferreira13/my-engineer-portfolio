@@ -79,7 +79,7 @@ Other project skills live under `.agents/skills/` (for example component docs an
 
 ## Cursor Cloud specific instructions
 
-- **Dev server**: `pnpm dev` uses `portless` (installed globally) to proxy via HTTPS on a `.localhost` domain. The actual Next.js dev server runs on a dynamic port (e.g. 4273, 4291). Use `curl http://localhost:<port>` to verify. Alternatively, run `npx next dev --port 3000` to skip portless and bind to a fixed port.
+- **Dev server**: `pnpm dev` uses `portless` (installed globally) to proxy via HTTPS at **https://leovferreira.localhost** (see `package.json` script and `next.config.ts` `allowedDevOrigins`). The actual Next.js dev server runs on a dynamic port (e.g. 4273, 4291). Use `curl http://localhost:<port>` to verify. Alternatively, run `npx next dev --port 3000` to skip portless and bind to a fixed port.
 - **No database or external services needed**: The app is entirely file-based (MDX content). All external API calls (GitHub, PostHog, OpenPanel) degrade gracefully without credentials.
 - **Environment variables**: Copy `.env.example` to `.env.local`. The app works without real values; analytics and GitHub API features simply no-op.
 - **registry:build**: Requires `bun` (not installed in the default environment). Only needed when modifying registry components. Install with `npm install -g bun` if needed.
