@@ -76,3 +76,12 @@ pnpm registry:build  # Build shadcn registry
 When the user confirms a work item is **ready to commit**, or asks for **commits**, **branches**, or **pull requests** under the agreed workflow, read and follow `**.agents/skills/github-source-control/SKILL.md`** (branches from `main` by default, no direct push to `main`/`staging`, conventional commits, open PRs with documented body).
 
 Other project skills live under `.agents/skills/` (for example component docs and registry block classification).
+
+## Cursor Cloud specific instructions
+
+- **Dev server**: `pnpm dev` uses `portless` (installed globally) to proxy via HTTPS on a `.localhost` domain. The actual Next.js dev server runs on a dynamic port (e.g. 4273, 4291). Use `curl http://localhost:<port>` to verify. Alternatively, run `npx next dev --port 3000` to skip portless and bind to a fixed port.
+- **No database or external services needed**: The app is entirely file-based (MDX content). All external API calls (GitHub, PostHog, OpenPanel) degrade gracefully without credentials.
+- **Environment variables**: Copy `.env.example` to `.env.local`. The app works without real values; analytics and GitHub API features simply no-op.
+- **registry:build**: Requires `bun` (not installed in the default environment). Only needed when modifying registry components. Install with `npm install -g bun` if needed.
+- **Pre-commit hook**: `.husky/pre-commit` runs `pnpm lint-staged`, which formats and lints staged files.
+- **Lint/type commands**: See the Commands section above. All pass cleanly on a fresh checkout.
