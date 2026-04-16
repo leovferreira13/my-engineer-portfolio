@@ -3,7 +3,7 @@ import type { NavItem } from "@/types/nav"
 
 export const SITE_INFO = {
   name: USER.displayName,
-  url: process.env.APP_URL || "https://chanhdai.com",
+  url: process.env.APP_URL || "https://www.leoferreira.dev",
   ogImage: USER.ogImage,
   description: USER.bio,
   keywords: USER.keywords,
@@ -41,13 +41,19 @@ export const MOBILE_NAV: NavItem[] = [
   ...MAIN_NAV,
 ]
 
-export const X_USERNAME = "@iamncdai"
-export const GITHUB_USERNAME = "ncdai"
-export const SOURCE_CODE_GITHUB_REPO = "ncdai/chanhdai.com"
-export const SOURCE_CODE_GITHUB_URL = "https://github.com/ncdai/chanhdai.com"
+export const X_USERNAME = "@leoaugustov"
+export const GITHUB_USERNAME = "leoaugustov"
+export const LINKEDIN_PROFILE_PATH = "leonardo-v-ferreira"
+export const SOURCE_CODE_GITHUB_REPO = "leovferreira13/my-engineer-portfolio"
+export const SOURCE_CODE_GITHUB_URL =
+  "https://github.com/leovferreira13/my-engineer-portfolio"
 
-export const SPONSORSHIP_URL = "https://github.com/sponsors/ncdai"
+export const SPONSORSHIP_URL = "https://github.com/sponsors/leoaugustov"
 
 export const UTM_PARAMS = {
-  utm_source: "chanhdai.com",
+  utm_source: "leoferreira.dev",
 }
+
+/** When false, the homepage hides registry marketing (components grid) and the doc-driven blog strip. */
+export const SHOW_PORTFOLIO_REGISTRY_SECTIONS =
+  process.env.NEXT_PUBLIC_SHOW_PORTFOLIO_REGISTRY_SECTIONS === "true"

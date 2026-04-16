@@ -5,6 +5,10 @@ import { Panel } from "../panel"
 import { GitHubContributionFallback, GitHubContributionGraph } from "./graph"
 
 export function GitHubContributions() {
+  if (!process.env.GITHUB_CONTRIBUTIONS_API_URL) {
+    return null
+  }
+
   const contributions = getGitHubContributions()
 
   return (

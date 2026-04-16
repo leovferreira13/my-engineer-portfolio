@@ -2,12 +2,17 @@ import { ArrowRightIcon } from "lucide-react"
 import Link from "next/link"
 
 import { Button } from "@/components/base/ui/button"
+import { SHOW_PORTFOLIO_REGISTRY_SECTIONS } from "@/config/site"
 import { PostItem } from "@/features/blog/components/post-item"
 import { getAllDocs } from "@/features/doc/data/documents"
 
 import { Panel, PanelHeader, PanelTitle, PanelTitleSup } from "./panel"
 
 export function Blog() {
+  if (!SHOW_PORTFOLIO_REGISTRY_SECTIONS) {
+    return null
+  }
+
   const allPosts = getAllDocs()
 
   return (

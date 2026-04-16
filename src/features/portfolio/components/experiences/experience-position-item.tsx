@@ -28,7 +28,7 @@ export function ExperiencePositionItem({
     <Collapsible
       className="relative last:before:absolute last:before:h-full last:before:w-4 last:before:bg-background"
       defaultOpen={position.isExpanded}
-      disabled={!position.description}
+      disabled={!position.description?.trim()}
     >
       <CollapsibleTrigger
         className={cn(

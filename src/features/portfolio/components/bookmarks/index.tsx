@@ -11,6 +11,10 @@ const SORTED_BOOKMARKS = [...BOOKMARKS].sort((a, b) => {
 })
 
 export function Bookmarks() {
+  if (SORTED_BOOKMARKS.length === 0) {
+    return null
+  }
+
   return (
     <Panel id="bookmarks">
       <PanelHeader>

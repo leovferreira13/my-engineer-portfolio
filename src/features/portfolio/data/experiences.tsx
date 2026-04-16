@@ -1,268 +1,237 @@
 import {
+  BarChart3Icon,
+  BriefcaseIcon,
   CodeXmlIcon,
-  DraftingCompassIcon,
+  CpuIcon,
   GraduationCapIcon,
-  LightbulbIcon,
+  LayoutTemplateIcon,
+  WrenchIcon,
 } from "lucide-react"
 
 import type { Experience } from "../types/experiences"
 
 export const EXPERIENCES: Experience[] = [
   {
-    id: "shadcncraft",
-    companyName: "shadcncraft",
-    companyLogo: "https://assets.chanhdai.com/images/companies/shadcncraft.svg",
-    companyWebsite: "https://shadcncraft.com",
+    id: "reach-ai",
+    companyName: "REACH.ai",
+    companyWebsite: "https://www.reach.ai",
     positions: [
       {
         id: "1",
-        title: "Design Engineer",
+        title: "Software Engineer",
         employmentPeriod: {
-          start: "01.2026",
+          start: "11.2025",
         },
         employmentType: "Full-time",
         icon: <CodeXmlIcon />,
         description:
-          "- Work on the registry and React component library.\n- Design and build Pro application components and blocks, from Figma to production-ready React.",
-        skills: [
-          "TypeScript",
-          "Next.js",
-          "Tailwind CSS",
-          "shadcn/registry",
-          "Figma",
-        ],
+          "- Helping businesses communicate better with customers through AI models and automation.",
+        skills: ["Python", "AI", "Automation", "SaaS"],
         isExpanded: true,
       },
     ],
     isCurrentEmployer: true,
   },
   {
-    id: "quaric",
-    companyName: "Quaric",
-    companyLogo: "https://assets.chanhdai.com/images/companies/quaric.svg",
-    companyWebsite: "https://quaric.com",
+    id: "guiavet",
+    companyName: "Guiavet",
+    companyWebsite: "https://pro.guia.vet",
     positions: [
-      {
-        id: "2",
-        title: "Design Engineer",
-        employmentPeriod: {
-          start: "03.2024",
-        },
-        employmentType: "Part-time",
-        icon: <CodeXmlIcon />,
-        description: `- Created Quaric Brand Identity.
-- Created the Quaric Design System to standardize design practices and accelerate development.
-
-In-house Project: [Quaric Website](https://quaric.com)
-- Designed the UI/UX for Quaric Website, delivering a seamless experience.
-- Developed online ordering to streamline purchases.
-- Integrated VNPAY-QR for secure transactions.
-- Registered the e-commerce site with [online.gov.vn](http://online.gov.vn/website/chi-tiet-115855) for compliance.
-
-In-house Project: [ZaDark](https://zadark.com)
-- Build and maintain ZaDark.com with Docusaurus, integrating AdSense.
-- Develop and maintain the ZaDark extension for Zalo Web on Chrome, Safari, Edge, and Firefox — with 20k+ active users via Chrome Web Store (as of Sep 2025).`,
-        skills: [
-          "Next.js",
-          "Strapi",
-          "Auth0",
-          "VNPAY-QR",
-          "Docker",
-          "NGINX",
-          "Google Cloud",
-          "Docusaurus",
-          "Extension",
-          "UI/UX Design",
-          "UX Writing",
-          "Design System",
-          "Brand Design",
-          "Figma",
-          "Research",
-        ],
-      },
       {
         id: "1",
-        title: "Founder",
+        title: "Head Software Engineer",
         employmentPeriod: {
-          start: "03.2024",
-        },
-        employmentType: "Part-time",
-        icon: <LightbulbIcon />,
-        skills: ["Business Ownership", "Business Law", "Business Tax"],
-      },
-    ],
-    isCurrentEmployer: true,
-  },
-  {
-    id: "simplamo",
-    companyName: "Simplamo",
-    companyLogo: "https://assets.chanhdai.com/images/companies/simplamo.webp",
-    positions: [
-      {
-        id: "2",
-        title: "Senior Frontend Developer",
-        employmentPeriod: {
-          start: "10.2022",
-          end: "01.2026",
+          start: "11.2024",
+          end: "11.2025",
         },
         employmentType: "Full-time",
         icon: <CodeXmlIcon />,
-        description: `- Built Tree & Gantt views features to improve goal organization, visibility, and progress tracking.
-- Developed [AI Chat](https://help.simplamo.com/features/simplamo-ai/ai-chat/guide_simplamo_ai_chat?ref=IN-926722) and [AI Assistant](https://help.simplamo.com/features/simplamo-ai/ai-expert/aiexpert-rockdiscribe?ref=IN-926722) features.
-- Developed [Whiteboards](https://help.simplamo.com/features/whiteboard/overview?ref=IN-926722) with real-time collaboration.
-- Built and maintained the [Zalo Mini App](https://zalo.me/s/1736112917405511258/) for Simplamo with seamless integration.
-- Developed interactive chart and analytics widgets for the [Dashboard](https://help.simplamo.com/features/dashboard/overview) to enhance data visualization.
-- Developed and maintained core features to enhance functionality and user experience.
-- Ensured UI/UX consistency and adherence to standards.
-- Implemented robust frontend solutions for web and mobile platforms.
-- Analyzed technical capabilities and provided optimal solutions.`,
+        description: `- Owned technical continuity of the SaaS platform while reducing infrastructure and operational costs through automation and lean delivery.
+- Led major improvements to the Health Records module: integrated drug reference data, built a pharmacy dispensing portal with external validation, customizable prescription templates (faster daily record creation), and optimized multi-page PDF generation (large performance improvement in rendering time).
+- Delivered end-to-end product changes across backend (Python/Django), frontend (Vue.js), and AWS operations while coordinating with senior engineers under Agile practices.`,
         skills: [
-          "TypeScript",
-          "Next.js",
-          "React Native",
-          "MobX",
-          "MobX-State-Tree",
-          "Tailwind CSS",
-          "Dify",
-          "Zalo Mini App",
+          "Python",
+          "Django",
+          "PostgreSQL",
+          "AWS",
+          "Vue.js",
+          "SaaS",
+          "PDF generation",
           "Agile",
-          "Teamwork",
-          "Research",
-          "Problem-solving",
         ],
+        isExpanded: true,
       },
       {
-        id: "1",
-        title: "UI Lead",
+        id: "2",
+        title: "Product Manager",
         employmentPeriod: {
-          start: "10.2022",
-          end: "01.2026",
+          start: "12.2023",
+          end: "11.2024",
         },
         employmentType: "Full-time",
-        icon: <DraftingCompassIcon />,
-        description: `- Ensured UI/UX consistency and high-quality standards.
-- Designed intuitive, user-focused interfaces aligned with business goals.
-- Defined and established a cohesive UI style for Simplamo.`,
-        skills: ["Creativity", "UI/UX Design", "Figma"],
+        icon: <LayoutTemplateIcon />,
+        description: `- Owned the product roadmap for Guiavet PRO, aligning stakeholders, leadership, design, and engineering under Agile practices.
+- Ran competitive benchmarks, analytics, and customer interviews to inform product decisions.
+- Reduced churn complaints related to usability through UX redesigns (including patient timeline and faster health record workflows).
+- Shortened vaccine registration flows by rethinking journeys and navigation.
+- Expanded the customer base with new B2B-ready entities integrated with scheduling, health, and billing modules.
+- Launched a professional website platform for veterinarians with SEO-oriented improvements (sitemaps, metadata, load-time improvements).
+- Managed team capacity and delivery alignment across priorities and deadlines.`,
+        skills: [
+          "Product management",
+          "Roadmapping",
+          "UX",
+          "B2B",
+          "SEO",
+          "Agile",
+        ],
       },
-    ],
-  },
-  {
-    id: "tungtung",
-    companyName: "Tung Tung",
-    companyLogo: "https://assets.chanhdai.com/images/companies/tungtung.webp",
-    positions: [
       {
         id: "3",
-        title: "Web Developer",
+        title: "Software and Data Engineer",
         employmentPeriod: {
-          start: "2020",
-          end: "2022",
+          start: "12.2021",
+          end: "12.2023",
         },
         employmentType: "Full-time",
-        description: `- Built a scalable design system for consistency and efficiency.
-- Built a complex rich-text editor based on ProseMirror and Slate for customizable content creation.
-- Integrated APIs with the Backend Team to enhance functionality.`,
         icon: <CodeXmlIcon />,
+        description: `- Built and scaled core modules of Guiavet PRO using Django, PostgreSQL, and AWS.
+- Led database modeling and domain-driven design discussions, balancing delivery speed and long-term maintainability.
+- Built ETL pipelines and interactive dashboards with SQL for finance, adoption, and user behavior insights.
+- Mentored junior engineers on backend and data engineering practices.
+- Architected asynchronous workers (Django APScheduler + AWS SQS) for heavy workloads and cron-style jobs.
+- Designed a dedicated microservice for scalable PDF generation integrated with health records.
+- Improved scalability with nginx tuning and database-level caching for patient health metrics.`,
         skills: [
-          "React",
-          "Redux",
-          "Storybook",
-          "Lerna",
-          "Agile",
-          "Teamwork",
-          "Research",
+          "Python",
+          "Django",
+          "PostgreSQL",
+          "AWS",
+          "SQS",
+          "ETL",
+          "SQL",
+          "nginx",
+          "DDD",
         ],
-      },
-      {
-        id: "2",
-        title: "Mobile Developer",
-        employmentPeriod: {
-          start: "2019",
-          end: "2020",
-        },
-        employmentType: "Full-time",
-        description: `- Rebuilt the app with React Native for better UX and performance.
-- Integrated MoMo and in-app purchases for seamless payments.
-- Optimized deployment for staging and production.
-- Published on App Store and Google Play, ensuring compliance.`,
-        icon: <CodeXmlIcon />,
-        skills: [
-          "React Native",
-          "Redux",
-          "MoMo Payment API",
-          "App Store",
-          "Google Play Store",
-          "App Center",
-          "Agile",
-          "Teamwork",
-          "Research",
-        ],
-      },
-      {
-        id: "1",
-        title: "UI/UX Designer",
-        employmentPeriod: {
-          start: "2018",
-          end: "2019",
-        },
-        employmentType: "Full-time",
-        description: `- Designed a Landing Page for enterprise clients.
-- Redesigned the Online Quiz Platform for a modern look on web and mobile.
-- Redesigned the Pricing interface for individual customers.
-- Enhanced UX by improving usability, navigation, and user flow.`,
-        icon: <DraftingCompassIcon />,
-        skills: ["UI/UX Design", "Sketch"],
       },
     ],
   },
   {
-    id: "freelance",
-    companyName: "Freelance",
+    id: "qdois",
+    companyName: "QDOIS - Data Intelligence",
     positions: [
       {
-        id: "2",
-        title: "Full-stack Developer",
+        id: "1",
+        title: "Data Engineer",
         employmentPeriod: {
-          start: "2018",
-          end: "2020",
+          start: "02.2021",
+          end: "12.2021",
         },
-        employmentType: "Part-time",
-        description: `- Built an order management website with real-time delivery tracking.
-- Developed an e-commerce site for bird's nest products.
-- Created a map to display monitoring station data.
-- Designed a customizable WordPress landing page.`,
-        icon: <CodeXmlIcon />,
+        employmentType: "Full-time",
+        icon: <BarChart3Icon />,
+        description: `- Built ETL pipelines and data workflows on Azure Data Factory and Azure Databricks (PySpark), consolidating relational DBs, SFTP, and APIs into a modern data lake architecture.
+- Supported digital transformation by reducing infrastructure costs and enabling future BI, analytics, and ML initiatives.
+- Established CI/CD with Azure DevOps and Git for automated deployments and environment consistency.
+- Partnered with business stakeholders to translate requirements into scalable data models and pipelines.`,
         skills: [
-          "Laravel",
-          "React",
-          "Express.js",
-          "Socket.IO",
-          "MongoDB",
-          "Firebase",
-          "WordPress",
-          "Docker",
-          "NGINX",
+          "Azure Data Factory",
+          "Azure Databricks",
+          "PySpark",
+          "ETL",
+          "Azure DevOps",
+          "Git",
         ],
       },
       {
-        id: "1",
-        title: "Graphic & UI/UX Designer",
+        id: "2",
+        title: "Data Analytics Intern",
         employmentPeriod: {
-          start: "2018",
-          end: "2019",
+          start: "10.2020",
+          end: "01.2021",
         },
-        employmentType: "Part-time",
-        description: "Designed logos, posters, ads, and UI.",
-        icon: <DraftingCompassIcon />,
-        skills: [
-          "Creativity",
-          "UI/UX Design",
-          "Graphic Design",
-          "Sketch",
-          "Adobe Photoshop",
-          "Adobe Illustrator",
-        ],
+        employmentType: "Internship",
+        icon: <BarChart3Icon />,
+        description:
+          "- Implemented data pipelines and ETL processes in the Azure ecosystem.",
+        skills: ["Azure", "ETL", "Data pipelines"],
+      },
+    ],
+  },
+  {
+    id: "chemtech",
+    companyName: "Chemtech",
+    positions: [
+      {
+        id: "1",
+        title: "Engineering Intern",
+        employmentPeriod: {
+          start: "12.2019",
+          end: "10.2020",
+        },
+        employmentType: "Internship",
+        icon: <WrenchIcon />,
+        description: "",
+        skills: [],
+      },
+    ],
+  },
+  {
+    id: "jabil",
+    companyName: "Jabil",
+    positions: [
+      {
+        id: "1",
+        title: "Process Technician",
+        employmentPeriod: {
+          start: "02.2019",
+          end: "07.2019",
+        },
+        employmentType: "Full-time",
+        icon: <CpuIcon />,
+        description: "",
+        skills: [],
+      },
+      {
+        id: "2",
+        title: "Process Assistant",
+        employmentPeriod: {
+          start: "01.2019",
+          end: "01.2019",
+        },
+        employmentType: "Full-time",
+        icon: <CpuIcon />,
+        description: "",
+        skills: [],
+      },
+      {
+        id: "3",
+        title: "Engineering Intern",
+        employmentPeriod: {
+          start: "03.2018",
+          end: "01.2019",
+        },
+        employmentType: "Internship",
+        icon: <WrenchIcon />,
+        description: "",
+        skills: [],
+      },
+    ],
+  },
+  {
+    id: "mga",
+    companyName: "MGA Automação Industrial",
+    positions: [
+      {
+        id: "1",
+        title: "Intern",
+        employmentPeriod: {
+          start: "05.2017",
+          end: "03.2018",
+        },
+        employmentType: "Internship",
+        icon: <BriefcaseIcon />,
+        description: "",
+        skills: [],
       },
     ],
   },
@@ -271,80 +240,33 @@ In-house Project: [ZaDark](https://zadark.com)
     companyName: "Education",
     positions: [
       {
-        id: "3",
-        title: "University of Science — VNUHCM",
+        id: "1",
+        title: "Universidade Federal de Minas Gerais (UFMG)",
         employmentPeriod: {
-          start: "08.2018",
-          end: "10.2026",
+          start: "2017",
+          end: "2022",
         },
         icon: <GraduationCapIcon />,
-        description: `- Currently studying for a Bachelor's degree in Information Systems.
-- Language Proficiency: B1 level in English (CEFR).
-- Achieved several awards, including:
-  - Bronze Medal — 10th Design, Manufacturing, and Application Award 2022
-  - 2nd Prize — Business Startup Competition 2019`,
+        description:
+          "- Bachelor's degree, Control and Automation Engineering.\n- Strong foundation in mathematics, programming, and systems engineering (control systems, automation, and software development).",
         skills: [
-          "C++",
-          "Java",
-          "Python",
-          "PHP",
-          "DSA",
-          "Advanced Databases",
-          "Systems Design",
-          "Distributed Systems",
-          "Software Engineering",
-          "Teamwork",
+          "Control systems",
+          "Automation",
+          "Software engineering",
+          "Mathematics",
         ],
       },
       {
         id: "2",
-        title: "Ly Tu Trong High School for the Gifted — Can Tho City",
+        title: "Centro Federal de Educação Tecnológica de Minas Gerais (CEFET-MG)",
         employmentPeriod: {
-          start: "08.2015",
-          end: "06.2018",
+          start: "2014",
+          end: "2016",
         },
         icon: <GraduationCapIcon />,
-        description: `- Student of the Specialized Computer Science Program.
-- Granted direct admission to university due to achieving 3rd Prize at the national level.
-- [Achieved numerous awards](https://baocantho.com.vn/nguyen-chanh-dai-17-tuoi-va-19-giai-thuong-a97348.html) at city and national levels, including:
-  - [3rd Prize](https://muctim.tuoitre.vn/cong-cu-ho-tro-viec-day-va-hoc-55107.htm) — National Science and Engineering Fair 2018 (ViSEF)
-  - 1st Prize — Can Tho City Science and Engineering Fair 2018
-  - Creativity Award — Binh Duong Hackathon 2017
-  - Consolation Prize — National Youth and Children's Creativity Contest 2016
-  - [1st Prize](https://www.youtube.com/watch?v=OYgugvjqU4A) — Can Tho City Youth and Children's Creativity Contest 2016
-  - 3rd Prize — National Young Informatics Contest 2016
-- Achieved the title of Outstanding Student from Grade 10-12.
-- Selected for the National Excellent Student Contest in Informatics for two consecutive years during high school.
-- Honored on the school's "Hall of Fame" for academic achievements.
-- Developed a feature using Node.js and Pandoc to recognize multiple-choice questions from .docx files and upload them to an [online quiz platform](https://youtu.be/QjR99wdmTyo) I created.
-- Developed websites based on Laravel framework.
-- Built websites with PHP and MySQL, following the MVC architecture.`,
-        skills: [
-          "Algorithms",
-          "C++",
-          "PHP",
-          "MySQL",
-          "Laravel",
-          "Node.js",
-          "Pandoc",
-        ],
-      },
-      {
-        id: "1",
-        title: "Thuan Hung Secondary School",
-        employmentPeriod: {
-          start: "08.2011",
-          end: "06.2015",
-        },
-        icon: <GraduationCapIcon />,
-        description: `- Recognized as the most outstanding student of the district.
-- Achieved numerous awards at city and national levels:
-  - Consolation Prize — National Young Informatics Contest 2015
-  - Consolation Prize — National Young Informatics Contest 2014
-  - 1st Prize — Can Tho City Young Informatics Contest 2014
-- Achieved the title of Outstanding Student from Grade 6-9.
-- Developed websites using the open-source NukeViet CMS.`,
-        skills: ["Pascal", "NukeViet", "HTML", "CSS", "JavaScript"],
+        description:
+          "- Technical education in Mechatronics, Robotics, and Automation Engineering.",
+        skills: ["Mechatronics", "Robotics", "Automation"],
       },
     ],
   },

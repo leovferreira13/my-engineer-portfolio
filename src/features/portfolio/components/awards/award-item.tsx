@@ -27,10 +27,14 @@ export function AwardItem({
   className?: string
   award: Award
 }) {
-  const canExpand = !!award.description
+  const canExpand = !!award.description?.trim()
 
   return (
-    <Collapsible className={className} disabled={!canExpand}>
+    <Collapsible
+      className={className}
+      disabled={!canExpand}
+      defaultOpen={award.isExpanded}
+    >
       <div className="flex items-center hover:bg-accent-muted">
         <div className="mx-4 flex size-6 shrink-0 items-center justify-center rounded-lg border border-muted-foreground/15 bg-muted ring-1 ring-line ring-offset-1 ring-offset-background">
           <AwardIcon className="pointer-events-none size-4 text-muted-foreground" />
