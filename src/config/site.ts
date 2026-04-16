@@ -43,6 +43,7 @@ export const MOBILE_NAV: NavItem[] = [
 
 export const GITHUB_USERNAME = "leovferreira13"
 export const LINKEDIN_PROFILE_PATH = "leonardo-v-ferreira"
+export const LINKEDIN_PROFILE_URL = `https://www.linkedin.com/in/${LINKEDIN_PROFILE_PATH}`
 export const SOURCE_CODE_GITHUB_REPO = "leovferreira13/my-engineer-portfolio"
 export const SOURCE_CODE_GITHUB_URL =
   "https://github.com/leovferreira13/my-engineer-portfolio"

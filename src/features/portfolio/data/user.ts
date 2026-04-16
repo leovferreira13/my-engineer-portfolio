@@ -14,6 +14,7 @@ export const USER: User = {
     "Backend, data & AI",
   ],
   address: "Rio de Janeiro, Brazil",
+  email: "bGVvdmllaXJhZi41OTlAZ21haWwuY29t", // base64 encoded
   website: "https://www.leoferreira.dev",
   jobTitle: "Product Engineer",
   jobs: [

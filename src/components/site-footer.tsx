@@ -5,6 +5,7 @@ import { SiteFooterInteractiveLogotype } from "@/components/site-footer-brand"
 import {
   GITHUB_USERNAME,
   LINKEDIN_PROFILE_PATH,
+  LINKEDIN_PROFILE_URL,
   SITE_INFO,
   SOURCE_CODE_GITHUB_URL,
   UTM_PARAMS,
@@ -23,7 +24,7 @@ export function SiteFooter() {
           Built by{" "}
           <a
             className="link transition-[color] hover:text-foreground"
-            href={SITE_INFO.url}
+            href={`${LINKEDIN_PROFILE_URL}?utm_source=${encodeURIComponent(UTM_PARAMS.utm_source)}`}
             target="_blank"
             rel="noopener"
           >
@@ -68,7 +69,7 @@ export function SiteFooter() {
 
             <a
               className="flex items-center text-muted-foreground transition-[color] hover:text-foreground"
-              href={`https://www.linkedin.com/in/${LINKEDIN_PROFILE_PATH}?utm_source=${encodeURIComponent(UTM_PARAMS.utm_source)}`}
+              href={`${LINKEDIN_PROFILE_URL}?utm_source=${encodeURIComponent(UTM_PARAMS.utm_source)}`}
               target="_blank"
               rel="noopener"
             >

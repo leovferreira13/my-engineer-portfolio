@@ -42,3 +42,6 @@ next-env.d.ts
 
 # ncdai
 .ncdai
+
+# Local desktop demo screenshots (regenerate with scripts/portfolio-demo-screenshots.mjs)
+docs/demo/*.png
