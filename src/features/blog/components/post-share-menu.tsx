@@ -52,17 +52,6 @@ export function PostShareMenu({ title, url }: { title: string; url: string }) {
 
         <DropdownMenuItem asChild>
           <a
-            href={`https://x.com/intent/tweet?url=${urlEncoded}`}
-            target="_blank"
-            rel="noopener"
-          >
-            <Icons.x />
-            Share on X
-          </a>
-        </DropdownMenuItem>
-
-        <DropdownMenuItem asChild>
-          <a
             href={`https://www.linkedin.com/sharing/share-offsite?url=${urlEncoded}`}
             target="_blank"
             rel="noopener"

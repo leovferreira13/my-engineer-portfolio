@@ -41,14 +41,13 @@ export const MOBILE_NAV: NavItem[] = [
   ...MAIN_NAV,
 ]
 
-export const X_USERNAME = "@leoaugustov"
-export const GITHUB_USERNAME = "leoaugustov"
+export const GITHUB_USERNAME = "leovferreira13"
 export const LINKEDIN_PROFILE_PATH = "leonardo-v-ferreira"
 export const SOURCE_CODE_GITHUB_REPO = "leovferreira13/my-engineer-portfolio"
 export const SOURCE_CODE_GITHUB_URL =
   "https://github.com/leovferreira13/my-engineer-portfolio"
 
-export const SPONSORSHIP_URL = "https://github.com/sponsors/leoaugustov"
+export const SPONSORSHIP_URL = "https://github.com/sponsors/leovferreira13"
 
 export const UTM_PARAMS = {
   utm_source: "leoferreira.dev",

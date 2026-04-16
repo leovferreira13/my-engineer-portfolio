@@ -15,7 +15,7 @@ import { MDX } from "@/components/mdx"
 import { Button } from "@/components/ui/button"
 import { Kbd } from "@/components/ui/kbd"
 import { Prose } from "@/components/ui/typography"
-import { SITE_INFO, X_USERNAME } from "@/config/site"
+import { SITE_INFO } from "@/config/site"
 import { PostKeyboardShortcuts } from "@/features/blog/components/post-keyboard-shortcuts"
 import { LLMCopyButtonWithViewOptions } from "@/features/blog/components/post-page-actions"
 import { PostShareMenu } from "@/features/blog/components/post-share-menu"
@@ -73,12 +73,6 @@ export async function generateMetadata({
         height: 630,
         alt: title,
       },
-    },
-    twitter: {
-      card: "summary_large_image",
-      site: X_USERNAME,
-      creator: X_USERNAME,
-      images: [ogImage],
     },
   }
 }

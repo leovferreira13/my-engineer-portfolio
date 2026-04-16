@@ -8,7 +8,6 @@ import {
   SITE_INFO,
   SOURCE_CODE_GITHUB_URL,
   UTM_PARAMS,
-  X_USERNAME,
 } from "@/config/site"
 import { cn } from "@/lib/utils"
 
@@ -24,7 +23,7 @@ export function SiteFooter() {
           Built by{" "}
           <a
             className="link transition-[color] hover:text-foreground"
-            href={`https://x.com/${X_USERNAME.replace(/^@/, "")}`}
+            href={SITE_INFO.url}
             target="_blank"
             rel="noopener"
           >
@@ -54,18 +53,6 @@ export function SiteFooter() {
             </a>
 
             <Separator className="max-sm:hidden" />
-
-            <a
-              className="flex items-center text-muted-foreground transition-[color] hover:text-foreground"
-              href={`https://x.com/${X_USERNAME.replace(/^@/, "")}?utm_source=${encodeURIComponent(UTM_PARAMS.utm_source)}`}
-              target="_blank"
-              rel="noopener"
-            >
-              <Icons.x className="size-4" />
-              <span className="sr-only">X</span>
-            </a>
-
-            <Separator />
 
             <a
               className="flex items-center text-muted-foreground transition-[color] hover:text-foreground"

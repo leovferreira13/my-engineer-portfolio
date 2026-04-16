@@ -4,7 +4,7 @@ export const USER: User = {
   firstName: "Leonardo",
   lastName: "Vieira Ferreira",
   displayName: "Leonardo Ferreira",
-  username: "leovieiraf",
+  username: "leovferreira13",
   gender: "male",
   pronouns: "he/him",
   bio: "Product Engineer and Tech Lead focused on backend, data platforms, and AI-enabled products.",
@@ -37,9 +37,8 @@ export const USER: User = {
 
 <p class="text-muted-foreground">Content reflects public professional profile sources used for this draft portfolio.</p>
 `,
-  avatar: "https://avatars.githubusercontent.com/u/31140984?v=4",
-  ogImage:
-    "https://avatars.githubusercontent.com/u/31140984?v=4",
+  avatar: "https://avatars.githubusercontent.com/u/65781172?v=4",
+  ogImage: "https://avatars.githubusercontent.com/u/65781172?v=4",
   namePronunciationUrl: "",
   timeZone: "America/Sao_Paulo",
   keywords: [

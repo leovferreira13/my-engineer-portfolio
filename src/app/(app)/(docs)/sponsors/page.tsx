@@ -2,7 +2,7 @@ import { ArrowUpRightIcon } from "lucide-react"
 import type { Metadata } from "next"
 
 import { Button } from "@/components/base/ui/button"
-import { SPONSORSHIP_URL, X_USERNAME } from "@/config/site"
+import { SPONSORSHIP_URL } from "@/config/site"
 import { SponsorItem } from "@/features/sponsor/components/sponsor-item"
 import { SPONSORS } from "@/features/sponsor/data"
 import type { Sponsor, SponsorTier } from "@/features/sponsor/types"
@@ -29,12 +29,6 @@ export const metadata: Metadata = {
       height: 630,
       alt: title,
     },
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: X_USERNAME,
-    creator: X_USERNAME,
-    images: [ogImage],
   },
 }
 

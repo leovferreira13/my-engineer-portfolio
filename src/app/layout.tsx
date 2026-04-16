@@ -8,7 +8,7 @@ import type { WebSite, WithContext } from "schema-dts"
 
 import { DuckFollower } from "@/components/duck-follower"
 import { Providers } from "@/components/providers"
-import { META_THEME_COLORS, SITE_INFO, X_USERNAME } from "@/config/site"
+import { META_THEME_COLORS, SITE_INFO } from "@/config/site"
 import { USER } from "@/features/portfolio/data/user"
 import { fontVariables } from "@/lib/fonts"
 
@@ -69,12 +69,6 @@ export const metadata: Metadata = {
         alt: SITE_INFO.name,
       },
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: X_USERNAME,
-    creator: X_USERNAME,
-    images: [SITE_INFO.ogImage],
   },
   icons: {
     icon: [
