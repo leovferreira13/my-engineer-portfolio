@@ -16,5 +16,6 @@ The resume-style experience list inherited granular roles at the same employer a
 ## Consequences
 
 - The experience section reads shorter and more intentional; recruiters see a coherent QDOIS chapter instead of two stacked titles.
+- Past roles that are consolidated for narrative can still use `isExpanded: false` on the position so the row stays collapsed by default while current roles remain expanded for immediate context.
 - Re-adding a removed role later is a data-only change in `experiences.tsx`.
 - Education remains in the same data file until a dedicated education section exists (see separate backlog issue).

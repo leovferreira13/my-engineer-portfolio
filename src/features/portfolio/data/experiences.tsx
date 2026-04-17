@@ -139,7 +139,7 @@ export const EXPERIENCES: Experience[] = [
           "Azure DevOps",
           "Git",
         ],
-        isExpanded: true,
+        isExpanded: false,
       },
     ],
   },
