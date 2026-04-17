@@ -1,29 +1,26 @@
 # Engineer portfolio · Leonardo Ferreira
 
-[![License](https://img.shields.io/github/license/leovferreira13/my-engineer-portfolio?label=License)](https://github.com/leovferreira13/my-engineer-portfolio/blob/main/LICENSE)
-
-Public source for **[leoferreira.dev](https://www.leoferreira.dev)** — a personal site that doubles as a concise engineering portfolio: who I am, how I work, and what I have shipped. The repository is meant to be readable by humans and by tooling (structured exports, MDX, registry metadata).
+Public source for **[leoferreira.dev](https://www.leoferreira.dev)** — a personal site that doubles as a concise engineering portfolio: who I am, how I work, and what I have shipped. The repository is meant to be readable by humans and by tooling (structured exports, MDX content).
 
 ## Intent
 
-This work is a **portfolio-first** product: the homepage tells a grounded professional story (experience, education, curated projects, tech stack, publications) instead of leading with component marketing or template chrome. The codebase still includes a **shadcn-style registry** and **MDX-powered blog/docs** so reusable UI and writing can evolve alongside the CV narrative.
+This work is a **portfolio-first career product**, not only a code demo: a fast, honest surface that moves each reader type (ATS, recruiter, interviewer, hiring manager) toward the **next step** in the hiring funnel—aligned with a strong resume and professional narrative on the homepage and in long-form content.
 
-The site began as a **fork of an open-source Next.js portfolio and registry template**. Scope, navigation, content splits, and visual treatment were intentionally redirected for my positioning; those choices are **documented as Architecture Decision Records** under [`docs/adr/`](./docs/adr/).
+The default experience is **grounded narrative** (experience, education, curated projects, tech stack, publications) with navigation scoped to that story. The same surface should show **how** decisions are made—product framing, engineering trade-offs, and evolution over time—not only **what** shipped. That includes room for a structured **engineering journal**, **projects** with real context, and an **exportable CV**.
 
-## What the ADRs capture
+Product vision, goals, and how this maps to the repo are spelled out in **[`docs/VISION.md`](./docs/VISION.md)**.
 
-| ADR                                                                   | Topic                                                                                       |
-| --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| [0001](./docs/adr/0001-portfolio-mvp-content-and-sections.md)         | MVP homepage scope, social links, optional registry sections behind env, publications panel |
-| [0002](./docs/adr/0002-header-navigation-portfolio-scope.md)          | Header and command palette limited to portfolio scope (Home, Blog)                          |
-| [0003](./docs/adr/0003-hero-without-cover-banner.md)                  | Hero without cover banner; identity anchored on avatar and name                             |
-| [0004](./docs/adr/0004-experience-section-narrative-curation.md)      | Experience list curated for a single coherent narrative                                     |
-| [0005](./docs/adr/0005-education-section-separate-from-experience.md) | Education as its own section and exports, separate from employers                           |
-| [0006](./docs/adr/0006-portfolio-tech-stack-icons.md)                 | Tech stack data, skill groups, local vs remote icons                                        |
-| [0007](./docs/adr/0007-projects-section-curation.md)                  | Curated projects list for the public surface                                                |
-| [0008](./docs/adr/0008-portfolio-section-cards.md)                    | Homepage sections as discrete cards and shared layout rules                                 |
+## Documentation
 
-For a structural map of `src/` (App Router, `features/`, registry pipeline), see [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md). For dev server, env, and tooling notes, see [`docs/GETTING-STARTED.md`](./docs/GETTING-STARTED.md).
+| Document                                                                   | Role                                                                   |
+| -------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| [`docs/VISION.md`](./docs/VISION.md)                                       | North star, Linear-aligned summary, and pointers to product directives |
+| [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md)                           | Map of `src/`, App Router, features, and active architectural summary  |
+| [`docs/adr/`](./docs/adr/)                                                 | Architecture Decision Records (detail when a choice is stable)         |
+| [`docs/GETTING-STARTED.md`](./docs/GETTING-STARTED.md)                     | Dev server, env, and tooling                                           |
+| [`docs/product/resume-directives.md`](./docs/product/resume-directives.md) | Copy and structure rules for resume-as-landing-page consistency        |
+
+The site began as a **fork of an open-source Next.js portfolio template**. Scope, navigation, content, and presentation were redirected for this positioning.
 
 ## Stack
 
@@ -40,10 +37,9 @@ For a structural map of `src/` (App Router, `features/`, registry pipeline), see
 - **AI-oriented** text exports (e.g. `llms.txt` style routes)
 - Optional **PostHog** / **OpenPanel** analytics and consent tooling (degrade without keys)
 - **PWA**-oriented configuration where enabled in the app
-- **shadcn registry** for installable blocks/components (see [SETUP.md](./SETUP.md))
 
 ## Development
 
-Local setup, production build, and registry workflow: **[SETUP.md](./SETUP.md)**.
+Local setup and production build: **[SETUP.md](./SETUP.md)**.
 
 Agent-oriented repo notes: **[AGENTS.md](./AGENTS.md)**.
