@@ -7,7 +7,7 @@ import { VerifiedIcon } from "./verified-icon"
 
 export function ProfileHeader() {
   return (
-    <div className="flex overflow-hidden rounded-b-xl rounded-t-none bg-background text-card-foreground shadow-xs ring-1 ring-border">
+    <div className="flex overflow-hidden rounded-b-xl rounded-t-none border-x border-b border-line bg-background text-card-foreground shadow-xs">
       <div className="shrink-0">
         <div className="mx-0.5 my-0.75">
           <AvatarElectricEffect>
