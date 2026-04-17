@@ -1,8 +1,12 @@
+---
+type: ADR
+id: "0006"
+title: "Portfolio tech stack data and icon resolution"
+status: active
+date: 2026-04-17
+---
+
 # ADR 0006: Portfolio tech stack data and icon resolution
-
-## Status
-
-Accepted
 
 ## Context
 

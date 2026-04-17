@@ -1,8 +1,12 @@
+---
+type: ADR
+id: "0008"
+title: "Portfolio homepage sections as discrete cards"
+status: active
+date: 2026-04-17
+---
+
 # ADR 0008: Portfolio homepage sections as discrete cards
-
-## Status
-
-Accepted
 
 ## Context
 
