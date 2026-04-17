@@ -11,10 +11,12 @@ The homepage Stack panel lists technologies with 32px icons. Icons for most entr
 ## Decision
 
 1. **Content**: The stack list in `src/features/portfolio/data/tech-stack.ts` is curated for the personal portfolio; it is not required to mirror every technology used in the site implementation (for example front-end framework icons may be omitted when they are template noise rather than career signal).
-2. **Icon resolution**: Each stack entry may set `useLocalAsset: true` on the `TechStack` type. When set, the UI loads `/public/tech-stack-icons/[key].svg` instead of the CDN path. Keys without that flag continue to use `https://assets.chanhdai.com/images/tech-stack-icons/` for visual parity with existing assets.
-3. **Local assets**: Local SVGs should follow the same nominal canvas as existing icons (100x100 viewBox) so layout and density stay consistent.
+2. **Skill grouping**: Each entry sets `skillGroup` (`Back end`, `Data engineering`, or `AI`). The Stack panel renders those values as section headings in a fixed order (`TECH_STACK_GROUP_ORDER`). Markdown exports (`formatTechStackForMarkdown`) mirror the same headings so LLM-facing text matches the page.
+3. **Icon resolution**: Each stack entry may set `useLocalAsset: true` on the `TechStack` type. When set, the UI loads `/public/tech-stack-icons/[key].svg` instead of the CDN path. Keys without that flag continue to use `https://assets.chanhdai.com/images/tech-stack-icons/` for visual parity with existing assets.
+4. **Local assets**: Local SVGs should follow the same nominal canvas as existing icons (100x100 viewBox) so layout and density stay consistent. Icons adapted from Simple Icons (Django, FastAPI, pandas) use official brand colors on that canvas when the CDN has no matching asset.
 
 ## Consequences
 
 - New technologies can be added without waiting for CDN publishes.
 - Duplication is possible if an icon is later added upstream; we can drop `useLocalAsset` and delete the local file when parity is confirmed.
+- Adding a new `skillGroup` requires updating the `TechStackSkillGroup` union and `TECH_STACK_GROUP_ORDER` so headings and export order stay explicit.
