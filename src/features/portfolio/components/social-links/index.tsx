@@ -4,15 +4,13 @@ import { SocialLinkItem } from "./social-link-item"
 
 export function SocialLinks() {
   return (
-    <Panel className="before:content-none after:content-none">
+    <Panel>
       <h2 className="sr-only">Social Links</h2>
 
-      <div className="mx-auto w-full max-w-3xl">
-        <div className="screen-line-top screen-line-bottom grid grid-cols-2 divide-x divide-line">
-          {SOCIAL_LINKS.map((link, index) => {
-            return <SocialLinkItem key={index} {...link} />
-          })}
-        </div>
+      <div className="grid grid-cols-1 gap-2 p-4 sm:grid-cols-2">
+        {SOCIAL_LINKS.map((link, index) => {
+          return <SocialLinkItem key={index} {...link} />
+        })}
       </div>
     </Panel>
   )

@@ -27,7 +27,7 @@ export function Sponsors() {
 
   return (
     <Panel id="sponsors">
-      <PanelHeader className="after:content-none">
+      <PanelHeader>
         <PanelTitle>Sponsors</PanelTitle>
         <PanelDescription>
           Grateful for the support that helps me grow and maintain high-quality
@@ -35,22 +35,15 @@ export function Sponsors() {
         </PanelDescription>
       </PanelHeader>
 
-      <div className="relative">
-        <div className="absolute inset-0 -z-1 grid grid-cols-1 gap-4 max-sm:hidden sm:grid-cols-2">
-          <div className="border-r border-line" />
-          <div className="border-l border-line" />
-        </div>
+      <div className="grid grid-cols-1 gap-4 px-4 pb-4 sm:grid-cols-2">
+        {FEATURED_SPONSORS.map((item) => (
+          <SponsorItem key={item.name} item={item} />
+        ))}
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {FEATURED_SPONSORS.map((item) => (
-            <SponsorItem key={item.name} item={item} />
-          ))}
-
-          <SponsorItemPlus />
-        </div>
+        <SponsorItemPlus />
       </div>
 
-      <div className="-mt-px flex justify-center py-2">
+      <div className="flex justify-center border-t border-border px-4 py-2">
         <Button
           className="gap-2 border-none pr-2.5 pl-3"
           size="sm"
