@@ -1,13 +1,15 @@
 import { EXPERIENCES } from "@/features/portfolio/data/experiences"
+import { formatPositionAsMarkdown } from "@/features/portfolio/lib/format-position-markdown"
 
 const content = `# Experience
 
 ${EXPERIENCES.map((item) =>
   item.positions
-    .map((position) => {
-      const skills = position.skills?.map((skill) => skill).join(", ") || "N/A"
-      return `## ${position.title} | ${item.companyName}\n\nDuration: ${position.employmentPeriod.start} - ${position.employmentPeriod.end || "Present"}\n\nSkills: ${skills}\n\n${position.description?.trim()}`
-    })
+    .map((position) =>
+      formatPositionAsMarkdown(position, item.companyName, {
+        headingPrefix: "##",
+      })
+    )
     .join("\n\n")
 ).join("\n\n")}
 `

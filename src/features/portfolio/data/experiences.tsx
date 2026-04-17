@@ -3,7 +3,6 @@ import {
   BriefcaseIcon,
   CodeXmlIcon,
   CpuIcon,
-  GraduationCapIcon,
   LayoutTemplateIcon,
   WrenchIcon,
 } from "lucide-react"
@@ -232,41 +231,6 @@ export const EXPERIENCES: Experience[] = [
         icon: <BriefcaseIcon />,
         description: "",
         skills: [],
-      },
-    ],
-  },
-  {
-    id: "education",
-    companyName: "Education",
-    positions: [
-      {
-        id: "1",
-        title: "Universidade Federal de Minas Gerais (UFMG)",
-        employmentPeriod: {
-          start: "2017",
-          end: "2022",
-        },
-        icon: <GraduationCapIcon />,
-        description:
-          "- Bachelor's degree, Control and Automation Engineering.\n- Strong foundation in mathematics, programming, and systems engineering (control systems, automation, and software development).",
-        skills: [
-          "Control systems",
-          "Automation",
-          "Software engineering",
-          "Mathematics",
-        ],
-      },
-      {
-        id: "2",
-        title: "Centro Federal de Educação Tecnológica de Minas Gerais (CEFET-MG)",
-        employmentPeriod: {
-          start: "2014",
-          end: "2016",
-        },
-        icon: <GraduationCapIcon />,
-        description:
-          "- Technical education in Mechatronics, Robotics, and Automation Engineering.",
-        skills: ["Mechatronics", "Robotics", "Automation"],
       },
     ],
   },
