@@ -1,12 +1,4 @@
-import {
-  BarChart3Icon,
-  BriefcaseIcon,
-  CodeXmlIcon,
-  CpuIcon,
-  GraduationCapIcon,
-  LayoutTemplateIcon,
-  WrenchIcon,
-} from "lucide-react"
+import { BarChart3Icon, CodeXmlIcon, LayoutTemplateIcon } from "lucide-react"
 
 import type { Experience } from "../types/experiences"
 
@@ -124,12 +116,13 @@ export const EXPERIENCES: Experience[] = [
         id: "1",
         title: "Data Engineer",
         employmentPeriod: {
-          start: "02.2021",
+          start: "10.2020",
           end: "12.2021",
         },
-        employmentType: "Full-time",
+        employmentType: "Internship and full-time",
         icon: <BarChart3Icon />,
-        description: `- Built ETL pipelines and data workflows on Azure Data Factory and Azure Databricks (PySpark), consolidating relational DBs, SFTP, and APIs into a modern data lake architecture.
+        description: `- Started in a data analytics internship implementing Azure-based ETL and data pipelines, then continued as a full-time data engineer on the same team.
+- Built ETL pipelines and data workflows on Azure Data Factory and Azure Databricks (PySpark), consolidating relational DBs, SFTP, and APIs into a modern data lake architecture.
 - Supported digital transformation by reducing infrastructure costs and enabling future BI, analytics, and ML initiatives.
 - Established CI/CD with Azure DevOps and Git for automated deployments and environment consistency.
 - Partnered with business stakeholders to translate requirements into scalable data models and pipelines.`,
@@ -141,132 +134,7 @@ export const EXPERIENCES: Experience[] = [
           "Azure DevOps",
           "Git",
         ],
-      },
-      {
-        id: "2",
-        title: "Data Analytics Intern",
-        employmentPeriod: {
-          start: "10.2020",
-          end: "01.2021",
-        },
-        employmentType: "Internship",
-        icon: <BarChart3Icon />,
-        description:
-          "- Implemented data pipelines and ETL processes in the Azure ecosystem.",
-        skills: ["Azure", "ETL", "Data pipelines"],
-      },
-    ],
-  },
-  {
-    id: "chemtech",
-    companyName: "Chemtech",
-    positions: [
-      {
-        id: "1",
-        title: "Engineering Intern",
-        employmentPeriod: {
-          start: "12.2019",
-          end: "10.2020",
-        },
-        employmentType: "Internship",
-        icon: <WrenchIcon />,
-        description: "",
-        skills: [],
-      },
-    ],
-  },
-  {
-    id: "jabil",
-    companyName: "Jabil",
-    positions: [
-      {
-        id: "1",
-        title: "Process Technician",
-        employmentPeriod: {
-          start: "02.2019",
-          end: "07.2019",
-        },
-        employmentType: "Full-time",
-        icon: <CpuIcon />,
-        description: "",
-        skills: [],
-      },
-      {
-        id: "2",
-        title: "Process Assistant",
-        employmentPeriod: {
-          start: "01.2019",
-          end: "01.2019",
-        },
-        employmentType: "Full-time",
-        icon: <CpuIcon />,
-        description: "",
-        skills: [],
-      },
-      {
-        id: "3",
-        title: "Engineering Intern",
-        employmentPeriod: {
-          start: "03.2018",
-          end: "01.2019",
-        },
-        employmentType: "Internship",
-        icon: <WrenchIcon />,
-        description: "",
-        skills: [],
-      },
-    ],
-  },
-  {
-    id: "mga",
-    companyName: "MGA Automação Industrial",
-    positions: [
-      {
-        id: "1",
-        title: "Intern",
-        employmentPeriod: {
-          start: "05.2017",
-          end: "03.2018",
-        },
-        employmentType: "Internship",
-        icon: <BriefcaseIcon />,
-        description: "",
-        skills: [],
-      },
-    ],
-  },
-  {
-    id: "education",
-    companyName: "Education",
-    positions: [
-      {
-        id: "1",
-        title: "Universidade Federal de Minas Gerais (UFMG)",
-        employmentPeriod: {
-          start: "2017",
-          end: "2022",
-        },
-        icon: <GraduationCapIcon />,
-        description:
-          "- Bachelor's degree, Control and Automation Engineering.\n- Strong foundation in mathematics, programming, and systems engineering (control systems, automation, and software development).",
-        skills: [
-          "Control systems",
-          "Automation",
-          "Software engineering",
-          "Mathematics",
-        ],
-      },
-      {
-        id: "2",
-        title: "Centro Federal de Educação Tecnológica de Minas Gerais (CEFET-MG)",
-        employmentPeriod: {
-          start: "2014",
-          end: "2016",
-        },
-        icon: <GraduationCapIcon />,
-        description:
-          "- Technical education in Mechatronics, Robotics, and Automation Engineering.",
-        skills: ["Mechatronics", "Robotics", "Automation"],
+        isExpanded: false,
       },
     ],
   },

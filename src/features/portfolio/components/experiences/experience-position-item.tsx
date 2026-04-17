@@ -18,15 +18,22 @@ import type { ExperiencePosition } from "../../types/experiences"
 
 export function ExperiencePositionItem({
   position,
+  anchorId,
 }: {
   position: ExperiencePosition
+  /** Optional DOM id for deep links (e.g. education-ufmg). */
+  anchorId?: string
 }) {
   const { start, end } = position.employmentPeriod
   const isOngoing = !end
 
   return (
     <Collapsible
-      className="relative last:before:absolute last:before:h-full last:before:w-4 last:before:bg-background"
+      id={anchorId}
+      className={cn(
+        "relative last:before:absolute last:before:h-full last:before:w-4 last:before:bg-background",
+        anchorId && "scroll-mt-14"
+      )}
       defaultOpen={position.isExpanded}
       disabled={!position.description?.trim()}
     >
