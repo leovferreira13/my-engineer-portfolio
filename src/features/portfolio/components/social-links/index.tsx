@@ -7,7 +7,7 @@ export function SocialLinks() {
     <Panel>
       <h2 className="sr-only">Social Links</h2>
 
-      <div className="grid grid-cols-2 gap-2 p-4 sm:grid-cols-2 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-2 p-4 sm:grid-cols-2">
         {SOCIAL_LINKS.map((link, index) => {
           return <SocialLinkItem key={index} {...link} />
         })}

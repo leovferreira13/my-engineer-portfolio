@@ -6,7 +6,7 @@ import type { SocialLink } from "@/features/portfolio/types/social-links"
 import { cn } from "@/lib/utils"
 import { addQueryParams } from "@/utils/url"
 
-export function SocialLinkItem({ icon, title, href }: SocialLink) {
+export function SocialLinkItem({ icon, title, subtitle, href }: SocialLink) {
   return (
     <a
       className={cn(
@@ -29,9 +29,14 @@ export function SocialLinkItem({ icon, title, href }: SocialLink) {
         <div className="pointer-events-none absolute inset-0 rounded-lg ring-1 ring-black/10 corner-squircle ring-inset dark:ring-white/15 supports-corner-shape:rounded-[50%]" />
       </div>
 
-      <h3 className="flex-1 font-medium">{title}</h3>
+      <div className="flex min-w-0 flex-1 flex-col justify-center gap-0.5">
+        <h3 className="font-medium">{title}</h3>
+        {subtitle ? (
+          <p className="truncate text-sm text-muted-foreground">{subtitle}</p>
+        ) : null}
+      </div>
 
-      <ArrowUpRightIcon className="size-4 text-muted-foreground" />
+      <ArrowUpRightIcon className="size-4 shrink-0 self-center text-muted-foreground" />
     </a>
   )
 }
