@@ -25,7 +25,7 @@ export const EXPERIENCES: Experience[] = [
         employmentType: "Full-time",
         icon: <CodeXmlIcon />,
         description:
-          "- Helping businesses communicate better with customers through AI models and automation.",
+          "- Building AI-backed communication flows end-to-end: scoping outcomes with stakeholders, hardening integrations, and keeping automation observable and safe to operate.",
         skills: ["Python", "AI", "Automation", "SaaS"],
         isExpanded: true,
       },

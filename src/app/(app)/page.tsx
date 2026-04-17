@@ -51,25 +51,25 @@ export default function Page() {
         <Testimonials />
         <div className="flex h-2 w-full border-x border-line" />
 
+        <Experiences />
+        <Separator />
+
+        <Projects />
+        <Separator />
+
+        <TechStack />
+        <Separator />
+
         <GitHubContributions />
         <Separator />
 
         <Sponsors />
         <Separator />
 
-        <TechStack />
-        <Separator />
-
         <Components />
         <Separator />
 
         <Blog />
-        <Separator />
-
-        <Experiences />
-        <Separator />
-
-        <Projects />
         <Separator />
 
         <Awards />

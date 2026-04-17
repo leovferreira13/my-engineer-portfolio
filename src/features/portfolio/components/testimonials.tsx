@@ -49,7 +49,7 @@ export function Testimonials() {
       id="testimonials"
       className="before:content-none after:content-none [&_.rfm-initial-child-container]:items-stretch! [&_.rfm-marquee]:items-stretch!"
     >
-      <h2 className="sr-only">Testimonials</h2>
+      <h2 className="sr-only">Recommendations</h2>
 
       {FEATURED_TESTIMONIALS.length > 0 && (
         <>
@@ -95,7 +95,7 @@ export function Testimonials() {
               href="/wall-of-love"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Wall of Love"
+              aria-label="All recommendations"
             >
               <ArrowUpRightIcon />
             </a>

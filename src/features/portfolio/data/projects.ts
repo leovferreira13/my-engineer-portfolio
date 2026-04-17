@@ -20,7 +20,7 @@ export const PROJECTS: Project[] = [
       "ETL",
     ],
     description:
-      "Veterinary practice management platform: clinical workflows, prescriptions, scheduling, billing, and analytics — delivered across engineering and product leadership roles.",
+      "B2B SaaS for veterinary clinics: clinical workflows, prescriptions, scheduling, billing, and analytics. Spanned hands-on engineering (Django, PostgreSQL, AWS, Vue) and product leadership — roadmap, UX bets, and regulated health-record changes shipped with the team.",
     isExpanded: true,
   },
   {
@@ -32,7 +32,7 @@ export const PROJECTS: Project[] = [
     link: "https://www.reach.ai",
     skills: ["AI", "Automation", "SaaS", "Customer communications"],
     description:
-      "Engineering work focused on AI models and automation to help businesses communicate better with customers.",
+      "Current role: AI and automation for customer communications — from integration design to production behavior, with emphasis on reliability and measurable operator outcomes.",
   },
   {
     id: "qdois-data",
@@ -50,7 +50,7 @@ export const PROJECTS: Project[] = [
       "Azure DevOps",
     ],
     description:
-      "ETL and lake-house style consolidation for operational sources (relational DBs, SFTP, APIs), plus CI/CD and collaboration with business stakeholders.",
+      "Enterprise data platform work: lake-house style consolidation from relational DBs, SFTP, and APIs; CI/CD on Azure DevOps; close partnership with business stakeholders to turn reporting needs into maintainable pipelines.",
   },
   {
     id: "leoferreira-dev",
@@ -61,6 +61,6 @@ export const PROJECTS: Project[] = [
     link: "https://www.leoferreira.dev",
     skills: ["Personal site", "Blog", "Projects"],
     description:
-      "Personal site with engineering notes and project highlights (Portuguese-first content).",
+      "This site: portfolio, engineering journal (blog), and public artifacts — Portuguese-first writing where it fits the audience.",
   },
 ]

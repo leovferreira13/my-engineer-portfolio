@@ -7,11 +7,11 @@ export const USER: User = {
   username: "leovferreira13",
   gender: "male",
   pronouns: "he/him",
-  bio: "Product Engineer and Tech Lead focused on backend, data platforms, and AI-enabled products.",
+  bio: "Product Engineer shipping end-to-end: discovery, trade-offs, backend and data systems, and AI-enabled workflows.",
   flipSentences: [
     "Product Engineer",
-    "Tech Lead",
     "Backend, data & AI",
+    "From problem framing to production",
   ],
   address: "Rio de Janeiro, Brazil",
   email: "bGVvdmllaXJhZi41OTlAZ21haWwuY29t", // base64 encoded
@@ -32,11 +32,9 @@ export const USER: User = {
     },
   ],
   about: `
-- **Product Engineer** and **Tech Lead** with experience across SaaS delivery, data platforms, and product leadership.
-- Strong track record in **Python/Django**, **PostgreSQL**, **AWS**, and **Vue.js**, from hands-on implementation to roadmap ownership and cross-functional coordination.
-- Interested in **AI/ML applications**, scalable systems, and turning complex domains (including regulated workflows) into reliable software.
-
-<p class="text-muted-foreground">Content reflects public professional profile sources used for this draft portfolio.</p>
+- I work as a **Product Engineer**: clarifying outcomes with stakeholders, choosing sensible trade-offs, and owning delivery through **Python/Django**, **PostgreSQL**, **AWS**, and **Vue.js** when the UI needs to move with the product.
+- Recent focus areas: **regulated workflows** (health tech), **data platforms and ETL**, and **AI-assisted automation** where reliability and operator trust matter as much as model quality.
+- I care about **traceable decisions** (why this shape, why now, what we deferred) and about writing that narrative alongside the code — see the **Blog** for engineering notes and longer-form rationale.
 `,
   avatar: "https://avatars.githubusercontent.com/u/65781172?v=4",
   ogImage: "https://avatars.githubusercontent.com/u/65781172?v=4",
@@ -53,6 +51,8 @@ export const USER: User = {
     "Django",
     "AWS",
     "data engineering",
+    "product engineering",
+    "SaaS",
   ],
   dateCreated: "2026-04-16",
 }
