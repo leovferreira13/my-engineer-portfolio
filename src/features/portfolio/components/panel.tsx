@@ -8,7 +8,7 @@ function Panel({ className, ...props }: React.ComponentProps<"section">) {
     <section
       data-slot="panel"
       className={cn(
-        "overflow-hidden rounded-xl bg-background text-card-foreground shadow-xs ring-1 ring-border",
+        "overflow-hidden rounded-xl border-x border-b border-line bg-background text-card-foreground shadow-xs",
         className
       )}
       {...props}
