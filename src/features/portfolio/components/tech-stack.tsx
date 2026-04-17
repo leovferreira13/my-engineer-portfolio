@@ -13,17 +13,13 @@ import { Panel, PanelContent, PanelHeader, PanelTitle } from "./panel"
 const REMOTE_TECH_ICON_BASE =
   "https://assets.chanhdai.com/images/tech-stack-icons"
 
-function groupHeadingId(title: string) {
-  return `stack-group-${title.replace(/\s+/g, "-").toLowerCase()}`
-}
-
 function TechStackIconRow({ tech }: { tech: TechStack }) {
   const iconBase = tech.useLocalAsset
     ? "/tech-stack-icons"
     : REMOTE_TECH_ICON_BASE
 
   return (
-    <li key={tech.key} className="flex">
+    <li className="flex shrink-0">
       <Tooltip>
         <TooltipTrigger
           render={
@@ -73,7 +69,7 @@ function TechStackIconRow({ tech }: { tech: TechStack }) {
 }
 
 export function TechStack() {
-  const groups = TECH_STACK_GROUPS.filter((g) => g.items.length > 0)
+  const orderedTech = TECH_STACK_GROUPS.flatMap((g) => g.items)
 
   return (
     <Panel id="stack">
@@ -81,22 +77,15 @@ export function TechStack() {
         <PanelTitle>Stack</PanelTitle>
       </PanelHeader>
 
-      <PanelContent className="flex flex-col gap-8">
-        {groups.map((group) => (
-          <section key={group.title} aria-labelledby={groupHeadingId(group.title)}>
-            <h3
-              id={groupHeadingId(group.title)}
-              className="text-muted-foreground mb-3 text-xs font-medium tracking-wide uppercase"
-            >
-              {group.title}
-            </h3>
-            <ul className="flex flex-wrap gap-4 select-none">
-              {group.items.map((tech) => (
-                <TechStackIconRow key={tech.key} tech={tech} />
-              ))}
-            </ul>
-          </section>
-        ))}
+      <PanelContent>
+        <ul
+          className="flex flex-nowrap items-center gap-4 overflow-x-auto overscroll-x-contain select-none [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          aria-label="Technologies in stack order"
+        >
+          {orderedTech.map((tech) => (
+            <TechStackIconRow key={tech.key} tech={tech} />
+          ))}
+        </ul>
       </PanelContent>
     </Panel>
   )
