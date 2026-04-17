@@ -6,6 +6,7 @@ Guidance for coding agents working in this repository: **product boundaries** fi
 
 ## Product rules and recorded decisions
 
+- **Vision and roadmap hub** (north star, Linear project, index of `docs/product/`): [`docs/VISION.md`](docs/VISION.md).
 - The site is **portfolio-first**: the public homepage emphasizes CV-grounded narrative (experience, education, projects, stack); registry marketing and optional homepage strips are controlled by config and env (see ADRs).
 - **Product and UX decisions** live in [`docs/adr/`](docs/adr/). Read the relevant ADR before changing homepage composition, navigation, portfolio data shapes, or section semantics.
 - **Resume and copy constraints** (when editing portfolio narrative): [`docs/product/resume-directives.md`](docs/product/resume-directives.md).
