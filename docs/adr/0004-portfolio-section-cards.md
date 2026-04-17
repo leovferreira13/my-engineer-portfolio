@@ -11,7 +11,7 @@ The homepage composition still used full-width horizontal rules and a repeating 
 ## Decision
 
 1. **Remove section separators that use the repeating line pattern** from the homepage flow (`/`): spacing between blocks is handled with vertical gap only.
-2. **Treat each major homepage block as a card**: `Panel` (and the profile hero) use `rounded-xl`, `bg-card`, light `shadow-xs`, and `ring-1 ring-foreground/10` (dark: `ring-border`) instead of `screen-line-*` utilities and full-height side rails.
+2. **Treat each major homepage block as a card**: `Panel` (and the profile hero) use `rounded-xl`, `bg-black`, `text-card-foreground`, light `shadow-xs`, and a single grey outline via `ring-1 ring-border` instead of `screen-line-*` utilities and full-height side rails. Section separation is read from the card contour only, not from a tinted card fill.
 3. **Panel titles**: `PanelHeader` uses a simple bottom border on the semantic token `border-border` instead of `screen-line-bottom`.
 4. **Interior grids** (social links, sponsors, optional components/blog grids): drop absolute overlay column borders; use per-cell borders on interactive tiles or neutral gap spacing so separation comes from the card edge and tile shapes, not a background grid.
 

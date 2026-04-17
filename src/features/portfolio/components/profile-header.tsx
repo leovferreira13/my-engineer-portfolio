@@ -7,7 +7,7 @@ import { VerifiedIcon } from "./verified-icon"
 
 export function ProfileHeader() {
   return (
-    <div className="flex overflow-hidden rounded-xl bg-card text-card-foreground shadow-xs ring-1 ring-foreground/10 dark:ring-border">
+    <div className="flex overflow-hidden rounded-xl bg-black text-card-foreground shadow-xs ring-1 ring-border">
       {/* <div className="absolute top-[-3.5px] left-[-4.5px] size-2 rounded-xs border bg-popover" /> */}
       {/* <div className="absolute top-[-3.5px] right-[-4.5px] size-2 rounded-xs border bg-popover" /> */}
 
