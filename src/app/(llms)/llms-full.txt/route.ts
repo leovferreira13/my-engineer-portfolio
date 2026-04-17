@@ -5,11 +5,13 @@ import { getAllDocs } from "@/features/doc/data/documents"
 import { getLLMText } from "@/features/doc/lib/get-llm-text"
 import { AWARDS } from "@/features/portfolio/data/awards"
 import { CERTIFICATIONS } from "@/features/portfolio/data/certifications"
+import { EDUCATION_ENTRIES } from "@/features/portfolio/data/education"
 import { EXPERIENCES } from "@/features/portfolio/data/experiences"
 import { PROJECTS } from "@/features/portfolio/data/projects"
 import { SOCIAL_LINKS } from "@/features/portfolio/data/social-links"
-import { TECH_STACK } from "@/features/portfolio/data/tech-stack"
+import { formatTechStackForMarkdown } from "@/features/portfolio/data/tech-stack"
 import { USER } from "@/features/portfolio/data/user"
+import { formatPositionAsMarkdown } from "@/features/portfolio/lib/format-position-markdown"
 
 const allPosts = getAllDocs()
 
@@ -31,17 +33,25 @@ ${SOCIAL_LINKS.map((item) => `- [${item.title}](${item.href})`).join("\n")}
 
 ### Tech Stack
 
-${TECH_STACK.map((item) => `- [${item.title}](${item.href})`).join("\n")}\n`
+${formatTechStackForMarkdown()}\n`
 
 const experienceText = `## Experience
 
 ${EXPERIENCES.map((item) =>
   item.positions
-    .map((position) => {
-      const skills = position.skills?.map((skill) => skill).join(", ") || "N/A"
-      return `### ${position.title} | ${item.companyName}\n\nDuration: ${position.employmentPeriod.start} - ${position.employmentPeriod.end || "Present"}\n\nSkills: ${skills}\n\n${position.description?.trim()}`
-    })
+    .map((position) =>
+      formatPositionAsMarkdown(position, item.companyName, {
+        headingPrefix: "###",
+      })
+    )
     .join("\n\n")
+).join("\n\n")}
+`
+
+const educationText = `## Education
+
+${EDUCATION_ENTRIES.map((position) =>
+  formatPositionAsMarkdown(position, "Education", { headingPrefix: "###" })
 ).join("\n\n")}
 `
 
@@ -82,6 +92,7 @@ async function getContent() {
 
 ${aboutText}
 ${experienceText}
+${educationText}
 ${projectsText}
 ${awardsText}
 ${certificationsText}

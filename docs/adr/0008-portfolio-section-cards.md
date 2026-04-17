@@ -1,4 +1,4 @@
-# ADR 0004: Portfolio homepage sections as discrete cards
+# ADR 0008: Portfolio homepage sections as discrete cards
 
 ## Status
 
@@ -8,6 +8,8 @@ Accepted
 
 The homepage composition still used full-width horizontal rules and a repeating diagonal line pattern between sections, plus vertical rails (`border-x border-line`) inherited from the upstream template. That reads as persistent grid chrome rather than intentional content blocks. ADR 0001 already scoped the homepage toward a CV-grounded narrative; the visual system should reinforce scan-friendly hierarchy without decorative noise.
 
+ADR 0004 through 0007 document later content and data decisions (experience curation, education split, tech stack icons, projects curation); this record is numbered **0008** so the index stays unique after those decisions landed on `main`.
+
 ## Decision
 
 1. **Remove section separators that use the repeating line pattern** from the homepage flow (`/`): spacing between blocks is handled with vertical gap only.
@@ -15,6 +17,7 @@ The homepage composition still used full-width horizontal rules and a repeating 
 3. **Profile hero and all homepage cards share header rails**: The first block sits directly under the header chrome (`md:max-w-3xl` + `px-2` gutter). The hero’s **top corners are square** (`rounded-t-none`) so the outline meets the header layout without a curved gap; the bottom keeps `rounded-b-xl`. Every **`Panel` below the hero** uses the same **`border-x border-b border-line`** treatment so **left and right edges line up with the hero and header** across the whole portfolio homepage. **No interior rule lines** in the hero (no column divider or stacked horizontal borders) and **no decorative “class name” teaser** above the display name, so identity reads as one block rather than a grid mock-up.
 4. **Panel titles**: `PanelHeader` uses a simple bottom border on the semantic token `border-border` instead of `screen-line-bottom`.
 5. **Interior grids** (social links, sponsors, optional components/blog grids): drop absolute overlay column borders; use per-cell borders on interactive tiles or neutral gap spacing so separation comes from the card edge and tile shapes, not a background grid.
+6. **Experience company rows**: Use **`border-border`** horizontal dividers between companies (`border-b` with `last:border-b-0`), not `screen-line-bottom`, so nested experience content matches the card system. Anchor ids use a configurable prefix defaulting to `experience` so they stay consistent with ADR 0005 (`experience-{id}` vs `education-{id}`).
 
 ## Consequences
 

@@ -7,6 +7,7 @@ import { Blog } from "@/features/portfolio/components/blog"
 import { Bookmarks } from "@/features/portfolio/components/bookmarks"
 import { Certifications } from "@/features/portfolio/components/certifications"
 import { Components } from "@/features/portfolio/components/components"
+import { Education } from "@/features/portfolio/components/education"
 import { Experiences } from "@/features/portfolio/components/experiences"
 import { Overview } from "@/features/portfolio/components/overview"
 import { ProfileHeader } from "@/features/portfolio/components/profile-header"
@@ -52,6 +53,8 @@ export default function Page() {
         <Blog />
 
         <Experiences />
+
+        <Education />
 
         <Projects />
 

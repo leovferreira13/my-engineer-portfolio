@@ -13,7 +13,11 @@ export function Experiences() {
 
       <div className="pr-2 pl-4">
         {EXPERIENCES.map((experience) => (
-          <ExperienceItem key={experience.id} experience={experience} />
+          <ExperienceItem
+            key={experience.id}
+            experience={experience}
+            anchorPrefixId="experience"
+          />
         ))}
       </div>
     </Panel>
