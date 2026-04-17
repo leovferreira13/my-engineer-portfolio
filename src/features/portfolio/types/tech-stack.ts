@@ -18,4 +18,9 @@ export type TechStack = {
   categories: string[]
   /** If true, use theme-specific icons for dark/light mode. */
   theme?: boolean
+  /**
+   * When true, icons are served from `/tech-stack-icons/[key].svg` instead of the
+   * shared CDN bundle (used when an asset is not published upstream yet).
+   */
+  useLocalAsset?: boolean
 }

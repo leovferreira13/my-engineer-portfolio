@@ -8,34 +8,10 @@ export const TECH_STACK: TechStack[] = [
     categories: ["Language"],
   },
   {
-    key: "typescript",
-    title: "TypeScript",
-    href: "https://www.typescriptlang.org/",
-    categories: ["Language"],
-  },
-  {
-    key: "java",
-    title: "Java",
-    href: "https://www.java.com/",
-    categories: ["Language"],
-  },
-  {
     key: "js",
     title: "JavaScript",
     href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     categories: ["Language"],
-  },
-  {
-    key: "nodejs",
-    title: "Node.js",
-    href: "https://nodejs.org/",
-    categories: ["Runtime Environment"],
-  },
-  {
-    key: "react",
-    title: "React",
-    href: "https://react.dev/",
-    categories: ["Library", "UI Library"],
   },
   {
     key: "nextjs2",
@@ -45,16 +21,24 @@ export const TECH_STACK: TechStack[] = [
     theme: true,
   },
   {
-    key: "tailwindcss",
-    title: "Tailwind CSS",
-    href: "https://tailwindcss.com/",
-    categories: ["Framework"],
-  },
-  {
     key: "docker",
     title: "Docker",
     href: "https://www.docker.com/",
     categories: ["Containerization"],
+  },
+  {
+    key: "postgresql",
+    title: "PostgreSQL",
+    href: "https://www.postgresql.org/",
+    categories: ["Database"],
+    useLocalAsset: true,
+  },
+  {
+    key: "apache-spark",
+    title: "Apache Spark",
+    href: "https://spark.apache.org/",
+    categories: ["Data Processing"],
+    useLocalAsset: true,
   },
   {
     key: "mysql",
