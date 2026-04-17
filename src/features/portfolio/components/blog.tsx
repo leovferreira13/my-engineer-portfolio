@@ -24,12 +24,7 @@ export function Blog() {
         </PanelTitle>
       </PanelHeader>
 
-      <div className="relative py-4">
-        <div className="pointer-events-none absolute inset-0 -z-1 grid grid-cols-1 gap-4 max-sm:hidden sm:grid-cols-2">
-          <div className="border-r border-line"></div>
-          <div className="border-l border-line"></div>
-        </div>
-
+      <div className="px-4 py-4">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {allPosts.slice(0, 4).map((post) => (
             <PostItem key={post.slug} post={post} />
@@ -37,7 +32,7 @@ export function Blog() {
         </div>
       </div>
 
-      <div className="screen-line-top flex justify-center py-2">
+      <div className="flex justify-center border-t border-border px-4 py-2">
         <Button
           className="gap-2 border-none pr-2.5 pl-3"
           size="sm"

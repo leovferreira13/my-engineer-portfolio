@@ -25,23 +25,14 @@ export function Components() {
         </PanelTitle>
       </PanelHeader>
 
-      <div className="relative pt-2">
-        <div className="absolute inset-0 -z-1 grid grid-cols-1 gap-2 max-sm:hidden sm:grid-cols-2 md:grid-cols-3">
-          <div className="border-r border-line" />
-          <div className="border-l border-line md:border-x" />
-          <div className="border-l border-line max-md:hidden" />
-        </div>
-
+      <div className="px-4 pt-2">
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3">
           {components.slice(0, 9).map((component) => (
             <Link
               key={component.slug}
               href={`/components/${component.slug}`}
               className={cn(
-                "group flex items-center gap-4 p-4 pr-2 transition-[background-color] ease-out hover:bg-accent-muted",
-                "max-sm:screen-line-top max-sm:screen-line-bottom",
-                "sm:max-md:nth-[2n+1]:screen-line-top sm:max-md:nth-[2n+1]:screen-line-bottom",
-                "md:nth-[3n+1]:screen-line-top md:nth-[3n+1]:screen-line-bottom"
+                "group flex items-center gap-4 rounded-lg border border-border/80 bg-muted/20 p-4 pr-2 transition-[background-color,box-shadow] ease-out hover:bg-accent-muted hover:shadow-xs"
               )}
             >
               <div className="relative flex size-6 shrink-0 items-center justify-center rounded-lg border border-muted-foreground/15 bg-muted ring-1 ring-line ring-offset-1 ring-offset-background">
@@ -65,7 +56,7 @@ export function Components() {
         </div>
       </div>
 
-      <div className="-mt-px flex justify-center py-2">
+      <div className="flex justify-center border-t border-border px-4 py-2">
         <Button
           className="gap-2 border-none pr-2.5 pl-3"
           size="sm"

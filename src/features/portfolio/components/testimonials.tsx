@@ -47,13 +47,13 @@ export function Testimonials() {
   return (
     <Panel
       id="testimonials"
-      className="before:content-none after:content-none [&_.rfm-initial-child-container]:items-stretch! [&_.rfm-marquee]:items-stretch!"
+      className="relative [&_.rfm-initial-child-container]:items-stretch! [&_.rfm-marquee]:items-stretch!"
     >
       <h2 className="sr-only">Testimonials</h2>
 
       {FEATURED_TESTIMONIALS.length > 0 && (
         <>
-          <div className="grid gap-2 px-2 sm:grid-cols-2">
+          <div className="grid gap-2 p-4 pt-4 sm:grid-cols-2">
             {FEATURED_TESTIMONIALS.map((item) => (
               <a
                 key={item.url}

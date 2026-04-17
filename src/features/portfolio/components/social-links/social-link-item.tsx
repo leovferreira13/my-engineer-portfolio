@@ -10,9 +10,7 @@ export function SocialLinkItem({ icon, title, href }: SocialLink) {
   return (
     <a
       className={cn(
-        "flex cursor-pointer items-center gap-4 p-4 pr-2 transition-[background-color] ease-out hover:bg-accent-muted",
-        "max-md:nth-[2n+1]:screen-line-top max-md:nth-[2n+1]:screen-line-bottom",
-        "md:nth-[3n+1]:screen-line-top md:nth-[3n+1]:screen-line-bottom"
+        "flex cursor-pointer items-center gap-4 rounded-lg border border-border/80 bg-muted/20 p-4 pr-2 transition-[background-color,box-shadow] ease-out hover:bg-accent-muted hover:shadow-xs"
       )}
       href={addQueryParams(href, UTM_PARAMS)}
       target="_blank"
