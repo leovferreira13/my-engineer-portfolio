@@ -1,8 +1,12 @@
+---
+type: ADR
+id: "0007"
+title: "Curated projects list for the portfolio surface"
+status: active
+date: 2026-04-17
+---
+
 # ADR 0007: Curated projects list for the portfolio surface
-
-## Status
-
-Accepted
 
 ## Context
 

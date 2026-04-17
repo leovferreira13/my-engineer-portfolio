@@ -1,8 +1,12 @@
+---
+type: ADR
+id: "0001"
+title: "MVP portfolio content and optional homepage sections"
+status: active
+date: 2026-04-16
+---
+
 # ADR 0001: MVP portfolio content and optional homepage sections
-
-## Status
-
-Accepted
 
 ## Context
 

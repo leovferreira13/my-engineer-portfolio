@@ -1,8 +1,12 @@
+---
+type: ADR
+id: "0005"
+title: "Dedicated Education section separate from Experience"
+status: active
+date: 2026-04-17
+---
+
 # ADR 0005: Dedicated Education section separate from Experience
-
-## Status
-
-Accepted
 
 ## Context
 

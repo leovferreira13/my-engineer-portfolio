@@ -1,8 +1,12 @@
+---
+type: ADR
+id: "0003"
+title: "Homepage hero without cover banner"
+status: active
+date: 2026-04-17
+---
+
 # ADR 0003: Homepage hero without cover banner
-
-## Status
-
-Accepted
 
 ## Context
 

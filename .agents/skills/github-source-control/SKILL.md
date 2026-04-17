@@ -15,17 +15,16 @@ Follow this skill whenever the user states that a **work item is OK to commit**,
 
 ## Protected branches
 
-- **Never push directly to `main` or `staging`.** Changes reach them only via **pull requests**.
-- All implementable work lands on a **feature branch**, then a **PR** targets `main` (or `staging` when the user says that integration path is required).
+- **Never push directly to `main` or `develop`.** Changes reach them only via **pull requests**.
+- All implementable work lands on a **feature branch**, then a **PR** targets `main` (or `develop` when the user says that integration path is required).
 
 ## Base branch for new work
 
-1. **Default:** create the new branch from `main` (update it first: `git fetch origin` and branch from `origin/main` unless the user is already on an up-to-date local `main`).
-2. **If `staging` exists and the user says it is required** (e.g. integration queue, release train): create the branch from `staging` or `main` as the user specifies; if unclear, ask once which base they want.
-3. Do not assume `staging` exists; verify with `git branch -a` or `git ls-remote` when relevant.
+1. **Default:** create the new branch from `develop` (update it first: `git fetch origin` and branch from `origin/develop` unless the user is already on an up-to-date local `develop`).
+2. **If the user says `main` is required** (e.g. hotfix): create the branch from `develop` or `main` as the user specifies; if unclear, ask once which base they want.
+3. Do not assume `develop` exists; verify with `git branch -a` or `git ls-remote` when relevant.
 
 ## Branch naming
-
 
 | Type    | Pattern              |
 | ------- | -------------------- |
@@ -33,12 +32,11 @@ Follow this skill whenever the user states that a **work item is OK to commit**,
 | Fix     | `fix/{short-name}`   |
 | Chore   | `chore/{short-name}` |
 
-
 - Use **lowercase**, **hyphens** for words, and keep `{short-name}` concise and descriptive (no spaces).
 - **Linked open issue:** if the user says the task comes from an open issue, prefix with the **issue identifier** before the descriptive part, for example:
   - `feat/42-user-profile-settings`
   - `fix/108-null-pointer-in-checkout`
-  Use the project's real issue key format if not numeric (e.g. `ABC-42-feature-name`).
+    Use the project's real issue key format if not numeric (e.g. `ABC-42-feature-name`).
 
 **New category (e.g. `docs/`, `refactor/`):** do **not** invent a new top-level prefix without documenting the proposed pattern in the PR or chat and **getting explicit user approval** for that naming convention.
 
@@ -60,12 +58,12 @@ chore(deps): bump eslint to latest patch
 ## Workflow (work item ready to commit)
 
 1. Ensure working tree changes match what the user approved.
-2. **Fetch** and choose **base** (`main` by default, or `staging` / user instruction).
+2. **Fetch** and choose **base** (`develop` by default, or `main` / user instruction).
 3. **Create and checkout** a new branch using the naming rules above.
 4. **Stage** only the intended files.
 5. **Commit** with a conventional message.
 6. **Push** the branch to `origin` (`git push -u origin <branch>`).
-7. **Open a pull request** targeting `main` (or `staging` if the user required that path). Set title and body per below, and **assign the maintainer** (see below).
+7. **Open a pull request** targeting `develop` (or `main` if the user required that path). Set title and body per below, and **assign the maintainer** (see below).
 
 ## PR assignee
 
@@ -96,9 +94,8 @@ Prefer **`gh pr create`** when GitHub CLI is available and authenticated; otherw
 
 ## Quick checklist
 
-- Branch from `main` unless user/staging rules say otherwise
+- Branch from `develop` unless user/develop rules say otherwise
 - Branch name matches `feat/` / `fix/` / `chore/` (+ issue prefix if applicable)
-- No push to `main` or `staging`
+- No direct pushes to `main` or `staging`
 - Conventional commit message, brief
 - PR opened with documented feature/fix; **maintainer added as assignee**; no approval workflow handled by the agent
-

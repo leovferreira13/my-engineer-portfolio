@@ -8,7 +8,7 @@ Step-by-step instructions to run the project locally on Ubuntu. You do not need 
 - **Git**
 - **Node.js 22.x** (`package.json` specifies `"node": "22.x"`)
 - **pnpm** version **9 or higher** (this repo pins `pnpm@10.33.0` via Corepack)
-- **npm** (only to install Portless globally, as in the development guide)
+- **npm** (only to install Portless globally)
 
 Optional but helpful if native dependencies fail to compile (for example `sharp`):
 
@@ -148,9 +148,51 @@ Then open **http://localhost:3000**.
 
 ---
 
+## Building for production
+
+From the repository root:
+
+```bash
+pnpm build
+```
+
+After a successful build, start the Next.js production server:
+
+```bash
+NODE_ENV=production pnpm start
+```
+
+---
+
+## Registry (shadcn)
+
+This project uses the **[shadcn/ui registry](https://ui.shadcn.com/docs/registry)** model: you can define components, hooks, blocks, examples, and shared library code in `src/registry/`, generate JSON artifacts, and install them into other React codebases with the shadcn CLI.
+
+### Using this registry in other React projects
+
+When the site is running locally (`pnpm dev`) or deployed, open the **`/components`** route in the browser for per-item install snippets and documentation. In another project, use `npx shadcn add <registry-url>` with the JSON URL your deployment exposes (under `public/r/` after a registry build), following the prompts from the CLI.
+
+> These registry items target **[Tailwind CSS v4](https://tailwindcss.com/blog/tailwindcss-v4)** and **[React 19](https://react.dev/blog/2024/12/05/react-19)**. Align versions in the consuming project to avoid integration issues.
+
+### Registry source and build
+
+- **Source**: `src/registry/` (see also [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md) for how registry types map to `_registry.ts` files).
+- **Generated output** (do not edit by hand): `src/__registry__/`, `public/r/*.json`.
+
+Before publishing or validating registry JSON locally:
+
+```bash
+pnpm registry:build
+```
+
+When you run `npx shadcn add <registry-url>` against a built item URL, the CLI downloads and wires the files into the target project according to the registry metadata.
+
+---
+
 ## Troubleshooting
 
 - **`pnpm: command not found`**: run `corepack enable` and `corepack prepare pnpm@10.33.0 --activate` again in the same shell.
 - **`portless: command not found`**: ensure global npm binaries are on your `PATH` (open a new terminal after `npm install -g portless`).
 - **Wrong Node version**: run `nvm use 22` in the project directory before `pnpm install` / `pnpm dev`.
-- More development workflow notes: see [DEVELOPMENT.md](./DEVELOPMENT.md).
+- **Architecture and registry layout**: [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md).
+- **Dev server, env, and tooling notes (including cloud agents)**: [docs/GETTING-STARTED.md](./docs/GETTING-STARTED.md).

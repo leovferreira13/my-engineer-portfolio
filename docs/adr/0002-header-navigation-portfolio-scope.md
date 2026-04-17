@@ -1,8 +1,12 @@
+---
+type: ADR
+id: "0002"
+title: "Header navigation limited to portfolio scope"
+status: active
+date: 2026-04-17
+---
+
 # ADR 0002: Header navigation limited to portfolio scope
-
-## Status
-
-Accepted
 
 ## Context
 

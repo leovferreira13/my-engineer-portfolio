@@ -1,8 +1,12 @@
+---
+type: ADR
+id: "0004"
+title: "Curate professional experience for narrative focus"
+status: active
+date: 2026-04-17
+---
+
 # ADR 0004: Curate professional experience for narrative focus
-
-## Status
-
-Accepted
 
 ## Context
 
