@@ -4,7 +4,6 @@ import { Icons } from "@/components/icons"
 import { SiteFooterInteractiveLogotype } from "@/components/site-footer-brand"
 import {
   GITHUB_USERNAME,
-  LINKEDIN_PROFILE_PATH,
   LINKEDIN_PROFILE_URL,
   SITE_INFO,
   SOURCE_CODE_GITHUB_URL,

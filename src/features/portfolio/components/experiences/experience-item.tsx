@@ -6,10 +6,16 @@ import { addQueryParams } from "@/utils/url"
 import type { Experience } from "../../types/experiences"
 import { ExperiencePositionItem } from "./experience-position-item"
 
-export function ExperienceItem({ experience }: { experience: Experience }) {
+export function ExperienceItem({
+  experience,
+  anchorPrefixId = "experience",
+}: {
+  experience: Experience
+  anchorPrefixId?: string
+}) {
   return (
     <div
-      id={`experience-${experience.id}`}
+      id={`${anchorPrefixId}-${experience.id}`}
       className="screen-line-bottom scroll-mt-14 space-y-4 py-4"
     >
       <div className="flex items-center gap-3">
