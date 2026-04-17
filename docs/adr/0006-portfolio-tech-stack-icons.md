@@ -1,4 +1,4 @@
-# ADR 0004: Portfolio tech stack data and icon resolution
+# ADR 0006: Portfolio tech stack data and icon resolution
 
 ## Status
 

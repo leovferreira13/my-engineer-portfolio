@@ -1,4 +1,4 @@
-# ADR 0004: Curated projects list for the portfolio surface
+# ADR 0007: Curated projects list for the portfolio surface
 
 ## Status
 
