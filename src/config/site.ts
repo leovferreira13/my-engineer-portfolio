@@ -16,30 +16,16 @@ export const META_THEME_COLORS = {
 
 export const MAIN_NAV: NavItem[] = [
   {
-    title: "Components",
-    href: "/components",
-  },
-  {
-    title: "Blocks",
-    href: "/blocks",
+    title: "Home",
+    href: "/",
   },
   {
     title: "Blog",
     href: "/blog",
   },
-  {
-    title: "Sponsors",
-    href: "/sponsors",
-  },
 ]
 
-export const MOBILE_NAV: NavItem[] = [
-  {
-    title: "Home",
-    href: "/",
-  },
-  ...MAIN_NAV,
-]
+export const MOBILE_NAV: NavItem[] = [...MAIN_NAV]
 
 export const GITHUB_USERNAME = "leovferreira13"
 export const LINKEDIN_PROFILE_PATH = "leonardo-v-ferreira"
