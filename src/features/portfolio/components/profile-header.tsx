@@ -15,6 +15,7 @@ export function ProfileHeader() {
         <div className="mx-0.5 my-0.75">
           <AvatarElectricEffect>
             <img
+              id="js-cover-mark"
               className="size-30 rounded-full ring-1 ring-border ring-offset-2 ring-offset-background select-none sm:size-40"
               alt="Avatar"
               src={USER.avatar}
