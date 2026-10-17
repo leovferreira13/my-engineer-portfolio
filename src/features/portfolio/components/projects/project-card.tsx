@@ -1,10 +1,13 @@
 import Link from "next/link"
 
 import { getJournalEntries } from "@/features/journal/data/entries"
+import { formatPeriod, localizePath } from "@/i18n/config"
+import { getI18n } from "@/i18n/request"
 
 import type { Project } from "../../types/projects"
 
-export function ProjectCard({ project }: { project: Project }) {
+export async function ProjectCard({ project }: { project: Project }) {
+  const { locale, t } = await getI18n()
   const entries = getJournalEntries().filter(
     (entry) => entry.metadata.projectId === project.id
   )
@@ -24,7 +27,7 @@ export function ProjectCard({ project }: { project: Project }) {
       )}
       <div className="space-y-4 p-5 sm:p-6">
         <p className="font-mono text-xs text-muted-foreground">
-          Public project · {project.period.start}
+          {t.publicProject} · {formatPeriod(project.period.start, locale)}
         </p>
         <h2 className="text-2xl font-semibold tracking-tight">
           {project.title}
@@ -33,7 +36,7 @@ export function ProjectCard({ project }: { project: Project }) {
         <p className="text-sm leading-relaxed text-muted-foreground">
           {project.description}
         </p>
-        <ul className="flex flex-wrap gap-2" aria-label="Project technologies">
+        <ul className="flex flex-wrap gap-2" aria-label={t.projectTech}>
           {project.skills.map((skill) => (
             <li className="rounded-md bg-muted px-2 py-1 text-xs" key={skill}>
               {skill}
@@ -47,7 +50,7 @@ export function ProjectCard({ project }: { project: Project }) {
             rel="noopener noreferrer"
             className="underline underline-offset-4"
           >
-            Open live app <span aria-hidden>↗</span>
+            {t.liveApp} <span aria-hidden>↗</span>
           </a>
           {project.repository && (
             <a
@@ -56,14 +59,15 @@ export function ProjectCard({ project }: { project: Project }) {
               rel="noopener noreferrer"
               className="underline underline-offset-4"
             >
-              View source <span aria-hidden>↗</span>
+              {t.source} <span aria-hidden>↗</span>
             </a>
           )}
           <Link
-            href={`/journal?project=${project.id}`}
+            href={localizePath(`/decisions?project=${project.id}`, locale)}
             className="underline underline-offset-4"
           >
-            Engineering notes{entries.length ? ` (${entries.length})` : ""}
+            {t.engineeringNotes}
+            {entries.length ? ` (${entries.length})` : ""}
           </Link>
         </div>
       </div>

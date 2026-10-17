@@ -4,7 +4,7 @@ This document describes how the codebase is organized and how the main subsystem
 
 ## Overview
 
-The site is a **Next.js 16** application using the **App Router**: server and client components, layouts, and route handlers under `src/app/`. It combines a **portfolio** surface, a **blog**, and a **shadcn-style component registry** that publishes installable snippets (blocks, components, hooks, examples, and shared lib code).
+The site is a **Next.js 16** application using the **App Router**: server and client components, layouts, and route handlers under `src/app/`. It combines a **portfolio** surface, a **Decision Log**, and a **shadcn-style component registry** that publishes installable snippets (blocks, components, hooks, examples, and shared lib code).
 
 **Stack**: TypeScript, Tailwind CSS v4, shadcn/ui, MDX, pnpm, Railway.
 
@@ -17,15 +17,15 @@ At a high level:
 
 ## Project structure
 
-| Directory                              | Purpose                                                     |
-| -------------------------------------- | ----------------------------------------------------------- |
-| `src/app/`                             | App Router pages, layouts, API routes                       |
-| `src/components/`                      | Shared UI components                                        |
-| `src/registry/`                        | Registry source (components, hooks, blocks, examples, lib)  |
-| `src/__registry__/`                    | Auto-generated registry files (**DO NOT EDIT**)             |
-| `src/features/`                        | Feature modules: `doc`, `blog`, `portfolio`, `sponsor`      |
-| `src/config/`                          | Site (`site.ts`) and registry (`registry.ts`) configuration |
-| `src/hooks/`, `src/lib/`, `src/utils/` | Hooks, libraries, utilities                                 |
+| Directory                              | Purpose                                                                                      |
+| -------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `src/app/`                             | App Router pages, layouts, API routes                                                        |
+| `src/components/`                      | Shared UI components                                                                         |
+| `src/registry/`                        | Registry source (components, hooks, blocks, examples, lib)                                   |
+| `src/__registry__/`                    | Auto-generated registry files (**DO NOT EDIT**)                                              |
+| `src/features/`                        | Active features: `doc`, `journal`, `portfolio`; retained `blog`/`sponsor` registry utilities |
+| `src/config/`                          | Site (`site.ts`) and registry (`registry.ts`) configuration                                  |
+| `src/hooks/`, `src/lib/`, `src/utils/` | Hooks, libraries, utilities                                                                  |
 
 **Key files**: `components.json` (shadcn config), `src/features/portfolio/data/` (portfolio data), `.env.example` (env vars).
 
@@ -44,13 +44,15 @@ The list below is the **living summary of decisions still in force**. Update it 
 - **[0006](./adr/0006-portfolio-tech-stack-icons.md)** — Tech stack data, skill groups, local vs remote icons.
 - **[0008](./adr/0008-portfolio-section-cards.md)** — Homepage sections as discrete cards; shared border treatment.
 
-- **[0009](./adr/0009-professional-portfolio-navigation.md)** — Profile, Projects, and Engineering Journal navigation; supersedes 0002.
 - **[0010](./adr/0010-public-project-catalog.md)** — Growing public project catalog with source/demo links; supersedes 0007.
 - **[0011](./adr/0011-project-linked-engineering-journal.md)** — Explicit MDX publication, project links, chronology, evidence, RSS, and honest empty state.
 
-## Portfolio and journal
+- **[0012](./adr/0012-multilingual-portfolio.md)** — Five explicit locale URLs and server-rendered translations; English default.
+- **[0013](./adr/0013-decision-log-navigation.md)** — Decision Log navigation and optional machine exports; supersedes 0009.
 
-`src/features/portfolio/data/` is the professional content and project catalog. `src/features/journal/` validates published notes from the shared MDX store. Pages live at `/`, `/projects`, `/journal`, and `/journal/[slug]`; the journal feed is `/journal/rss`. Drafts, future dates, and component documentation do not enter the journal, its navigation, RSS, sitemap, or profile exports. See [JOURNAL.md](JOURNAL.md).
+## Portfolio and Decision Log
+
+`src/features/portfolio/data/` is the professional content and project catalog. `src/features/journal/` validates published notes from the shared MDX store. Public pages live at `/<locale>`, `/<locale>/projects`, `/<locale>/decisions`, and `/<locale>/decisions/[slug]`; the journal feed is `/journal/rss`. Drafts, future dates, and component documentation do not enter the journal, its navigation, RSS, sitemap, or profile exports. See [JOURNAL.md](JOURNAL.md).
 
 `src/lib/site-url.ts` resolves an explicit `APP_URL`, Railway public domain, or local-only fallback. Static metadata needs a rebuild after changing domains. [DEPLOYMENT.md](DEPLOYMENT.md) covers the Railway contract.
 
@@ -77,3 +79,5 @@ The registry is built on **shadcn/ui** conventions: each item type is declared i
 5. Add MDX documentation under `src/features/doc/content/` with `category: "components"`.
 
 For narrative content (blog vs docs), see the **Content System** section in [`AGENTS.md`](../AGENTS.md).
+
+`src/i18n/` holds curated UI and professional translations with stable role and education IDs. `src/app/(app)/[locale]/` contains real localized routes. `src/proxy.ts` supplies request locale and English-default redirects. The header language selector performs document navigation to keep shared chrome and HTML language consistent.

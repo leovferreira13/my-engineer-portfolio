@@ -1,0 +1,137 @@
+{
+  "ui": {
+    "home": "Startseite",
+    "profile": "Profil",
+    "projects": "Projekte",
+    "decisions": "Entscheidungen",
+    "language": "Sprache ändern",
+    "theme": "Farbschema ändern",
+    "light": "Hell",
+    "dark": "Dunkel",
+    "system": "System",
+    "search": "Suchen",
+    "searchPlaceholder": "Seiten und Entscheidungen suchen…",
+    "noResults": "Keine Ergebnisse gefunden.",
+    "menu": "Menü",
+    "about": "Über mich",
+    "experience": "Berufserfahrung",
+    "education": "Ausbildung",
+    "publications": "Publikationen",
+    "capabilities": "Kompetenzen und Tools",
+    "selectedWork": "Ausgewählte Projekte",
+    "allProjects": "Alle Projekte",
+    "exploreWork": "Meine Arbeit ansehen",
+    "contact": "Kontakt aufnehmen",
+    "present": "Heute",
+    "remote": "Remote",
+    "languages": "Portugiesisch (Muttersprache) · Englisch (fließend)",
+    "currentEmployer": "Aktueller Arbeitgeber",
+    "employmentType": "Beschäftigungsart",
+    "employmentPeriod": "Zeitraum",
+    "downloadVcard": "Kontakt herunterladen",
+    "source": "Quellcode ansehen",
+    "liveApp": "App öffnen",
+    "engineeringNotes": "Entscheidungsprotokoll",
+    "projectTech": "Projekttechnologien",
+    "publicProject": "Öffentliches Projekt",
+    "proof": "Arbeit in der Praxis",
+    "projectsIntro": "Projekte, mit denen ich ein Problem untersuche, eine Idee nutzbar mache und ihre Funktionsweise zeige. Jedes Projekt verbindet das Produkt, den Code und die zugrunde liegenden Entscheidungen.",
+    "decisionEyebrow": "Die Überlegungen hinter der Arbeit",
+    "decisionIntro": "Ein Protokoll darüber, was sich geändert hat, warum ich einen Ansatz gewählt habe und was ich gelernt habe. Entscheidungen, Releases und Experimente, verknüpft mit ihren Projekten.",
+    "emptyTitle": "Der erste Beitrag folgt noch.",
+    "emptyBody": "Es gibt noch keine veröffentlichten Notizen. Künftige Beiträge dokumentieren Kontext, Alternativen, Abwägungen, Nachweise und nächste Schritte jedes Projekts.",
+    "emptyPreview": "Es gibt noch keine Beiträge. Hier werde ich Projektentscheidungen, Release Notes, Experimente und die zugehörigen Nachweise teilen.",
+    "visitDecisions": "Entscheidungen ansehen",
+    "exploreProjects": "Projekte ansehen",
+    "unknownProject": "Unbekanntes Projekt",
+    "noProject": "Projekt nicht gefunden",
+    "chooseProject": "Wähle oben ein Projekt aus, um seine Entscheidungen anzusehen.",
+    "filterProjects": "Entscheidungen nach Projekt filtern",
+    "reference": "Referenz öffnen",
+    "published": "Veröffentlicht",
+    "research": "Forschung",
+    "by": "Von",
+    "updated": "Aktualisiert",
+    "aboutProject": "Über das Projekt",
+    "repository": "Repository",
+    "references": "Nachweise und Referenzen",
+    "moreNotes": "Weitere Entscheidungen zu diesem Projekt",
+    "originalEnglish": "Originalartikel auf Englisch",
+    "originalLanguage": "Originalsprache",
+    "decision": "Entscheidung",
+    "release": "Release",
+    "experiment": "Experiment",
+    "retrospective": "Rückblick",
+    "overview": "Kontakt und aktuelle Arbeit",
+    "close": "Schließen",
+    "loading": "Sprache wird geändert…",
+    "navigation": "Hauptnavigation"
+  },
+  "profile": {
+    "tagline": "Ich mache aus Nutzerproblemen Software, von der ersten Frage bis zum Produktiveinsatz.",
+    "subtitle": "Mehr als 5 Jahre Erfahrung mit B2B-SaaS, Backend, Data Engineering, Produktverantwortung und angewandter KI.",
+    "location": "Rio de Janeiro, Brasilien"
+  },
+  "about": "Ich bin **Product Engineer** mit **mehr als 5 Jahren** Erfahrung in Backend- und Data Engineering, Produktmanagement und technischer Führung. Ich begleite Nutzerprobleme von der Analyse über technische Entscheidungen und Implementierung bis zum Launch und zur Weiterentwicklung.\n\nBei **Guiavet** entwickelte ich mich vom Software Engineer zum Product Manager und Head of Engineering & Product Lead. Die direkte Zusammenarbeit mit Tierärzten lehrte mich, Produktfunktionen mit den tatsächlichen Aufgaben der Nutzer zu verbinden. Forschung und Nutzungsdaten führten zu Verbesserungen, die den Zeitaufwand einiger kritischer Abläufe um **bis zu 80%** und **abwanderungsbezogene Indikatoren für Usability-Probleme um bis zu 95%** senkten, innerhalb eines Monats nach dem Launch.\n\nBei **Reach.ai** entwickle ich Python-APIs und ereignisgesteuerte Nachrichtensysteme, die **mehr als 20 Millionen E-Mails und SMS pro Monat** verarbeiten. Außerdem baue ich einen Terminassistenten für Sprache und SMS, der Gespräche über Wissensabruf, Tool-Orchestrierung, Verhaltensevaluierungen und Observability mit Terminplanungs-APIs verbindet.\n\n**Anpassungsfähigkeit zieht sich durch meine Arbeit.** Ich lerne gern neue Fachgebiete kennen, verstehe ihre Grenzen und entscheide, was sich sinnvoll bauen lässt. Dabei verbinde ich solide Backend-Grundlagen mit Produktverständnis, auch wenn angewandte KI das passende Werkzeug ist.",
+  "project": [
+    "Eine interaktive Fußballanalyse-App, die Expected Goals greifbar macht: Schüsse verschieben, Merkmale untersuchen und das Modell hinter der Schätzung erkunden.",
+    "Durchgängig entwickelt mit einer reproduzierbaren StatsBomb-Open-Data-Pipeline, XGBoost-Training und -Evaluierung sowie Inferenz im Browser. Der Playground in fünf Sprachen zeigt acht Modellmerkmale neben dem Spielfeld; Methodik und Ergebnisse sind in der App verfügbar. Ein Projekt, das Data Engineering, Modellvalidierung und eine erkundbare Oberfläche verbindet.",
+    "Football, Visualized: interaktives Spielfeld, Expected-Goalschätzung und Modellmerkmale"
+  ],
+  "education": {
+    "ufmg": "- Bachelorabschluss in Regelungs- und Automatisierungstechnik.\n- Solide Grundlagen in Mathematik, Programmierung und Systemtechnik, mit Schwerpunkt Regelungssysteme, Automatisierung und Softwareentwicklung.",
+    "cefet-mg": "- Technische Ausbildung in Mechatronik, Robotik und Automatisierung."
+  },
+  "publication": "Untersuchung algorithmischer Handlungsmöglichkeiten in der psychischen Gesundheitsversorgung, mit einem Klassifikationsrahmen für beobachtete und latente Variablen.",
+  "skills": {
+    "Product & delivery": "Produkt und Umsetzung",
+    "Backend & cloud": "Backend und Cloud",
+    "Data engineering": "Data Engineering",
+    "Applied AI": "Angewandte KI",
+    "Frontend": "Frontend",
+    "User discovery": "Nutzerforschung",
+    "Workflow design": "Workflow-Design",
+    "Prioritization & technical scoping": "Priorisierung und technischer Umfang",
+    "ETL & data modeling": "ETL und Datenmodellierung",
+    "Behavioral evaluations & guardrails": "Verhaltensevaluierungen und Guardrails",
+    "RAG & vector search": "RAG und Vektorsuche",
+    "Evaluations": "Evaluierungen",
+    "PDF generation": "PDF-Generierung",
+    "Product management": "Produktmanagement",
+    "Roadmapping": "Roadmap-Planung",
+    "Control systems": "Regelungssysteme",
+    "Automation": "Automatisierung",
+    "Software engineering": "Software Engineering",
+    "Mathematics": "Mathematik",
+    "Mechatronics": "Mechatronik",
+    "Robotics": "Robotik",
+    "Version Control": "Versionsverwaltung"
+  },
+  "employment": {
+    "Contract": "Auftragsbasis",
+    "Full-time": "Vollzeit",
+    "Internship and full-time": "Praktikum und Vollzeit"
+  },
+  "positions": {
+    "reach-ai:1": {
+      "title": "Senior Software Engineer",
+      "description": "- Entwickelte Python/FastAPI-APIs und ereignisgesteuerte Abläufe für **mehr als 20 Millionen SMS und E-Mails pro Monat**, mit **99,9% Zustellzuverlässigkeit** und Kapazität für **50-fache Spitzenlasten** durch verbesserte Warteschlangen und Idempotenz.\n- Baue einen Terminassistenten für **Sprache und SMS** mit Buchung, Umbuchung und Stornierung über LangGraph, Tool Calling, RAG und Terminplanungs-APIs.\n- Entwickelte Verhaltensevaluierungen, Guardrails, Redis-Idempotenz und Observability mit LangSmith und Audit-Logs. Optimierte die mediane Sprach-Antwortzeit in Tests auf **etwa 2 Sekunden**."
+    },
+    "guiavet:1": {
+      "title": "Leiter Engineering und Product Lead",
+      "description": "- Leitete fünf Engineers und verantwortete Prioritäten, technische Entscheidungen und Umsetzung während der Weiterentwicklung des veterinärmedizinischen B2B-SaaS-Produkts.\n- Sicherte die technische Kontinuität und senkte Infrastruktur- und Betriebskosten durch Automatisierung.\n- Verbesserte Patientenakten, Medikamentenreferenzen, Apothekenabgabe mit externer Validierung, Rezeptvorlagen und die Leistung mehrseitiger PDF-Generierung.\n- Setzte vollständige Produktänderungen in Python/Django, Vue.js und AWS gemeinsam mit Senior Engineers um."
+    },
+    "guiavet:2": {
+      "title": "Produktmanager",
+      "description": "- Verantwortete die Roadmap von Guiavet PRO und koordinierte Stakeholder, Führung, Design und Engineering.\n- Nutzte Interviews, Wettbewerbsanalysen und Nutzungsdaten zur Verbesserung klinischer Abläufe: **bis zu 80% weniger Zeitaufwand** bei einigen kritischen Vorgängen und **bis zu 95% niedrigere abwanderungsbezogene Usability-Indikatoren**, innerhalb eines Monats nach dem Launch.\n- Erweiterte das Produkt auf Tierärzte, die andere Kliniken betreuen, sowie auf Kliniken selbst, mit angepassten Paketen und Abläufen für Terminplanung, Versorgung und Abrechnung.\n- Startete eine Plattform für professionelle Tierarzt-Websites mit SEO- und Leistungsverbesserungen und koordinierte Teamkapazität, Prioritäten und Fristen."
+    },
+    "guiavet:3": {
+      "title": "Software- und Dateningenieur",
+      "description": "- Entwickelte und skalierte Kernmodule von Guiavet PRO mit Django, PostgreSQL und AWS.\n- Leitete Datenmodellierung und Domänendiskussionen mit Blick auf Umsetzungsgeschwindigkeit und Wartbarkeit; baute ETL-Prozesse und SQL-Dashboards für Finanzen, Nutzung und Produktakzeptanz.\n- Betreute Junior Engineers in Backend und Datenverarbeitung.\n- Entwarf asynchrone Worker mit Django APScheduler und SQS, einen PDF-Microservice sowie Skalierungsverbesserungen mit nginx und Caching von Gesundheitsmetriken."
+    },
+    "qdois:1": {
+      "title": "Dateningenieur",
+      "description": "- Begann als Praktikant in der Datenanalyse und arbeitete anschließend als Dateningenieur im selben Team.\n- Entwickelte ETL-Prozesse mit Azure Data Factory, Databricks und PySpark und führte relationale Datenbanken, SFTP und APIs in einem Data Lake zusammen.\n- Unterstützte digitale Transformation, Kostensenkung und die Grundlage für BI, Analytics und ML.\n- Etablierte CI/CD mit Azure DevOps und Git und übersetzte Geschäftsanforderungen in Datenmodelle und Pipelines."
+    }
+  }
+}

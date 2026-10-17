@@ -20,11 +20,13 @@ At Guiavet, I progressed from Software Engineer to Product Manager and Head of E
 
 ## Explore the portfolio
 
-| Area                               | What it contains                                                                                |
-| ---------------------------------- | ----------------------------------------------------------------------------------------------- |
-| **Profile** `/`                    | Product Engineer narrative, experience, capabilities, education, publication, and contact links |
-| **Projects** `/projects`           | Curated public work with a live app, source repository, and associated engineering notes        |
-| **Engineering Journal** `/journal` | Dated decisions, releases, experiments, and retrospectives, filterable by project               |
+English is always the default. The header language selector offers English (`/en`), Portuguese (`/br`), Dutch (`/nl`), Spanish (`/es`), and German (`/de`). Profile, experience, projects, navigation, and metadata are translated. Switching language preserves the current section and project filter.
+
+| Area                                   | What it contains                                                                                |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| **Profile** `/<locale>`                | Product Engineer narrative, experience, capabilities, education, publication, and contact links |
+| **Projects** `/<locale>/projects`      | Curated public work with a live app, source repository, and associated engineering notes        |
+| **Decision Log** `/<locale>/decisions` | Dated decisions, releases, experiments, and retrospectives, filterable by project               |
 
 ### First public project: Football, Visualized
 
@@ -32,7 +34,7 @@ An interactive football analytics app connecting a reproducible StatsBomb Open D
 
 **[Open the live app](https://sports-data-visualizer-production.up.railway.app/en)** · **[Read the source](https://github.com/leovferreira13/sports-data-visualizer)**
 
-The journal intentionally starts empty. There are no sample posts presented as my work. Future entries link to a project and can reference the specific PR, commit, release, or evaluation behind a decision.
+The Decision Log intentionally starts empty. There are no sample posts presented as my work. Future entries link to a project and can reference the specific PR, commit, release, or evaluation behind a decision.
 
 ## Run locally
 
@@ -62,7 +64,7 @@ Optional: `pnpm dev:portless` uses an existing global Portless installation.
 1. Create a Railway service from this GitHub repository after merging the implementation.
 2. Use the repository root. `railway.toml` supplies the build, start, and health-check configuration.
 3. Generate a public domain. Set `APP_URL` to its complete HTTPS origin, for example `https://your-portfolio.up.railway.app`. Railway's `RAILWAY_PUBLIC_DOMAIN` is also detected automatically. Rebuild after changing the URL so static metadata, RSS, and sitemap agree.
-4. Confirm `/`, `/projects`, `/journal`, `/journal/rss`, `/robots.txt`, and `/sitemap.xml` at the deployed origin.
+4. Confirm `/en`, `/en/projects`, `/en/decisions`, `/journal/rss`, `/robots.txt`, and `/sitemap.xml` at the deployed origin.
 5. Update the README's production link with the actual, verified URL:
 
 ```bash
@@ -111,3 +113,5 @@ The inherited component registry remains available in the source for reuse, outs
 Based on [Chánh Đại's open-source portfolio](https://github.com/ncdai/chanhdai.com). Its MIT license and copyright notice are preserved in [LICENSE](LICENSE). The profile content, curated projects, and journal structure have been adapted for Leonardo Ferreira.
 
 The Football, Visualized screenshot is from [sports-data-visualizer](https://github.com/leovferreira13/sports-data-visualizer). That project uses StatsBomb Open Data under its own attribution and non-commercial-use terms; see its README for data provenance and permissions. This portfolio does not redistribute its datasets.
+
+Machine-readable `/llms.txt` and `/llms-full.txt` are optional public English summaries generated from the same content. They contain no private information and are not required for the site to work. RSS remains available to clients without a visible subscription action.

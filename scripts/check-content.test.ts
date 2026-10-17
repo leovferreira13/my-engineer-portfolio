@@ -109,6 +109,6 @@ test("RSS includes only published journal entries and escapes XML", async () => 
 })
 test("an empty feed contains a real channel and no fabricated posts", async () => {
   const xml = await rss().text()
-  assert.match(xml, /Engineering Journal/)
+  assert.match(xml, /Decision Log/)
   assert.doesNotMatch(xml, /<item>/)
 })

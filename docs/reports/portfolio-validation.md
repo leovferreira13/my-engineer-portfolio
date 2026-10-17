@@ -1,40 +1,55 @@
 # Professional portfolio validation
 
-Validated on 2026-10-17 against the current Product Engineer CV, cover-letter narrative, public LinkedIn profile, and the sports-data-visualizer README and screenshot.
+Validated on 2026-10-17 after the multilingual and QA refinement of PR #18.
 
-## Scope
+## Current result
 
-- Profile: current product-engineering narrative, professional timeline, capabilities, education, publication, professional contact links, and a local profile photo.
-- Public catalog: exactly one project, Football, Visualized, with the actual live app and repository.
-- Engineering Journal: zero published entries; project filter, four entry types, dated MDX, evidence references, RSS, and project-linked navigation ready for real writing.
-- Public repository presentation: README screenshot, actual project screenshot, upstream MIT notice, author identity, blank optional configuration, Railway setup, and explicit unpublished website status.
+- Profile, Projects, and Decision Log in English (default), Portuguese, Dutch, Spanish, and German.
+- Real locale routes: `/en`, `/br`, `/nl`, `/es`, `/de`, with `/projects` and `/decisions` beneath each language.
+- Server-rendered document language, translated professional content, localized titles, canonical URLs, and language alternates.
+- Header language control beside the theme control; house icon for home; real GitHub and LinkedIn glyphs.
+- Explicit localized Present dates; UFMG expanded by default; shared design-system All projects button.
+- No visible RSS subscription or machine-export menu entry. Optional feeds and English `/llms.txt` exports remain available.
+- Zero published decision-log entries.
 
-## Results
+## Automated and browser checks
 
-| Check                             | Result                                                                                                     |
-| --------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `pnpm test:content`               | PASS — 8 tests                                                                                             |
-| `pnpm lint`                       | PASS                                                                                                       |
-| `pnpm check-types`                | PASS                                                                                                       |
-| `pnpm build`                      | PASS — 73 generated routes/pages in the retained application                                               |
-| `git diff --check`                | PASS                                                                                                       |
-| Production HTTP smoke             | PASS — 15 core pages, feeds, text exports, and assets return 200                                           |
-| Retired template/missing posts    | PASS — 404; `/blog` redirects to `/journal`                                                                |
-| Public-origin configuration       | PASS — HTTPS origin propagates to sitemap and robots; local fallback stays noindex with empty sitemap      |
-| Desktop 1440×1080                 | PASS — profile, projects, journal; no horizontal overflow or broken images                                 |
-| Mobile 390×844                    | PASS — no horizontal overflow; menu exposes Profile, Projects, Engineering Journal and navigates correctly |
-| Theme switching                   | PASS — light and dark render correctly                                                                     |
-| Browser runtime                   | PASS — zero uncaught page errors in the final navigation check                                             |
-| Final published journal inventory | PASS — zero entries; no test post or template post remains                                                 |
+| Check                  | Result                                                                                                                                                                |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `pnpm test:content`    | PASS — 13 tests                                                                                                                                                       |
+| `pnpm lint`            | PASS                                                                                                                                                                  |
+| `pnpm check-types`     | PASS                                                                                                                                                                  |
+| `pnpm build`           | PASS                                                                                                                                                                  |
+| `git diff --check`     | PASS                                                                                                                                                                  |
+| Localized public pages | PASS — profile, projects, and filtered decisions across all five languages (15 pages)                                                                                 |
+| Mobile profiles        | PASS — all five languages at 390×844 without horizontal overflow                                                                                                      |
+| Desktop                | PASS — 1440×1080; no broken images or overflow                                                                                                                        |
+| Language selection     | PASS — English default even with Portuguese Accept-Language; switching updates root HTML language, shared navigation, title, and page while preserving project filter |
+| Theme controls         | PASS — light and dark                                                                                                                                                 |
+| Current position       | PASS — localized Present text; no infinity symbol                                                                                                                     |
+| UFMG                   | PASS — expanded by default                                                                                                                                            |
+| GitHub card            | PASS — real SVG glyph                                                                                                                                                 |
+| RSS interface          | PASS — no subscription buttons or menu entries                                                                                                                        |
+| vCard                  | PASS — embedded JPEG portrait and canonical contact email                                                                                                             |
+| Machine summaries      | PASS — current Decision Log terminology, no upstream identity or obsolete blog framing                                                                                |
+| Sitemap                | PASS — 15 locale/section URLs with alternate-language links when a public origin is configured                                                                        |
+| Browser runtime        | PASS — no uncaught page errors                                                                                                                                        |
 
-Content tests cover explicit publication, draft/future/template exclusion at the shared data layer, chronological ordering, project validation, impossible dates, backwards updates, valid entry types, HTTPS evidence links, and XML escaping. A temporary MDX fixture was also used to verify entry rendering and project/evidence links, then removed before the final empty-journal build.
+Tests cover draft/future/template exclusion, valid project IDs and dates, chronological ordering, evidence links, RSS escaping, complete translation keys, stable professional translations, locale links and anchors, active navigation, localized date formatting, UFMG expansion, and local portrait embedding.
 
-The browser checks used a local production server and Puppeteer; desktop/mobile screenshots are in `docs/screenshots/`. The run used Node.js 24.19.0 and pnpm 10.33.0 in the available environment. The repository retains its Node.js 22 deployment target.
+The browser checks used a local production server and Puppeteer. Updated captures are in `docs/screenshots/`; the desktop is English and the full mobile capture is Portuguese. The available runtime was Node.js 24.19.0; the existing Railway target remains Node.js 22.
 
-## Known inherited warning
+## Automated QA findings addressed
 
-Turbopack emits a file-tracing warning for the retained registry markdown pipeline (`remark-component` through `get-llm-text`). Compilation, type checks, page generation, and production serving complete successfully. No registry-source changes are required for portfolio content. Reassess its trace scope before moving to a minimal standalone deployment image.
+1. The hero contact CTA decodes `USER.email`, sharing the same source as Overview.
+2. The vCard reads `/profile.jpg` from `public/` before JPEG conversion; no self-fetch or running server is required.
+3. The architecture map identifies `doc`, `journal`, and `portfolio` as active features, with `blog`/`sponsor` retained only as utilities.
+4. The full machine export uses Decision Log terminology, an appropriately named helper, and no empty certifications section or obsolete system blurb.
 
-## Deployment status
+The command menu was also simplified to current localized navigation, themes, real decision entries, and the contact download. Removed brand-asset commands, obsolete metadata entries, RSS actions, and machine-summary links no longer appear there.
 
-This change prepares the GitHub source and Railway configuration. A production portfolio URL has not been created or assumed. After deployment, verify the actual public origin, rebuild with `APP_URL` (or Railway's generated domain), and use `pnpm site:url <verified-origin>` to update the README.
+## Limits and publication
+
+The retained registry Markdown pipeline still emits the previously recorded Turbopack file-tracing warning; compilation and production serving pass. Original authored decision entries are not silently translated. Publishing translated articles can be added explicitly once there is real writing.
+
+No production deployment, merge, or repository visibility change is included. The actual portfolio URL and the GitHub repository Website setting should be set to the verified Railway origin after publication.

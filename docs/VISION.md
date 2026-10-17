@@ -81,3 +81,7 @@ Success looks like: a visitor or recruiter understands **role, impact, and speci
 ## Current public portfolio surface (2026-10-17)
 
 Profile, Projects, and Engineering Journal form the hiring-facing navigation. The current narrative is Product Engineer: 5+ years across backend/data, product management, technical leadership, and applied AI, taking problems from discovery through production and iteration. Football, Visualized is the first public project. The project-linked journal starts intentionally empty; no fabricated release history is required for launch. See ADRs 0009–0011, [JOURNAL.md](JOURNAL.md), and [DEPLOYMENT.md](DEPLOYMENT.md).
+
+## Multilingual refinement (2026-10-17)
+
+The public writing label is now **Decision Log**, focused on choices and evidence. The same professional profile is available in English (default), Portuguese, Dutch, Spanish, and German via explicit locale URLs. RSS subscription controls are removed; machine feeds and optional public English text exports remain available. ADRs 0012–0013 record the current routing and navigation decisions.

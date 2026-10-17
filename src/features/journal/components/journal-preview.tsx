@@ -6,31 +6,32 @@ import {
   PanelHeader,
   PanelTitle,
 } from "@/features/portfolio/components/panel"
+import { localizePath } from "@/i18n/config"
+import { getI18n } from "@/i18n/request"
 
 import { getJournalEntries } from "../data/entries"
 import { EntryList } from "./entry-list"
-
-export function JournalPreview() {
+export async function JournalPreview() {
+  const { locale, t } = await getI18n()
   const entries = getJournalEntries().slice(0, 3)
   return (
     <Panel id="journal">
       <PanelHeader>
-        <PanelTitle>Engineering Journal</PanelTitle>
+        <PanelTitle>{t.decisions}</PanelTitle>
       </PanelHeader>
       <PanelContent>
         {entries.length ? (
           <EntryList entries={entries} />
         ) : (
           <p className="text-sm leading-relaxed text-muted-foreground">
-            No published entries yet. This is where I will share project
-            decisions, release notes, experiments, and the evidence behind them.
+            {t.emptyPreview}
           </p>
         )}
         <Link
-          href="/journal"
+          href={localizePath("/decisions", locale)}
           className="mt-4 inline-block text-sm underline underline-offset-4"
         >
-          Visit the journal
+          {t.visitDecisions}
         </Link>
       </PanelContent>
     </Panel>

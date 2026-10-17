@@ -9,6 +9,9 @@ import type { WebSite, WithContext } from "schema-dts"
 import { Providers } from "@/components/providers"
 import { META_THEME_COLORS, SITE_INFO } from "@/config/site"
 import { USER } from "@/features/portfolio/data/user"
+import { languageTags } from "@/i18n/config"
+import { LocaleProvider } from "@/i18n/provider"
+import { getI18n } from "@/i18n/request"
 import { fontVariables } from "@/lib/fonts"
 import { HAS_PUBLIC_SITE_URL } from "@/lib/site-url"
 
@@ -81,13 +84,18 @@ export const viewport: Viewport = {
   themeColor: META_THEME_COLORS.light,
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const { locale, t } = await getI18n()
   return (
-    <html lang="en" className={fontVariables} suppressHydrationWarning>
+    <html
+      lang={languageTags[locale]}
+      className={fontVariables}
+      suppressHydrationWarning
+    >
       <head>
         <script
           type="text/javascript"
@@ -111,9 +119,11 @@ export default function RootLayout({
       )}
 
       <body>
-        <Providers>
-          <NuqsAdapter>{children}</NuqsAdapter>
-        </Providers>
+        <LocaleProvider locale={locale} messages={t}>
+          <Providers>
+            <NuqsAdapter>{children}</NuqsAdapter>
+          </Providers>
+        </LocaleProvider>
       </body>
     </html>
   )

@@ -1,4 +1,6 @@
 import { USER } from "@/features/portfolio/data/user"
+import { type Locale, localizePath } from "@/i18n/config"
+import { getDictionary } from "@/i18n/dictionaries"
 import { SITE_URL } from "@/lib/site-url"
 import type { NavItem } from "@/types/nav"
 
@@ -15,13 +17,16 @@ export const META_THEME_COLORS = {
   dark: "#09090b",
 }
 
-export const MAIN_NAV: NavItem[] = [
-  { title: "Profile", href: "/" },
-  { title: "Projects", href: "/projects" },
-  { title: "Engineering Journal", href: "/journal" },
-]
-
-export const MOBILE_NAV: NavItem[] = [...MAIN_NAV]
+export function getMainNav(locale: Locale): NavItem[] {
+  const t = getDictionary(locale).ui
+  return [
+    { title: t.profile, href: localizePath("/", locale) },
+    { title: t.projects, href: localizePath("/projects", locale) },
+    { title: t.decisions, href: localizePath("/decisions", locale) },
+  ]
+}
+export const MAIN_NAV = getMainNav("en")
+export const MOBILE_NAV = [...MAIN_NAV]
 
 export const GITHUB_USERNAME = "leovferreira13"
 export const LINKEDIN_PROFILE_PATH = "leonardo-v-ferreira"

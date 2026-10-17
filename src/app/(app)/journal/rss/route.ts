@@ -19,11 +19,11 @@ export function GET() {
   const items = getJournalEntries()
     .map(
       (entry) =>
-        `<item><title>${xml(entry.metadata.title)}</title><link>${xml(`${SITE_INFO.url}/journal/${entry.slug}`)}</link><guid isPermaLink="true">${xml(`${SITE_INFO.url}/journal/${entry.slug}`)}</guid><description>${xml(entry.metadata.description)}</description><pubDate>${new Date(entry.metadata.createdAt).toUTCString()}</pubDate><category>${xml(entry.metadata.entryType)}</category></item>`
+        `<item><title>${xml(entry.metadata.title)}</title><link>${xml(`${SITE_INFO.url}/en/decisions/${entry.slug}`)}</link><guid isPermaLink="true">${xml(`${SITE_INFO.url}/en/decisions/${entry.slug}`)}</guid><description>${xml(entry.metadata.description)}</description><pubDate>${new Date(entry.metadata.createdAt).toUTCString()}</pubDate><category>${xml(entry.metadata.entryType)}</category></item>`
     )
     .join("\n")
   return new Response(
-    `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>${xml(`Engineering Journal | ${SITE_INFO.name}`)}</title><link>${xml(`${SITE_INFO.url}/journal`)}</link><description>Decisions, releases, experiments, and lessons from my projects.</description>${items}</channel></rss>`,
+    `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>${xml(`Decision Log | ${SITE_INFO.name}`)}</title><link>${xml(`${SITE_INFO.url}/en/decisions`)}</link><description>Decisions, releases, experiments, and lessons from my projects.</description>${items}</channel></rss>`,
     { headers: { "Content-Type": "application/rss+xml; charset=utf-8" } }
   )
 }

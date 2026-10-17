@@ -1,4 +1,4 @@
-# Engineering Journal
+# Decision Log
 
 The journal is a dated record of product and engineering work. It starts empty; publishing a real entry is an editorial action, not a prerequisite for launching the portfolio.
 
@@ -17,7 +17,7 @@ Entries live in `src/features/doc/content/<slug>.mdx`. Start from [the template]
 | `tags`                   | Optional list of relevant topics                                                         |
 | `references`             | Optional `{ label, url }` items; HTTPS links to a PR, commit, release, result, or source |
 
-The slug is the filename and is the permanent address: `/journal/<slug>`. Avoid renaming a published file without adding a redirect. Keep project IDs stable for the same reason.
+The slug is the filename and is the permanent address: `/<locale>/decisions/<slug>`. Avoid renaming a published file without adding a redirect. Keep project IDs stable for the same reason.
 
 ## What makes an entry useful
 
@@ -48,3 +48,7 @@ Published entries are newest first, with stable slug ordering for ties. Each pag
 - UI: `src/features/journal/components/` and `src/app/(app)/journal/`.
 
 There is no CMS, database, external account, or client-side storage required to publish an entry.
+
+## Interface languages
+
+The five public language routes translate the interface and professional profile. Decision-log articles keep their original authored English text; other language views display an original-language note. No automatic article translation or duplicate post is created. `/journal/rss` remains a machine-readable English feed without a subscription button.

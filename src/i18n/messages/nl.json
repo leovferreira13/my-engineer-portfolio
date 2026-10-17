@@ -1,0 +1,137 @@
+{
+  "ui": {
+    "home": "Home",
+    "profile": "Profiel",
+    "projects": "Projecten",
+    "decisions": "Beslissingen",
+    "language": "Taal wijzigen",
+    "theme": "Kleurthema wijzigen",
+    "light": "Licht",
+    "dark": "Donker",
+    "system": "Systeem",
+    "search": "Zoeken",
+    "searchPlaceholder": "Zoek pagina’s en beslissingen…",
+    "noResults": "Geen resultaten gevonden.",
+    "menu": "Menu",
+    "about": "Over mij",
+    "experience": "Werkervaring",
+    "education": "Opleiding",
+    "publications": "Publicaties",
+    "capabilities": "Vaardigheden en tools",
+    "selectedWork": "Uitgelichte projecten",
+    "allProjects": "Alle projecten",
+    "exploreWork": "Bekijk mijn werk",
+    "contact": "Neem contact op",
+    "present": "Heden",
+    "remote": "Op afstand",
+    "languages": "Portugees (moedertaal) · Engels (vloeiend)",
+    "currentEmployer": "Huidige werkgever",
+    "employmentType": "Dienstverband",
+    "employmentPeriod": "Periode",
+    "downloadVcard": "Contact downloaden",
+    "source": "Bekijk de code",
+    "liveApp": "Open de app",
+    "engineeringNotes": "Beslissingslogboek",
+    "projectTech": "Projecttechnologieën",
+    "publicProject": "Openbaar project",
+    "proof": "Werk in de praktijk",
+    "projectsIntro": "Projecten waarmee ik een probleem onderzoek, een idee bruikbaar maak en laat zien hoe het werkt. Elk project verbindt het product, de code en de achterliggende beslissingen.",
+    "decisionEyebrow": "De gedachte achter het werk",
+    "decisionIntro": "Een overzicht van wat veranderde, waarom ik voor een aanpak koos en wat ik leerde. Beslissingen, releases en experimenten gekoppeld aan hun projecten.",
+    "emptyTitle": "De eerste bijdrage volgt nog.",
+    "emptyBody": "Er zijn nog geen notities gepubliceerd. Toekomstige bijdragen beschrijven de context, alternatieven, afwegingen, onderbouwing en vervolgstappen van elk project.",
+    "emptyPreview": "Er zijn nog geen bijdragen. Hier deel ik projectbeslissingen, release notes, experimenten en de onderbouwing daarvan.",
+    "visitDecisions": "Bekijk het beslissingslogboek",
+    "exploreProjects": "Bekijk de projecten",
+    "unknownProject": "Onbekend project",
+    "noProject": "Project niet gevonden",
+    "chooseProject": "Kies hierboven een project om de beslissingen te bekijken.",
+    "filterProjects": "Filter beslissingen op project",
+    "reference": "Open referentie",
+    "published": "Gepubliceerd",
+    "research": "Onderzoek",
+    "by": "Door",
+    "updated": "Bijgewerkt",
+    "aboutProject": "Over het project",
+    "repository": "Repository",
+    "references": "Onderbouwing en referenties",
+    "moreNotes": "Meer beslissingen voor dit project",
+    "originalEnglish": "Oorspronkelijk artikel in het Engels",
+    "originalLanguage": "Oorspronkelijke taal",
+    "decision": "Beslissing",
+    "release": "Release",
+    "experiment": "Experiment",
+    "retrospective": "Terugblik",
+    "overview": "Contact en huidig werk",
+    "close": "Sluiten",
+    "loading": "Taal wordt gewijzigd…",
+    "navigation": "Hoofdnavigatie"
+  },
+  "profile": {
+    "tagline": "Ik vertaal gebruikersproblemen naar software, van de eerste vraag tot productie.",
+    "subtitle": "Meer dan 5 jaar ervaring met B2B SaaS, backend, data-engineering, productleiderschap en toegepaste AI.",
+    "location": "Rio de Janeiro, Brazilië"
+  },
+  "about": "Ik ben **Product Engineer** met **meer dan 5 jaar** ervaring in backend- en data-engineering, productmanagement en technisch leiderschap. Ik werk vanuit het gebruikersprobleem aan onderzoek, technische keuzes, implementatie, lancering en verdere verbetering.\n\nBij **Guiavet** groeide ik van Software Engineer naar Product Manager en Head of Engineering & Product Lead. Door rechtstreeks met dierenartsen te werken, leerde ik het product te verbinden met wat mensen moeten kunnen doen. Onderzoek en gebruiksdata leidden tot verbeteringen die de tijd voor sommige kritieke handelingen met **maximaal 80%** verminderden en **uitvalindicatoren gerelateerd aan gebruiksgemak met maximaal 95%**, binnen een maand na de lancering.\n\nBij **Reach.ai** bouw ik Python-API’s en gebeurtenisgestuurde berichtensystemen die **meer dan 20 miljoen e-mails en sms-berichten per maand** verwerken. Ook bouw ik een afsprakenagent voor spraak en sms, die gesprekken verbindt met plannings-API’s via kennisopvraging, toolorkestratie, gedragsevaluaties en observability.\n\n**Aanpassingsvermogen is de rode draad in mijn werk.** Ik leer graag een nieuw domein kennen, begrijp de beperkingen en bepaal wat zinvol is om te bouwen. Daarbij combineer ik een sterke backendbasis met productinzicht, ook wanneer toegepaste AI het juiste middel is.",
+  "project": [
+    "Een interactieve voetbalanalyse-app die expected goals tastbaar maakt: verplaats een schot, bekijk de kenmerken en onderzoek het model achter de voorspelling.",
+    "Van begin tot eind gebouwd met een reproduceerbare StatsBomb Open Data-pipeline, XGBoost-training en -evaluatie en inferentie in de browser. De playground in vijf talen toont acht modelkenmerken naast het veld, met methodologie en resultaten in de app. Een project dat data-engineering, modelvalidatie en een verkenbare interface verbindt.",
+    "Football, Visualized: interactief veld, expected-goalschatting en modelkenmerken"
+  ],
+  "education": {
+    "ufmg": "- Bachelordiploma in regeltechniek en automatisering.\n- Sterke basis in wiskunde, programmeren en systeemtechniek, met nadruk op regelsystemen, automatisering en softwareontwikkeling.",
+    "cefet-mg": "- Technische opleiding in mechatronica, robotica en automatisering."
+  },
+  "publication": "Onderzoek naar algoritmische handelingsopties in de geestelijke gezondheidszorg, met een classificatiekader met geobserveerde en latente variabelen.",
+  "skills": {
+    "Product & delivery": "Product en levering",
+    "Backend & cloud": "Backend en cloud",
+    "Data engineering": "Data-engineering",
+    "Applied AI": "Toegepaste AI",
+    "Frontend": "Frontend",
+    "User discovery": "Gebruikersonderzoek",
+    "Workflow design": "Workflowontwerp",
+    "Prioritization & technical scoping": "Prioritering en technische afbakening",
+    "ETL & data modeling": "ETL en datamodellering",
+    "Behavioral evaluations & guardrails": "Gedragsevaluaties en guardrails",
+    "RAG & vector search": "RAG en vectorzoeken",
+    "Evaluations": "Evaluaties",
+    "PDF generation": "PDF-generatie",
+    "Product management": "Productmanagement",
+    "Roadmapping": "Roadmaps",
+    "Control systems": "Regelsystemen",
+    "Automation": "Automatisering",
+    "Software engineering": "Software-engineering",
+    "Mathematics": "Wiskunde",
+    "Mechatronics": "Mechatronica",
+    "Robotics": "Robotica",
+    "Version Control": "Versiebeheer"
+  },
+  "employment": {
+    "Contract": "Op contractbasis",
+    "Full-time": "Fulltime",
+    "Internship and full-time": "Stage en fulltime"
+  },
+  "positions": {
+    "reach-ai:1": {
+      "title": "Senior Software Engineer",
+      "description": "- Ontwikkelde Python/FastAPI-API’s en gebeurtenisgestuurde processen voor **meer dan 20 miljoen sms-berichten en e-mails per maand**, met **99,9% afleverbetrouwbaarheid** en capaciteit voor **50 keer hogere piekbelasting**, door verbeterde wachtrijen en idempotentie.\n- Bouw een afsprakenagent voor **spraak en sms**, met boeken, verplaatsen en annuleren via LangGraph, tool calling, RAG en plannings-API’s.\n- Ontwierp gedragsevaluaties, guardrails, Redis-idempotentie en observability met LangSmith en auditlogs. Optimaliseerde de mediane spraakrespons tot **ongeveer 2 seconden** in tests."
+    },
+    "guiavet:1": {
+      "title": "Hoofd Engineering en Product Lead",
+      "description": "- Leidde vijf engineers en was verantwoordelijk voor prioritering, technische keuzes en levering tijdens de groei van het veterinaire B2B-SaaS-product.\n- Borgde de technische continuïteit en verlaagde infrastructuur- en operationele kosten door automatisering.\n- Verbeterde medische dossiers, medicijnreferenties, apotheekverstrekking met externe validatie, receptsjablonen en de snelheid van PDF-generatie.\n- Leverde volledige productwijzigingen in Python/Django, Vue.js en AWS in samenwerking met senior engineers."
+    },
+    "guiavet:2": {
+      "title": "Product Manager",
+      "description": "- Beheerde de roadmap van Guiavet PRO en bracht stakeholders, directie, ontwerp en engineering op één lijn.\n- Gebruikte interviews, concurrentieanalyse en gebruiksdata om kliniekprocessen te verbeteren: **maximaal 80% minder tijd** voor sommige kritieke handelingen en **maximaal 95% lagere uitvalindicatoren gerelateerd aan gebruiksgemak**, binnen een maand na de lancering.\n- Breidde het product uit naar dierenartsen die andere klinieken bedienen en naar klinieken zelf, met aangepaste pakketten en processen voor planning, zorg en facturatie.\n- Lanceerde een platform voor professionele dierenartswebsites met SEO- en prestatieverbeteringen en stemde teamcapaciteit, prioriteiten en deadlines af."
+    },
+    "guiavet:3": {
+      "title": "Software- en data-engineer",
+      "description": "- Bouwde en schaalde kernmodules van Guiavet PRO met Django, PostgreSQL en AWS.\n- Leidde datamodellering en domeinbesprekingen met oog voor snelheid en onderhoud; bouwde ETL-processen en SQL-dashboards voor financiën, adoptie en gebruik.\n- Begeleidde junior backend- en data-engineers.\n- Ontwierp asynchrone workers met Django APScheduler en SQS, een PDF-microservice en schaalverbeteringen met nginx en caching van gezondheidsgegevens."
+    },
+    "qdois:1": {
+      "title": "Data-engineer",
+      "description": "- Begon als stagiair data-analyse en ging verder als data-engineer in hetzelfde team.\n- Bouwde ETL-processen met Azure Data Factory, Databricks en PySpark om relationele databases, SFTP en API’s samen te brengen in een data lake.\n- Ondersteunde digitale transformatie, kostenverlaging en de basis voor BI, analytics en ML.\n- Richtte CI/CD in met Azure DevOps en Git en vertaalde bedrijfsbehoeften naar datamodellen en pipelines."
+    }
+  }
+}

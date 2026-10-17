@@ -2,7 +2,8 @@
 type: ADR
 id: "0009"
 title: "Professional portfolio navigation"
-status: active
+status: superseded
+superseded_by: "0013"
 date: 2026-10-17
 ---
 

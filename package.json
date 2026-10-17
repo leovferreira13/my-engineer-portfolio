@@ -1,7 +1,7 @@
 {
   "name": "my-engineer-portfolio",
   "version": "0.1.0",
-  "description": "Leonardo Ferreira \u2014 Product Engineer, public projects, and engineering journal",
+  "description": "Leonardo Ferreira — Product Engineer, public projects, and engineering journal",
   "homepage": "https://github.com/leovferreira13/my-engineer-portfolio",
   "license": "MIT",
   "author": {
@@ -36,7 +36,7 @@
     "upgrade:tailwind": "npx @tailwindcss/upgrade@latest",
     "prepare": "husky",
     "dev:portless": "portless leovferreira next dev",
-    "test:content": "node --import tsx --test scripts/check-content.test.ts",
+    "test:content": "node --import tsx --test scripts/check-content.test.ts scripts/check-i18n.test.ts",
     "site:url": "node scripts/set-public-url.mjs",
     "capture:portfolio": "node scripts/capture-portfolio.mjs"
   },

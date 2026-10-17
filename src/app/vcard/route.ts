@@ -1,3 +1,6 @@
+import { readFile } from "node:fs/promises"
+import path from "node:path"
+
 import { NextResponse } from "next/server"
 import sharp from "sharp"
 import VCard from "vcard-creator"
@@ -45,7 +48,16 @@ export async function GET() {
 
 async function getVCardPhoto(url: string) {
   try {
-    const res = await fetch(url)
+    if (url === "/profile.jpg") {
+      const buffer = await readFile(
+        path.join(process.cwd(), "public/profile.jpg")
+      )
+      return {
+        image: (await convertImageToJpeg(buffer)).toString("base64"),
+        mime: "jpeg",
+      }
+    }
+    const res = await fetch(new URL(url, USER.website))
 
     if (!res.ok) {
       return null

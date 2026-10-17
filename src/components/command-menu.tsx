@@ -1,23 +1,20 @@
 "use client"
-
-import { useRouter } from "@bprogress/next/app"
-import { useCommandState } from "cmdk"
 import {
-  BoxIcon,
-  BriefcaseBusinessIcon,
-  CornerDownLeftIcon,
   DownloadIcon,
-  FileTextIcon,
-  LayersIcon,
-  MoonStarIcon,
-  RssIcon,
-  SunMediumIcon,
-  TextInitialIcon,
+  FolderIcon,
+  HouseIcon,
+  MonitorIcon,
+  MoonIcon,
+  NotebookPenIcon,
+  SearchIcon,
+  SunIcon,
 } from "lucide-react"
+import { useRouter } from "next/navigation"
 import { useTheme } from "next-themes"
-import React, { useCallback, useEffect, useMemo, useState } from "react"
+import { useState } from "react"
 import { useHotkeys } from "react-hotkeys-hook"
 
+import { Button } from "@/components/ui/button"
 import {
   CommandDialog,
   CommandEmpty,
@@ -25,102 +22,11 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-  CommandShortcut,
 } from "@/components/ui/command"
+import { Kbd } from "@/components/ui/kbd"
 import type { DocPreview } from "@/features/doc/types/document"
-import { SOCIAL_LINKS } from "@/features/portfolio/data/social-links"
-import { trackEvent } from "@/lib/events"
-
-import { Icons } from "./icons"
-import { SiteHeaderMark } from "./site-header-mark"
-import { Button } from "./ui/button"
-import { Kbd, KbdGroup } from "./ui/kbd"
-import { Separator } from "./ui/separator"
-
-type CommandLinkItem = {
-  title: string
-  href: string
-
-  icon?: React.ReactElement
-  iconImage?: string
-  shortcut?: string
-  keywords?: string[]
-  openInNewTab?: boolean
-}
-
-const MENU_LINKS: CommandLinkItem[] = [
-  {
-    title: "Profile",
-    href: "/",
-    icon: <SiteHeaderMark />,
-    shortcut: "GH",
-  },
-  {
-    title: "Engineering Journal",
-    href: "/journal",
-    icon: <Icons.news />,
-    shortcut: "GL",
-  },
-  {
-    title: "Projects",
-    href: "/projects",
-    icon: <Icons.bookHeart />,
-    shortcut: "GP",
-  },
-]
-
-const PORTFOLIO_LINKS: CommandLinkItem[] = [
-  {
-    title: "About",
-    href: "/#about",
-    icon: <TextInitialIcon />,
-  },
-  {
-    title: "Tech Stack",
-    href: "/#stack",
-    icon: <LayersIcon />,
-  },
-  {
-    title: "Experience",
-    href: "/#experience",
-    icon: <BriefcaseBusinessIcon />,
-  },
-  {
-    title: "Projects",
-    href: "/projects",
-    icon: <BoxIcon />,
-  },
-  { title: "Publications", href: "/#awards", icon: <FileTextIcon /> },
-  { title: "Education", href: "/#education", icon: <FileTextIcon /> },
-  {
-    title: "Download vCard",
-    href: "/vcard",
-    icon: <DownloadIcon />,
-  },
-]
-
-const SOCIAL_LINK_ITEMS: CommandLinkItem[] = SOCIAL_LINKS.map((item) => ({
-  title: item.title,
-  href: item.href,
-  iconImage: item.icon,
-  openInNewTab: true,
-}))
-
-const OTHER_LINK_ITEMS: CommandLinkItem[] = [
-  {
-    title: "llms.txt",
-    href: "/llms.txt",
-    icon: <FileTextIcon />,
-    openInNewTab: true,
-  },
-  {
-    title: "RSS Feed",
-    href: "/journal/rss",
-    icon: <RssIcon />,
-    openInNewTab: true,
-  },
-]
-
+import { localizePath } from "@/i18n/config"
+import { useI18n } from "@/i18n/provider"
 export function CommandMenu({
   docs,
   enabledHotkeys = false,
@@ -128,339 +34,121 @@ export function CommandMenu({
   docs: DocPreview[]
   enabledHotkeys?: boolean
 }) {
-  const router = useRouter()
-
-  const { setTheme } = useTheme()
-
+  const { locale, t } = useI18n(),
+    router = useRouter(),
+    { setTheme } = useTheme()
   const [open, setOpen] = useState(false)
-
   useHotkeys(
     "mod+k, slash",
-    (e) => {
-      e.preventDefault()
-
-      setOpen((open) => {
-        if (!open) {
-          trackEvent({
-            name: "open_command_menu",
-            properties: {
-              method: "keyboard",
-              key: e.key === "/" ? "/" : e.metaKey ? "cmd+k" : "ctrl+k",
-            },
-          })
-        }
-        return !open
-      })
+    (event) => {
+      event.preventDefault()
+      setOpen((value) => !value)
     },
     { enabled: enabledHotkeys }
   )
-
-  const handleOpenLink = useCallback(
-    (href: string, openInNewTab = false) => {
-      setOpen(false)
-
-      trackEvent({
-        name: "command_menu_action",
-        properties: {
-          action: "navigate",
-          href: href,
-          open_in_new_tab: openInNewTab,
-        },
-      })
-
-      if (openInNewTab) {
-        window.open(href, "_blank", "noopener")
-      } else {
-        router.push(href)
-      }
-    },
-    [router]
-  )
-
-  const createThemeHandler = useCallback(
-    (theme: "light" | "dark" | "system") => () => {
-      setOpen(false)
-
-      trackEvent({
-        name: "command_menu_action",
-        properties: {
-          action: "change_theme",
-          theme: theme,
-        },
-      })
-
-      setTheme(theme)
-    },
-    [setTheme]
-  )
-
-  const blogLinks = useMemo(
-    () =>
-      docs
-        .filter((doc) => doc.category === "journal")
-        .map(docToCommandLinkItem),
-    [docs]
-  )
-
+  const navigate = (path: string) => {
+    setOpen(false)
+    router.push(localizePath(path, locale))
+  }
   return (
     <>
-      <CommandMenuTrigger
-        onClick={() => {
-          setOpen(true)
-          trackEvent({
-            name: "open_command_menu",
-            properties: {
-              method: "click",
-            },
-          })
-        }}
-      />
-
-      <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandMenuInput />
-
-        <CommandList className="min-h-80 supports-timeline-scroll:scroll-fade-effect-y">
-          <CommandEmpty>No results found.</CommandEmpty>
-
-          <CommandLinkGroup
-            heading="Menu"
-            links={MENU_LINKS}
-            onLinkSelect={handleOpenLink}
-          />
-
-          <CommandLinkGroup
-            heading="Portfolio"
-            links={PORTFOLIO_LINKS}
-            onLinkSelect={handleOpenLink}
-          />
-
-          <CommandLinkGroup
-            heading="Engineering Journal"
-            links={blogLinks}
-            fallbackIcon={<Icons.news />}
-            onLinkSelect={handleOpenLink}
-          />
-
-          <CommandLinkGroup
-            heading="Social Links"
-            links={SOCIAL_LINK_ITEMS}
-            onLinkSelect={handleOpenLink}
-          />
-
-          <CommandGroup heading="Theme">
-            <CommandItem
-              keywords={["theme"]}
-              onSelect={createThemeHandler("light")}
-            >
-              <SunMediumIcon />
-              Light
+      <Button
+        data-slot="command-menu-trigger"
+        variant="outline"
+        size="sm"
+        className="gap-2 rounded-full text-muted-foreground"
+        aria-label={t.search}
+        onClick={() => setOpen(true)}
+      >
+        <SearchIcon className="size-4" />
+        <span className="sm:hidden">{t.search}</span>
+        <span className="hidden sm:inline-flex">
+          <Kbd>Ctrl K</Kbd>
+        </span>
+      </Button>
+      <CommandDialog
+        open={open}
+        onOpenChange={setOpen}
+        title={t.search}
+        description={t.searchPlaceholder}
+      >
+        <CommandInput placeholder={t.searchPlaceholder} />
+        <CommandList>
+          <CommandEmpty>{t.noResults}</CommandEmpty>
+          <CommandGroup heading={t.menu}>
+            <CommandItem onSelect={() => navigate("/")}>
+              <HouseIcon />
+              {t.profile}
             </CommandItem>
-            <CommandItem
-              keywords={["theme"]}
-              onSelect={createThemeHandler("dark")}
-            >
-              <MoonStarIcon />
-              Dark
+            <CommandItem onSelect={() => navigate("/projects")}>
+              <FolderIcon />
+              {t.projects}
             </CommandItem>
-            <CommandItem
-              keywords={["theme"]}
-              onSelect={createThemeHandler("system")}
-            >
-              <Icons.contrast />
-              Auto
+            <CommandItem onSelect={() => navigate("/decisions")}>
+              <NotebookPenIcon />
+              {t.decisions}
             </CommandItem>
           </CommandGroup>
-
-          <CommandLinkGroup
-            heading="Other"
-            links={OTHER_LINK_ITEMS}
-            onLinkSelect={handleOpenLink}
-          />
+          <CommandGroup heading={t.profile}>
+            {(
+              [
+                ["about", t.about],
+                ["experience", t.experience],
+                ["stack", t.capabilities],
+                ["education", t.education],
+                ["awards", t.publications],
+              ] as const
+            ).map(([id, label]) => (
+              <CommandItem key={id} onSelect={() => navigate(`/#${id}`)}>
+                {label}
+              </CommandItem>
+            ))}
+            <CommandItem
+              onSelect={() => {
+                setOpen(false)
+                window.location.assign("/vcard")
+              }}
+            >
+              <DownloadIcon />
+              {t.downloadVcard}
+            </CommandItem>
+          </CommandGroup>
+          {docs.length > 0 && (
+            <CommandGroup heading={t.decisions}>
+              {docs
+                .filter((doc) => doc.category === "journal")
+                .map((doc) => (
+                  <CommandItem
+                    key={doc.slug}
+                    onSelect={() => navigate(`/decisions/${doc.slug}`)}
+                  >
+                    {doc.title}
+                  </CommandItem>
+                ))}
+            </CommandGroup>
+          )}
+          <CommandGroup heading={t.theme}>
+            {(
+              [
+                ["light", t.light, SunIcon],
+                ["dark", t.dark, MoonIcon],
+                ["system", t.system, MonitorIcon],
+              ] as const
+            ).map(([mode, label, Icon]) => (
+              <CommandItem
+                key={mode}
+                onSelect={() => {
+                  setTheme(mode)
+                  setOpen(false)
+                }}
+              >
+                <Icon />
+                {label}
+              </CommandItem>
+            ))}
+          </CommandGroup>
         </CommandList>
-
-        <CommandMenuFooter />
       </CommandDialog>
     </>
   )
-}
-
-function CommandMenuTrigger({ ...props }: React.ComponentProps<typeof Button>) {
-  return (
-    <Button
-      data-slot="command-menu-trigger"
-      className="gap-1.5 rounded-full text-muted-foreground shadow-none select-none hover:bg-background hover:text-muted-foreground dark:hover:bg-input/30"
-      variant="outline"
-      size="sm"
-      {...props}
-    >
-      <Icons.search />
-
-      <span className="font-sans text-sm/4 font-medium sm:hidden">Search…</span>
-
-      <KbdGroup className="hidden sm:in-[.os-macos_&]:flex">
-        <Kbd className="w-5 min-w-5">⌘</Kbd>
-        <Kbd className="w-5 min-w-5">K</Kbd>
-      </KbdGroup>
-
-      <KbdGroup className="hidden sm:not-[.os-macos_&]:flex">
-        <Kbd>Ctrl</Kbd>
-        <Kbd className="w-5 min-w-5">K</Kbd>
-      </KbdGroup>
-    </Button>
-  )
-}
-
-function CommandMenuInput() {
-  const [searchValue, setSearchValue] = useState("")
-
-  useEffect(() => {
-    if (searchValue.length >= 2) {
-      const timeoutId = setTimeout(() => {
-        trackEvent({
-          name: "command_menu_search",
-          properties: {
-            query: searchValue,
-            query_length: searchValue.length,
-          },
-        })
-      }, 500)
-
-      return () => clearTimeout(timeoutId)
-    }
-  }, [searchValue])
-
-  return (
-    <CommandInput
-      placeholder="Type a command or search…"
-      value={searchValue}
-      onValueChange={setSearchValue}
-    />
-  )
-}
-
-function CommandLinkGroup({
-  heading,
-  links,
-  fallbackIcon,
-  onLinkSelect,
-}: {
-  heading: string
-  links: CommandLinkItem[]
-  fallbackIcon?: React.ReactElement
-  onLinkSelect: (href: string, openInNewTab?: boolean) => void
-}) {
-  return (
-    <CommandGroup heading={heading}>
-      {links.map((link) => {
-        const icon = link?.icon ?? fallbackIcon ?? <React.Fragment />
-
-        return (
-          <CommandItem
-            key={link.href}
-            keywords={link.keywords}
-            onSelect={() => onLinkSelect(link.href, link.openInNewTab)}
-          >
-            {link?.iconImage ? (
-              <img
-                className="size-4 rounded-sm corner-squircle supports-corner-shape:rounded-[50%]"
-                src={link.iconImage}
-                alt={link.title}
-              />
-            ) : (
-              icon
-            )}
-
-            <p className="line-clamp-1">{link.title}</p>
-
-            {link.shortcut && (
-              <CommandShortcut className="font-mono tracking-[0.2em] max-sm:hidden">
-                {link.shortcut}
-              </CommandShortcut>
-            )}
-          </CommandItem>
-        )
-      })}
-    </CommandGroup>
-  )
-}
-
-type CommandKind = "command" | "page" | "link"
-
-type CommandMetaMap = Map<
-  string,
-  {
-    commandKind: CommandKind
-  }
->
-
-function buildCommandMetaMap() {
-  const commandMetaMap: CommandMetaMap = new Map()
-
-  commandMetaMap.set("Download vCard", { commandKind: "command" })
-
-  commandMetaMap.set("Light", { commandKind: "command" })
-  commandMetaMap.set("Dark", { commandKind: "command" })
-  commandMetaMap.set("Auto", { commandKind: "command" })
-
-  commandMetaMap.set("Copy Mark as SVG", {
-    commandKind: "command",
-  })
-  commandMetaMap.set("Copy Logotype as SVG", {
-    commandKind: "command",
-  })
-  commandMetaMap.set("Download Brand Assets", {
-    commandKind: "command",
-  })
-
-  SOCIAL_LINK_ITEMS.forEach((item) => {
-    commandMetaMap.set(item.title, {
-      commandKind: "link",
-    })
-  })
-
-  return commandMetaMap
-}
-
-const COMMAND_META_MAP = buildCommandMetaMap()
-
-const ENTER_ACTION_LABELS: Record<CommandKind, string> = {
-  command: "Run Command",
-  page: "Go to Page",
-  link: "Open Link",
-}
-
-function CommandMenuFooter() {
-  const selectedCommandKind = useCommandState(
-    (state) => COMMAND_META_MAP.get(state.value)?.commandKind ?? "page"
-  )
-
-  return (
-    <>
-      <div className="flex h-10" />
-
-      <div className="absolute inset-x-0 bottom-0 flex h-10 items-center justify-between gap-2 rounded-b-2xl border-t px-4 text-xs font-medium">
-        <SiteHeaderMark />
-
-        <div className="flex shrink-0 items-center gap-2 max-sm:hidden">
-          <span>{ENTER_ACTION_LABELS[selectedCommandKind]}</span>
-          <Kbd>
-            <CornerDownLeftIcon />
-          </Kbd>
-          <Separator
-            orientation="vertical"
-            className="data-vertical:h-4 data-vertical:self-center"
-          />
-          <span className="text-muted-foreground">Exit</span>
-          <Kbd>Esc</Kbd>
-        </div>
-      </div>
-    </>
-  )
-}
-
-function docToCommandLinkItem(doc: DocPreview): CommandLinkItem {
-  return {
-    title: doc.title,
-    href: `/journal/${doc.slug}`,
-  }
 }

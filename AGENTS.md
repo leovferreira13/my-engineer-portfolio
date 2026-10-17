@@ -30,10 +30,11 @@ See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for stack overview, how `app`
 
 ## Content system
 
-All content lives in `src/features/doc/content/` as MDX files. Blog posts and component docs are distinguished by the `category` field in frontmatter.
+All content lives in `src/features/doc/content/` as MDX files. Decision-log entries and component docs are distinguished by the `category` field in frontmatter.
 
 - **Data layer**: `src/features/doc/data/documents.ts` (`getAllDocs`, `getDocBySlug`, `getDocsByCategory`)
-- **Blog UI**: `src/features/blog/` (rendering only; imports data from `features/doc`)
+- **Decision Log UI**: `src/features/journal/`; inherited `blog` components remain only as registry utilities.
+- **Translations**: `src/i18n/`; English default plus `br`, `nl`, `es`, `de`. `src/proxy.ts` maps public locale URLs to portfolio pages. Never translate employer/project identifiers or measured outcomes.
 
 ---
 

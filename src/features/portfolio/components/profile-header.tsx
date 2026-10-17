@@ -1,8 +1,12 @@
 import Link from "next/link"
 
 import { USER } from "@/features/portfolio/data/user"
+import { localizePath } from "@/i18n/config"
+import { getI18n } from "@/i18n/request"
+import { decodeEmail } from "@/utils/string"
 
-export function ProfileHeader() {
+export async function ProfileHeader() {
+  const { locale, dictionary, t } = await getI18n()
   return (
     <section
       aria-labelledby="profile-title"
@@ -20,7 +24,7 @@ export function ProfileHeader() {
         />
         <div className="min-w-0 flex-1">
           <p className="mb-3 font-mono text-xs tracking-widest text-muted-foreground uppercase">
-            Product Engineer · Rio de Janeiro, Brazil
+            Product Engineer · {dictionary.profile.location}
           </p>
           <h1
             id="profile-title"
@@ -29,25 +33,25 @@ export function ProfileHeader() {
             {USER.displayName}
           </h1>
           <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
-            I turn user problems into software, from the first question to
-            production.
+            {dictionary.profile.tagline}
           </p>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-            5+ years across B2B SaaS, backend, data engineering, product
-            leadership, and applied AI.
+            {dictionary.profile.subtitle}
           </p>
           <div className="mt-6 flex flex-wrap gap-3 text-sm font-medium">
             <Link
-              href="/projects"
+              href={localizePath("/projects", locale)}
               className="rounded-lg bg-foreground px-4 py-2 text-background transition-opacity hover:opacity-80"
             >
-              Explore my work <span aria-hidden>↗</span>
+              {t.exploreWork} <span aria-hidden>↗</span>
             </Link>
             <a
-              href="mailto:leovieiraf.599@gmail.com"
+              href={
+                USER.email ? `mailto:${decodeEmail(USER.email)}` : undefined
+              }
               className="rounded-lg border border-line px-4 py-2 transition-colors hover:bg-accent"
             >
-              Get in touch
+              {t.contact}
             </a>
           </div>
         </div>

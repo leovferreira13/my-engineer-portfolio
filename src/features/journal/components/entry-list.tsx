@@ -1,10 +1,13 @@
 import Link from "next/link"
 
 import { PROJECTS } from "@/features/portfolio/data/projects"
+import { localizePath } from "@/i18n/config"
+import { getI18n } from "@/i18n/request"
 
 import type { JournalEntry } from "../data/entries"
 
-export function EntryList({ entries }: { entries: JournalEntry[] }) {
+export async function EntryList({ entries }: { entries: JournalEntry[] }) {
+  const { locale, t } = await getI18n()
   return (
     <div className="space-y-4">
       {entries.map((entry) => {
@@ -21,11 +24,14 @@ export function EntryList({ entries }: { entries: JournalEntry[] }) {
                 {entry.metadata.createdAt}
               </time>
               <span>
-                · {entry.metadata.entryType} · {project.title}
+                · {t[entry.metadata.entryType]} · {project.title}
               </span>
             </p>
             <h2 className="text-xl font-semibold">
-              <Link className="hover:underline" href={`/journal/${entry.slug}`}>
+              <Link
+                className="hover:underline"
+                href={localizePath(`/decisions/${entry.slug}`, locale)}
+              >
                 {entry.metadata.title}
               </Link>
             </h2>

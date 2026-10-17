@@ -1,13 +1,17 @@
 import dynamic from "next/dynamic"
 import Link from "next/link"
+import { Suspense } from "react"
 
 import { DesktopNav } from "@/components/desktop-nav"
+import { LanguageSelector } from "@/components/language-selector"
 import { SiteHeaderMark } from "@/components/site-header-mark"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Separator } from "@/components/ui/separator"
-import { MAIN_NAV, MOBILE_NAV } from "@/config/site"
+import { getMainNav } from "@/config/site"
 import { getAllDocs } from "@/features/doc/data/documents"
 import type { DocPreview } from "@/features/doc/types/document"
+import { localizePath } from "@/i18n/config"
+import { getI18n } from "@/i18n/request"
 import { cn } from "@/lib/utils"
 
 const CommandMenu = dynamic(() =>
@@ -18,7 +22,9 @@ const MobileNav = dynamic(() =>
   import("@/components/mobile-nav").then((mod) => mod.MobileNav)
 )
 
-export function SiteHeader() {
+export async function SiteHeader() {
+  const { locale, t } = await getI18n()
+  const nav = getMainNav(locale)
   const docs = getAllDocs().filter((doc) => doc.metadata.category === "journal")
 
   // Minimize data serialized to client component - only send necessary fields
@@ -33,16 +39,16 @@ export function SiteHeader() {
       <header className="sticky top-0 z-50 max-w-screen overflow-x-hidden bg-background px-2 pt-2">
         <div className="screen-line-top screen-line-bottom mx-auto flex h-12 items-center justify-between gap-2 border-x border-line px-2 group-has-data-[slot=layout-wide]/layout:container after:z-1 after:transition-[background-color] sm:gap-4 md:max-w-3xl">
           <Link
-            className="transition-[scale] ease-out active:scale-[0.98] has-data-[visible=false]:pointer-events-none [&_svg]:h-8"
-            href="/"
-            aria-label="Home"
+            className="inline-flex size-8 items-center justify-center rounded-md transition-colors hover:bg-accent"
+            href={localizePath("/", locale)}
+            aria-label={t.home}
           >
             <SiteHeaderMark />
           </Link>
 
           <div className="flex-1" />
 
-          <DesktopNav items={MAIN_NAV} />
+          <DesktopNav items={nav} />
 
           <div className="flex items-center *:first:mr-2 max-sm:*:data-[slot=command-menu-trigger]:hidden">
             <CommandMenu docs={docPreviews} enabledHotkeys />
@@ -51,6 +57,9 @@ export function SiteHeader() {
               orientation="vertical"
               className="mx-2 data-vertical:h-4 data-vertical:self-center"
             />
+            <Suspense>
+              <LanguageSelector />
+            </Suspense>
             <ThemeToggle />
           </div>
         </div>
@@ -69,7 +78,7 @@ export function SiteHeader() {
           orientation="vertical"
           className="mr-1 ml-2.5 data-vertical:h-6 data-vertical:self-center"
         />
-        <MobileNav items={MOBILE_NAV} />
+        <MobileNav items={nav} />
       </div>
     </>
   )

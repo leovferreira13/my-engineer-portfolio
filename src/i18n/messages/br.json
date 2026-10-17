@@ -1,0 +1,137 @@
+{
+  "ui": {
+    "home": "Início",
+    "profile": "Perfil",
+    "projects": "Projetos",
+    "decisions": "Decisões",
+    "language": "Alterar idioma",
+    "theme": "Alterar tema",
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema",
+    "search": "Buscar",
+    "searchPlaceholder": "Buscar páginas e decisões…",
+    "noResults": "Nenhum resultado encontrado.",
+    "menu": "Menu",
+    "about": "Sobre",
+    "experience": "Experiência",
+    "education": "Formação",
+    "publications": "Publicações",
+    "capabilities": "Competências e ferramentas",
+    "selectedWork": "Projetos em destaque",
+    "allProjects": "Todos os projetos",
+    "exploreWork": "Conheça meu trabalho",
+    "contact": "Entre em contato",
+    "present": "Atual",
+    "remote": "Remoto",
+    "languages": "Português (nativo) · Inglês (fluente)",
+    "currentEmployer": "Empresa atual",
+    "employmentType": "Tipo de vínculo",
+    "employmentPeriod": "Período",
+    "downloadVcard": "Baixar contato",
+    "source": "Ver código",
+    "liveApp": "Abrir app",
+    "engineeringNotes": "Registro de decisões",
+    "projectTech": "Tecnologias do projeto",
+    "publicProject": "Projeto público",
+    "proof": "Trabalho na prática",
+    "projectsIntro": "Projetos que desenvolvo para explorar um problema, transformar uma ideia em algo útil e compartilhar como funciona. Cada projeto conecta o produto, o código e as decisões por trás dele.",
+    "decisionEyebrow": "O raciocínio por trás do trabalho",
+    "decisionIntro": "Um registro do que mudou, por que escolhi uma abordagem e o que aprendi. Decisões, releases e experimentos conectados aos seus projetos.",
+    "emptyTitle": "A primeira publicação ainda está por vir.",
+    "emptyBody": "Ainda não há notas publicadas. As próximas entradas vão registrar contexto, alternativas, trade-offs, evidências e próximos passos de cada projeto.",
+    "emptyPreview": "Ainda não há publicações. Aqui vou compartilhar decisões de projeto, notas de versão, experimentos e as evidências por trás deles.",
+    "visitDecisions": "Explorar as decisões",
+    "exploreProjects": "Explorar os projetos",
+    "unknownProject": "Projeto desconhecido",
+    "noProject": "Projeto não encontrado",
+    "chooseProject": "Escolha um projeto acima para ver suas decisões.",
+    "filterProjects": "Filtrar decisões por projeto",
+    "reference": "Abrir referência",
+    "published": "Publicado",
+    "research": "Pesquisa",
+    "by": "Por",
+    "updated": "Atualizado",
+    "aboutProject": "Sobre o projeto",
+    "repository": "Repositório",
+    "references": "Evidências e referências",
+    "moreNotes": "Outras decisões deste projeto",
+    "originalEnglish": "Artigo original em inglês",
+    "originalLanguage": "Idioma original",
+    "decision": "Decisão",
+    "release": "Release",
+    "experiment": "Experimento",
+    "retrospective": "Retrospectiva",
+    "overview": "Contato e trabalho atual",
+    "close": "Fechar",
+    "loading": "Alterando idioma…",
+    "navigation": "Navegação principal"
+  },
+  "profile": {
+    "tagline": "Transformo problemas dos usuários em software, da primeira pergunta à produção.",
+    "subtitle": "Mais de 5 anos entre SaaS B2B, backend, engenharia de dados, liderança de produto e IA aplicada.",
+    "location": "Rio de Janeiro, Brasil"
+  },
+  "about": "Sou **Product Engineer** com **mais de 5 anos** de experiência em backend, engenharia de dados, gestão de produto e liderança técnica. Trabalho desde o entendimento do problema do usuário até as decisões técnicas, implementação, lançamento e evolução do produto.\n\nNa **Guiavet**, evoluí de Software Engineer para Product Manager e Head of Engineering & Product Lead. Trabalhar diretamente com veterinários me ensinou a conectar o que acontece no produto ao que as pessoas precisam realizar. Pesquisa e dados de uso orientaram melhorias que reduziram o tempo de algumas operações críticas em **até 80%** e os **indicadores de churn relacionados à usabilidade em até 95%**, no primeiro mês após o lançamento.\n\nNa **Reach.ai**, desenvolvo APIs em Python e sistemas de mensageria orientados a eventos que processam **mais de 20 milhões de e-mails e SMS por mês**. Também estou construindo um agente de agendamento por voz e SMS, conectando conversas a APIs de agenda com recuperação de conhecimento, orquestração de ferramentas, avaliações comportamentais e observabilidade.\n\n**Adaptabilidade é o fio condutor do meu trabalho.** Gosto de aprender um domínio novo, entender suas restrições e decidir o que vale a pena construir. Combino fundamentos sólidos de backend com visão de produto, inclusive quando a ferramenta adequada é IA aplicada.",
+  "project": [
+    "Um app interativo de análise de futebol que torna o expected goals concreto: mova o chute, inspecione as features e explore o modelo por trás da estimativa.",
+    "Desenvolvido de ponta a ponta com um pipeline reproduzível de StatsBomb Open Data, treinamento e avaliação de XGBoost e inferência no navegador. O playground em cinco idiomas exibe oito features do modelo ao lado do campo, com metodologia e resultados no app. Um projeto que conecta engenharia de dados, validação de modelos e uma interface explorável.",
+    "Football, Visualized: campo interativo, estimativa de expected goals e features do modelo"
+  ],
+  "education": {
+    "ufmg": "- Bacharelado em Engenharia de Controle e Automação.\n- Base sólida em matemática, programação e engenharia de sistemas, com foco em controle, automação e desenvolvimento de software.",
+    "cefet-mg": "- Formação técnica em Mecatrônica, Robótica e Automação."
+  },
+  "publication": "Pesquisa sobre recourse algorítmico em saúde mental, incluindo um framework de classificação com variáveis observadas e latentes.",
+  "skills": {
+    "Product & delivery": "Produto e entrega",
+    "Backend & cloud": "Backend e cloud",
+    "Data engineering": "Engenharia de dados",
+    "Applied AI": "IA aplicada",
+    "Frontend": "Frontend",
+    "User discovery": "Pesquisa com usuários",
+    "Workflow design": "Design de fluxos",
+    "Prioritization & technical scoping": "Priorização e escopo técnico",
+    "ETL & data modeling": "ETL e modelagem de dados",
+    "Behavioral evaluations & guardrails": "Avaliações comportamentais e guardrails",
+    "RAG & vector search": "RAG e busca vetorial",
+    "Evaluations": "Avaliações",
+    "PDF generation": "Geração de PDFs",
+    "Product management": "Gestão de produto",
+    "Roadmapping": "Roadmap",
+    "Control systems": "Sistemas de controle",
+    "Automation": "Automação",
+    "Software engineering": "Engenharia de software",
+    "Mathematics": "Matemática",
+    "Mechatronics": "Mecatrônica",
+    "Robotics": "Robótica",
+    "Version Control": "Controle de versão"
+  },
+  "employment": {
+    "Contract": "Prestação de serviços",
+    "Full-time": "Tempo integral",
+    "Internship and full-time": "Estágio e tempo integral"
+  },
+  "positions": {
+    "reach-ai:1": {
+      "title": "Engenheiro de Software Sênior",
+      "description": "- Desenvolvi APIs Python/FastAPI e fluxos orientados a eventos para **mais de 20 milhões de SMS e e-mails por mês**, com **99,9% de confiabilidade de entrega** e capacidade para **picos 50 vezes maiores**, por meio de melhorias em filas e idempotência.\n- Estou construindo um agente de agendamento por **voz e SMS**, com marcação, remarcação e cancelamento via LangGraph, tool calling, RAG e APIs de agenda.\n- Implementei avaliações comportamentais, guardrails, idempotência com Redis e observabilidade com LangSmith e logs de auditoria. Otimizei a latência mediana de resposta por voz para **aproximadamente 2 segundos** em testes."
+    },
+    "guiavet:1": {
+      "title": "Head de Engenharia e Líder de Produto",
+      "description": "- Liderei cinco engenheiros, com responsabilidade por priorização, decisões técnicas e entregas conforme o SaaS B2B veterinário amadurecia.\n- Mantive a continuidade técnica da plataforma, reduzindo custos de infraestrutura e operação por meio de automação.\n- Evoluí prontuários, integração de referências de medicamentos, dispensação em farmácias com validação externa, templates de prescrição e desempenho de PDFs de várias páginas.\n- Entreguei mudanças completas no backend Python/Django, frontend Vue.js e operações AWS, em colaboração com engenheiros sêniores."
+    },
+    "guiavet:2": {
+      "title": "Gerente de Produto",
+      "description": "- Conduzi o roadmap do Guiavet PRO, alinhando stakeholders, liderança, design e engenharia.\n- Usei entrevistas, análise competitiva e dados de uso para redesenhar fluxos clínicos, reduzindo o tempo de algumas operações críticas em **até 80%** e os **indicadores de churn relacionados à usabilidade em até 95%** no primeiro mês após o lançamento.\n- Expandi o produto para veterinários que atendem outras clínicas e para clínicas, adaptando empacotamento e fluxos de agenda, saúde e cobrança.\n- Lancei uma plataforma de sites profissionais para veterinários com melhorias de SEO, metadados e desempenho, e alinhei capacidade do time, prioridades e prazos."
+    },
+    "guiavet:3": {
+      "title": "Engenheiro de Software e Dados",
+      "description": "- Desenvolvi e escalei módulos centrais do Guiavet PRO com Django, PostgreSQL e AWS.\n- Conduzi modelagem de dados e discussões de domínio, equilibrando velocidade de entrega e manutenção; construí ETLs e dashboards SQL para finanças, adoção e comportamento de uso.\n- Mentorei engenheiros iniciantes em backend e dados.\n- Estruturei workers assíncronos com Django APScheduler e SQS, um microsserviço de PDFs e melhorias de escala com nginx e cache de métricas de saúde."
+    },
+    "qdois:1": {
+      "title": "Engenheiro de Dados",
+      "description": "- Comecei como estagiário em análise de dados e continuei como engenheiro de dados na mesma equipe.\n- Construí ETLs com Azure Data Factory, Databricks e PySpark, consolidando bancos relacionais, SFTP e APIs em um data lake.\n- Apoiei a transformação digital, a redução de custos e a base para BI, analytics e ML.\n- Implementei CI/CD com Azure DevOps e Git e traduzi necessidades de negócio em modelos e pipelines de dados."
+    }
+  }
+}
