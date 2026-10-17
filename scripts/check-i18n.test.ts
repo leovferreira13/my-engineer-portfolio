@@ -52,10 +52,14 @@ test("language links preserve section, filters and anchors without duplicate pre
     "/br/projects?project=x#sports-data-visualizer"
   )
   assert.equal(
-    localizePath("/br/decisions?project=sports-data-visualizer", "de"),
-    "/de/decisions?project=sports-data-visualizer"
+    localizePath("/br/journal?project=sports-data-visualizer", "de"),
+    "/de/journal?project=sports-data-visualizer"
   )
-  assert.equal(localizePath("/journal/a-note", "nl"), "/nl/decisions/a-note")
+  assert.equal(localizePath("/journal/a-note", "nl"), "/nl/journal/a-note")
+  assert.equal(
+    localizePath("/br/decisions/a-note", "de"),
+    "/de/journal/a-note"
+  )
   assert.equal(localizePath("/", "en"), "/en")
   assert.equal(
     localizePath("https://github.com/leovferreira13", "br"),
@@ -66,7 +70,7 @@ test("profile navigation is not active on every localized subpage", () => {
   assert.equal(activeNavigation("/br/projects", "/br"), false)
   assert.equal(activeNavigation("/br", "/br"), true)
   assert.equal(
-    activeNavigation("/de/decisions/some-note", "/de/decisions"),
+    activeNavigation("/de/journal/some-note", "/de/journal"),
     true
   )
   assert.equal(activeNavigation("/en/projects-other", "/en/projects"), false)

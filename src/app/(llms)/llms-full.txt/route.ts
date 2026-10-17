@@ -72,14 +72,14 @@ async function getDecisionContent() {
   const text = await Promise.all(
     allPosts.map(
       async (item) =>
-        `---\ntitle: "${item.metadata.title}"\ndescription: "${item.metadata.description}"\nlast_updated: "${format(new Date(item.metadata.updatedAt), "MMMM d, yyyy")}"\nsource: "${SITE_INFO.url}/en/decisions/${item.slug}"\n---\n\n${await getLLMText(item)}`
+        `---\ntitle: "${item.metadata.title}"\ndescription: "${item.metadata.description}"\nlast_updated: "${format(new Date(item.metadata.updatedAt), "MMMM d, yyyy")}"\nsource: "${SITE_INFO.url}/en/journal/${item.slug}"\n---\n\n${await getLLMText(item)}`
     )
   )
   return text.join("\n\n")
 }
 
 async function getContent() {
-  return `This document contains comprehensive information about ${USER.displayName}'s professional profile, portfolio, and decision-log content. It includes professional details, work experience, education, projects, publications, and published decision-log entries. This data is formatted for consumption by Large Language Models (LLMs) to provide accurate and up-to-date information about ${USER.displayName}'s background, skills, and expertise as a Product Engineer.
+  return `This document contains comprehensive information about ${USER.displayName}'s professional profile, portfolio, and journal content. It includes professional details, work experience, education, projects, publications, and published journal entries. This data is formatted for consumption by Large Language Models (LLMs) to provide accurate and up-to-date information about ${USER.displayName}'s background, skills, and expertise as a Product Engineer.
 
 # Leonardo Ferreira
 
@@ -91,7 +91,7 @@ ${educationText}
 ${projectsText}
 ${awardsText}
 
-## Decision Log
+## Journal
 
 ${await getDecisionContent()}`
 }

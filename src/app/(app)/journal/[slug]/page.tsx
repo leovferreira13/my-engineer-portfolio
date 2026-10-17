@@ -5,5 +5,5 @@ export default async function Page({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  permanentRedirect(`/en/decisions/${slug}`)
+  permanentRedirect(`/en/journal/${slug}`)
 }

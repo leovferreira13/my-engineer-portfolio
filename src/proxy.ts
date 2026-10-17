@@ -10,8 +10,14 @@ export function proxy(request: NextRequest) {
   requestHeaders.set("x-portfolio-locale", locale)
 
   if (isLocale(segments[0] || "")) {
+    if (segments[1] === "decisions") {
+      const url = request.nextUrl.clone()
+      segments[1] = "journal"
+      url.pathname = `/${segments.join("/")}`
+      return NextResponse.redirect(url, 308)
+    }
     if (
-      segments[1] === "decisions" &&
+      segments[1] === "journal" &&
       segments.length > 2 &&
       (pathname.endsWith(".mdx") ||
         request.headers.get("accept")?.includes("text/markdown"))
