@@ -1,8 +1,11 @@
+import { LanguagesIcon } from "lucide-react"
+
 import { USER } from "@/features/portfolio/data/user"
 import { getI18n } from "@/i18n/request"
 
 import { Panel, PanelContent } from "../panel"
 import { EmailItem } from "./email-item"
+import { IntroItem, IntroItemContent, IntroItemIcon } from "./intro-item"
 import { JobItem } from "./job-item"
 
 export async function Overview() {
@@ -24,7 +27,12 @@ export async function Overview() {
             UTC−3 · {t.remote}
           </span>
         </div>
-        <p className="text-sm text-muted-foreground">{t.languages}</p>
+        <IntroItem>
+          <IntroItemIcon>
+            <LanguagesIcon aria-hidden="true" />
+          </IntroItemIcon>
+          <IntroItemContent>{t.languages}</IntroItemContent>
+        </IntroItem>
       </PanelContent>
     </Panel>
   )

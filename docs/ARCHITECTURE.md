@@ -58,6 +58,8 @@ The list below is the **living summary of decisions still in force**. Update it 
 
 `src/lib/site-url.ts` resolves an explicit `APP_URL`, Railway public domain, or local-only fallback. Static metadata needs a rebuild after changing domains. [DEPLOYMENT.md](DEPLOYMENT.md) covers the Railway contract.
 
+Grouped company histories show the shared employment type and total tenure below the company heading; each position keeps its own dates and duration. `src/features/portfolio/lib/employment-duration.ts` counts calendar months inclusively, merges overlapping promotion months, and excludes gaps. Current roles use the current UTC month; year-only education dates do not imply month-level precision. Durations are formatted for each interface language.
+
 ## Component registry
 
 The registry is built on **shadcn/ui** conventions: each item type is declared in a `_registry.ts` file and built into generated artifacts for the site and for distribution.

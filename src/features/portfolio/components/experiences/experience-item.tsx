@@ -4,6 +4,10 @@ import { UTM_PARAMS } from "@/config/site"
 import { getI18n } from "@/i18n/request"
 import { addQueryParams } from "@/utils/url"
 
+import {
+  employmentMonths,
+  formatEmploymentDuration,
+} from "../../lib/employment-duration"
 import type { Experience } from "../../types/experiences"
 import { ExperiencePositionItem } from "./experience-position-item"
 
@@ -14,7 +18,21 @@ export async function ExperienceItem({
   experience: Experience
   anchorPrefixId?: string
 }) {
-  const { t } = await getI18n()
+  const { locale, t } = await getI18n()
+  const isGrouped = experience.positions.length > 1
+  const firstType = experience.positions[0]?.employmentType
+  const sharedEmploymentType =
+    isGrouped &&
+    experience.positions.every(
+      (position) => position.employmentType === firstType
+    )
+      ? firstType
+      : undefined
+  const months = isGrouped
+    ? employmentMonths(
+        experience.positions.map((position) => position.employmentPeriod)
+      )
+    : undefined
   return (
     <div
       id={`${anchorPrefixId}-${experience.id}`}
@@ -60,9 +78,31 @@ export async function ExperienceItem({
         )}
       </div>
 
+      {isGrouped && months !== undefined && (
+        <div className="-mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 pl-9 text-sm text-muted-foreground">
+          {sharedEmploymentType && (
+            <>
+              <dl>
+                <dt className="sr-only">{t.employmentType}</dt>
+                <dd>{sharedEmploymentType}</dd>
+              </dl>
+              <span aria-hidden="true">·</span>
+            </>
+          )}
+          <dl>
+            <dt className="sr-only">{t.totalTenure}</dt>
+            <dd>{formatEmploymentDuration(months, locale)}</dd>
+          </dl>
+        </div>
+      )}
+
       <div className="relative space-y-4 before:absolute before:left-3 before:h-full before:w-px before:bg-border">
         {experience.positions.map((position) => (
-          <ExperiencePositionItem key={position.id} position={position} />
+          <ExperiencePositionItem
+            key={position.id}
+            position={position}
+            showEmploymentType={!sharedEmploymentType || months === undefined}
+          />
         ))}
       </div>
     </div>
