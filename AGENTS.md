@@ -62,6 +62,10 @@ pnpm registry:build  # Build shadcn registry
 
 ---
 
+## README screenshot freshness
+
+For **every revision to the portfolio's content, layout, styles, navigation, or behavior**, build and run the current revision locally, then run `pnpm capture:portfolio` against that server before committing. Inspect both captures and commit them with the change. The README's `docs/screenshots/profile.png` must always show the current English profile in **dark mode**; `profile-mobile.png` shows the current Portuguese profile in dark mode. Do not reuse an older capture or capture a deployed branch that lacks the changes under review. If a capture is visually identical, verify it was regenerated anyway. This is part of completing a portfolio revision, not an optional documentation task.
+
 ## GitHub source control
 
 When a work item is **ready to commit**, or the user asks for **commits**, **branches**, or **pull requests** under the agreed workflow, read and follow [`.agents/skills/github-source-control/SKILL.md`](.agents/skills/github-source-control/SKILL.md) (branch from `develop` by default, no direct push to `main`/`develop`, conventional commits, open PRs with a documented body).

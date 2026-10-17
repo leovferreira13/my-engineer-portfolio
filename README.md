@@ -6,11 +6,11 @@ My professional portfolio: the products I have worked on, the problems I help so
 
 <!-- deployment-url:start -->
 
-**Website:** not published yet. The production link will be added after the first Railway deployment.
+**[Visit the live site](https://my-engineer-portfolio-production.up.railway.app)** — production tracks `main`; the portfolio revisions in PR #18 become visible after integration and deployment.
 
 <!-- deployment-url:end -->
 
-![Leonardo Ferreira's portfolio profile](docs/screenshots/profile.png)
+![Current Leonardo Ferreira portfolio in dark mode](docs/screenshots/profile.png)
 
 ## About me
 
@@ -94,7 +94,9 @@ With the site running locally:
 pnpm capture:portfolio
 ```
 
-This regenerates `docs/screenshots/profile.png` and a mobile capture using Puppeteer. Set `PORTFOLIO_BASE_URL` if the server is not at `http://localhost:3000`. Screenshots are real browser renders, not design mockups.
+This regenerates `docs/screenshots/profile.png` and a mobile capture using Puppeteer. Set `PORTFOLIO_BASE_URL` if the server is not at `http://localhost:3000`. Screenshots are real browser renders.
+
+Every portfolio revision must refresh and visually inspect both screenshots from the current local production build before committing. `pnpm capture:portfolio` captures the English desktop and Portuguese mobile profiles in dark mode, independently of OS or saved theme preferences. See `AGENTS.md` and [Getting started](docs/GETTING-STARTED.md#keep-readme-captures-current).
 
 ## Architecture
 
@@ -120,4 +122,4 @@ Machine-readable `/llms.txt` and `/llms-full.txt` are optional public English su
 
 ## Machine-readable profile
 
-`/llms.txt` is a short English Markdown index linking to `/llms-full.txt` and the individual profile exports. Both `.txt` routes return inline UTF-8 `text/plain`, so they can be read in a browser or fetched by a tool. The HTML head advertises the index with `rel="describedby"`. These are optional conventions, not a promise that every LLM will discover or consume them. No `/llm.txt` alias is needed. Configure the real public origin before publishing so exported absolute links point to the deployed site.
+`/llms.txt` is a short English Markdown index linking to `/llms-full.txt` and the individual profile exports. Both `.txt` routes return inline UTF-8 `text/plain` without caching, so they can be read in a browser or fetched by a tool. The HTML head advertises the index with `rel="describedby"`. These are optional conventions, not a promise that every LLM will discover or consume them. No `/llm.txt` alias is needed. Configure the real public origin before publishing so exported absolute links point to the deployed site.

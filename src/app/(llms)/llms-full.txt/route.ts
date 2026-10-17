@@ -96,13 +96,13 @@ ${awardsText}
 ${await getDecisionContent()}`
 }
 
-export const revalidate = false
-export const dynamic = "force-static"
+export const dynamic = "force-dynamic"
 
 export async function GET() {
   return new Response(await getContent(), {
     headers: {
       "Content-Type": "text/plain; charset=utf-8",
+      "Cache-Control": "no-store",
       "Content-Disposition": "inline",
       "X-Content-Type-Options": "nosniff",
     },

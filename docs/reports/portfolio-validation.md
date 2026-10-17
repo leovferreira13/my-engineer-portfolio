@@ -52,7 +52,7 @@ The command menu was also simplified to current localized navigation, themes, re
 
 The retained registry Markdown pipeline still emits the previously recorded Turbopack file-tracing warning; compilation and production serving pass. Original authored decision entries are not silently translated. Publishing translated articles can be added explicitly once there is real writing.
 
-No production deployment, merge, or repository visibility change is included. The actual portfolio URL and the GitHub repository Website setting should be set to the verified Railway origin after publication.
+No source deployment, merge, or repository visibility change is included. The existing Railway domain target was corrected from 3000 to 8080 on 2026-10-17; production still runs the prior `main` commit. README now links to the verified responding origin.
 
 ## Expanded positioning and controls (2026-10-17)
 
@@ -61,3 +61,13 @@ Reviewed the four role-specific CVs (Product Engineer, Forward Deployed Engineer
 The language control uses the theme tooltip design, displays Shift+L, and opens from that shortcut. G → L continues to navigate to Journal. Explore the journal uses the shared outline Button.
 
 The prior local production build returned nonempty Markdown and displayed it in Chromium, so the reported blank browser view was not reproduced locally. Both `.txt` endpoints now explicitly return `text/plain; charset=utf-8`, `Content-Disposition: inline`, and `X-Content-Type-Options: nosniff`; production-build browser tests compare the entire displayed body with the fetched response and verify the expanded English export. The HTML head advertises `/llms.txt`. The singular `/llm.txt` remains 404, without redundant aliases. This verification does not establish behavior at an unprovided deployed URL.
+
+## Footer, capture freshness, and production networking (2026-10-17)
+
+- Explore the projects now uses the shared small outline Button, matching the other section actions. Verified in all five languages on desktop and mobile (10 views).
+- Footer has no grid/border/separator lines; its links are LinkedIn then GitHub, matching the profile cards. Verified DOM order and absence of grid classes in all 10 views; inspected the dark-mode Journal/footer render.
+- `capture:portfolio` explicitly sets dark mode, waits for fonts/images, verifies the profile and HTTP status, and rejects overflow. Regenerated and inspected the English desktop and Portuguese mobile captures from the current local production build. AGENTS.md requires recapture for every portfolio revision.
+- The production-build text routes return nonempty UTF-8 text inline with nosniff and no-store; Chromium displays the complete fetched response. Inspected `/llms.txt` visually. Routes now render on demand to avoid long-lived static response caching.
+- Local production server honored `PORT=8080`; `/en` returned 200 directly and `/` returned 308. Railway healthcheck changed to `/en` to avoid redirect-only health responses.
+- Live Railway diagnosis: domain targeted 3000, runtime listened on 8080, and HTTP logs showed connection refused. Changed only the domain target to 8080; both `/` and `/llms.txt` then returned 200 with no upstream error. The deployment remains `main@9a0b833`, so public `/llms.txt` still contains the upstream template until PR #18 is integrated and deployed.
+- Full lint, TypeScript, production build, 15 content tests, and diff whitespace checks pass. No source redeploy or merge was performed.

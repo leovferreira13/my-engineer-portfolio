@@ -109,6 +109,7 @@ test("machine index is inline UTF-8 text with real Markdown lines and current li
     "text/plain; charset=utf-8"
   )
   assert.equal(response.headers.get("Content-Disposition"), "inline")
+  assert.equal(response.headers.get("Cache-Control"), "no-store")
   assert.equal(response.headers.get("X-Content-Type-Options"), "nosniff")
   const text = await response.text()
   assert.match(text, /^# Leonardo Ferreira\n\n> /)

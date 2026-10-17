@@ -1,7 +1,7 @@
 import { SITE_INFO } from "@/config/site"
 import { getJournalEntries } from "@/features/journal/data/entries"
 import { USER } from "@/features/portfolio/data/user"
-export const dynamic = "force-static"
+export const dynamic = "force-dynamic"
 export function GET() {
   return new Response(
     `# ${USER.displayName}\n\n> ${USER.bio}\n\n## Professional profile\n\n- [Full profile](${SITE_INFO.url}/llms-full.txt): Complete English profile, experience, capabilities, projects, and publications.\n- [About](${SITE_INFO.url}/about.md)\n- [Experience](${SITE_INFO.url}/experience.md)\n- [Education](${SITE_INFO.url}/education.md)\n- [Projects](${SITE_INFO.url}/projects.md)\n- [Journal](${SITE_INFO.url}/en/journal)\n\n## Published journal entries\n\n${
@@ -15,6 +15,7 @@ export function GET() {
     {
       headers: {
         "Content-Type": "text/plain; charset=utf-8",
+        "Cache-Control": "no-store",
         "Content-Disposition": "inline",
         "X-Content-Type-Options": "nosniff",
       },

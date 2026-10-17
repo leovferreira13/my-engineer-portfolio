@@ -9,3 +9,7 @@ Use Node.js 22 and pnpm 10.33.0. Run `pnpm install --frozen-lockfile`, copy `.en
 Run `pnpm check-types`, `pnpm lint`, `pnpm test:content`, and `pnpm build` for implementation validation. `pnpm capture:portfolio` captures the running profile for the README. [JOURNAL.md](JOURNAL.md) covers writing and publishing.
 
 The inherited registry build requires Bun; run it only when changing registry source. The pre-commit hook uses lint-staged to format/lint staged changes. No registry rebuild is needed for professional data or journal entries.
+
+## Keep README captures current
+
+For every portfolio revision, run a fresh production build and serve that revision locally before `pnpm capture:portfolio`. Set `PORTFOLIO_BASE_URL` if the local server uses another origin. The script explicitly loads `/en` for the desktop and `/br` for mobile, sets dark mode independently of saved preferences, and waits for fonts and images. It rejects HTTP errors, a different profile, or horizontal overflow. Inspect both screenshots and commit them with the implementation, even when the desktop crop happens to look unchanged. The mandatory rule is in `AGENTS.md`.

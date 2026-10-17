@@ -1,5 +1,7 @@
+import { ArrowRightIcon } from "lucide-react"
 import Link from "next/link"
 
+import { Button } from "@/components/ui/button"
 import { EntryList } from "@/features/journal/components/entry-list"
 import { getJournalEntries } from "@/features/journal/data/entries"
 import { PROJECTS } from "@/features/portfolio/data/projects"
@@ -68,12 +70,12 @@ export default async function JournalPage({
           <p className="mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground">
             {projectId && !selected ? t.chooseProject : t.emptyBody}
           </p>
-          <Link
-            className="mt-6 inline-block text-sm underline underline-offset-4"
-            href={localizePath("/projects", locale)}
-          >
-            {t.exploreProjects}
-          </Link>
+          <Button variant="outline" size="sm" asChild className="mt-6">
+            <Link href={localizePath("/projects", locale)}>
+              {t.exploreProjects}
+              <ArrowRightIcon aria-hidden="true" />
+            </Link>
+          </Button>
         </section>
       )}
     </div>
