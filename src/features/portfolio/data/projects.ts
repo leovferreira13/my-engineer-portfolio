@@ -5,7 +5,7 @@ export const PROJECTS: Project[] = [
     id: "sports-data-visualizer",
     title: "Football, Visualized",
     period: { start: "10.2026" },
-    link: "https://sports-data-visualizer-production.up.railway.app/en",
+    link: "https://sports-data.leoferreira.dev.br/en",
     repository: "https://github.com/leovferreira13/sports-data-visualizer",
     image: "/projects/football-visualized.png",
     imageAlt:
