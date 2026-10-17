@@ -23,7 +23,7 @@ export function localizePath(path: string, locale: Locale): string {
   const url = new URL(path, "https://portfolio.invalid")
   const segments = url.pathname.split("/").filter(Boolean)
   if (isLocale(segments[0] || "")) segments.shift()
-  if (["journal", "decisions"].includes(segments[0])) segments[0] = "decisions"
+  if (segments[0] === "decisions") segments[0] = "journal"
   return `/${locale}${segments.length ? "/" + segments.join("/") : ""}${url.search}${url.hash}`
 }
 export function activeNavigation(path: string, href: string): boolean {

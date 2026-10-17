@@ -17,7 +17,7 @@ export async function JournalPreview() {
   return (
     <Panel id="journal">
       <PanelHeader>
-        <PanelTitle>{t.decisions}</PanelTitle>
+        <PanelTitle>{t.journal}</PanelTitle>
       </PanelHeader>
       <PanelContent>
         {entries.length ? (
@@ -28,10 +28,10 @@ export async function JournalPreview() {
           </p>
         )}
         <Link
-          href={localizePath("/decisions", locale)}
+          href={localizePath("/journal", locale)}
           className="mt-4 inline-block text-sm underline underline-offset-4"
         >
-          {t.visitDecisions}
+          {t.visitJournal}
         </Link>
       </PanelContent>
     </Panel>

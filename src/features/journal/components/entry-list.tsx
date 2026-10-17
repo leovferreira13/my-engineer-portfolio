@@ -30,7 +30,7 @@ export async function EntryList({ entries }: { entries: JournalEntry[] }) {
             <h2 className="text-xl font-semibold">
               <Link
                 className="hover:underline"
-                href={localizePath(`/decisions/${entry.slug}`, locale)}
+                href={localizePath(`/journal/${entry.slug}`, locale)}
               >
                 {entry.metadata.title}
               </Link>

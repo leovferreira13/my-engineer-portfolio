@@ -63,7 +63,7 @@ export async function ProjectCard({ project }: { project: Project }) {
             </a>
           )}
           <Link
-            href={localizePath(`/decisions?project=${project.id}`, locale)}
+            href={localizePath(`/journal?project=${project.id}`, locale)}
             className="underline underline-offset-4"
           >
             {t.engineeringNotes}

@@ -5,7 +5,7 @@ import { SITE_INFO } from "@/config/site"
 import { languageTags, locales, localizePath } from "./config"
 import { getI18n } from "./request"
 export async function localizedMetadata(
-  section: "profile" | "projects" | "decisions"
+  section: "profile" | "projects" | "journal"
 ): Promise<Metadata> {
   const { locale, dictionary, t } = await getI18n()
   const path = section === "profile" ? "/" : `/${section}`

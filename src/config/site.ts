@@ -22,7 +22,7 @@ export function getMainNav(locale: Locale): NavItem[] {
   return [
     { title: t.profile, href: localizePath("/", locale) },
     { title: t.projects, href: localizePath("/projects", locale) },
-    { title: t.decisions, href: localizePath("/decisions", locale) },
+    { title: t.journal, href: localizePath("/journal", locale) },
   ]
 }
 export const MAIN_NAV = getMainNav("en")

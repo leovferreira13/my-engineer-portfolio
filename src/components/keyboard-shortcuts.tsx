@@ -9,6 +9,6 @@ export function KeyboardShortcuts() {
     { locale } = useI18n()
   useHotkeys("g>h", () => router.push(localizePath("/", locale)))
   useHotkeys("g>p", () => router.push(localizePath("/projects", locale)))
-  useHotkeys("g>l", () => router.push(localizePath("/decisions", locale)))
+  useHotkeys("g>l", () => router.push(localizePath("/journal", locale)))
   return null
 }

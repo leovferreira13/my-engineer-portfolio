@@ -84,9 +84,9 @@ export function CommandMenu({
               <FolderIcon />
               {t.projects}
             </CommandItem>
-            <CommandItem onSelect={() => navigate("/decisions")}>
+            <CommandItem onSelect={() => navigate("/journal")}>
               <NotebookPenIcon />
-              {t.decisions}
+              {t.journal}
             </CommandItem>
           </CommandGroup>
           <CommandGroup heading={t.profile}>
@@ -114,13 +114,13 @@ export function CommandMenu({
             </CommandItem>
           </CommandGroup>
           {docs.length > 0 && (
-            <CommandGroup heading={t.decisions}>
+            <CommandGroup heading={t.journal}>
               {docs
                 .filter((doc) => doc.category === "journal")
                 .map((doc) => (
                   <CommandItem
                     key={doc.slug}
-                    onSelect={() => navigate(`/decisions/${doc.slug}`)}
+                    onSelect={() => navigate(`/journal/${doc.slug}`)}
                   >
                     {doc.title}
                   </CommandItem>
