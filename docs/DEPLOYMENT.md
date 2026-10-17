@@ -22,7 +22,7 @@ Generate the Railway domain first if needed, then rebuild with that domain avail
 - `/og/simple`: portfolio-branded social image.
 - `/blog`: redirects to `/en/journal`; upstream personal post URLs return 404.
 
-The published domain is https://my-engineer-portfolio-production.up.railway.app. Set `APP_URL` to that origin (or rely on `RAILWAY_PUBLIC_DOMAIN`) so metadata, RSS, sitemap, and exports embed the correct URLs. Each Railway build serves the commit that triggered it; compare the deployed revision with the repository when debugging production behavior. Source code may be made public independently of deployment.
+The published domain is https://leoferreira.dev.br. Set `APP_URL` to that custom origin; it takes precedence over the Railway-generated `RAILWAY_PUBLIC_DOMAIN` so metadata, RSS, sitemap, and exports embed the correct URLs. Each Railway build serves the commit that triggered it; compare the deployed revision with the repository when debugging production behavior. Source code may be made public independently of deployment.
 
 ## Optional analytics
 

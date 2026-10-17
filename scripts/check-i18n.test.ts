@@ -4,6 +4,10 @@ import { test } from "node:test"
 import { GET as llmsIndex } from "../src/app/(llms)/llms.txt/route"
 import { GET as vcard } from "../src/app/vcard/route"
 import { TECH_STACK_GROUP_ORDER } from "../src/features/portfolio/data/tech-stack"
+import {
+  employmentMonths,
+  formatEmploymentDuration,
+} from "../src/features/portfolio/lib/employment-duration"
 import { formatPositionAsMarkdown } from "../src/features/portfolio/lib/format-position-markdown"
 import {
   activeNavigation,
@@ -121,5 +125,49 @@ test("machine index is inline UTF-8 text with real Markdown lines and current li
   assert.match(
     formatPositionAsMarkdown(position, "Reach.ai"),
     /prelaunch testing/
+  )
+})
+
+test("company tenure counts promotion months once and keeps role durations separate", () => {
+  for (const locale of locales) {
+    const guiavet = localizedContent(locale).experiences.find(
+      (item) => item.id === "guiavet"
+    )!
+    assert.equal(
+      employmentMonths(
+        guiavet.positions.map((position) => position.employmentPeriod)
+      ),
+      48
+    )
+    assert.deepEqual(
+      guiavet.positions.map((position) =>
+        employmentMonths([position.employmentPeriod])
+      ),
+      [13, 12, 25]
+    )
+    assert.ok(formatEmploymentDuration(48, locale).length > 0)
+    assert.ok(formatEmploymentDuration(13, locale).length > 0)
+  }
+  assert.equal(formatEmploymentDuration(48, "en"), "4 yrs")
+  assert.equal(formatEmploymentDuration(48, "br"), "4 anos")
+})
+
+test("tenure excludes gaps, handles current months in UTC and preserves imprecise dates", () => {
+  assert.equal(
+    employmentMonths([
+      { start: "01.2020", end: "02.2020" },
+      { start: "05.2020", end: "05.2020" },
+    ]),
+    3
+  )
+  assert.equal(
+    employmentMonths([{ start: "11.2025" }], new Date("2026-10-01T00:00:00Z")),
+    12
+  )
+  assert.equal(employmentMonths([{ start: "2017", end: "2022" }]), undefined)
+  assert.equal(employmentMonths([{ start: "13.2020" }]), undefined)
+  assert.equal(
+    employmentMonths([{ start: "12.2021", end: "11.2021" }]),
+    undefined
   )
 })

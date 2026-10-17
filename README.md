@@ -4,13 +4,13 @@ I turn user problems into software, from the first question to production.
 
 <!-- deployment-url:start -->
 
-**[Explore my portfolio](https://my-engineer-portfolio-production.up.railway.app)**
+**[Explore my portfolio](https://leoferreira.dev.br)**
 
 <!-- deployment-url:end -->
 
 [LinkedIn](https://www.linkedin.com/in/leonardo-v-ferreira) · [GitHub](https://github.com/leovferreira13) · [Get in touch](mailto:leovieiraf.599@gmail.com)
 
-[![Leonardo Ferreira's current portfolio in dark mode](docs/screenshots/profile.png)](https://my-engineer-portfolio-production.up.railway.app)
+[![Leonardo Ferreira's current portfolio in dark mode](docs/screenshots/profile.png)](https://leoferreira.dev.br)
 
 ## About me
 
@@ -26,7 +26,7 @@ I bring strong **backend foundations** and product judgment to that process, wit
 - **Backend and data systems:** Python, FastAPI, Django, PostgreSQL, Redis, AWS, and event-driven processing; a data engineering foundation with Azure, Databricks, and PySpark.
 - **Applied AI:** multi-turn agents with LangGraph, OpenAI tool calling, RAG, scheduling integrations, behavioral evaluations, guardrails, and observability. The appointment agent is in prelaunch testing; customer outcomes are still to be measured after launch.
 
-[Read my full experience and capabilities →](https://my-engineer-portfolio-production.up.railway.app/en)
+[Read my full experience and capabilities →](https://leoferreira.dev.br/en)
 
 ## Selected work
 
@@ -34,17 +34,17 @@ I bring strong **backend foundations** and product judgment to that process, wit
 
 An interactive football analytics app that makes expected goals tangible: change the conditions of a shot, inspect the model's features, and explore the estimate. I connected a reproducible StatsBomb Open Data pipeline to XGBoost training and evaluation, browser inference, and a five-language Next.js playground.
 
-**[Try the app](https://sports-data-visualizer-production.up.railway.app/en)** · **[Explore the source](https://github.com/leovferreira13/sports-data-visualizer)**
+**[Try the app](https://sports-data.leoferreira.dev.br/en)** · **[Explore the source](https://github.com/leovferreira13/sports-data-visualizer)**
 
-This is my first public project. [The project catalog](https://my-engineer-portfolio-production.up.railway.app/en/projects) will grow as I publish more work.
+This is my first public project. [The project catalog](https://leoferreira.dev.br/en/projects) will grow as I publish more work.
 
 ## The thinking behind the work
 
-The **[Journal](https://my-engineer-portfolio-production.up.railway.app/en/journal)** is where I'll document engineering decisions, releases, experiments, and what I learn while building. Entries connect to projects and the evidence behind each choice. It currently has no published entries.
+The **[Journal](https://leoferreira.dev.br/en/journal)** is where I'll document engineering decisions, releases, experiments, and what I learn while building. Entries connect to projects and the evidence behind each choice. It currently has no published entries.
 
 ## Read in your language
 
-[English](https://my-engineer-portfolio-production.up.railway.app/en) · [Português](https://my-engineer-portfolio-production.up.railway.app/br) · [Nederlands](https://my-engineer-portfolio-production.up.railway.app/nl) · [Español](https://my-engineer-portfolio-production.up.railway.app/es) · [Deutsch](https://my-engineer-portfolio-production.up.railway.app/de)
+[English](https://leoferreira.dev.br/en) · [Português](https://leoferreira.dev.br/br) · [Nederlands](https://leoferreira.dev.br/nl) · [Español](https://leoferreira.dev.br/es) · [Deutsch](https://leoferreira.dev.br/de)
 
 ## About this repository
 

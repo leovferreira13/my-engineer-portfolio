@@ -21,10 +21,12 @@ import type { ExperiencePosition } from "../../types/experiences"
 export async function ExperiencePositionItem({
   position,
   anchorId,
+  showEmploymentType = true,
 }: {
   position: ExperiencePosition
   /** Optional DOM id for deep links (e.g. education-ufmg). */
   anchorId?: string
+  showEmploymentType?: boolean
 }) {
   const { locale, t } = await getI18n()
   const { start, end } = position.employmentPeriod
@@ -68,7 +70,7 @@ export async function ExperiencePositionItem({
         </div>
 
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1 pl-9 text-sm text-muted-foreground">
-          {position.employmentType && (
+          {showEmploymentType && position.employmentType && (
             <>
               <dl>
                 <dt className="sr-only">{t.employmentType}</dt>

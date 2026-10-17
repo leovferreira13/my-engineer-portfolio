@@ -26,11 +26,7 @@ test("domain changes update all ten current portfolio links and preserve README 
   const result = updateReadmeOrigin(readme, nextOrigin + "/")
   assert.equal(result, readme.split(previousOrigin).join(nextOrigin))
   assert.ok(result.includes("**[Explore my portfolio](" + nextOrigin + ")**"))
-  assert.ok(
-    result.includes(
-      "https://sports-data-visualizer-production.up.railway.app/en"
-    )
-  )
+  assert.ok(result.includes("https://sports-data.leoferreira.dev.br/en"))
   assert.equal(updateReadmeOrigin(result, nextOrigin), result)
 })
 
