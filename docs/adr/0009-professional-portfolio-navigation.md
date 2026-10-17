@@ -13,7 +13,7 @@ Supersedes ADR 0002. The hiring portfolio needs distinct places to understand th
 
 ## Decision
 
-**Use Profile (`/`), Projects (`/projects`), and Engineering Journal (`/journal`) as primary navigation**, on desktop, mobile, and keyboard search. Keep the existing responsive card visual system. Legacy `/blog` redirects to `/journal`; upstream personal posts are removed.
+**Use Profile (`/<locale>`), Projects (`/<locale>/projects`), and Journal (`/<locale>/journal`) as primary navigation**, on desktop, mobile, and keyboard search. Keep the existing responsive card visual system. Legacy `/blog`, unlocalized `/journal`, and `/decisions` redirect to `/en/journal`; upstream personal posts are removed.
 
 ## Options considered
 
