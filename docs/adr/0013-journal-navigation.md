@@ -8,7 +8,7 @@ date: 2026-10-17
 
 ## Context
 
-Supersedes ADR 0009 for public navigation labels and addresses. The writing surface records product and engineering choices; “Engineering Journal” was long for the header, while a generic blog label loses that purpose. The public name is **Journal** (not “Engineering Journal”).
+Supersedes ADR 0009 for public navigation labels and addresses. The writing surface records product and engineering choices; a longer header label was undesirable, while a generic blog label loses that purpose. The public name is **Journal**.
 
 ## Decision
 
