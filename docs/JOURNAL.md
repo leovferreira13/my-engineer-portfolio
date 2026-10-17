@@ -52,3 +52,7 @@ There is no CMS, database, external account, or client-side storage required to 
 ## Interface languages
 
 The five public language routes translate the interface and professional profile. Journal articles keep their original authored English text; other language views display an original-language note. No automatic article translation or duplicate post is created. `/journal/rss` remains a machine-readable English feed without a subscription button.
+
+## Drafts in a public repository
+
+`status: "draft"` and future dates control publication on the website; they do not hide committed source files. In a public repository, anyone can read draft MDX, deleted content in Git history, and references included in it. Keep confidential notes, customer data, employer material, and private career documents outside the repository. Commit only content that is safe to read publicly, even before publication.

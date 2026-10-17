@@ -2,7 +2,8 @@
 type: ADR
 id: "0014"
 title: "Expanded professional narrative with one primary positioning"
-status: active
+status: superseded
+superseded_by: "0015"
 date: 2026-10-17
 ---
 

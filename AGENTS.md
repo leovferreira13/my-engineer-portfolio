@@ -38,6 +38,10 @@ All content lives in `src/features/doc/content/` as MDX files. Journal entries a
 
 ---
 
+## Public-source boundary
+
+Treat every committed file as publicly readable, including drafts, examples, agent configuration, and documentation. Never commit credentials, customer data, confidential employer material, private planning links, or raw private CV/cover-letter inputs. A Journal draft flag is not an access-control boundary. Keep private working notes outside this repository.
+
 ## Coding and implementation
 
 - TypeScript strict mode; explicit types when necessary.
@@ -67,6 +71,8 @@ pnpm registry:build  # Build shadcn registry
 For **every revision to the portfolio's content, layout, styles, navigation, or behavior**, build and run the current revision locally, then run `pnpm capture:portfolio` against that server before committing. Inspect both captures and commit them with the change. The README's `docs/screenshots/profile.png` must always show the current English profile in **dark mode**; `profile-mobile.png` shows the current Portuguese profile in dark mode. Do not reuse an older capture or capture a deployed branch that lacks the changes under review. If a capture is visually identical, verify it was regenerated anyway. This is part of completing a portfolio revision, not an optional documentation task.
 
 ## GitHub source control
+
+**Create every new pull request as a draft by default** (`gh pr create --draft` or API `draft: true`). Keep it in draft during implementation and user-requested refinements; convert an existing ready PR back to draft before continuing work. Only mark it ready for review at the agreed final QA handoff, after implementation, required checks, screenshots, and the PR description are complete. If the user says to keep it draft for now, leave it draft until they indicate the refinement phase is finished. Marking ready does not authorize merging or self-approving. This maintainer preference takes precedence over workflow examples that omit the draft flag.
 
 When a work item is **ready to commit**, or the user asks for **commits**, **branches**, or **pull requests** under the agreed workflow, read and follow [`.agents/skills/github-source-control/SKILL.md`](.agents/skills/github-source-control/SKILL.md) (branch from `develop` by default, no direct push to `main`/`develop`, conventional commits, open PRs with a documented body).
 
