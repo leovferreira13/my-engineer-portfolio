@@ -10,7 +10,7 @@ This document states **why this repository exists** as a product, how it should 
 
 The codebase remains capable of a **shadcn-style registry** and rich **MDX** documentation, but the **default experience** is **portfolio-first**: grounded narrative (experience, education, curated projects, stack, publications), minimal template chrome, and navigation scoped to that story unless explicitly re-enabled for maintainers.
 
-That north star matches the **Linear project** [_Portfolio Product Engineer_](https://linear.app/leonardo-personal/project/portfolio-product-engineer-35f0a60bfa80/overview): treat the site as proof of **how** you decide and ship—not only **what** shipped—so recruiters and peers see product thinking, trade-offs, and evolution over time (including a structured **engineering journal** alongside projects and an **exportable CV**).
+That north star matches the **Linear project** [_Portfolio Product Engineer_](https://linear.app/leonardo-personal/project/portfolio-product-engineer-35f0a60bfa80/overview): treat the site as proof of **how** you decide and ship—not only **what** shipped—so recruiters and peers see product thinking, trade-offs, and evolution over time (including a structured **Journal** alongside projects and an **exportable CV**).
 
 ---
 
@@ -20,11 +20,11 @@ The **authoritative long-form vision, goals, milestones, and notes** for this pr
 
 | In Linear             | Meaning for this repo                                                                                                                                                                                                                       |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Summary**           | High-quality personal portfolio: projects, **engineering decisions**, and **daily journal** for product engineering.                                                                                                                        |
+| **Summary**           | High-quality personal portfolio: projects, **engineering decisions**, and a **Journal** for product engineering.                                                                                                                        |
 | **Vision**            | Show finished work **and** the decision trail: product framing, engineering trade-offs, execution over time.                                                                                                                                |
-| **Goals**             | Projects with **GitHub** context; structured **journal** (logs + rationale); strong **exportable resume**; signal product + engineering thinking to recruiters and peers.                                                                   |
-| **Key surface areas** | **Projects** (descriptions, GitHub, highlighted decisions/outcomes); **Journal / posts** (per-project or traceable narrative of trade-offs and learnings); **Resume** (impact-first, exportable); **Narrative layer** (why, not only what). |
-| **Success**           | Clearly **not** a generic dev portfolio; recruiters grasp **impact and thinking** quickly; **consistent journaling**; projects show **depth**, not only breadth.                                                                            |
+| **Goals**             | Projects with **GitHub** context; structured **Journal** (entries + rationale); strong **exportable resume**; signal product + engineering thinking to recruiters and peers.                                                                   |
+| **Key surface areas** | **Projects** (descriptions, GitHub, highlighted decisions/outcomes); **Journal** (per-project or traceable narrative of trade-offs and learnings); **Resume** (impact-first, exportable); **Narrative layer** (why, not only what). |
+| **Success**           | Clearly **not** a generic dev portfolio; recruiters grasp **impact and thinking** quickly; **consistent Journal** entries; projects show **depth**, not only breadth.                                                                            |
 | **Non-goals**         | Beauty without substance; **static** project lists without context.                                                                                                                                                                         |
 | **Principle**         | **Clarity of thinking** and visible decisions over chasing visual polish alone.                                                                                                                                                             |
 
@@ -80,7 +80,7 @@ Success looks like: a visitor or recruiter understands **role, impact, and speci
 
 ## Current public portfolio surface (2026-10-17)
 
-Profile, Projects, and Engineering Journal form the hiring-facing navigation. The current narrative is Product Engineer: 5+ years across backend/data, product management, technical leadership, and applied AI, taking problems from discovery through production and iteration. Football, Visualized is the first public project. The project-linked journal starts intentionally empty; no fabricated release history is required for launch. See ADRs 0009–0011, [JOURNAL.md](JOURNAL.md), and [DEPLOYMENT.md](DEPLOYMENT.md).
+Profile, Projects, and Journal form the hiring-facing navigation. The current narrative is Product Engineer: 5+ years across backend/data, product management, technical leadership, and applied AI, taking problems from discovery through production and iteration. Football, Visualized is the first public project. The project-linked Journal starts intentionally empty; no fabricated release history is required for launch. See ADRs 0009–0011, [JOURNAL.md](JOURNAL.md), and [DEPLOYMENT.md](DEPLOYMENT.md).
 
 ## Multilingual refinement (2026-10-17)
 

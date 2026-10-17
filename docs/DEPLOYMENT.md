@@ -16,7 +16,7 @@ Generate the Railway domain first if needed, then rebuild with that domain avail
 - `/en/projects`: Football, Visualized links to the real app and public source.
 - `/en/decisions`: honest empty state; filter by project works.
 - `/journal/rss`: valid RSS with no items until a real entry is published.
-- `/sitemap.xml`: profile, projects, and journal on the actual domain; no component/template pages.
+- `/sitemap.xml`: profile, projects, and Journal on the actual domain; no component/template pages.
 - `/robots.txt`: public crawling enabled with the correct sitemap URL.
 - `/llms.txt`, `/llms-full.txt`, `/about.md`, `/projects.md`: Leonardo's narrative; no upstream personal posts.
 - `/og/simple`: portfolio-branded social image.
