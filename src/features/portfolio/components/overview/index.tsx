@@ -1,99 +1,31 @@
-import {
-  LinkIcon,
-  MapPinIcon,
-  MarsIcon,
-  NonBinaryIcon,
-  VenusIcon,
-} from "lucide-react"
-
 import { USER } from "@/features/portfolio/data/user"
-import type { User } from "@/features/portfolio/types/user"
-import { urlToName } from "@/utils/url"
+import { getI18n } from "@/i18n/request"
 
 import { Panel, PanelContent } from "../panel"
-import { CurrentLocalTimeItem } from "./current-local-time-item"
 import { EmailItem } from "./email-item"
-import {
-  IntroItem,
-  IntroItemContent,
-  IntroItemIcon,
-  IntroItemLink,
-} from "./intro-item"
 import { JobItem } from "./job-item"
-import { PhoneItem } from "./phone-item"
 
-export function Overview() {
+export async function Overview() {
+  const { dictionary, t } = await getI18n()
   return (
     <Panel>
-      <h2 className="sr-only">Overview</h2>
-
-      <PanelContent className="space-y-2.5">
-        {USER.jobs.map((job, index) => {
-          return (
-            <JobItem
-              key={index}
-              title={job.title}
-              company={job.company}
-              website={job.website}
-              experienceId={job.experienceId}
-            />
-          )
-        })}
-
-        <div className="grid gap-x-4 gap-y-2.5 sm:grid-cols-2">
-          <IntroItem>
-            <IntroItemIcon>
-              <MapPinIcon />
-            </IntroItemIcon>
-            <IntroItemContent>
-              <IntroItemLink
-                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(USER.address)}`}
-                aria-label={`Location: ${USER.address}`}
-              >
-                {USER.address}
-              </IntroItemLink>
-            </IntroItemContent>
-          </IntroItem>
-
-          <CurrentLocalTimeItem timeZone={USER.timeZone} />
-
-          {USER.phoneNumber && <PhoneItem phoneNumber={USER.phoneNumber} />}
-
+      <h2 className="sr-only">{t.overview}</h2>
+      <PanelContent className="space-y-3">
+        {USER.jobs.map((job) => (
+          <JobItem
+            key={job.company}
+            {...job}
+            title={dictionary.positions["reach-ai:1"]?.title || job.title}
+          />
+        ))}
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
           {USER.email && <EmailItem email={USER.email} />}
-
-          <IntroItem>
-            <IntroItemIcon>
-              <LinkIcon />
-            </IntroItemIcon>
-            <IntroItemContent>
-              <IntroItemLink
-                href={USER.website}
-                aria-label={`Personal website: ${urlToName(USER.website)}`}
-              >
-                {urlToName(USER.website)}
-              </IntroItemLink>
-            </IntroItemContent>
-          </IntroItem>
-
-          <IntroItem>
-            <IntroItemIcon>{getGenderIcon(USER.gender)}</IntroItemIcon>
-            <IntroItemContent aria-label={`Pronouns: ${USER.pronouns}`}>
-              {USER.pronouns}
-            </IntroItemContent>
-          </IntroItem>
+          <span className="text-sm text-muted-foreground">
+            UTC−3 · {t.remote}
+          </span>
         </div>
+        <p className="text-sm text-muted-foreground">{t.languages}</p>
       </PanelContent>
     </Panel>
   )
-}
-
-function getGenderIcon(gender: User["gender"]) {
-  switch (gender) {
-    case "male":
-      return <MarsIcon />
-    case "female":
-      return <VenusIcon />
-    case "non-binary":
-      return <NonBinaryIcon />
-  }
 }

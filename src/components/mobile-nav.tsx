@@ -11,6 +11,8 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { useMediaQuery } from "@/hooks/use-media-query"
+import { activeNavigation } from "@/i18n/config"
+import { useI18n } from "@/i18n/provider"
 import { haptic } from "@/registry/lib/haptic"
 import type { NavItem } from "@/types/nav"
 
@@ -45,11 +47,7 @@ export function MobileNav({ items }: { items: NavItem[] }) {
       >
         <div className="flex flex-col">
           {items.map((link) => {
-            const active =
-              pathname === link.href ||
-              (link.href === "/" // Home page
-                ? ["/", "/index"].includes(pathname || "")
-                : pathname?.startsWith(link.href))
+            const active = activeNavigation(pathname, link.href)
 
             return (
               <Link
@@ -72,12 +70,13 @@ export function MobileNav({ items }: { items: NavItem[] }) {
 function MobileNavTrigger(
   props: Omit<React.ComponentProps<typeof Button>, "children">
 ) {
+  const { t } = useI18n()
   return (
     <Button
       className="group extend-touch-target flex flex-col gap-1 border-none data-open:bg-accent"
       variant="ghost"
       size="icon-sm"
-      aria-label="Toggle Menu"
+      aria-label={t.menu}
       {...props}
     >
       <span className="flex h-0.5 w-4 transform rounded-[1px] bg-foreground transition-transform group-data-[state=open]:translate-y-0.75 group-data-[state=open]:rotate-45" />

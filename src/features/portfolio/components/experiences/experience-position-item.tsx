@@ -1,4 +1,4 @@
-import { BriefcaseBusinessIcon, InfinityIcon } from "lucide-react"
+import { BriefcaseBusinessIcon } from "lucide-react"
 
 import {
   Collapsible,
@@ -12,11 +12,13 @@ import { Markdown } from "@/components/markdown"
 import { Separator } from "@/components/ui/separator"
 import { Tag } from "@/components/ui/tag"
 import { ProseMono } from "@/components/ui/typography"
+import { formatPeriod } from "@/i18n/config"
+import { getI18n } from "@/i18n/request"
 import { cn } from "@/lib/utils"
 
 import type { ExperiencePosition } from "../../types/experiences"
 
-export function ExperiencePositionItem({
+export async function ExperiencePositionItem({
   position,
   anchorId,
 }: {
@@ -24,6 +26,7 @@ export function ExperiencePositionItem({
   /** Optional DOM id for deep links (e.g. education-ufmg). */
   anchorId?: string
 }) {
+  const { locale, t } = await getI18n()
   const { start, end } = position.employmentPeriod
   const isOngoing = !end
 
@@ -64,11 +67,11 @@ export function ExperiencePositionItem({
           </div>
         </div>
 
-        <div className="flex items-center gap-2 pl-9 text-sm text-muted-foreground">
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 pl-9 text-sm text-muted-foreground">
           {position.employmentType && (
             <>
               <dl>
-                <dt className="sr-only">Employment Type</dt>
+                <dt className="sr-only">{t.employmentType}</dt>
                 <dd>{position.employmentType}</dd>
               </dl>
 
@@ -80,17 +83,14 @@ export function ExperiencePositionItem({
           )}
 
           <dl>
-            <dt className="sr-only">Employment Period</dt>
+            <dt className="sr-only">{t.employmentPeriod}</dt>
             <dd className="flex items-center gap-0.5">
-              <span>{start}</span>
+              <span>{formatPeriod(start, locale)}</span>
               <span className="font-mono">—</span>
               {isOngoing ? (
-                <>
-                  <InfinityIcon className="size-4.5 translate-y-[0.5px]" />
-                  <span className="sr-only">Present</span>
-                </>
+                <span>{t.present}</span>
               ) : (
-                <span>{end}</span>
+                <span>{formatPeriod(end!, locale)}</span>
               )}
             </dd>
           </dl>

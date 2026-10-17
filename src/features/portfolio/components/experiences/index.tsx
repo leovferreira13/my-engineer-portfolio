@@ -1,18 +1,22 @@
 import React from "react"
 
-import { EXPERIENCES } from "../../data/experiences"
+import { localizedContent } from "@/i18n/content"
+import { getI18n } from "@/i18n/request"
+
 import { Panel, PanelHeader, PanelTitle } from "../panel"
 import { ExperienceItem } from "./experience-item"
 
-export function Experiences() {
+export async function Experiences() {
+  const { locale, t } = await getI18n()
+  const content = localizedContent(locale)
   return (
     <Panel id="experience">
       <PanelHeader>
-        <PanelTitle>Experience</PanelTitle>
+        <PanelTitle>{t.experience}</PanelTitle>
       </PanelHeader>
 
       <div className="pr-2 pl-4">
-        {EXPERIENCES.map((experience) => (
+        {content.experiences.map((experience) => (
           <ExperienceItem
             key={experience.id}
             experience={experience}

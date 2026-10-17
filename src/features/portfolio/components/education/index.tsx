@@ -1,19 +1,23 @@
 import React from "react"
 
-import { EDUCATION_ENTRIES } from "../../data/education"
+import { localizedContent } from "@/i18n/content"
+import { getI18n } from "@/i18n/request"
+
 import { ExperiencePositionItem } from "../experiences/experience-position-item"
 import { Panel, PanelHeader, PanelTitle } from "../panel"
 
-export function Education() {
+export async function Education() {
+  const { locale, t } = await getI18n()
+  const content = localizedContent(locale)
   return (
     <Panel id="education">
       <PanelHeader>
-        <PanelTitle>Education</PanelTitle>
+        <PanelTitle>{t.education}</PanelTitle>
       </PanelHeader>
 
       <div className="pr-2 pl-4">
         <div className="relative space-y-4 py-4 before:absolute before:left-3 before:h-full before:w-px before:bg-border">
-          {EDUCATION_ENTRIES.map((position) => (
+          {content.education.map((position) => (
             <ExperiencePositionItem
               key={position.id}
               position={position}

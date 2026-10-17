@@ -1,158 +1,183 @@
+import en from "@/i18n/messages/en.json"
+
 import type { TechStack, TechStackSkillGroup } from "../types/tech-stack"
-
-/** Display order for Stack panel section headings. */
 export const TECH_STACK_GROUP_ORDER: readonly TechStackSkillGroup[] = [
-  "Back end",
+  "Product & delivery",
+  "Backend & cloud",
   "Data engineering",
-  "AI",
-] as const
-
+  "Applied AI",
+  "Frontend",
+]
 export const TECH_STACK: TechStack[] = [
-  // Back end
   {
-    key: "python",
+    key: "product-&-delivery-0",
+    title: "User discovery",
+    href: "https://www.nngroup.com/articles/user-interviews/",
+    skillGroup: "Product & delivery",
+    categories: [],
+  },
+  {
+    key: "product-&-delivery-1",
+    title: "Workflow design",
+    href: "https://www.nngroup.com/articles/task-analysis/",
+    skillGroup: "Product & delivery",
+    categories: [],
+  },
+  {
+    key: "product-&-delivery-2",
+    title: "Prioritization & technical scoping",
+    href: "https://www.atlassian.com/agile/product-management",
+    skillGroup: "Product & delivery",
+    categories: [],
+  },
+  {
+    key: "backend-&-cloud-0",
     title: "Python",
     href: "https://www.python.org/",
-    skillGroup: "Back end",
-    categories: ["Language"],
+    skillGroup: "Backend & cloud",
+    categories: [],
   },
   {
-    key: "django",
-    title: "Django",
-    href: "https://www.djangoproject.com/",
-    skillGroup: "Back end",
-    categories: ["Framework"],
-    useLocalAsset: true,
-  },
-  {
-    key: "fastapi",
+    key: "backend-&-cloud-1",
     title: "FastAPI",
     href: "https://fastapi.tiangolo.com/",
-    skillGroup: "Back end",
-    categories: ["Framework"],
-    useLocalAsset: true,
+    skillGroup: "Backend & cloud",
+    categories: [],
   },
   {
-    key: "js",
-    title: "JavaScript",
-    href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-    skillGroup: "Back end",
-    categories: ["Language"],
+    key: "backend-&-cloud-2",
+    title: "Django",
+    href: "https://www.djangoproject.com/",
+    skillGroup: "Backend & cloud",
+    categories: [],
   },
   {
-    key: "nextjs2",
-    title: "Next.js",
-    href: "https://nextjs.org/",
-    skillGroup: "Back end",
-    categories: ["Framework"],
-    theme: true,
-  },
-  {
-    key: "docker",
-    title: "Docker",
-    href: "https://www.docker.com/",
-    skillGroup: "Back end",
-    categories: ["Containerization"],
-  },
-  {
-    key: "postgresql",
+    key: "backend-&-cloud-3",
     title: "PostgreSQL",
     href: "https://www.postgresql.org/",
-    skillGroup: "Back end",
-    categories: ["Database"],
-    useLocalAsset: true,
+    skillGroup: "Backend & cloud",
+    categories: [],
   },
   {
-    key: "mysql",
-    title: "MySQL",
-    href: "https://www.mysql.com/",
-    skillGroup: "Back end",
-    categories: ["Database"],
-  },
-  {
-    key: "mongodb",
+    key: "backend-&-cloud-4",
     title: "MongoDB",
     href: "https://www.mongodb.com/",
-    skillGroup: "Back end",
-    categories: ["Database"],
+    skillGroup: "Backend & cloud",
+    categories: [],
   },
   {
-    key: "redis",
+    key: "backend-&-cloud-5",
     title: "Redis",
     href: "https://redis.io/",
-    skillGroup: "Back end",
-    categories: ["Database"],
+    skillGroup: "Backend & cloud",
+    categories: [],
   },
   {
-    key: "git",
-    title: "Git",
-    href: "https://git-scm.com/",
-    skillGroup: "Back end",
-    categories: ["Version Control"],
+    key: "backend-&-cloud-6",
+    title: "AWS Lambda, SQS & API Gateway",
+    href: "https://aws.amazon.com/",
+    skillGroup: "Backend & cloud",
+    categories: [],
   },
-  // Data engineering
   {
-    key: "pandas",
-    title: "pandas",
-    href: "https://pandas.pydata.org/",
+    key: "data-engineering-0",
+    title: "Databricks",
+    href: "https://www.databricks.com/",
     skillGroup: "Data engineering",
-    categories: ["Library"],
-    useLocalAsset: true,
+    categories: [],
   },
   {
-    key: "apache-spark",
-    title: "Apache Spark",
-    href: "https://spark.apache.org/",
+    key: "data-engineering-1",
+    title: "PySpark",
+    href: "https://spark.apache.org/docs/latest/api/python/",
     skillGroup: "Data engineering",
-    categories: ["Data Processing"],
-    useLocalAsset: true,
-  },
-  // AI
-  {
-    key: "claude",
-    title: "Claude",
-    href: "https://claude.ai/",
-    skillGroup: "AI",
-    categories: ["Tools", "AI"],
+    categories: [],
   },
   {
-    key: "cursor",
-    title: "Cursor",
-    href: "https://cursor.com/",
-    skillGroup: "AI",
-    categories: ["Tools", "AI"],
-    theme: true,
+    key: "data-engineering-2",
+    title: "Azure Data Factory",
+    href: "https://azure.microsoft.com/products/data-factory/",
+    skillGroup: "Data engineering",
+    categories: [],
+  },
+  {
+    key: "data-engineering-3",
+    title: "ETL & data modeling",
+    href: "https://learn.microsoft.com/azure/architecture/data-guide/",
+    skillGroup: "Data engineering",
+    categories: [],
+  },
+  {
+    key: "applied-ai-0",
+    title: "LangGraph",
+    href: "https://docs.langchain.com/oss/python/langgraph/overview",
+    skillGroup: "Applied AI",
+    categories: [],
+  },
+  {
+    key: "applied-ai-1",
+    title: "OpenAI tool calling",
+    href: "https://platform.openai.com/docs/guides/function-calling",
+    skillGroup: "Applied AI",
+    categories: [],
+  },
+  {
+    key: "applied-ai-2",
+    title: "RAG & vector search",
+    href: "https://www.databricks.com/product/machine-learning/vector-search",
+    skillGroup: "Applied AI",
+    categories: [],
+  },
+  {
+    key: "applied-ai-3",
+    title: "Behavioral evaluations & guardrails",
+    href: "https://platform.openai.com/docs/guides/evals",
+    skillGroup: "Applied AI",
+    categories: [],
+  },
+  {
+    key: "applied-ai-4",
+    title: "LangSmith",
+    href: "https://www.langchain.com/langsmith",
+    skillGroup: "Applied AI",
+    categories: [],
+  },
+  {
+    key: "frontend-0",
+    title: "React",
+    href: "https://react.dev/",
+    skillGroup: "Frontend",
+    categories: [],
+  },
+  {
+    key: "frontend-1",
+    title: "Next.js",
+    href: "https://nextjs.org/",
+    skillGroup: "Frontend",
+    categories: [],
+  },
+  {
+    key: "frontend-2",
+    title: "TypeScript",
+    href: "https://www.typescriptlang.org/",
+    skillGroup: "Frontend",
+    categories: [],
+  },
+  {
+    key: "frontend-3",
+    title: "Vue.js",
+    href: "https://vuejs.org/",
+    skillGroup: "Frontend",
+    categories: [],
   },
 ]
-
-const stackByGroup = (): Map<TechStackSkillGroup, TechStack[]> => {
-  const map = new Map<TechStackSkillGroup, TechStack[]>()
-  for (const item of TECH_STACK) {
-    const bucket = map.get(item.skillGroup)
-    if (bucket) {
-      bucket.push(item)
-    } else {
-      map.set(item.skillGroup, [item])
-    }
-  }
-  return map
-}
-
-/** Ordered sections for UI and LLM exports (stable heading order). */
-export const TECH_STACK_GROUPS: { title: TechStackSkillGroup; items: TechStack[] }[] =
-  (() => {
-    const map = stackByGroup()
-    return TECH_STACK_GROUP_ORDER.map((title) => ({
-      title,
-      items: map.get(title) ?? [],
-    }))
-  })()
-
+export const TECH_STACK_GROUPS = TECH_STACK_GROUP_ORDER.map((title) => ({
+  title,
+  items: TECH_STACK.filter((item) => item.skillGroup === title),
+}))
 export function formatTechStackForMarkdown(): string {
-  return TECH_STACK_GROUPS.filter((g) => g.items.length > 0)
-    .map(
-      (g) =>
-        `### ${g.title}\n\n${g.items.map((item) => `- [${item.title}](${item.href})`).join("\n")}`
-    )
-    .join("\n\n")
+  return TECH_STACK_GROUPS.map(
+    (group) =>
+      `### ${group.title}\n\n${en.capabilityDescriptions[group.title]}\n\n${group.items.map((item) => `- [${item.title}](${item.href})`).join("\n")}`
+  ).join("\n\n")
 }

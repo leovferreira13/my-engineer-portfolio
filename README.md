@@ -1,45 +1,125 @@
-# Engineer portfolio · Leonardo Ferreira
+# Leonardo Ferreira · Product Engineer
 
-Public source for **[leoferreira.dev](https://www.leoferreira.dev)** — a personal site that doubles as a concise engineering portfolio: who I am, how I work, and what I have shipped. The repository is meant to be readable by humans and by tooling (structured exports, MDX content).
+My professional portfolio: the products I have worked on, the problems I help solve, and the decisions behind what I build.
 
-## Intent
+**[LinkedIn](https://www.linkedin.com/in/leonardo-v-ferreira)** · **[GitHub](https://github.com/leovferreira13)** · **[Contact](mailto:leovieiraf.599@gmail.com)**
 
-This work is a **portfolio-first career product**, not only a code demo: a fast, honest surface that moves each reader type (ATS, recruiter, interviewer, hiring manager) toward the **next step** in the hiring funnel—aligned with a strong resume and professional narrative on the homepage and in long-form content.
+<!-- deployment-url:start -->
 
-The default experience is **grounded narrative** (experience, education, curated projects, tech stack, publications) with navigation scoped to that story. The same surface should show **how** decisions are made—product framing, engineering trade-offs, and evolution over time—not only **what** shipped. That includes room for a structured **engineering journal**, **projects** with real context, and an **exportable CV**.
+**[Visit the live site](https://my-engineer-portfolio-production.up.railway.app)** — public portfolio on Railway (profile, projects, and journal; English default with five locales).
 
-Product vision, goals, and how this maps to the repo are spelled out in **[`docs/VISION.md`](./docs/VISION.md)**.
+<!-- deployment-url:end -->
 
-## Documentation
+![Current Leonardo Ferreira portfolio in dark mode](docs/screenshots/profile.png)
 
-| Document                                                                   | Role                                                                   |
-| -------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| [`docs/VISION.md`](./docs/VISION.md)                                       | North star, Linear-aligned summary, and pointers to product directives |
-| [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md)                           | Map of `src/`, App Router, features, and active architectural summary  |
-| [`docs/adr/`](./docs/adr/)                                                 | Architecture Decision Records (detail when a choice is stable)         |
-| [`docs/GETTING-STARTED.md`](./docs/GETTING-STARTED.md)                     | Dev server, env, and tooling                                           |
-| [`docs/product/resume-directives.md`](./docs/product/resume-directives.md) | Copy and structure rules for resume-as-landing-page consistency        |
+## About me
 
-The site began as a **fork of an open-source Next.js portfolio template**. Scope, navigation, content, and presentation were redirected for this positioning.
+I am a Product Engineer based in Rio de Janeiro, with 5+ years across backend and data engineering, product management, and technical leadership. I work from discovery through launch and iteration, combining user context with hands-on engineering.
 
-## Stack
+At Guiavet, I progressed from Software Engineer to Product Manager and Head of Engineering & Product Lead, building veterinary SaaS workflows and leading a team of five engineers. At Reach.ai, I build Python APIs, event-driven messaging systems, and a voice/SMS appointment agent with retrieval, tool calling, evaluations, and observability.
 
-- **Next.js 16** (App Router)
-- **Tailwind CSS v4** and **shadcn/ui**
-- **MDX** for blog and documentation-style content
-- **pnpm** and **TypeScript** (strict)
+The profile keeps Product Engineer as its main positioning and explains the customer discovery and integration work relevant to Forward Deployed Engineering, the systems depth behind Backend Engineering, and current Applied AI work. The appointment agent is in prelaunch testing; its approximate two-second median voice response latency comes from internal tests.
 
-## Highlights (site)
+## Explore the portfolio
 
-- Light/dark themes, responsive layout, SEO-oriented metadata
-- Centralized **MDX** content with categories (blog vs docs)
-- **JSON-LD**, sitemap, robots, RSS where applicable
-- **AI-oriented** text exports (e.g. `llms.txt` style routes)
-- Optional **PostHog** / **OpenPanel** analytics and consent tooling (degrade without keys)
-- **PWA**-oriented configuration where enabled in the app
+English is always the default. The header language selector offers English (`/en`), Portuguese (`/br`), Dutch (`/nl`), Spanish (`/es`), and German (`/de`). Profile, experience, projects, navigation, and metadata are translated. Switching language preserves the current section and project filter. Hover the language icon to see its shortcut: **Shift+L** opens the selector; **D** switches theme and **G → L** opens the Journal.
 
-## Development
+| Area                              | What it contains                                                                                |
+| --------------------------------- | ----------------------------------------------------------------------------------------------- |
+| **Profile** `/<locale>`           | Product Engineer narrative, experience, capabilities, education, publication, and contact links |
+| **Projects** `/<locale>/projects` | Curated public work with a live app, source repository, and associated engineering notes        |
+| **Journal** `/<locale>/journal`   | Dated decisions, releases, experiments, and retrospectives, filterable by project               |
 
-Local setup and production build: **[SETUP.md](./SETUP.md)**.
+### First public project: Football, Visualized
 
-Agent-oriented repo notes: **[AGENTS.md](./AGENTS.md)**.
+An interactive football analytics app connecting a reproducible StatsBomb Open Data pipeline, XGBoost training and evaluation, browser inference, and a five-language Next.js playground.
+
+**[Open the live app](https://sports-data-visualizer-production.up.railway.app/en)** · **[Read the source](https://github.com/leovferreira13/sports-data-visualizer)**
+
+The Journal intentionally starts empty. There are no sample posts presented as my work. Future entries link to a project and can reference the specific PR, commit, release, or evaluation behind a decision.
+
+## Run locally
+
+Requirements: Node.js 22 and pnpm 10.33.0 (the version pinned in `package.json`).
+
+```bash
+corepack enable
+pnpm install --frozen-lockfile
+cp .env.example .env.local
+pnpm dev
+```
+
+Open **http://localhost:3000**. Core pages require no database, API key, or analytics service.
+
+```bash
+pnpm check-types
+pnpm lint
+pnpm test:content
+pnpm build
+pnpm start
+```
+
+Optional: `pnpm dev:portless` uses an existing global Portless installation.
+
+## Publish on Railway
+
+1. Create a Railway service from this GitHub repository after merging the implementation.
+2. Use the repository root. `railway.toml` supplies the build, start, and health-check configuration.
+3. Generate a public domain. Set `APP_URL` to its complete HTTPS origin, for example `https://your-portfolio.up.railway.app`. Railway's `RAILWAY_PUBLIC_DOMAIN` is also detected automatically. Rebuild after changing the URL so static metadata, RSS, and sitemap agree.
+4. Confirm `/en`, `/en/projects`, `/en/journal`, `/journal/rss`, `/robots.txt`, and `/sitemap.xml` at the deployed origin.
+5. Update the README's production link with the actual, verified URL:
+
+```bash
+pnpm site:url https://your-portfolio.up.railway.app
+```
+
+`site:url` updates only this README; configure `APP_URL` in Railway separately. Without a public origin, previews stay `noindex` and the sitemap is empty. No production domain is assumed or invented.
+
+See [deployment notes](docs/DEPLOYMENT.md) for details.
+
+## Add projects and journal entries
+
+- Add public projects in [`src/features/portfolio/data/projects.ts`](src/features/portfolio/data/projects.ts), with a stable `id`, real links, context, technologies, and an optional screenshot.
+- Copy [`docs/templates/journal-entry.mdx.example`](docs/templates/journal-entry.mdx.example) to `src/features/doc/content/<descriptive-slug>.mdx`.
+- Keep `status: "draft"` while writing. Set the matching `projectId`, entry type, dates, tags, and evidence links. Publish with `status: "published"` and rebuild/deploy.
+- Drafts and future-dated entries stay out of pages, navigation, RSS, sitemap, and text exports. The publication date uses UTC; future entries need a new build/deploy on or after that date.
+
+Read the [journal authoring guide](docs/JOURNAL.md) for the content contract and workflow.
+
+## Capture the profile
+
+With the site running locally:
+
+```bash
+pnpm capture:portfolio
+```
+
+This regenerates `docs/screenshots/profile.png` and a mobile capture using Puppeteer. Set `PORTFOLIO_BASE_URL` if the server is not at `http://localhost:3000`. Screenshots are real browser renders.
+
+Every portfolio revision must refresh and visually inspect both screenshots from the current local production build before committing. `pnpm capture:portfolio` captures the English desktop and Portuguese mobile profiles in dark mode, independently of OS or saved theme preferences. See `AGENTS.md` and [Getting started](docs/GETTING-STARTED.md#keep-readme-captures-current).
+
+## Architecture
+
+Next.js 16 App Router, React 19, strict TypeScript, Tailwind CSS v4, and MDX. Professional data is curated in `src/features/portfolio/data/`; journal entries use the shared MDX store with an explicit publication contract. There is no CMS or runtime database to operate.
+
+| Document                             | Purpose                                           |
+| ------------------------------------ | ------------------------------------------------- |
+| [Architecture](docs/ARCHITECTURE.md) | Code map and active architecture decisions        |
+| [Journal](docs/JOURNAL.md)           | Entry schema, publishing, and editorial guidance  |
+| [Deployment](docs/DEPLOYMENT.md)     | Railway configuration and production verification |
+| [Vision](docs/VISION.md)             | Portfolio purpose and product direction           |
+| [Agent guidance](AGENTS.md)          | Repository conventions and contribution workflow  |
+
+The inherited component registry remains available in the source for reuse, outside the portfolio's navigation, journal, sitemap, and profile exports.
+
+## Credits
+
+Based on [Chánh Đại's open-source portfolio](https://github.com/ncdai/chanhdai.com). Its MIT license and copyright notice are preserved in [LICENSE](LICENSE). The profile content, curated projects, and journal structure have been adapted for Leonardo Ferreira.
+
+The Football, Visualized screenshot is from [sports-data-visualizer](https://github.com/leovferreira13/sports-data-visualizer). That project uses StatsBomb Open Data under its own attribution and non-commercial-use terms; see its README for data provenance and permissions. This portfolio does not redistribute its datasets.
+
+Machine-readable `/llms.txt` and `/llms-full.txt` are optional public English summaries generated from the same content. They contain no private information and are not required for the site to work. RSS remains available to clients without a visible subscription action.
+
+## Machine-readable profile
+
+`/llms.txt` is a short English Markdown index linking to `/llms-full.txt` and the individual profile exports. Both `.txt` routes return inline UTF-8 `text/plain` without caching, so they can be read in a browser or fetched by a tool. The HTML head advertises the index with `rel="describedby"`. These are optional conventions, not a promise that every LLM will discover or consume them. No `/llm.txt` alias is needed. Configure the real public origin before publishing so exported absolute links point to the deployed site.

@@ -5,6 +5,7 @@ import type { ExperiencePosition } from "../types/experiences"
 export const EDUCATION_ENTRIES: ExperiencePosition[] = [
   {
     id: "ufmg",
+    isExpanded: true,
     title: "Universidade Federal de Minas Gerais (UFMG)",
     employmentPeriod: {
       start: "2017",
