@@ -7,7 +7,7 @@ import { localizePath } from "@/i18n/config"
 import { localizedMetadata } from "@/i18n/metadata"
 import { getI18n } from "@/i18n/request"
 export function generateMetadata() {
-  return localizedMetadata("decisions")
+  return localizedMetadata("journal")
 }
 export default async function JournalPage({
   searchParams,
@@ -25,7 +25,7 @@ export default async function JournalPage({
       <p className="mb-3 font-mono text-xs tracking-widest text-muted-foreground uppercase">
         {t.decisionEyebrow}
       </p>
-      <h1 className="text-4xl font-semibold tracking-tight">{t.decisions}</h1>
+      <h1 className="text-4xl font-semibold tracking-tight">{t.journal}</h1>
       <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
         {t.decisionIntro}
       </p>
@@ -36,7 +36,7 @@ export default async function JournalPage({
         <Link
           aria-current={!projectId ? "page" : undefined}
           className={`rounded-lg border border-line px-3 py-2 ${!projectId ? "bg-foreground text-background" : "hover:bg-accent"}`}
-          href={localizePath("/decisions", locale)}
+          href={localizePath("/journal", locale)}
         >
           {t.allProjects}
         </Link>
@@ -45,7 +45,7 @@ export default async function JournalPage({
             key={project.id}
             aria-current={projectId === project.id ? "page" : undefined}
             className={`rounded-lg border border-line px-3 py-2 ${projectId === project.id ? "bg-foreground text-background" : "hover:bg-accent"}`}
-            href={localizePath(`/decisions?project=${project.id}`, locale)}
+            href={localizePath(`/journal?project=${project.id}`, locale)}
           >
             {project.title}
           </Link>
@@ -60,7 +60,7 @@ export default async function JournalPage({
               ? selected.title
               : projectId
                 ? t.unknownProject
-                : t.decisions}
+                : t.journal}
           </p>
           <h2 className="text-2xl font-semibold tracking-tight">
             {projectId && !selected ? t.noProject : t.emptyTitle}

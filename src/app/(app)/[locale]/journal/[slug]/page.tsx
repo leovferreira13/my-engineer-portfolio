@@ -27,12 +27,12 @@ export async function generateMetadata({
   return {
     title: entry.metadata.title,
     description: entry.metadata.description,
-    alternates: { canonical: localizePath(`/decisions/${entry.slug}`, locale) },
+    alternates: { canonical: localizePath(`/journal/${entry.slug}`, locale) },
     openGraph: {
       type: "article",
       title: entry.metadata.title,
       description: entry.metadata.description,
-      url: localizePath(`/decisions/${entry.slug}`, locale),
+      url: localizePath(`/journal/${entry.slug}`, locale),
       publishedTime: entry.metadata.createdAt,
       modifiedTime: entry.metadata.updatedAt,
     },
@@ -62,7 +62,7 @@ export default async function JournalEntryPage({
     description: entry.metadata.description,
     datePublished: entry.metadata.createdAt,
     dateModified: entry.metadata.updatedAt,
-    url: `${SITE_INFO.url}${localizePath(`/decisions/${entry.slug}`, locale)}`,
+    url: `${SITE_INFO.url}${localizePath(`/journal/${entry.slug}`, locale)}`,
     author: { "@type": "Person", name: USER.displayName, url: SITE_INFO.url },
     about: {
       "@type": "SoftwareSourceCode",
@@ -79,10 +79,10 @@ export default async function JournalEntryPage({
         }}
       />
       <Link
-        href={localizePath(`/decisions?project=${project.id}`, locale)}
+        href={localizePath(`/journal?project=${project.id}`, locale)}
         className="text-sm text-muted-foreground underline underline-offset-4"
       >
-        ← {t.decisions} · {project.title}
+        ← {t.journal} · {project.title}
       </Link>
       <header className="mt-8 mb-8 space-y-4">
         <p className="font-mono text-xs text-muted-foreground">
@@ -158,12 +158,12 @@ export default async function JournalEntryPage({
         className="mt-10 flex flex-wrap justify-between gap-4 border-t border-line pt-6 text-sm"
       >
         {older && (
-          <Link href={localizePath(`/decisions/${older.slug}`, locale)}>
+          <Link href={localizePath(`/journal/${older.slug}`, locale)}>
             ← {older.metadata.title}
           </Link>
         )}
         {newer && (
-          <Link href={localizePath(`/decisions/${newer.slug}`, locale)}>
+          <Link href={localizePath(`/journal/${newer.slug}`, locale)}>
             {newer.metadata.title} →
           </Link>
         )}
