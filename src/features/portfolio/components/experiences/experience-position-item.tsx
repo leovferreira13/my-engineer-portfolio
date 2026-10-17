@@ -16,10 +16,6 @@ import { formatPeriod } from "@/i18n/config"
 import { getI18n } from "@/i18n/request"
 import { cn } from "@/lib/utils"
 
-import {
-  employmentMonths,
-  formatEmploymentDuration,
-} from "../../lib/employment-duration"
 import type { ExperiencePosition } from "../../types/experiences"
 
 export async function ExperiencePositionItem({
@@ -35,7 +31,6 @@ export async function ExperiencePositionItem({
   const { locale, t } = await getI18n()
   const { start, end } = position.employmentPeriod
   const isOngoing = !end
-  const months = employmentMonths([position.employmentPeriod])
 
   return (
     <Collapsible
@@ -101,12 +96,6 @@ export async function ExperiencePositionItem({
               )}
             </dd>
           </dl>
-          {months !== undefined && (
-            <>
-              <span aria-hidden="true">·</span>
-              <span>{formatEmploymentDuration(months, locale)}</span>
-            </>
-          )}
         </div>
       </CollapsibleTrigger>
 
