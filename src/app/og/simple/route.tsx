@@ -32,7 +32,7 @@ export async function GET(request: Request) {
           <div style={{ fontSize: 30, color: "#a1a1aa" }}>{description}</div>
         </div>
         <div style={{ display: "flex", fontSize: 22, color: "#a1a1aa" }}>
-          Product engineering · Projects · Engineering Journal
+          Product engineering · Projects · Journal
         </div>
       </div>
     ),
