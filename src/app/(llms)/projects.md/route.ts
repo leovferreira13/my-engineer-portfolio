@@ -5,7 +5,7 @@ const content = `# Projects
 ${PROJECTS.map((item) => {
   const skills = `\n\nSkills: ${item.skills.join(", ")}`
   const description = item.description ? `\n\n${item.description.trim()}` : ""
-  return `## ${item.title}\n\nProject URL: ${item.link}${skills}${description}`
+  return `## ${item.title}\n\nProject URL: ${item.link}\nRepository: ${item.repository ?? ""}${skills}${description}`
 }).join("\n\n")}
 `
 

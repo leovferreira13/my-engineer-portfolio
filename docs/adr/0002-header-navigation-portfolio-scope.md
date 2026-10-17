@@ -2,7 +2,8 @@
 type: ADR
 id: "0002"
 title: "Header navigation limited to portfolio scope"
-status: active
+status: superseded
+superseded_by: "0009"
 date: 2026-04-17
 ---
 

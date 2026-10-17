@@ -1,6 +1,7 @@
 import Link from "next/link"
 import React from "react"
 
+import { activeNavigation } from "@/i18n/config"
 import { cn } from "@/lib/utils"
 import type { NavItem } from "@/types/nav"
 
@@ -23,10 +24,7 @@ export function Nav({
       {items.map(({ title, href }) => {
         const active = exactMatch
           ? activeId === href
-          : activeId === href ||
-            (href === "/" // Home page
-              ? ["/", "/index"].includes(activeId || "")
-              : activeId?.startsWith(href))
+          : activeNavigation(activeId || "", href)
 
         return (
           <NavItem key={href} href={href} active={active}>

@@ -1,0 +1,32 @@
+---
+title: "A specific decision or release title"
+description: "The user problem, change, or learning in one sentence."
+category: "journal"
+status: "draft"
+createdAt: "2026-10-17"
+updatedAt: "2026-10-17"
+projectId: "sports-data-visualizer"
+entryType: "decision"
+tags: ["modeling", "product"]
+references: []
+---
+
+## Context
+
+What problem triggered this work? Who experiences it, and what constraints matter?
+
+## Options considered
+
+What were the realistic alternatives? What did each trade off?
+
+## Decision
+
+What changed, why was this approach chosen, and what was deliberately left for later?
+
+## Verification and evidence
+
+What was tested or measured? Link the exact PR, commit, release, or evaluation in references.
+
+## Limitations and next steps
+
+What remains uncertain? What would cause this decision to be revisited?

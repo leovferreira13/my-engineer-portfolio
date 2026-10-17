@@ -30,10 +30,11 @@ See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for stack overview, how `app`
 
 ## Content system
 
-All content lives in `src/features/doc/content/` as MDX files. Blog posts and component docs are distinguished by the `category` field in frontmatter.
+All content lives in `src/features/doc/content/` as MDX files. Journal entries and component docs are distinguished by the `category` field in frontmatter.
 
 - **Data layer**: `src/features/doc/data/documents.ts` (`getAllDocs`, `getDocBySlug`, `getDocsByCategory`)
-- **Blog UI**: `src/features/blog/` (rendering only; imports data from `features/doc`)
+- **Journal UI**: `src/features/journal/`; inherited `blog` components remain only as registry utilities.
+- **Translations**: `src/i18n/`; English default plus `br`, `nl`, `es`, `de`. `src/proxy.ts` maps public locale URLs to portfolio pages. Never translate employer/project identifiers or measured outcomes.
 
 ---
 
@@ -60,6 +61,10 @@ pnpm registry:build  # Build shadcn registry
 ```
 
 ---
+
+## README screenshot freshness
+
+For **every revision to the portfolio's content, layout, styles, navigation, or behavior**, build and run the current revision locally, then run `pnpm capture:portfolio` against that server before committing. Inspect both captures and commit them with the change. The README's `docs/screenshots/profile.png` must always show the current English profile in **dark mode**; `profile-mobile.png` shows the current Portuguese profile in dark mode. Do not reuse an older capture or capture a deployed branch that lacks the changes under review. If a capture is visually identical, verify it was regenerated anyway. This is part of completing a portfolio revision, not an optional documentation task.
 
 ## GitHub source control
 

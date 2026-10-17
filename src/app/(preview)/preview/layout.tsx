@@ -1,3 +1,5 @@
+export const metadata = { robots: { index: false, follow: false } }
+
 import "dialkit/styles.css"
 
 import { DialRoot } from "dialkit"

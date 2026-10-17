@@ -1,24 +1,33 @@
-import { CollapsibleList } from "@/components/collapsible-list"
+import { ArrowRightIcon } from "lucide-react"
+import Link from "next/link"
 
-import { PROJECTS } from "../../data/projects"
-import { Panel, PanelHeader, PanelTitle, PanelTitleSup } from "../panel"
-import { ProjectItem } from "./project-item"
+import { Button } from "@/components/ui/button"
+import { localizePath } from "@/i18n/config"
+import { localizedContent } from "@/i18n/content"
+import { getI18n } from "@/i18n/request"
 
-export function Projects() {
+import { Panel, PanelContent, PanelHeader, PanelTitle } from "../panel"
+import { ProjectCard } from "./project-card"
+
+export async function Projects() {
+  const { locale, t } = await getI18n()
+  const content = localizedContent(locale)
   return (
     <Panel id="projects">
-      <PanelHeader>
-        <PanelTitle>
-          Projects
-          <PanelTitleSup>({PROJECTS.length})</PanelTitleSup>
-        </PanelTitle>
+      <PanelHeader className="flex flex-wrap items-center justify-between gap-3">
+        <PanelTitle>{t.selectedWork}</PanelTitle>
+        <Button variant="outline" size="sm" asChild className="shrink-0">
+          <Link href={localizePath("/projects", locale)}>
+            {t.allProjects}
+            <ArrowRightIcon className="size-4" />
+          </Link>
+        </Button>
       </PanelHeader>
-
-      <CollapsibleList
-        items={PROJECTS}
-        max={4}
-        renderItem={(item) => <ProjectItem project={item} />}
-      />
+      <PanelContent className="space-y-4">
+        {content.projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
+      </PanelContent>
     </Panel>
   )
 }

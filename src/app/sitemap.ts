@@ -1,23 +1,28 @@
 import type { MetadataRoute } from "next"
 
 import { SITE_INFO } from "@/config/site"
-import { getAllDocs, getDocsByCategory } from "@/features/doc/data/documents"
-
+import { getJournalEntries } from "@/features/journal/data/entries"
+import { languageTags, locales, localizePath } from "@/i18n/config"
+import { HAS_PUBLIC_SITE_URL } from "@/lib/site-url"
 export default function sitemap(): MetadataRoute.Sitemap {
-  const posts = getAllDocs().map((post) => ({
-    url: `${SITE_INFO.url}/blog/${post.slug}`,
-    lastModified: new Date(post.metadata.updatedAt).toISOString(),
-  }))
-
-  const components = getDocsByCategory("components").map((post) => ({
-    url: `${SITE_INFO.url}/components/${post.slug}`,
-    lastModified: new Date(post.metadata.updatedAt).toISOString(),
-  }))
-
-  const routes = ["", "/blog", "/components"].map((route) => ({
-    url: `${SITE_INFO.url}${route}`,
-    lastModified: new Date().toISOString(),
-  }))
-
-  return [...routes, ...posts, ...components]
+  if (!HAS_PUBLIC_SITE_URL) return []
+  return [
+    ...["/", "/projects", "/journal"].flatMap((path) =>
+      locales.map((locale) => ({
+        url: `${SITE_INFO.url}${localizePath(path, locale)}`,
+        alternates: {
+          languages: Object.fromEntries(
+            locales.map((language) => [
+              languageTags[language],
+              `${SITE_INFO.url}${localizePath(path, language)}`,
+            ])
+          ),
+        },
+      }))
+    ),
+    ...getJournalEntries().map((entry) => ({
+      url: `${SITE_INFO.url}/en/journal/${entry.slug}`,
+      lastModified: entry.metadata.updatedAt,
+    })),
+  ]
 }

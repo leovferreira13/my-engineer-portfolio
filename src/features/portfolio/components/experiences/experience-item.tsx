@@ -1,18 +1,20 @@
 import Image from "next/image"
 
 import { UTM_PARAMS } from "@/config/site"
+import { getI18n } from "@/i18n/request"
 import { addQueryParams } from "@/utils/url"
 
 import type { Experience } from "../../types/experiences"
 import { ExperiencePositionItem } from "./experience-position-item"
 
-export function ExperienceItem({
+export async function ExperienceItem({
   experience,
   anchorPrefixId = "experience",
 }: {
   experience: Experience
   anchorPrefixId?: string
 }) {
+  const { t } = await getI18n()
   return (
     <div
       id={`${anchorPrefixId}-${experience.id}`}
@@ -52,10 +54,8 @@ export function ExperienceItem({
         </h3>
 
         {experience.isCurrentEmployer && (
-          <span className="relative flex items-center justify-center">
-            <span className="absolute inline-flex size-3 animate-ping rounded-full bg-info opacity-50" />
-            <span className="relative inline-flex size-2 rounded-full bg-info" />
-            <span className="sr-only">Current Employer</span>
+          <span className="rounded-md bg-muted px-2 py-0.5 text-xs text-muted-foreground">
+            {t.present}
           </span>
         )}
       </div>

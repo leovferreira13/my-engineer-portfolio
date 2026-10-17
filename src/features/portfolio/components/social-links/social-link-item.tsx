@@ -1,6 +1,7 @@
 import { ArrowUpRightIcon } from "lucide-react"
 import Image from "next/image"
 
+import { Icons } from "@/components/icons"
 import { UTM_PARAMS } from "@/config/site"
 import type { SocialLink } from "@/features/portfolio/types/social-links"
 import { cn } from "@/lib/utils"
@@ -17,15 +18,13 @@ export function SocialLinkItem({ icon, title, subtitle, href }: SocialLink) {
       rel="noopener"
     >
       <div className="relative size-8 shrink-0">
-        <Image
-          className="rounded-lg select-none corner-squircle supports-corner-shape:rounded-[50%]"
-          src={icon}
-          alt={title}
-          width={32}
-          height={32}
-          quality={100}
-          unoptimized
-        />
+        {title === "GitHub" ? (
+          <Icons.github className="size-8" aria-hidden="true" />
+        ) : title === "LinkedIn" ? (
+          <Icons.linkedin className="size-8" aria-hidden="true" />
+        ) : (
+          <Image src={icon} alt={title} width={32} height={32} unoptimized />
+        )}
         <div className="pointer-events-none absolute inset-0 rounded-lg ring-1 ring-black/10 corner-squircle ring-inset dark:ring-white/15 supports-corner-shape:rounded-[50%]" />
       </div>
 

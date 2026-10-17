@@ -1,9 +1,12 @@
 import { USER } from "@/features/portfolio/data/user"
+import { type Locale, localizePath } from "@/i18n/config"
+import { getDictionary } from "@/i18n/dictionaries"
+import { SITE_URL } from "@/lib/site-url"
 import type { NavItem } from "@/types/nav"
 
 export const SITE_INFO = {
   name: USER.displayName,
-  url: process.env.APP_URL || "https://www.leoferreira.dev",
+  url: SITE_URL,
   ogImage: USER.ogImage,
   description: USER.bio,
   keywords: USER.keywords,
@@ -14,18 +17,16 @@ export const META_THEME_COLORS = {
   dark: "#09090b",
 }
 
-export const MAIN_NAV: NavItem[] = [
-  {
-    title: "Home",
-    href: "/",
-  },
-  {
-    title: "Blog",
-    href: "/blog",
-  },
-]
-
-export const MOBILE_NAV: NavItem[] = [...MAIN_NAV]
+export function getMainNav(locale: Locale): NavItem[] {
+  const t = getDictionary(locale).ui
+  return [
+    { title: t.profile, href: localizePath("/", locale) },
+    { title: t.projects, href: localizePath("/projects", locale) },
+    { title: t.journal, href: localizePath("/journal", locale) },
+  ]
+}
+export const MAIN_NAV = getMainNav("en")
+export const MOBILE_NAV = [...MAIN_NAV]
 
 export const GITHUB_USERNAME = "leovferreira13"
 export const LINKEDIN_PROFILE_PATH = "leonardo-v-ferreira"
@@ -37,7 +38,7 @@ export const SOURCE_CODE_GITHUB_URL =
 export const SPONSORSHIP_URL = "https://github.com/sponsors/leovferreira13"
 
 export const UTM_PARAMS = {
-  utm_source: "leoferreira.dev",
+  utm_source: "leonardo-portfolio",
 }
 
 /** When false, the homepage hides registry marketing (components grid) and the doc-driven blog strip. */
