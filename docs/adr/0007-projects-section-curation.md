@@ -2,7 +2,8 @@
 type: ADR
 id: "0007"
 title: "Curated projects list for the portfolio surface"
-status: active
+status: superseded
+superseded_by: "0010"
 date: 2026-04-17
 ---
 

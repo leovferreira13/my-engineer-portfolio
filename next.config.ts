@@ -46,6 +46,18 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     return [
+      { source: "/journal/:slug.mdx", destination: "/journal-text/:slug" },
+      {
+        source: "/journal/:slug",
+        destination: "/journal-text/:slug",
+        has: [
+          {
+            type: "header",
+            key: "accept",
+            value: "(?<accept>.*text/markdown.*)",
+          },
+        ],
+      },
       {
         source: "/:section(blog|components)/:slug.mdx",
         destination: "/doc.mdx/:slug",

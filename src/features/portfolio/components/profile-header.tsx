@@ -1,57 +1,57 @@
-import { USER } from "@/features/portfolio/data/user"
-import { TextFlip } from "@/registry/components/text-flip"
+import Link from "next/link"
 
-import { AvatarElectricEffect } from "./avatar-electric-effect"
-import { PronounceMyName } from "./pronounce-my-name"
-import { VerifiedIcon } from "./verified-icon"
+import { USER } from "@/features/portfolio/data/user"
 
 export function ProfileHeader() {
   return (
-    <div className="flex overflow-hidden rounded-b-xl rounded-t-none border-x border-b border-line bg-background text-card-foreground shadow-xs">
-      <div className="shrink-0">
-        <div className="mx-0.5 my-0.75">
-          <AvatarElectricEffect>
-            <img
-              id="js-cover-mark"
-              className="size-30 rounded-full ring-1 ring-border ring-offset-2 ring-offset-background select-none sm:size-40"
-              alt="Avatar"
-              src={USER.avatar}
-              fetchPriority="high"
-            />
-          </AvatarElectricEffect>
-        </div>
-      </div>
-
-      <div className="flex min-h-30 flex-1 flex-col justify-center gap-1 py-3 pl-4 sm:min-h-40 sm:py-4">
-        <div className="flex items-center gap-2">
-          <h1 className="text-3xl font-semibold tracking-tight">
+    <section
+      aria-labelledby="profile-title"
+      className="rounded-b-xl border-x border-b border-line bg-background p-6 shadow-xs sm:p-8"
+    >
+      <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
+        <img
+          id="js-cover-mark"
+          src={USER.avatar}
+          alt="Leonardo Ferreira"
+          width={112}
+          height={112}
+          fetchPriority="high"
+          className="size-24 shrink-0 rounded-2xl border border-line object-cover sm:size-28"
+        />
+        <div className="min-w-0 flex-1">
+          <p className="mb-3 font-mono text-xs tracking-widest text-muted-foreground uppercase">
+            Product Engineer · Rio de Janeiro, Brazil
+          </p>
+          <h1
+            id="profile-title"
+            className="text-4xl font-semibold tracking-tight sm:text-5xl"
+          >
             {USER.displayName}
           </h1>
-
-          <VerifiedIcon
-            className="size-4.5 text-info select-none"
-            aria-label="Verified"
-          />
-
-          {USER.namePronunciationUrl && (
-            <PronounceMyName namePronunciationUrl={USER.namePronunciationUrl} />
-          )}
-        </div>
-
-        <div className="py-0.5">
-          <TextFlip
-            className="font-pixel-square text-sm text-balance text-muted-foreground"
-            variants={{
-              initial: { y: -10, opacity: 0 },
-              animate: { y: -1, opacity: 1 },
-              exit: { y: 10, opacity: 0 },
-            }}
-            interval={1.5}
-          >
-            {USER.flipSentences}
-          </TextFlip>
+          <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
+            I turn user problems into software, from the first question to
+            production.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+            5+ years across B2B SaaS, backend, data engineering, product
+            leadership, and applied AI.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3 text-sm font-medium">
+            <Link
+              href="/projects"
+              className="rounded-lg bg-foreground px-4 py-2 text-background transition-opacity hover:opacity-80"
+            >
+              Explore my work <span aria-hidden>↗</span>
+            </Link>
+            <a
+              href="mailto:leovieiraf.599@gmail.com"
+              className="rounded-lg border border-line px-4 py-2 transition-colors hover:bg-accent"
+            >
+              Get in touch
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

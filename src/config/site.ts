@@ -1,9 +1,10 @@
 import { USER } from "@/features/portfolio/data/user"
+import { SITE_URL } from "@/lib/site-url"
 import type { NavItem } from "@/types/nav"
 
 export const SITE_INFO = {
   name: USER.displayName,
-  url: process.env.APP_URL || "https://www.leoferreira.dev",
+  url: SITE_URL,
   ogImage: USER.ogImage,
   description: USER.bio,
   keywords: USER.keywords,
@@ -15,14 +16,9 @@ export const META_THEME_COLORS = {
 }
 
 export const MAIN_NAV: NavItem[] = [
-  {
-    title: "Home",
-    href: "/",
-  },
-  {
-    title: "Blog",
-    href: "/blog",
-  },
+  { title: "Profile", href: "/" },
+  { title: "Projects", href: "/projects" },
+  { title: "Engineering Journal", href: "/journal" },
 ]
 
 export const MOBILE_NAV: NavItem[] = [...MAIN_NAV]
@@ -37,7 +33,7 @@ export const SOURCE_CODE_GITHUB_URL =
 export const SPONSORSHIP_URL = "https://github.com/sponsors/leovferreira13"
 
 export const UTM_PARAMS = {
-  utm_source: "leoferreira.dev",
+  utm_source: "leonardo-portfolio",
 }
 
 /** When false, the homepage hides registry marketing (components grid) and the doc-driven blog strip. */

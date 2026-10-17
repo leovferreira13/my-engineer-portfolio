@@ -1,8 +1,8 @@
 import { format } from "date-fns"
 
 import { SITE_INFO } from "@/config/site"
-import { getAllDocs } from "@/features/doc/data/documents"
 import { getLLMText } from "@/features/doc/lib/get-llm-text"
+import { getJournalEntries } from "@/features/journal/data/entries"
 import { AWARDS } from "@/features/portfolio/data/awards"
 import { CERTIFICATIONS } from "@/features/portfolio/data/certifications"
 import { EDUCATION_ENTRIES } from "@/features/portfolio/data/education"
@@ -13,7 +13,7 @@ import { formatTechStackForMarkdown } from "@/features/portfolio/data/tech-stack
 import { USER } from "@/features/portfolio/data/user"
 import { formatPositionAsMarkdown } from "@/features/portfolio/lib/format-position-markdown"
 
-const allPosts = getAllDocs()
+const allPosts = getJournalEntries()
 
 const aboutText = `## About
 
@@ -60,7 +60,7 @@ const projectsText = `## Projects
 ${PROJECTS.map((item) => {
   const skills = `\n\nSkills: ${item.skills.join(", ")}`
   const description = item.description ? `\n\n${item.description.trim()}` : ""
-  return `### ${item.title}\n\nProject URL: ${item.link}${skills}${description}`
+  return `### ${item.title}\n\nProject URL: ${item.link}\nRepository: ${item.repository ?? ""}${skills}${description}`
 }).join("\n\n")}
 `
 
@@ -77,18 +77,18 @@ async function getBlogContent() {
   const text = await Promise.all(
     allPosts.map(
       async (item) =>
-        `---\ntitle: "${item.metadata.title}"\ndescription: "${item.metadata.description}"\nlast_updated: "${format(new Date(item.metadata.updatedAt), "MMMM d, yyyy")}"\nsource: "${SITE_INFO.url}/blog/${item.slug}"\n---\n\n${await getLLMText(item)}`
+        `---\ntitle: "${item.metadata.title}"\ndescription: "${item.metadata.description}"\nlast_updated: "${format(new Date(item.metadata.updatedAt), "MMMM d, yyyy")}"\nsource: "${SITE_INFO.url}/journal/${item.slug}"\n---\n\n${await getLLMText(item)}`
     )
   )
   return text.join("\n\n")
 }
 
 async function getContent() {
-  return `<SYSTEM>This document contains comprehensive information about ${USER.displayName}'s professional profile, portfolio, and blog content. It includes personal details, work experience, projects, achievements, certifications, and all published blog posts. This data is formatted for consumption by Large Language Models (LLMs) to provide accurate and up-to-date information about ${USER.displayName}'s background, skills, and expertise as a Design Engineer.</SYSTEM>
+  return `<SYSTEM>This document contains comprehensive information about ${USER.displayName}'s professional profile, portfolio, and blog content. It includes personal details, work experience, projects, achievements, certifications, and all published blog posts. This data is formatted for consumption by Large Language Models (LLMs) to provide accurate and up-to-date information about ${USER.displayName}'s background, skills, and expertise as a Product Engineer.</SYSTEM>
 
-# chanhdai.com
+# Leonardo Ferreira
 
-> A minimal, pixel-perfect dev portfolio, shadcn registry, and blog to showcase my work as a Design Engineer.
+> Product Engineer | B2B SaaS, user workflows & applied AI.
 
 ${aboutText}
 ${experienceText}
@@ -97,7 +97,7 @@ ${projectsText}
 ${awardsText}
 ${certificationsText}
 
-## Blog
+## Engineering Journal
 
 ${await getBlogContent()}`
 }

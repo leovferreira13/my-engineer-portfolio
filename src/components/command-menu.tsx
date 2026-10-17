@@ -3,27 +3,20 @@
 import { useRouter } from "@bprogress/next/app"
 import { useCommandState } from "cmdk"
 import {
-  AwardIcon,
-  BookmarkIcon,
   BoxIcon,
   BriefcaseBusinessIcon,
-  CircleCheckBigIcon,
   CornerDownLeftIcon,
   DownloadIcon,
   FileTextIcon,
   LayersIcon,
   MoonStarIcon,
-  MousePointer2Icon,
   RssIcon,
   SunMediumIcon,
   TextInitialIcon,
-  TriangleDashedIcon,
-  TypeIcon,
 } from "lucide-react"
 import { useTheme } from "next-themes"
 import React, { useCallback, useEffect, useMemo, useState } from "react"
 import { useHotkeys } from "react-hotkeys-hook"
-import { toast } from "sonner"
 
 import {
   CommandDialog,
@@ -36,13 +29,10 @@ import {
 } from "@/components/ui/command"
 import type { DocPreview } from "@/features/doc/types/document"
 import { SOCIAL_LINKS } from "@/features/portfolio/data/social-links"
-import { useDuckFollowerVisibility } from "@/hooks/use-duck-follower-visibility"
 import { trackEvent } from "@/lib/events"
-import { copyToClipboardWithEvent } from "@/utils/copy"
 
-import { ChanhDaiMark, getMarkSVG } from "./chanhdai-mark"
-import { getWordmarkSVG } from "./chanhdai-wordmark"
 import { Icons } from "./icons"
+import { SiteHeaderMark } from "./site-header-mark"
 import { Button } from "./ui/button"
 import { Kbd, KbdGroup } from "./ui/kbd"
 import { Separator } from "./ui/separator"
@@ -60,22 +50,22 @@ type CommandLinkItem = {
 
 const MENU_LINKS: CommandLinkItem[] = [
   {
-    title: "Home",
+    title: "Profile",
     href: "/",
-    icon: <ChanhDaiMark />,
+    icon: <SiteHeaderMark />,
     shortcut: "GH",
   },
   {
-    title: "Blog",
-    href: "/blog",
+    title: "Engineering Journal",
+    href: "/journal",
     icon: <Icons.news />,
     shortcut: "GL",
   },
   {
-    title: "Wall of Love",
-    href: "/wall-of-love",
+    title: "Projects",
+    href: "/projects",
     icon: <Icons.bookHeart />,
-    shortcut: "GW",
+    shortcut: "GP",
   },
 ]
 
@@ -97,24 +87,11 @@ const PORTFOLIO_LINKS: CommandLinkItem[] = [
   },
   {
     title: "Projects",
-    href: "/#projects",
+    href: "/projects",
     icon: <BoxIcon />,
   },
-  {
-    title: "Honors & Awards",
-    href: "/#awards",
-    icon: <AwardIcon />,
-  },
-  {
-    title: "Certifications",
-    href: "/#certs",
-    icon: <CircleCheckBigIcon />,
-  },
-  {
-    title: "Bookmarks",
-    href: "/#bookmarks",
-    icon: <BookmarkIcon />,
-  },
+  { title: "Publications", href: "/#awards", icon: <FileTextIcon /> },
+  { title: "Education", href: "/#education", icon: <FileTextIcon /> },
   {
     title: "Download vCard",
     href: "/vcard",
@@ -138,7 +115,7 @@ const OTHER_LINK_ITEMS: CommandLinkItem[] = [
   },
   {
     title: "RSS Feed",
-    href: "/rss",
+    href: "/journal/rss",
     icon: <RssIcon />,
     openInNewTab: true,
   },
@@ -153,11 +130,9 @@ export function CommandMenu({
 }) {
   const router = useRouter()
 
-  const { setTheme, resolvedTheme } = useTheme()
+  const { setTheme } = useTheme()
 
   const [open, setOpen] = useState(false)
-
-  const [, setIsDuckFollowerVisible] = useDuckFollowerVisibility()
 
   useHotkeys(
     "mod+k, slash",
@@ -202,18 +177,6 @@ export function CommandMenu({
     [router]
   )
 
-  const handleCopyText = useCallback((text: string, message: string) => {
-    setOpen(false)
-    copyToClipboardWithEvent(text, {
-      name: "command_menu_action",
-      properties: {
-        action: "copy",
-        text: text,
-      },
-    })
-    toast.success(message)
-  }, [])
-
   const createThemeHandler = useCallback(
     (theme: "light" | "dark" | "system") => () => {
       setOpen(false)
@@ -231,22 +194,10 @@ export function CommandMenu({
     [setTheme]
   )
 
-  const handleToggleDuckFollower = useCallback(() => {
-    setOpen(false)
-    setIsDuckFollowerVisible((isVisible) => !isVisible)
-
-    trackEvent({
-      name: "command_menu_action",
-      properties: {
-        action: "toggle_duck_follower",
-      },
-    })
-  }, [setIsDuckFollowerVisible])
-
   const blogLinks = useMemo(
     () =>
       docs
-        .filter((doc) => doc.category !== "components")
+        .filter((doc) => doc.category === "journal")
         .map(docToCommandLinkItem),
     [docs]
   )
@@ -284,7 +235,7 @@ export function CommandMenu({
           />
 
           <CommandLinkGroup
-            heading="Blog"
+            heading="Engineering Journal"
             links={blogLinks}
             fallbackIcon={<Icons.news />}
             onLinkSelect={handleOpenLink}
@@ -295,46 +246,6 @@ export function CommandMenu({
             links={SOCIAL_LINK_ITEMS}
             onLinkSelect={handleOpenLink}
           />
-
-          <CommandGroup heading="Brand Assets">
-            <CommandItem
-              onSelect={() => {
-                handleCopyText(
-                  getMarkSVG(resolvedTheme === "light" ? "#000" : "#fff"),
-                  "Mark as SVG copied"
-                )
-              }}
-            >
-              <ChanhDaiMark />
-              Copy Mark as SVG
-            </CommandItem>
-
-            <CommandItem
-              onSelect={() => {
-                handleCopyText(
-                  getWordmarkSVG(resolvedTheme === "light" ? "#000" : "#fff"),
-                  "Logotype as SVG copied"
-                )
-              }}
-            >
-              <TypeIcon />
-              Copy Logotype as SVG
-            </CommandItem>
-
-            <CommandItem
-              onSelect={() => handleOpenLink("/blog/chanhdai-brand")}
-            >
-              <TriangleDashedIcon />
-              Brand Guidelines
-            </CommandItem>
-
-            <CommandItem asChild>
-              <a href="https://assets.chanhdai.com/chanhdai-brand.zip" download>
-                <DownloadIcon />
-                Download Brand Assets
-              </a>
-            </CommandItem>
-          </CommandGroup>
 
           <CommandGroup heading="Theme">
             <CommandItem
@@ -357,13 +268,6 @@ export function CommandMenu({
             >
               <Icons.contrast />
               Auto
-            </CommandItem>
-          </CommandGroup>
-
-          <CommandGroup heading="Interactive Features">
-            <CommandItem onSelect={handleToggleDuckFollower}>
-              <MousePointer2Icon />
-              Toggle Duck Follower
             </CommandItem>
           </CommandGroup>
 
@@ -535,7 +439,7 @@ function CommandMenuFooter() {
       <div className="flex h-10" />
 
       <div className="absolute inset-x-0 bottom-0 flex h-10 items-center justify-between gap-2 rounded-b-2xl border-t px-4 text-xs font-medium">
-        <ChanhDaiMark className="size-6 text-muted-foreground" />
+        <SiteHeaderMark />
 
         <div className="flex shrink-0 items-center gap-2 max-sm:hidden">
           <span>{ENTER_ACTION_LABELS[selectedCommandKind]}</span>
@@ -557,6 +461,6 @@ function CommandMenuFooter() {
 function docToCommandLinkItem(doc: DocPreview): CommandLinkItem {
   return {
     title: doc.title,
-    href: `/blog/${doc.slug}`,
+    href: `/journal/${doc.slug}`,
   }
 }

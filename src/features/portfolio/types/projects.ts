@@ -2,6 +2,10 @@ export type Project = {
   /** Stable unique identifier (used as list key/anchor). */
   id: string
   title: string
+  summary?: string
+  repository?: string
+  image?: string
+  imageAlt?: string
   /**
    * Project period for display and sorting.
    * Use "MM.YYYY" format. Omit `end` for ongoing projects.

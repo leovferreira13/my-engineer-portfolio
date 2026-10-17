@@ -10,15 +10,26 @@ export const EXPERIENCES: Experience[] = [
     positions: [
       {
         id: "1",
-        title: "Software Engineer",
+        title: "Senior Software Engineer",
         employmentPeriod: {
           start: "11.2025",
         },
-        employmentType: "Full-time",
+        employmentType: "Contract",
         icon: <CodeXmlIcon />,
-        description:
-          "- Helping businesses communicate better with customers through AI models and automation.",
-        skills: ["Python", "AI", "Automation", "SaaS"],
+        description: `- Engineered Python/FastAPI APIs and event-driven flows processing **20M+ SMS and emails monthly**, with **99.9% delivery reliability** and support for **50x peak throughput capacity** through queue processing and idempotency improvements.
+- Building an appointment agent for **voice and SMS**: booking, rescheduling, and cancellation through LangGraph, tool calling, retrieval over business knowledge, and scheduling APIs.
+- Designed behavioral evaluations, guardrails, Redis-backed idempotency, and observability with LangSmith and audit logs. Optimized median voice response latency to **approximately 2 seconds** in testing.`,
+        skills: [
+          "Python",
+          "FastAPI",
+          "AWS Lambda",
+          "SQS",
+          "Redis",
+          "MongoDB",
+          "LangGraph",
+          "RAG",
+          "Evaluations",
+        ],
         isExpanded: true,
       },
     ],
@@ -31,14 +42,15 @@ export const EXPERIENCES: Experience[] = [
     positions: [
       {
         id: "1",
-        title: "Head Software Engineer",
+        title: "Head of Engineering & Product Lead",
         employmentPeriod: {
           start: "11.2024",
           end: "11.2025",
         },
         employmentType: "Full-time",
         icon: <CodeXmlIcon />,
-        description: `- Owned technical continuity of the SaaS platform while reducing infrastructure and operational costs through automation and lean delivery.
+        description: `- Led five engineers, owning prioritization, technical decisions, and delivery as the B2B veterinary SaaS product matured.
+- Owned technical continuity of the platform while reducing infrastructure and operational costs through automation and lean delivery.
 - Led major improvements to the Health Records module: integrated drug reference data, built a pharmacy dispensing portal with external validation, customizable prescription templates (faster daily record creation), and optimized multi-page PDF generation (large performance improvement in rendering time).
 - Delivered end-to-end product changes across backend (Python/Django), frontend (Vue.js), and AWS operations while coordinating with senior engineers under Agile practices.`,
         skills: [
@@ -64,8 +76,8 @@ export const EXPERIENCES: Experience[] = [
         icon: <LayoutTemplateIcon />,
         description: `- Owned the product roadmap for Guiavet PRO, aligning stakeholders, leadership, design, and engineering under Agile practices.
 - Ran competitive benchmarks, analytics, and customer interviews to inform product decisions.
-- Reduced churn complaints related to usability through UX redesigns (including patient timeline and faster health record workflows).
-- Shortened vaccine registration flows by rethinking journeys and navigation.
+- Used research and usage data to redesign clinic workflows, reducing time for some critical operations by **up to 80%** and **usability-related churn indicators by up to 95%** within one month after launch.
+- Expanded the product beyond solo practitioners to veterinarians serving other clinics and to clinics, adapting packaging and workflows to each B2B segment.
 - Expanded the customer base with new B2B-ready entities integrated with scheduling, health, and billing modules.
 - Launched a professional website platform for veterinarians with SEO-oriented improvements (sitemaps, metadata, load-time improvements).
 - Managed team capacity and delivery alignment across priorities and deadlines.`,
@@ -117,7 +129,7 @@ export const EXPERIENCES: Experience[] = [
         title: "Data Engineer",
         employmentPeriod: {
           start: "10.2020",
-          end: "12.2021",
+          end: "11.2021",
         },
         employmentType: "Internship and full-time",
         icon: <BarChart3Icon />,

@@ -1,4 +1,5 @@
 import type { User } from "@/features/portfolio/types/user"
+import { SITE_URL } from "@/lib/site-url"
 
 export const USER: User = {
   firstName: "Leonardo",
@@ -7,52 +8,46 @@ export const USER: User = {
   username: "leovferreira13",
   gender: "male",
   pronouns: "he/him",
-  bio: "Product Engineer and Tech Lead focused on backend, data platforms, and AI-enabled products.",
-  flipSentences: [
-    "Product Engineer",
-    "Tech Lead",
-    "Backend, data & AI",
-  ],
+  bio: "Product Engineer with 5+ years across backend, data, product leadership and applied AI. I take user problems from discovery to production.",
+  flipSentences: ["Product Engineer", "Backend, data & applied AI"],
   address: "Rio de Janeiro, Brazil",
-  email: "bGVvdmllaXJhZi41OTlAZ21haWwuY29t", // base64 encoded
-  website: "https://www.leoferreira.dev",
+  email: "bGVvdmllaXJhZi41OTlAZ21haWwuY29t",
+  website: SITE_URL,
   jobTitle: "Product Engineer",
   jobs: [
     {
-      title: "Software Engineer",
-      company: "REACH.ai",
+      title: "Senior Software Engineer",
+      company: "Reach.ai",
       website: "https://www.reach.ai",
       experienceId: "reach-ai",
     },
-    {
-      title: "Head Software Engineer (prior)",
-      company: "Guiavet",
-      website: "https://pro.guia.vet",
-      experienceId: "guiavet",
-    },
   ],
   about: `
-- **Product Engineer** and **Tech Lead** with experience across SaaS delivery, data platforms, and product leadership.
-- Strong track record in **Python/Django**, **PostgreSQL**, **AWS**, and **Vue.js**, from hands-on implementation to roadmap ownership and cross-functional coordination.
-- Interested in **AI/ML applications**, scalable systems, and turning complex domains (including regulated workflows) into reliable software.
+I am a **Product Engineer** with **5+ years** across backend and data engineering, product management, and technical leadership. I work from the user problem through discovery, technical decisions, implementation, launch, and iteration.
 
-<p class="text-muted-foreground">Content reflects public professional profile sources used for this draft portfolio.</p>
+At **Guiavet**, I grew from Software Engineer to Product Manager and Head of Engineering & Product Lead. Working directly with veterinarians taught me to connect what happens in a product to what people need to get done. Research and usage data informed workflow redesigns that cut time for some critical operations by **up to 80%** and reduced **usability-related churn indicators by up to 95%** within one month of launch.
+
+At **Reach.ai**, I build Python APIs and event-driven messaging systems handling **20M+ emails and SMS per month**. I am also building a voice and SMS appointment agent, connecting conversations to scheduling APIs with retrieval, tool orchestration, behavioral evaluations, and observability.
+
+**Adaptability is the thread through my work.** I enjoy learning an unfamiliar domain, understanding its constraints, and deciding what is useful to build. I bring strong backend foundations and product judgment to that process, including when the right tool is applied AI.
 `,
-  avatar: "https://avatars.githubusercontent.com/u/65781172?v=4",
-  ogImage: "https://avatars.githubusercontent.com/u/65781172?v=4",
+  avatar: "/profile.jpg",
+  ogImage:
+    "/og/simple?title=Leonardo%20Ferreira&description=Product%20Engineer%20%7C%20Backend%2C%20data%20%26%20applied%20AI",
   namePronunciationUrl: "",
   timeZone: "America/Sao_Paulo",
   keywords: [
     "Leonardo Ferreira",
     "Leonardo Vieira Ferreira",
     "Product Engineer",
-    "REACH.ai",
-    "Guiavet",
-    "QDOIS",
     "Python",
+    "FastAPI",
     "Django",
+    "B2B SaaS",
     "AWS",
-    "data engineering",
+    "Applied AI",
+    "LangGraph",
+    "Data Engineering",
   ],
   dateCreated: "2026-04-16",
 }

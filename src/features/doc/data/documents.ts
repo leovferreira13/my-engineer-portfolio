@@ -7,6 +7,10 @@ import type { Doc, DocMetadata } from "@/features/doc/types/document"
 
 function parseFrontmatter(fileContent: string) {
   const file = matter(fileContent)
+  for (const field of ["createdAt", "updatedAt"]) {
+    if (file.data[field] instanceof Date)
+      file.data[field] = file.data[field].toISOString().slice(0, 10)
+  }
 
   return {
     metadata: file.data as DocMetadata,
@@ -40,8 +44,15 @@ function getMDXData(dir: string) {
 }
 
 export const getAllDocs = cache(() => {
-  return getMDXData(path.join(process.cwd(), "src/features/doc/content")).sort(
-    (a, b) => {
+  return getMDXData(path.join(process.cwd(), "src/features/doc/content"))
+    .filter(
+      (doc) =>
+        doc.metadata.category === "components" ||
+        (doc.metadata.category === "journal" &&
+          doc.metadata.status === "published" &&
+          doc.metadata.createdAt <= new Date().toISOString().slice(0, 10))
+    )
+    .sort((a, b) => {
       if (a.metadata.pinned && !b.metadata.pinned) return -1
       if (!a.metadata.pinned && b.metadata.pinned) return 1
 
@@ -49,8 +60,7 @@ export const getAllDocs = cache(() => {
         new Date(b.metadata.createdAt).getTime() -
         new Date(a.metadata.createdAt).getTime()
       )
-    }
-  )
+    })
 })
 
 export function getDocBySlug(slug: string) {

@@ -6,11 +6,11 @@ import Script from "next/script"
 import { NuqsAdapter } from "nuqs/adapters/next/app"
 import type { WebSite, WithContext } from "schema-dts"
 
-import { DuckFollower } from "@/components/duck-follower"
 import { Providers } from "@/components/providers"
 import { META_THEME_COLORS, SITE_INFO } from "@/config/site"
 import { USER } from "@/features/portfolio/data/user"
 import { fontVariables } from "@/lib/fonts"
+import { HAS_PUBLIC_SITE_URL } from "@/lib/site-url"
 
 function getWebSiteJsonLd(): WithContext<WebSite> {
   return {
@@ -70,23 +70,8 @@ export const metadata: Metadata = {
       },
     ],
   },
-  icons: {
-    icon: [
-      {
-        url: "https://assets.chanhdai.com/images/favicon.ico",
-        sizes: "any",
-      },
-      {
-        url: "https://assets.chanhdai.com/images/favicon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: {
-      url: "https://assets.chanhdai.com/images/apple-touch-icon.png",
-      type: "image/png",
-      sizes: "180x180",
-    },
-  },
+  icons: { icon: { url: "/favicon.svg", type: "image/svg+xml" } },
+  robots: { index: HAS_PUBLIC_SITE_URL, follow: HAS_PUBLIC_SITE_URL },
 }
 
 export const viewport: Viewport = {
@@ -127,10 +112,7 @@ export default function RootLayout({
 
       <body>
         <Providers>
-          <NuqsAdapter>
-            {children}
-            <DuckFollower />
-          </NuqsAdapter>
+          <NuqsAdapter>{children}</NuqsAdapter>
         </Providers>
       </body>
     </html>

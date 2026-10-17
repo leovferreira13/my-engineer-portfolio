@@ -1,84 +1,56 @@
 import type { Metadata } from "next"
-import type { ProfilePage as PageSchema, WithContext } from "schema-dts"
 
+import { JournalPreview } from "@/features/journal/components/journal-preview"
 import { About } from "@/features/portfolio/components/about"
 import { Awards } from "@/features/portfolio/components/awards"
-import { Blog } from "@/features/portfolio/components/blog"
-import { Bookmarks } from "@/features/portfolio/components/bookmarks"
-import { Certifications } from "@/features/portfolio/components/certifications"
-import { Components } from "@/features/portfolio/components/components"
 import { Education } from "@/features/portfolio/components/education"
 import { Experiences } from "@/features/portfolio/components/experiences"
 import { Overview } from "@/features/portfolio/components/overview"
 import { ProfileHeader } from "@/features/portfolio/components/profile-header"
 import { Projects } from "@/features/portfolio/components/projects"
 import { SocialLinks } from "@/features/portfolio/components/social-links"
-import { Sponsors } from "@/features/portfolio/components/sponsors"
 import { TechStack } from "@/features/portfolio/components/tech-stack"
-import { Testimonials } from "@/features/portfolio/components/testimonials"
 import { USER } from "@/features/portfolio/data/user"
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "/",
-  },
-}
-
+export const metadata: Metadata = { alternates: { canonical: "/" } }
 export default function Page() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    dateCreated: USER.dateCreated,
+    mainEntity: {
+      "@type": "Person",
+      name: `${USER.firstName} ${USER.lastName}`,
+      jobTitle: USER.jobTitle,
+      description: USER.bio,
+      url: USER.website,
+      image: new URL(USER.avatar, USER.website).toString(),
+      sameAs: [
+        "https://www.linkedin.com/in/leonardo-v-ferreira",
+        "https://github.com/leovferreira13",
+      ],
+    },
+  }
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(getPageJsonLd()).replace(/</g, "\\u003c"),
+          __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
         }}
       />
-
-      <div className="mx-auto flex flex-col gap-4 md:max-w-3xl *:[[id]]:scroll-mt-22">
+      <div className="mx-auto flex max-w-3xl flex-col gap-4 pb-8 *:[[id]]:scroll-mt-22">
         <ProfileHeader />
-
         <Overview />
         <SocialLinks />
-
         <About />
-
-        <Testimonials />
-
-        <Sponsors />
-
-        <TechStack />
-
-        <Components />
-
-        <Blog />
-
         <Experiences />
-
-        <Education />
-
         <Projects />
-
+        <TechStack />
+        <Education />
         <Awards />
-
-        <Certifications />
-
-        <Bookmarks />
+        <JournalPreview />
       </div>
     </>
   )
-}
-
-function getPageJsonLd(): WithContext<PageSchema> {
-  return {
-    "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    dateCreated: new Date(USER.dateCreated).toISOString(),
-    dateModified: new Date().toISOString(),
-    mainEntity: {
-      "@type": "Person",
-      name: USER.displayName,
-      identifier: USER.username,
-      image: USER.avatar,
-    },
-  }
 }

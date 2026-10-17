@@ -1,24 +1,23 @@
-import { CollapsibleList } from "@/components/collapsible-list"
+import Link from "next/link"
 
 import { PROJECTS } from "../../data/projects"
-import { Panel, PanelHeader, PanelTitle, PanelTitleSup } from "../panel"
-import { ProjectItem } from "./project-item"
+import { Panel, PanelContent, PanelHeader, PanelTitle } from "../panel"
+import { ProjectCard } from "./project-card"
 
 export function Projects() {
   return (
     <Panel id="projects">
-      <PanelHeader>
-        <PanelTitle>
-          Projects
-          <PanelTitleSup>({PROJECTS.length})</PanelTitleSup>
-        </PanelTitle>
+      <PanelHeader className="flex items-center justify-between gap-4">
+        <PanelTitle>Selected work</PanelTitle>
+        <Link className="text-sm underline underline-offset-4" href="/projects">
+          All projects
+        </Link>
       </PanelHeader>
-
-      <CollapsibleList
-        items={PROJECTS}
-        max={4}
-        renderItem={(item) => <ProjectItem project={item} />}
-      />
+      <PanelContent className="space-y-4">
+        {PROJECTS.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
+      </PanelContent>
     </Panel>
   )
 }
