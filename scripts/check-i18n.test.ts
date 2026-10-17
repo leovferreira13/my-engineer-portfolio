@@ -96,8 +96,8 @@ test("capability explanations cover each group in every language", () => {
     )
     for (const description of Object.values(content.capabilityDescriptions))
       assert.ok(description.length > 100)
-    assert.match(content.user.about, /Forward Deployed Engineering/)
-    assert.match(content.user.about, /LangSmith/)
+    assert.doesNotMatch(content.user.about, /^#{1,6}\s/m)
+    assert.doesNotMatch(content.user.about, /Guiavet|Reach\.ai|QDOIS/i)
   }
 })
 

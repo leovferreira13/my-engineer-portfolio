@@ -50,7 +50,7 @@ The list below is the **living summary of decisions still in force**. Update it 
 - **[0012](./adr/0012-multilingual-portfolio.md)** — Five explicit locale URLs and server-rendered translations; English default.
 - **[0013](./adr/0013-journal-navigation.md)** — Journal navigation and optional machine exports; supersedes 0009.
 
-- **[0014](./adr/0014-expanded-professional-narrative.md)** — Expanded Product Engineer narrative, adjacent role evidence, and multilingual capability explanations reused by English exports.
+- **[0015](./adr/0015-concise-profile-about.md)** — Concise profile-centered About, with detailed experience and multilingual capability explanations reused by English exports; supersedes 0014.
 
 ## Portfolio and Journal
 

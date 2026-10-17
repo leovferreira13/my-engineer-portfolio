@@ -71,3 +71,11 @@ The prior local production build returned nonempty Markdown and displayed it in 
 - Local production server honored `PORT=8080`; `/en` returned 200 directly and `/` returned 308. Railway healthcheck changed to `/en` to avoid redirect-only health responses.
 - Live Railway diagnosis: domain targeted 3000, runtime listened on 8080, and HTTP logs showed connection refused. Changed only the domain target to 8080; both `/` and `/llms.txt` then returned 200 with no upstream error. The deployment remains `main@9a0b833`, so public `/llms.txt` still contains the upstream template until PR #18 is integrated and deployed.
 - Full lint, TypeScript, production build, 15 content tests, and diff whitespace checks pass. No source redeploy or merge was performed.
+
+## Concise About and draft-first PR workflow (2026-10-17)
+
+About now has three continuous, profile-centered paragraphs in every language (English: 155 words), without employer names, metrics, or subsection headings. Detailed experience and capability explanations remain in their own sections. README uses the same English introduction, and English text exports reuse USER.about. ADR 0015 supersedes 0014 and retains the detailed evidence approach outside About.
+
+Regenerated dark-mode English desktop and Portuguese mobile screenshots from the current production build. Checked all five profile languages on desktop and mobile: three paragraphs, no About subheadings or employer names, no horizontal overflow. Verified the current About in the full machine export and both inline text routes. All 15 content tests, full lint, TypeScript, production build, formatting, and diff whitespace checks pass.
+
+PR #20 was converted to draft before work and stays draft during the refinement phase. AGENTS.md now requires draft creation by default, with a ready-for-review transition only at the agreed final QA handoff. No merge or deployment was performed.

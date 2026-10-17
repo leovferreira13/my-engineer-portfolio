@@ -14,11 +14,11 @@ I turn user problems into software, from the first question to production.
 
 ## About me
 
-I'm a Product Engineer based in Rio de Janeiro, Brazil, with 5+ years across backend and data engineering, product management, and technical leadership. I enjoy learning an unfamiliar domain, understanding what people need, and taking a solution through discovery, technical decisions, implementation, launch, and iteration.
+I am a **Product Engineer** with **5+ years** across backend and data engineering, product management, and technical leadership. I connect user and business needs to practical software, taking problems from discovery through technical decisions, implementation, launch, and iteration.
 
-At **Guiavet**, I grew from Software Engineer to Product Manager and Head of Engineering & Product Lead. I worked with veterinarians to improve everyday workflows, helped adapt the product to new B2B segments, and led a team of five engineers. At **Reach.ai**, I build Python APIs and event-driven messaging systems, and I'm developing a voice and SMS appointment agent.
+**Adaptability is the thread through my work.** I enjoy learning an unfamiliar domain, listening to the people who know it, and working through ambiguity to understand what is useful to build. I am comfortable moving between customer conversations, product trade-offs, and the technical details that make a solution work in practice.
 
-My main focus is **Product Engineering**, supported by the backend foundations, customer understanding, and integration work that also connect to **Forward Deployed Engineering** and **Applied AI**.
+I bring strong **backend foundations** and product judgment to that process, with experience in APIs, data pipelines, integrations, and event-driven systems. More recently, I have been applying that background to **AI agents**, focusing on how they connect to real workflows, behave reliably, and can be evaluated and improved. I work best close to the problem, with ownership of both the engineering and the experience it creates.
 
 ## What I bring
 
