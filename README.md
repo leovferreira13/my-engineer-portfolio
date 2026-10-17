@@ -6,7 +6,7 @@ My professional portfolio: the products I have worked on, the problems I help so
 
 <!-- deployment-url:start -->
 
-**[Visit the live site](https://my-engineer-portfolio-production.up.railway.app)** — production tracks `main`; the portfolio revisions in PR #18 become visible after integration and deployment.
+**[Visit the live site](https://my-engineer-portfolio-production.up.railway.app)** — public portfolio on Railway (profile, projects, and journal; English default with five locales).
 
 <!-- deployment-url:end -->
 
