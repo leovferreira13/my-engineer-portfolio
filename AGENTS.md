@@ -38,6 +38,10 @@ All content lives in `src/features/doc/content/` as MDX files. Journal entries a
 
 ---
 
+## Public-source boundary
+
+Treat every committed file as publicly readable, including drafts, examples, agent configuration, and documentation. Never commit credentials, customer data, confidential employer material, private planning links, or raw private CV/cover-letter inputs. A Journal draft flag is not an access-control boundary. Keep private working notes outside this repository.
+
 ## Coding and implementation
 
 - TypeScript strict mode; explicit types when necessary.

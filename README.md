@@ -1,125 +1,55 @@
 # Leonardo Ferreira · Product Engineer
 
-My professional portfolio: the products I have worked on, the problems I help solve, and the decisions behind what I build.
-
-**[LinkedIn](https://www.linkedin.com/in/leonardo-v-ferreira)** · **[GitHub](https://github.com/leovferreira13)** · **[Contact](mailto:leovieiraf.599@gmail.com)**
+I turn user problems into software, from the first question to production.
 
 <!-- deployment-url:start -->
 
-**[Visit the live site](https://my-engineer-portfolio-production.up.railway.app)** — public portfolio on Railway (profile, projects, and journal; English default with five locales).
+**[Explore my portfolio](https://my-engineer-portfolio-production.up.railway.app)**
 
 <!-- deployment-url:end -->
 
-![Current Leonardo Ferreira portfolio in dark mode](docs/screenshots/profile.png)
+[LinkedIn](https://www.linkedin.com/in/leonardo-v-ferreira) · [GitHub](https://github.com/leovferreira13) · [Get in touch](mailto:leovieiraf.599@gmail.com)
+
+[![Leonardo Ferreira's current portfolio in dark mode](docs/screenshots/profile.png)](https://my-engineer-portfolio-production.up.railway.app)
 
 ## About me
 
-I am a Product Engineer based in Rio de Janeiro, with 5+ years across backend and data engineering, product management, and technical leadership. I work from discovery through launch and iteration, combining user context with hands-on engineering.
+I'm a Product Engineer based in Rio de Janeiro, Brazil, with 5+ years across backend and data engineering, product management, and technical leadership. I enjoy learning an unfamiliar domain, understanding what people need, and taking a solution through discovery, technical decisions, implementation, launch, and iteration.
 
-At Guiavet, I progressed from Software Engineer to Product Manager and Head of Engineering & Product Lead, building veterinary SaaS workflows and leading a team of five engineers. At Reach.ai, I build Python APIs, event-driven messaging systems, and a voice/SMS appointment agent with retrieval, tool calling, evaluations, and observability.
+At **Guiavet**, I grew from Software Engineer to Product Manager and Head of Engineering & Product Lead. I worked with veterinarians to improve everyday workflows, helped adapt the product to new B2B segments, and led a team of five engineers. At **Reach.ai**, I build Python APIs and event-driven messaging systems, and I'm developing a voice and SMS appointment agent.
 
-The profile keeps Product Engineer as its main positioning and explains the customer discovery and integration work relevant to Forward Deployed Engineering, the systems depth behind Backend Engineering, and current Applied AI work. The appointment agent is in prelaunch testing; its approximate two-second median voice response latency comes from internal tests.
+My main focus is **Product Engineering**, supported by the backend foundations, customer understanding, and integration work that also connect to **Forward Deployed Engineering** and **Applied AI**.
 
-## Explore the portfolio
+## What I bring
 
-English is always the default. The header language selector offers English (`/en`), Portuguese (`/br`), Dutch (`/nl`), Spanish (`/es`), and German (`/de`). Profile, experience, projects, navigation, and metadata are translated. Switching language preserves the current section and project filter. Hover the language icon to see its shortcut: **Shift+L** opens the selector; **D** switches theme and **G → L** opens the Journal.
+- **Product and customer workflows:** discovery, user research, technical scoping, prioritization, and delivery across scheduling, medical records, prescriptions, and pharmacy workflows.
+- **Backend and data systems:** Python, FastAPI, Django, PostgreSQL, Redis, AWS, and event-driven processing; a data engineering foundation with Azure, Databricks, and PySpark.
+- **Applied AI:** multi-turn agents with LangGraph, OpenAI tool calling, RAG, scheduling integrations, behavioral evaluations, guardrails, and observability. The appointment agent is in prelaunch testing; customer outcomes are still to be measured after launch.
 
-| Area                              | What it contains                                                                                |
-| --------------------------------- | ----------------------------------------------------------------------------------------------- |
-| **Profile** `/<locale>`           | Product Engineer narrative, experience, capabilities, education, publication, and contact links |
-| **Projects** `/<locale>/projects` | Curated public work with a live app, source repository, and associated engineering notes        |
-| **Journal** `/<locale>/journal`   | Dated decisions, releases, experiments, and retrospectives, filterable by project               |
+[Read my full experience and capabilities →](https://my-engineer-portfolio-production.up.railway.app/en)
 
-### First public project: Football, Visualized
+## Selected work
 
-An interactive football analytics app connecting a reproducible StatsBomb Open Data pipeline, XGBoost training and evaluation, browser inference, and a five-language Next.js playground.
+### Football, Visualized
 
-**[Open the live app](https://sports-data-visualizer-production.up.railway.app/en)** · **[Read the source](https://github.com/leovferreira13/sports-data-visualizer)**
+An interactive football analytics app that makes expected goals tangible: change the conditions of a shot, inspect the model's features, and explore the estimate. I connected a reproducible StatsBomb Open Data pipeline to XGBoost training and evaluation, browser inference, and a five-language Next.js playground.
 
-The Journal intentionally starts empty. There are no sample posts presented as my work. Future entries link to a project and can reference the specific PR, commit, release, or evaluation behind a decision.
+**[Try the app](https://sports-data-visualizer-production.up.railway.app/en)** · **[Explore the source](https://github.com/leovferreira13/sports-data-visualizer)**
 
-## Run locally
+This is my first public project. [The project catalog](https://my-engineer-portfolio-production.up.railway.app/en/projects) will grow as I publish more work.
 
-Requirements: Node.js 22 and pnpm 10.33.0 (the version pinned in `package.json`).
+## The thinking behind the work
 
-```bash
-corepack enable
-pnpm install --frozen-lockfile
-cp .env.example .env.local
-pnpm dev
-```
+The **[Journal](https://my-engineer-portfolio-production.up.railway.app/en/journal)** is where I'll document engineering decisions, releases, experiments, and what I learn while building. Entries connect to projects and the evidence behind each choice. It currently has no published entries.
 
-Open **http://localhost:3000**. Core pages require no database, API key, or analytics service.
+## Read in your language
 
-```bash
-pnpm check-types
-pnpm lint
-pnpm test:content
-pnpm build
-pnpm start
-```
+[English](https://my-engineer-portfolio-production.up.railway.app/en) · [Português](https://my-engineer-portfolio-production.up.railway.app/br) · [Nederlands](https://my-engineer-portfolio-production.up.railway.app/nl) · [Español](https://my-engineer-portfolio-production.up.railway.app/es) · [Deutsch](https://my-engineer-portfolio-production.up.railway.app/de)
 
-Optional: `pnpm dev:portless` uses an existing global Portless installation.
+## About this repository
 
-## Publish on Railway
+This is the source of my professional portfolio, built with Next.js, React, TypeScript, Tailwind CSS, and MDX. The site brings together my experience, public projects, and future engineering notes.
 
-1. Create a Railway service from this GitHub repository after merging the implementation.
-2. Use the repository root. `railway.toml` supplies the build, start, and health-check configuration.
-3. Generate a public domain. Set `APP_URL` to its complete HTTPS origin, for example `https://your-portfolio.up.railway.app`. Railway's `RAILWAY_PUBLIC_DOMAIN` is also detected automatically. Rebuild after changing the URL so static metadata, RSS, and sitemap agree.
-4. Confirm `/en`, `/en/projects`, `/en/journal`, `/journal/rss`, `/robots.txt`, and `/sitemap.xml` at the deployed origin.
-5. Update the README's production link with the actual, verified URL:
+For implementation details: [Local setup](docs/GETTING-STARTED.md) · [Architecture](docs/ARCHITECTURE.md) · [Journal authoring](docs/JOURNAL.md) · [Deployment](docs/DEPLOYMENT.md).
 
-```bash
-pnpm site:url https://your-portfolio.up.railway.app
-```
-
-`site:url` updates only this README; configure `APP_URL` in Railway separately. Without a public origin, previews stay `noindex` and the sitemap is empty. No production domain is assumed or invented.
-
-See [deployment notes](docs/DEPLOYMENT.md) for details.
-
-## Add projects and journal entries
-
-- Add public projects in [`src/features/portfolio/data/projects.ts`](src/features/portfolio/data/projects.ts), with a stable `id`, real links, context, technologies, and an optional screenshot.
-- Copy [`docs/templates/journal-entry.mdx.example`](docs/templates/journal-entry.mdx.example) to `src/features/doc/content/<descriptive-slug>.mdx`.
-- Keep `status: "draft"` while writing. Set the matching `projectId`, entry type, dates, tags, and evidence links. Publish with `status: "published"` and rebuild/deploy.
-- Drafts and future-dated entries stay out of pages, navigation, RSS, sitemap, and text exports. The publication date uses UTC; future entries need a new build/deploy on or after that date.
-
-Read the [journal authoring guide](docs/JOURNAL.md) for the content contract and workflow.
-
-## Capture the profile
-
-With the site running locally:
-
-```bash
-pnpm capture:portfolio
-```
-
-This regenerates `docs/screenshots/profile.png` and a mobile capture using Puppeteer. Set `PORTFOLIO_BASE_URL` if the server is not at `http://localhost:3000`. Screenshots are real browser renders.
-
-Every portfolio revision must refresh and visually inspect both screenshots from the current local production build before committing. `pnpm capture:portfolio` captures the English desktop and Portuguese mobile profiles in dark mode, independently of OS or saved theme preferences. See `AGENTS.md` and [Getting started](docs/GETTING-STARTED.md#keep-readme-captures-current).
-
-## Architecture
-
-Next.js 16 App Router, React 19, strict TypeScript, Tailwind CSS v4, and MDX. Professional data is curated in `src/features/portfolio/data/`; journal entries use the shared MDX store with an explicit publication contract. There is no CMS or runtime database to operate.
-
-| Document                             | Purpose                                           |
-| ------------------------------------ | ------------------------------------------------- |
-| [Architecture](docs/ARCHITECTURE.md) | Code map and active architecture decisions        |
-| [Journal](docs/JOURNAL.md)           | Entry schema, publishing, and editorial guidance  |
-| [Deployment](docs/DEPLOYMENT.md)     | Railway configuration and production verification |
-| [Vision](docs/VISION.md)             | Portfolio purpose and product direction           |
-| [Agent guidance](AGENTS.md)          | Repository conventions and contribution workflow  |
-
-The inherited component registry remains available in the source for reuse, outside the portfolio's navigation, journal, sitemap, and profile exports.
-
-## Credits
-
-Based on [Chánh Đại's open-source portfolio](https://github.com/ncdai/chanhdai.com). Its MIT license and copyright notice are preserved in [LICENSE](LICENSE). The profile content, curated projects, and journal structure have been adapted for Leonardo Ferreira.
-
-The Football, Visualized screenshot is from [sports-data-visualizer](https://github.com/leovferreira13/sports-data-visualizer). That project uses StatsBomb Open Data under its own attribution and non-commercial-use terms; see its README for data provenance and permissions. This portfolio does not redistribute its datasets.
-
-Machine-readable `/llms.txt` and `/llms-full.txt` are optional public English summaries generated from the same content. They contain no private information and are not required for the site to work. RSS remains available to clients without a visible subscription action.
-
-## Machine-readable profile
-
-`/llms.txt` is a short English Markdown index linking to `/llms-full.txt` and the individual profile exports. Both `.txt` routes return inline UTF-8 `text/plain` without caching, so they can be read in a browser or fetched by a tool. The HTML head advertises the index with `rel="describedby"`. These are optional conventions, not a promise that every LLM will discover or consume them. No `/llm.txt` alias is needed. Configure the real public origin before publishing so exported absolute links point to the deployed site.
+Based on [Chánh Đại's open-source portfolio](https://github.com/ncdai/chanhdai.com), adapted for my professional profile. The original MIT license and copyright notice are preserved in [LICENSE](LICENSE). Football, Visualized uses StatsBomb Open Data under its own terms; see [its README](https://github.com/leovferreira13/sports-data-visualizer#readme) for attribution and data permissions.

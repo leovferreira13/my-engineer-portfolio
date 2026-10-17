@@ -13,3 +13,9 @@ The inherited registry build requires Bun; run it only when changing registry so
 ## Keep README captures current
 
 For every portfolio revision, run a fresh production build and serve that revision locally before `pnpm capture:portfolio`. Set `PORTFOLIO_BASE_URL` if the local server uses another origin. The script explicitly loads `/en` for the desktop and `/br` for mobile, sets dark mode independently of saved preferences, and waits for fonts and images. It rejects HTTP errors, a different profile, or horizontal overflow. Inspect both screenshots and commit them with the implementation, even when the desktop crop happens to look unchanged. The mandatory rule is in `AGENTS.md`.
+
+## Maintainer shortcuts
+
+Add a public project to `src/features/portfolio/data/projects.ts` with a stable ID, verified live/source links, context, and an optional image. The [Journal guide](JOURNAL.md) covers project-linked posts, drafts, dates, and evidence references.
+
+`pnpm site:url https://your-verified-domain` updates the marked website link in README; configure `APP_URL` in Railway separately. Optional English `/llms.txt` and `/llms-full.txt` exports use the profile data. The inherited component registry remains available in source but is outside the portfolio navigation.
