@@ -26,7 +26,7 @@ English is always the default. The header language selector offers English (`/en
 | -------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | **Profile** `/<locale>`                | Product Engineer narrative, experience, capabilities, education, publication, and contact links |
 | **Projects** `/<locale>/projects`      | Curated public work with a live app, source repository, and associated engineering notes        |
-| **Decision Log** `/<locale>/decisions` | Dated decisions, releases, experiments, and retrospectives, filterable by project               |
+| **Journal** `/<locale>/journal` | Dated decisions, releases, experiments, and retrospectives, filterable by project               |
 
 ### First public project: Football, Visualized
 
@@ -34,7 +34,7 @@ An interactive football analytics app connecting a reproducible StatsBomb Open D
 
 **[Open the live app](https://sports-data-visualizer-production.up.railway.app/en)** · **[Read the source](https://github.com/leovferreira13/sports-data-visualizer)**
 
-The Decision Log intentionally starts empty. There are no sample posts presented as my work. Future entries link to a project and can reference the specific PR, commit, release, or evaluation behind a decision.
+The Journal intentionally starts empty. There are no sample posts presented as my work. Future entries link to a project and can reference the specific PR, commit, release, or evaluation behind a decision.
 
 ## Run locally
 
@@ -64,7 +64,7 @@ Optional: `pnpm dev:portless` uses an existing global Portless installation.
 1. Create a Railway service from this GitHub repository after merging the implementation.
 2. Use the repository root. `railway.toml` supplies the build, start, and health-check configuration.
 3. Generate a public domain. Set `APP_URL` to its complete HTTPS origin, for example `https://your-portfolio.up.railway.app`. Railway's `RAILWAY_PUBLIC_DOMAIN` is also detected automatically. Rebuild after changing the URL so static metadata, RSS, and sitemap agree.
-4. Confirm `/en`, `/en/projects`, `/en/decisions`, `/journal/rss`, `/robots.txt`, and `/sitemap.xml` at the deployed origin.
+4. Confirm `/en`, `/en/projects`, `/en/journal`, `/journal/rss`, `/robots.txt`, and `/sitemap.xml` at the deployed origin.
 5. Update the README's production link with the actual, verified URL:
 
 ```bash

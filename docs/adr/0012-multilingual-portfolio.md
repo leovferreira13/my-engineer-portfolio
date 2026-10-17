@@ -25,4 +25,4 @@ The request proxy supplies the locale to server components and the root HTML doc
 
 ## Consequences
 
-Professional copy changes require equivalent dictionary updates and tests. Language changes load a complete document; no mixed-language patching is needed. Existing decision-log entries remain in their original authored language, with translated surrounding UI and a visible original-language note. Article translations can be introduced explicitly when there is published content to translate.
+Professional copy changes require equivalent dictionary updates and tests. Language changes load a complete document; no mixed-language patching is needed. Existing journal entries remain in their original authored language, with translated surrounding UI and a visible original-language note. Article translations can be introduced explicitly when there is published content to translate.

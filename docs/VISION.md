@@ -84,4 +84,4 @@ Profile, Projects, and Journal form the hiring-facing navigation. The current na
 
 ## Multilingual refinement (2026-10-17)
 
-The public writing label is now **Decision Log**, focused on choices and evidence. The same professional profile is available in English (default), Portuguese, Dutch, Spanish, and German via explicit locale URLs. RSS subscription controls are removed; machine feeds and optional public English text exports remain available. ADRs 0012–0013 record the current routing and navigation decisions.
+The public writing label is now **Journal**, focused on choices and evidence. The same professional profile is available in English (default), Portuguese, Dutch, Spanish, and German via explicit locale URLs. RSS subscription controls are removed; machine feeds and optional public English text exports remain available. ADRs 0012–0013 record the current routing and navigation decisions.
