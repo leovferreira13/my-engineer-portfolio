@@ -1,7 +1,7 @@
 ---
 type: ADR
 id: "0011"
-title: "Project-linked engineering journal"
+title: "Project-linked journal"
 status: active
 date: 2026-10-17
 ---
@@ -12,7 +12,7 @@ The portfolio needs dated evidence of decisions and releases, but has no publish
 
 ## Decision
 
-**Extend the existing MDX store with explicit `journal` category, draft/published status, dates, project ID, entry type, tags, and evidence references.** Publish only explicit, non-future entries. Validate published journal metadata, filter by project, provide RSS and project-scoped previous/next links, and share publication rules with sitemap and exports.
+**Extend the existing MDX store with explicit `journal` category, draft/published status, dates, project ID, entry type, tags, and evidence references.** Publish only explicit, non-future entries. Validate published journal metadata, filter by project, provide RSS at `/journal/rss` and project-scoped previous/next links on `/<locale>/journal/[slug]`, and share publication rules with sitemap and exports.
 
 ## Options considered
 
