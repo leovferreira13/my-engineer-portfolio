@@ -58,7 +58,7 @@ The list below is the **living summary of decisions still in force**. Update it 
 
 `src/lib/site-url.ts` resolves an explicit `APP_URL`, Railway public domain, or local-only fallback. Static metadata needs a rebuild after changing domains. [DEPLOYMENT.md](DEPLOYMENT.md) covers the Railway contract.
 
-Grouped company histories show the shared employment type and total tenure below the company heading; each position keeps its own dates and duration. `src/features/portfolio/lib/employment-duration.ts` counts calendar months inclusively, merges overlapping promotion months, and excludes gaps. Current roles use the current UTC month; year-only education dates do not imply month-level precision. Durations are formatted for each interface language.
+Every company, including those with a single position, shows its shared employment type and total tenure directly below the company heading; each position keeps its own dates and duration. Shared employment types are not repeated on the positions. `src/features/portfolio/lib/employment-duration.ts` counts calendar months inclusively, merges overlapping promotion months, and excludes gaps. Current roles use the current UTC month; year-only education dates do not imply month-level precision. Durations are formatted for each interface language.
 
 ## Component registry
 
