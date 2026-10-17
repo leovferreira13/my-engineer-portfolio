@@ -16,7 +16,7 @@ Validated on 2026-10-17 after the multilingual and QA refinement of PR #18.
 
 | Check                  | Result                                                                                                                                                                |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `pnpm test:content`    | PASS — 15 tests                                                                                                                                                       |
+| `pnpm test:content`    | PASS — 19 tests                                                                                                                                                       |
 | `pnpm lint`            | PASS                                                                                                                                                                  |
 | `pnpm check-types`     | PASS                                                                                                                                                                  |
 | `pnpm build`           | PASS                                                                                                                                                                  |
@@ -79,3 +79,9 @@ About now has three continuous, profile-centered paragraphs in every language (E
 Regenerated dark-mode English desktop and Portuguese mobile screenshots from the current production build. Checked all five profile languages on desktop and mobile: three paragraphs, no About subheadings or employer names, no horizontal overflow. Verified the current About in the full machine export and both inline text routes. All 15 content tests, full lint, TypeScript, production build, formatting, and diff whitespace checks pass.
 
 PR #20 was converted to draft before work and stays draft during the refinement phase. AGENTS.md now requires draft creation by default, with a ready-for-review transition only at the agreed final QA handoff. No merge or deployment was performed.
+
+## QA correction: README domain changes (2026-10-17)
+
+Addressed Iris review comment discussion_r4304236094 on PR #20. `site:url` now reads the current origin from the marked CTA and replaces that origin across README without reconstructing the block, preserving Explore my portfolio, blank lines, link paths, queries, and fragments. Other origins, including Football, Visualized and similarly named hosts, remain unchanged. GETTING-STARTED.md describes this behavior.
+
+Four new regression tests exercise all ten actual README portfolio links, preserved copy/formatting, repeat invocation, URL suffixes, distinct hosts, invalid inputs, and the real CLI against a temporary README (including failure without writes). They are included in `test:content`; all 19 tests pass. Targeted ESLint, formatting, and whitespace checks pass. No website code or rendering changed, so the latest screenshots remain current and no new app build was needed. PR stays draft for the refinement phase. The review's separate branch-policy observation is not part of this P2 fix.
