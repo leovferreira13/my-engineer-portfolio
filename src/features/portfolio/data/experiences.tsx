@@ -16,9 +16,11 @@ export const EXPERIENCES: Experience[] = [
         },
         employmentType: "Contract",
         icon: <CodeXmlIcon />,
-        description: `- Engineered Python/FastAPI APIs and event-driven flows processing **20M+ SMS and emails monthly**, with **99.9% delivery reliability** and support for **50x peak throughput capacity** through queue processing and idempotency improvements.
-- Building an appointment agent for **voice and SMS**: booking, rescheduling, and cancellation through LangGraph, tool calling, retrieval over business knowledge, and scheduling APIs.
-- Designed behavioral evaluations, guardrails, Redis-backed idempotency, and observability with LangSmith and audit logs. Optimized median voice response latency to **approximately 2 seconds** in testing.`,
+        description: `- Engineer **Python/FastAPI APIs and event-driven messaging flows** for a multi-tenant SaaS platform processing **20M+ SMS and emails monthly**, with **99.9% delivery reliability**. The system connects AWS SQS, Lambda, API Gateway, Aurora/RDS, MongoDB, Redis, and messaging providers.
+- Improved queue processing and introduced **Redis-backed idempotency**, reducing duplicate-send risk and supporting **50x peak throughput capacity**.
+- Building a **multi-turn voice and SMS appointment agent** with Python, LangGraph, ReAct-style orchestration, OpenAI tool calling, and RAG over business knowledge. Integrate scheduling APIs for availability, booking, rescheduling, and cancellation.
+- Designed behavioral evaluations, guardrails against unsupported responses, and observability through **LangSmith and internal audit logs**, so conversation behavior and tool calls can be inspected and improved.
+- Optimized median voice response latency to **approximately 2 seconds in internal tests**. The agent is **in prelaunch testing**; customer adoption and operational outcomes have not yet been measured.`,
         skills: [
           "Python",
           "FastAPI",
@@ -51,7 +53,8 @@ export const EXPERIENCES: Experience[] = [
         icon: <CodeXmlIcon />,
         description: `- Led five engineers, owning prioritization, technical decisions, and delivery as the B2B veterinary SaaS product matured.
 - Owned technical continuity of the platform while reducing infrastructure and operational costs through automation and lean delivery.
-- Led major improvements to the Health Records module: integrated drug reference data, built a pharmacy dispensing portal with external validation, customizable prescription templates (faster daily record creation), and optimized multi-page PDF generation (large performance improvement in rendering time).
+- Led major improvements to the Health Records module: integrated drug reference data, built a pharmacy dispensing portal with external validation, customizable prescription templates (faster daily record creation), and customizable document workflows.
+- Re-architected multi-page PDF generation and asynchronous processing at Guiavet, reducing generation time from **approximately 90 to 15 seconds** (about **83%**), improving a document workflow used by veterinary teams.
 - Delivered end-to-end product changes across backend (Python/Django), frontend (Vue.js), and AWS operations while coordinating with senior engineers under Agile practices.`,
         skills: [
           "Python",

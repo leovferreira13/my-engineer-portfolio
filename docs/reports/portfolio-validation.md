@@ -16,12 +16,12 @@ Validated on 2026-10-17 after the multilingual and QA refinement of PR #18.
 
 | Check                  | Result                                                                                                                                                                |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `pnpm test:content`    | PASS — 13 tests                                                                                                                                                       |
+| `pnpm test:content`    | PASS — 15 tests                                                                                                                                                       |
 | `pnpm lint`            | PASS                                                                                                                                                                  |
 | `pnpm check-types`     | PASS                                                                                                                                                                  |
 | `pnpm build`           | PASS                                                                                                                                                                  |
 | `git diff --check`     | PASS                                                                                                                                                                  |
-| Localized public pages | PASS — profile, projects, and filtered journal across all five languages (15 pages)                                                                                 |
+| Localized public pages | PASS — profile, projects, and filtered journal across all five languages (15 pages)                                                                                   |
 | Mobile profiles        | PASS — all five languages at 390×844 without horizontal overflow                                                                                                      |
 | Desktop                | PASS — 1440×1080; no broken images or overflow                                                                                                                        |
 | Language selection     | PASS — English default even with Portuguese Accept-Language; switching updates root HTML language, shared navigation, title, and page while preserving project filter |
@@ -31,7 +31,7 @@ Validated on 2026-10-17 after the multilingual and QA refinement of PR #18.
 | GitHub card            | PASS — real SVG glyph                                                                                                                                                 |
 | RSS interface          | PASS — no subscription buttons or menu entries                                                                                                                        |
 | vCard                  | PASS — embedded JPEG portrait and canonical contact email                                                                                                             |
-| Machine summaries      | PASS — current Journal terminology, no upstream identity or obsolete blog framing                                                                                |
+| Machine summaries      | PASS — current Journal terminology, no upstream identity or obsolete blog framing                                                                                     |
 | Sitemap                | PASS — 15 locale/section URLs with alternate-language links when a public origin is configured                                                                        |
 | Browser runtime        | PASS — no uncaught page errors                                                                                                                                        |
 
@@ -53,3 +53,11 @@ The command menu was also simplified to current localized navigation, themes, re
 The retained registry Markdown pipeline still emits the previously recorded Turbopack file-tracing warning; compilation and production serving pass. Original authored decision entries are not silently translated. Publishing translated articles can be added explicitly once there is real writing.
 
 No production deployment, merge, or repository visibility change is included. The actual portfolio URL and the GitHub repository Website setting should be set to the verified Railway origin after publication.
+
+## Expanded positioning and controls (2026-10-17)
+
+Reviewed the four role-specific CVs (Product Engineer, Forward Deployed Engineer, Backend, Applied AI), the Product/FDE/Applied AI cover letters, and the evidence bank. Expanded About with scannable customer, backend, and applied AI subsections; added tool-use explanations in every language; expanded Reach.ai details and public project context; qualified the prelaunch agent and internal latency result; added the approximate 90-to-15-second PDF-generation improvement. ADR 0014 records this content pattern.
+
+The language control uses the theme tooltip design, displays Shift+L, and opens from that shortcut. G → L continues to navigate to Journal. Explore the journal uses the shared outline Button.
+
+The prior local production build returned nonempty Markdown and displayed it in Chromium, so the reported blank browser view was not reproduced locally. Both `.txt` endpoints now explicitly return `text/plain; charset=utf-8`, `Content-Disposition: inline`, and `X-Content-Type-Options: nosniff`; production-build browser tests compare the entire displayed body with the fetched response and verify the expanded English export. The HTML head advertises `/llms.txt`. The singular `/llm.txt` remains 404, without redundant aliases. This verification does not establish behavior at an unprovided deployed URL.

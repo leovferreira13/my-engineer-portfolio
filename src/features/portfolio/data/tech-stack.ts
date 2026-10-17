@@ -1,3 +1,5 @@
+import en from "@/i18n/messages/en.json"
+
 import type { TechStack, TechStackSkillGroup } from "../types/tech-stack"
 export const TECH_STACK_GROUP_ORDER: readonly TechStackSkillGroup[] = [
   "Product & delivery",
@@ -176,6 +178,6 @@ export const TECH_STACK_GROUPS = TECH_STACK_GROUP_ORDER.map((title) => ({
 export function formatTechStackForMarkdown(): string {
   return TECH_STACK_GROUPS.map(
     (group) =>
-      `### ${group.title}\n\n${group.items.map((item) => `- [${item.title}](${item.href})`).join("\n")}`
+      `### ${group.title}\n\n${en.capabilityDescriptions[group.title]}\n\n${group.items.map((item) => `- [${item.title}](${item.href})`).join("\n")}`
   ).join("\n\n")
 }

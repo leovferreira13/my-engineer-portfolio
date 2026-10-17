@@ -102,7 +102,9 @@ export const dynamic = "force-static"
 export async function GET() {
   return new Response(await getContent(), {
     headers: {
-      "Content-Type": "text/markdown;charset=utf-8",
+      "Content-Type": "text/plain; charset=utf-8",
+      "Content-Disposition": "inline",
+      "X-Content-Type-Options": "nosniff",
     },
   })
 }

@@ -1,5 +1,7 @@
+import { ArrowRightIcon } from "lucide-react"
 import Link from "next/link"
 
+import { Button } from "@/components/ui/button"
 import {
   Panel,
   PanelContent,
@@ -27,12 +29,12 @@ export async function JournalPreview() {
             {t.emptyPreview}
           </p>
         )}
-        <Link
-          href={localizePath("/journal", locale)}
-          className="mt-4 inline-block text-sm underline underline-offset-4"
-        >
-          {t.visitJournal}
-        </Link>
+        <Button variant="outline" size="sm" asChild className="mt-4">
+          <Link href={localizePath("/journal", locale)}>
+            {t.visitJournal}
+            <ArrowRightIcon aria-hidden="true" />
+          </Link>
+        </Button>
       </PanelContent>
     </Panel>
   )

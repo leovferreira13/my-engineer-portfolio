@@ -2,8 +2,15 @@
 import { CheckIcon, LanguagesIcon, LoaderCircleIcon } from "lucide-react"
 import { usePathname, useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
+import { useHotkeys } from "react-hotkeys-hook"
 
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/base/ui/tooltip"
 import { Button } from "@/components/ui/button"
+import { Kbd } from "@/components/ui/kbd"
 import {
   Popover,
   PopoverContent,
@@ -22,6 +29,9 @@ export function LanguageSelector() {
     params = useSearchParams()
   const [open, setOpen] = useState(false),
     [pending, setPending] = useState(false)
+  useHotkeys("shift+l", () => setOpen((value) => !value), {
+    preventDefault: true,
+  })
   useEffect(() => {
     const reset = () => setPending(false)
     window.addEventListener("pageshow", reset)
@@ -29,21 +39,33 @@ export function LanguageSelector() {
   }, [])
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
-        <Button
-          variant="ghost"
-          size="icon-sm"
-          aria-label={t.language}
-          aria-busy={pending}
-          title={t.language}
-        >
-          {pending ? (
-            <LoaderCircleIcon className="size-4 animate-spin" />
-          ) : (
-            <LanguagesIcon className="size-4" />
-          )}
-        </Button>
-      </PopoverTrigger>
+      <Tooltip>
+        <PopoverTrigger asChild>
+          <TooltipTrigger
+            render={
+              <Button
+                variant="ghost"
+                size="icon-sm"
+                aria-label={t.language}
+                aria-busy={pending}
+                aria-keyshortcuts="Shift+L"
+              >
+                {pending ? (
+                  <LoaderCircleIcon className="size-4 animate-spin" />
+                ) : (
+                  <LanguagesIcon className="size-4" />
+                )}
+              </Button>
+            }
+          />
+        </PopoverTrigger>
+        <TooltipContent className="pr-2 pl-3">
+          <div className="flex items-center gap-3">
+            {t.language}
+            <Kbd>⇧ L</Kbd>
+          </div>
+        </TooltipContent>
+      </Tooltip>
       <PopoverContent align="end" className="w-44 p-1">
         <nav aria-label={t.language}>
           {locales.map((language) => {

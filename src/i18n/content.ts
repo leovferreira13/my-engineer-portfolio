@@ -49,5 +49,6 @@ export function localizedContent(locale: Locale) {
         : project
     ),
     skill,
+    capabilityDescriptions: dictionary.capabilityDescriptions,
   }
 }

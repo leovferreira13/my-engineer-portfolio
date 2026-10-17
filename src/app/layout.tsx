@@ -97,6 +97,7 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <link rel="describedby" href="/llms.txt" type="text/plain" />
         <script
           type="text/javascript"
           dangerouslySetInnerHTML={{ __html: darkModeScript }}

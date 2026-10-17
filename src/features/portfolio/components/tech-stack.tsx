@@ -18,6 +18,9 @@ export async function TechStack() {
             <h3 className="mb-3 text-sm font-semibold">
               {content.skill(group.title)}
             </h3>
+            <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
+              {content.capabilityDescriptions[group.title]}
+            </p>
             <ul className="flex flex-wrap gap-2">
               {group.items.map((tech) => (
                 <li key={tech.key}>

@@ -1,7 +1,10 @@
 import assert from "node:assert/strict"
 import { test } from "node:test"
 
+import { GET as llmsIndex } from "../src/app/(llms)/llms.txt/route"
 import { GET as vcard } from "../src/app/vcard/route"
+import { TECH_STACK_GROUP_ORDER } from "../src/features/portfolio/data/tech-stack"
+import { formatPositionAsMarkdown } from "../src/features/portfolio/lib/format-position-markdown"
 import {
   activeNavigation,
   formatPeriod,
@@ -56,10 +59,7 @@ test("language links preserve section, filters and anchors without duplicate pre
     "/de/journal?project=sports-data-visualizer"
   )
   assert.equal(localizePath("/journal/a-note", "nl"), "/nl/journal/a-note")
-  assert.equal(
-    localizePath("/br/decisions/a-note", "de"),
-    "/de/journal/a-note"
-  )
+  assert.equal(localizePath("/br/decisions/a-note", "de"), "/de/journal/a-note")
   assert.equal(localizePath("/", "en"), "/en")
   assert.equal(
     localizePath("https://github.com/leovferreira13", "br"),
@@ -69,10 +69,7 @@ test("language links preserve section, filters and anchors without duplicate pre
 test("profile navigation is not active on every localized subpage", () => {
   assert.equal(activeNavigation("/br/projects", "/br"), false)
   assert.equal(activeNavigation("/br", "/br"), true)
-  assert.equal(
-    activeNavigation("/de/journal/some-note", "/de/journal"),
-    true
-  )
+  assert.equal(activeNavigation("/de/journal/some-note", "/de/journal"), true)
   assert.equal(activeNavigation("/en/projects-other", "/en/projects"), false)
 })
 test("experience dates have localized months and preserve year-only education dates", () => {
@@ -88,4 +85,40 @@ test("vCard embeds the local portrait and canonical contact email", async () => 
   const text = await response.text()
   assert.match(text, /PHOTO;ENCODING=b;TYPE=JPEG:/i)
   assert.match(text, /leovieiraf\.599@gmail\.com/)
+})
+
+test("capability explanations cover each group in every language", () => {
+  for (const locale of locales) {
+    const content = localizedContent(locale)
+    assert.deepEqual(
+      Object.keys(content.capabilityDescriptions),
+      TECH_STACK_GROUP_ORDER
+    )
+    for (const description of Object.values(content.capabilityDescriptions))
+      assert.ok(description.length > 100)
+    assert.match(content.user.about, /Forward Deployed Engineering/)
+    assert.match(content.user.about, /LangSmith/)
+  }
+})
+
+test("machine index is inline UTF-8 text with real Markdown lines and current links", async () => {
+  const response = llmsIndex()
+  assert.equal(response.status, 200)
+  assert.equal(
+    response.headers.get("Content-Type"),
+    "text/plain; charset=utf-8"
+  )
+  assert.equal(response.headers.get("Content-Disposition"), "inline")
+  assert.equal(response.headers.get("X-Content-Type-Options"), "nosniff")
+  const text = await response.text()
+  assert.match(text, /^# Leonardo Ferreira\n\n> /)
+  assert.match(text, /\n## Professional profile\n/)
+  assert.match(text, /\/llms-full\.txt/)
+  assert.match(text, /\/en\/journal/)
+  assert.doesNotMatch(text, /\\n/)
+  const position = localizedContent("en").experiences[0].positions[0]
+  assert.match(
+    formatPositionAsMarkdown(position, "Reach.ai"),
+    /prelaunch testing/
+  )
 })

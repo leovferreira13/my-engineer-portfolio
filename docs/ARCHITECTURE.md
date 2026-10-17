@@ -50,6 +50,8 @@ The list below is the **living summary of decisions still in force**. Update it 
 - **[0012](./adr/0012-multilingual-portfolio.md)** — Five explicit locale URLs and server-rendered translations; English default.
 - **[0013](./adr/0013-journal-navigation.md)** — Journal navigation and optional machine exports; supersedes 0009.
 
+- **[0014](./adr/0014-expanded-professional-narrative.md)** — Expanded Product Engineer narrative, adjacent role evidence, and multilingual capability explanations reused by English exports.
+
 ## Portfolio and Journal
 
 `src/features/portfolio/data/` is the professional content and project catalog. `src/features/journal/` validates published notes from the shared MDX store. Public pages live at `/<locale>`, `/<locale>/projects`, `/<locale>/journal`, and `/<locale>/journal/[slug]`; the journal feed is `/journal/rss`. Legacy `/decisions` URLs redirect to `/journal` on the same locale. Drafts, future dates, and component documentation do not enter the journal, its navigation, RSS, sitemap, or profile exports. See [JOURNAL.md](JOURNAL.md).

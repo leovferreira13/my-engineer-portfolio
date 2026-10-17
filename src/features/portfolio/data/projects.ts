@@ -13,7 +13,7 @@ export const PROJECTS: Project[] = [
     summary:
       "An interactive football analytics app that makes expected goals tangible: move a shot, inspect its features, and explore the model behind the estimate.",
     description:
-      "Built end to end with a reproducible StatsBomb Open Data pipeline, XGBoost training and evaluation, and browser inference. The five-language playground exposes eight model features alongside the pitch, with methodology and results available in the app. A portfolio project connecting data engineering, model validation, and an interface people can explore.",
+      "The interactive pitch lets visitors change shot conditions and inspect eight model features alongside an expected-goals estimate. I connected a reproducible StatsBomb Open Data pipeline to XGBoost training and evaluation, then brought inference into the browser with a Next.js/React interface.\n\nThe playground is available in five languages and includes methodology and evaluation results. It brings my data, applied ML, backend-to-interface integration, and product work into one public project: visitors can explore what the model does, while the repository exposes how the result was built.",
     skills: [
       "Next.js",
       "React",

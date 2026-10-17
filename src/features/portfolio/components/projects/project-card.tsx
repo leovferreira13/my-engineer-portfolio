@@ -33,9 +33,14 @@ export async function ProjectCard({ project }: { project: Project }) {
           {project.title}
         </h2>
         <p className="leading-relaxed">{project.summary}</p>
-        <p className="text-sm leading-relaxed text-muted-foreground">
-          {project.description}
-        </p>
+        {project.description?.split("\n\n").map((paragraph) => (
+          <p
+            key={paragraph}
+            className="text-sm leading-relaxed text-muted-foreground"
+          >
+            {paragraph}
+          </p>
+        ))}
         <ul className="flex flex-wrap gap-2" aria-label={t.projectTech}>
           {project.skills.map((skill) => (
             <li className="rounded-md bg-muted px-2 py-1 text-xs" key={skill}>

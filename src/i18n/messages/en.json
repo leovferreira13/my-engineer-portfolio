@@ -105,5 +105,12 @@
     "Full-time": "Full-time",
     "Internship and full-time": "Internship and full-time"
   },
-  "positions": {}
+  "positions": {},
+  "capabilityDescriptions": {
+    "Product & delivery": "I connect interviews and usage data to workflow design, prioritization, and technical scope. At Guiavet, this included adapting a veterinary product to different B2B segments and leading five engineers through delivery.",
+    "Backend & cloud": "Python is my main backend language. I use FastAPI for APIs, Django for domain-heavy products, PostgreSQL and MongoDB for persistence, and Redis and AWS queues for asynchronous processing and idempotency.",
+    "Data engineering": "I build ETL pipelines and data models that connect operational systems to reporting and ML. My consulting work used Azure Data Factory, Databricks, and PySpark to integrate databases, APIs, and SFTP sources.",
+    "Applied AI": "I use LangGraph to orchestrate multi-turn agents, OpenAI tool calling to act through APIs, and RAG to retrieve business knowledge. Behavioral evaluations, guardrails, LangSmith traces, and audit logs help inspect behavior and failures.",
+    "Frontend": "I work across the interface when a product needs it: Vue.js in veterinary SaaS, and React, Next.js, and TypeScript in Football, Visualized. The goal is to make backend and model behavior understandable to the user."
+  }
 }

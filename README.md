@@ -18,15 +18,17 @@ I am a Product Engineer based in Rio de Janeiro, with 5+ years across backend an
 
 At Guiavet, I progressed from Software Engineer to Product Manager and Head of Engineering & Product Lead, building veterinary SaaS workflows and leading a team of five engineers. At Reach.ai, I build Python APIs, event-driven messaging systems, and a voice/SMS appointment agent with retrieval, tool calling, evaluations, and observability.
 
+The profile keeps Product Engineer as its main positioning and explains the customer discovery and integration work relevant to Forward Deployed Engineering, the systems depth behind Backend Engineering, and current Applied AI work. The appointment agent is in prelaunch testing; its approximate two-second median voice response latency comes from internal tests.
+
 ## Explore the portfolio
 
-English is always the default. The header language selector offers English (`/en`), Portuguese (`/br`), Dutch (`/nl`), Spanish (`/es`), and German (`/de`). Profile, experience, projects, navigation, and metadata are translated. Switching language preserves the current section and project filter.
+English is always the default. The header language selector offers English (`/en`), Portuguese (`/br`), Dutch (`/nl`), Spanish (`/es`), and German (`/de`). Profile, experience, projects, navigation, and metadata are translated. Switching language preserves the current section and project filter. Hover the language icon to see its shortcut: **Shift+L** opens the selector; **D** switches theme and **G → L** opens the Journal.
 
-| Area                                   | What it contains                                                                                |
-| -------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| **Profile** `/<locale>`                | Product Engineer narrative, experience, capabilities, education, publication, and contact links |
-| **Projects** `/<locale>/projects`      | Curated public work with a live app, source repository, and associated engineering notes        |
-| **Journal** `/<locale>/journal` | Dated decisions, releases, experiments, and retrospectives, filterable by project               |
+| Area                              | What it contains                                                                                |
+| --------------------------------- | ----------------------------------------------------------------------------------------------- |
+| **Profile** `/<locale>`           | Product Engineer narrative, experience, capabilities, education, publication, and contact links |
+| **Projects** `/<locale>/projects` | Curated public work with a live app, source repository, and associated engineering notes        |
+| **Journal** `/<locale>/journal`   | Dated decisions, releases, experiments, and retrospectives, filterable by project               |
 
 ### First public project: Football, Visualized
 
@@ -115,3 +117,7 @@ Based on [Chánh Đại's open-source portfolio](https://github.com/ncdai/chanhd
 The Football, Visualized screenshot is from [sports-data-visualizer](https://github.com/leovferreira13/sports-data-visualizer). That project uses StatsBomb Open Data under its own attribution and non-commercial-use terms; see its README for data provenance and permissions. This portfolio does not redistribute its datasets.
 
 Machine-readable `/llms.txt` and `/llms-full.txt` are optional public English summaries generated from the same content. They contain no private information and are not required for the site to work. RSS remains available to clients without a visible subscription action.
+
+## Machine-readable profile
+
+`/llms.txt` is a short English Markdown index linking to `/llms-full.txt` and the individual profile exports. Both `.txt` routes return inline UTF-8 `text/plain`, so they can be read in a browser or fetched by a tool. The HTML head advertises the index with `rel="describedby"`. These are optional conventions, not a promise that every LLM will discover or consume them. No `/llm.txt` alias is needed. Configure the real public origin before publishing so exported absolute links point to the deployed site.
