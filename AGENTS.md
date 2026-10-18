@@ -74,7 +74,7 @@ For **every revision to the portfolio's content, layout, styles, navigation, or 
 
 **Create every new pull request as a draft by default** (`gh pr create --draft` or API `draft: true`). Keep it in draft during implementation and user-requested refinements; convert an existing ready PR back to draft before continuing work. Only mark it ready for review at the agreed final QA handoff, after implementation, required checks, screenshots, and the PR description are complete. If the user says to keep it draft for now, leave it draft until they indicate the refinement phase is finished. Marking ready does not authorize merging or self-approving. This maintainer preference takes precedence over workflow examples that omit the draft flag.
 
-When a work item is **ready to commit**, or the user asks for **commits**, **branches**, or **pull requests** under the agreed workflow, read and follow [`.agents/skills/github-source-control/SKILL.md`](.agents/skills/github-source-control/SKILL.md) (branch from `develop` by default, no direct push to `main`/`develop`, conventional commits, open PRs with a documented body).
+When a work item is **ready to commit**, or the user asks for **commits**, **branches**, or **pull requests** under the agreed workflow, read and follow [`.agents/skills/github-source-control/SKILL.md`](.agents/skills/github-source-control/SKILL.md) (branch from `main`, no direct push to `main`, conventional commits, open PRs with a documented body).
 
 Other project skills live under [`.agents/skills/`](.agents/skills/) (for example component docs and registry block classification).
 

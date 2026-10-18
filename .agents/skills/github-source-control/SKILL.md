@@ -15,14 +15,12 @@ Follow this skill whenever the user states that a **work item is OK to commit**,
 
 ## Protected branches
 
-- **Never push directly to `main` or `develop`.** Changes reach them only via **pull requests**.
-- All implementable work lands on a **feature branch**, then a **PR** targets `main` (or `develop` when the user says that integration path is required).
+- **Never push directly to `main`.** Changes reach it only via **pull requests**.
+- All implementable work lands on a **feature branch**, then a **PR** targets `main`.
 
 ## Base branch for new work
 
-1. **Default:** create the new branch from `develop` (update it first: `git fetch origin` and branch from `origin/develop` unless the user is already on an up-to-date local `develop`).
-2. **If the user says `main` is required** (e.g. hotfix): create the branch from `develop` or `main` as the user specifies; if unclear, ask once which base they want.
-3. Do not assume `develop` exists; verify with `git branch -a` or `git ls-remote` when relevant.
+1. **Default:** create the new branch from `main` (update it first: `git fetch origin` and branch from `origin/main` unless the user is already on an up-to-date local `main`).
 
 ## Branch naming
 
@@ -58,12 +56,12 @@ chore(deps): bump eslint to latest patch
 ## Workflow (work item ready to commit)
 
 1. Ensure working tree changes match what the user approved.
-2. **Fetch** and choose **base** (`develop` by default, or `main` / user instruction).
+2. **Fetch** and use **base** `main` (`git fetch origin`, then branch from `origin/main`).
 3. **Create and checkout** a new branch using the naming rules above.
 4. **Stage** only the intended files.
 5. **Commit** with a conventional message.
 6. **Push** the branch to `origin` (`git push -u origin <branch>`).
-7. **Open a pull request** targeting `develop` (or `main` if the user required that path). Set title and body per below, and **assign the maintainer** (see below).
+7. **Open a pull request** targeting `main`. Set title and body per below, and **assign the maintainer** (see below).
 
 ## PR assignee
 
@@ -94,8 +92,8 @@ Prefer **`gh pr create`** when GitHub CLI is available and authenticated; otherw
 
 ## Quick checklist
 
-- Branch from `develop` unless user/develop rules say otherwise
+- Branch from `main` and open the pull request against `main`
 - Branch name matches `feat/` / `fix/` / `chore/` (+ issue prefix if applicable)
-- No direct pushes to `main` or `staging`
+- No direct pushes to `main`.
 - Conventional commit message, brief
 - PR opened with documented feature/fix; **maintainer added as assignee**; no approval workflow handled by the agent
