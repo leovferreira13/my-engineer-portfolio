@@ -3,7 +3,10 @@ import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { EntryList } from "@/features/journal/components/entry-list"
-import { getJournalEntries } from "@/features/journal/data/entries"
+import {
+  entryListsProject,
+  getJournalEntries,
+} from "@/features/journal/data/entries"
 import { PROJECTS } from "@/features/portfolio/data/projects"
 import { localizePath } from "@/i18n/config"
 import { localizedMetadata } from "@/i18n/metadata"
@@ -20,7 +23,8 @@ export default async function JournalPage({
   const { project: projectId } = await searchParams
   const selected = PROJECTS.find((project) => project.id === projectId)
   const entries = getJournalEntries().filter(
-    (entry) => !projectId || entry.metadata.projectId === projectId
+    (entry) =>
+      !projectId || entryListsProject(entry.metadata.projectIds, projectId)
   )
   return (
     <div className="mx-auto max-w-3xl py-10 sm:py-14">

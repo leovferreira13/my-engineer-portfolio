@@ -47,10 +47,10 @@ export default async function JournalEntryPage({
   const entry = getJournalEntry((await params).slug)
   if (!entry) notFound()
   const project = PROJECTS.find(
-    (project) => project.id === entry.metadata.projectId
+    (item) => item.id === entry.metadata.projectIds[0]
   )!
   const all = getJournalEntries().filter(
-    (item) => item.metadata.projectId === project.id
+    (item) => item.metadata.projectIds[0] === project.id
   )
   const index = all.findIndex((item) => item.slug === entry.slug)
   const newer = all[index - 1],

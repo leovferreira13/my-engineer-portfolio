@@ -1,6 +1,9 @@
 import Link from "next/link"
 
-import { getJournalEntries } from "@/features/journal/data/entries"
+import {
+  entryListsProject,
+  getJournalEntries,
+} from "@/features/journal/data/entries"
 import { formatPeriod, localizePath } from "@/i18n/config"
 import { getI18n } from "@/i18n/request"
 
@@ -8,8 +11,8 @@ import type { Project } from "../../types/projects"
 
 export async function ProjectCard({ project }: { project: Project }) {
   const { locale, t } = await getI18n()
-  const entries = getJournalEntries().filter(
-    (entry) => entry.metadata.projectId === project.id
+  const entries = getJournalEntries().filter((entry) =>
+    entryListsProject(entry.metadata.projectIds, project.id)
   )
   return (
     <article

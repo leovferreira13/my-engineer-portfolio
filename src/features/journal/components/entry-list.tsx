@@ -11,9 +11,9 @@ export async function EntryList({ entries }: { entries: JournalEntry[] }) {
   return (
     <div className="space-y-4">
       {entries.map((entry) => {
-        const project = PROJECTS.find(
-          (project) => project.id === entry.metadata.projectId
-        )!
+        const projects = entry.metadata.projectIds.map(
+          (id) => PROJECTS.find((project) => project.id === id)!
+        )
         return (
           <article
             key={entry.slug}
@@ -24,7 +24,10 @@ export async function EntryList({ entries }: { entries: JournalEntry[] }) {
                 {entry.metadata.createdAt}
               </time>
               <span>
-                · {t[entry.metadata.entryType]} · {project.title}
+                · {t[entry.metadata.entryType]}
+                {projects.length > 0
+                  ? ` · ${projects.map((project) => project.title).join(" · ")}`
+                  : null}
               </span>
             </p>
             <h2 className="text-xl font-semibold">
