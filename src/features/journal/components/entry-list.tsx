@@ -5,8 +5,15 @@ import { localizePath } from "@/i18n/config"
 import { getI18n } from "@/i18n/request"
 
 import type { JournalEntry } from "../data/entries"
+import { entryPath } from "../lib/timeline-href"
 
-export async function EntryList({ entries }: { entries: JournalEntry[] }) {
+export async function EntryList({
+  entries,
+  projectFilter,
+}: {
+  entries: JournalEntry[]
+  projectFilter?: string
+}) {
   const { locale, t } = await getI18n()
   return (
     <div className="space-y-4">
@@ -33,7 +40,10 @@ export async function EntryList({ entries }: { entries: JournalEntry[] }) {
             <h2 className="text-xl font-semibold">
               <Link
                 className="hover:underline"
-                href={localizePath(`/journal/${entry.slug}`, locale)}
+                href={localizePath(
+                  entryPath(entry.slug, projectFilter),
+                  locale
+                )}
               >
                 {entry.metadata.title}
               </Link>

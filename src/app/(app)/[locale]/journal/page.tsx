@@ -3,10 +3,15 @@ import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { EntryList } from "@/features/journal/components/entry-list"
+import { JournalTimelineMarker } from "@/features/journal/components/journal-timeline-marker"
 import {
   entryListsProject,
   getJournalEntries,
 } from "@/features/journal/data/entries"
+import {
+  journalListPath,
+  readProjectFilter,
+} from "@/features/journal/lib/timeline-href"
 import { PROJECTS } from "@/features/portfolio/data/projects"
 import { localizePath } from "@/i18n/config"
 import { localizedMetadata } from "@/i18n/metadata"
@@ -17,10 +22,10 @@ export function generateMetadata() {
 export default async function JournalPage({
   searchParams,
 }: {
-  searchParams: Promise<{ project?: string }>
+  searchParams: Promise<{ project?: string | string[] }>
 }) {
   const { locale, t } = await getI18n()
-  const { project: projectId } = await searchParams
+  const projectId = readProjectFilter((await searchParams).project)
   const selected = PROJECTS.find((project) => project.id === projectId)
   const entries = getJournalEntries().filter(
     (entry) =>
@@ -28,6 +33,9 @@ export default async function JournalPage({
   )
   return (
     <div className="mx-auto max-w-3xl py-10 sm:py-14">
+      <JournalTimelineMarker
+        href={localizePath(journalListPath(projectId), locale)}
+      />
       <p className="mb-3 font-mono text-xs tracking-widest text-muted-foreground uppercase">
         {t.decisionEyebrow}
       </p>
@@ -58,7 +66,7 @@ export default async function JournalPage({
         ))}
       </nav>
       {entries.length ? (
-        <EntryList entries={entries} />
+        <EntryList entries={entries} projectFilter={projectId} />
       ) : (
         <section className="rounded-xl border border-dashed border-line p-8 sm:p-10">
           <p className="mb-4 font-mono text-xs text-muted-foreground">

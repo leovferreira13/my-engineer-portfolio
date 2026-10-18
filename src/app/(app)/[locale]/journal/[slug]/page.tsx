@@ -5,10 +5,13 @@ import { notFound } from "next/navigation"
 import { MDX } from "@/components/mdx"
 import { Prose } from "@/components/ui/typography"
 import { SITE_INFO } from "@/config/site"
+import { JournalBack } from "@/features/journal/components/journal-back"
+import { getJournalEntry } from "@/features/journal/data/entries"
+import { journalAbout } from "@/features/journal/lib/journal-about"
 import {
-  getJournalEntries,
-  getJournalEntry,
-} from "@/features/journal/data/entries"
+  journalListPath,
+  readProjectFilter,
+} from "@/features/journal/lib/timeline-href"
 import { PROJECTS } from "@/features/portfolio/data/projects"
 import { USER } from "@/features/portfolio/data/user"
 import { localizePath } from "@/i18n/config"
@@ -40,21 +43,19 @@ export async function generateMetadata({
 }
 export default async function JournalEntryPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ slug: string }>
+  searchParams: Promise<{ project?: string | string[] }>
 }) {
   const { locale, t } = await getI18n()
   const entry = getJournalEntry((await params).slug)
   if (!entry) notFound()
-  const project = PROJECTS.find(
-    (item) => item.id === entry.metadata.projectIds[0]
-  )!
-  const all = getJournalEntries().filter(
-    (item) => item.metadata.projectIds[0] === project.id
+  const filter = readProjectFilter((await searchParams).project)
+  const projects = entry.metadata.projectIds.map(
+    (id) => PROJECTS.find((project) => project.id === id)!
   )
-  const index = all.findIndex((item) => item.slug === entry.slug)
-  const newer = all[index - 1],
-    older = all[index + 1]
+  const about = journalAbout(projects)
   const schema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -64,11 +65,7 @@ export default async function JournalEntryPage({
     dateModified: entry.metadata.updatedAt,
     url: `${SITE_INFO.url}${localizePath(`/journal/${entry.slug}`, locale)}`,
     author: { "@type": "Person", name: USER.displayName, url: SITE_INFO.url },
-    about: {
-      "@type": "SoftwareSourceCode",
-      name: project.title,
-      codeRepository: project.repository,
-    },
+    ...(about ? { about } : {}),
   }
   return (
     <article className="mx-auto max-w-3xl py-10 sm:py-14">
@@ -78,12 +75,10 @@ export default async function JournalEntryPage({
           __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
         }}
       />
-      <Link
-        href={localizePath(`/journal?project=${project.id}`, locale)}
-        className="text-sm text-muted-foreground underline underline-offset-4"
-      >
-        ← {t.journal} · {project.title}
-      </Link>
+      <JournalBack
+        href={localizePath(journalListPath(filter), locale)}
+        label={t.backToJournal}
+      />
       <header className="mt-8 mb-8 space-y-4">
         <p className="font-mono text-xs text-muted-foreground">
           <time dateTime={entry.metadata.createdAt}>
@@ -103,23 +98,34 @@ export default async function JournalEntryPage({
             {entry.metadata.updatedAt}
           </time>
         </p>
-        <div className="flex flex-wrap gap-4 text-sm underline underline-offset-4">
-          <Link href={localizePath(`/projects#${project.id}`, locale)}>
-            {t.aboutProject}
-          </Link>
-          {project.repository && (
-            <a
-              href={project.repository}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t.repository} ↗
-            </a>
-          )}
-          <a href={project.link} target="_blank" rel="noopener noreferrer">
-            {t.liveApp} ↗
-          </a>
-        </div>
+        {projects.length > 0 && (
+          <div className="space-y-3 text-sm underline underline-offset-4">
+            {projects.map((project) => (
+              <div key={project.id} className="flex flex-wrap gap-4">
+                <Link href={localizePath(`/projects#${project.id}`, locale)}>
+                  {projects.length > 1 ? `${project.title}: ` : null}
+                  {t.aboutProject}
+                </Link>
+                {project.repository && (
+                  <a
+                    href={project.repository}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t.repository} ↗
+                  </a>
+                )}
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t.liveApp} ↗
+                </a>
+              </div>
+            ))}
+          </div>
+        )}
         {entry.metadata.tags.length > 0 && (
           <p className="text-xs text-muted-foreground">
             {entry.metadata.tags.join(" · ")}
@@ -153,21 +159,6 @@ export default async function JournalEntryPage({
           </ul>
         </section>
       )}
-      <nav
-        aria-label={t.moreNotes}
-        className="mt-10 flex flex-wrap justify-between gap-4 border-t border-line pt-6 text-sm"
-      >
-        {older && (
-          <Link href={localizePath(`/journal/${older.slug}`, locale)}>
-            ← {older.metadata.title}
-          </Link>
-        )}
-        {newer && (
-          <Link href={localizePath(`/journal/${newer.slug}`, locale)}>
-            {newer.metadata.title} →
-          </Link>
-        )}
-      </nav>
     </article>
   )
 }
