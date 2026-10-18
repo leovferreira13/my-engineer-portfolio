@@ -1,18 +1,19 @@
-import Link from "next/link"
-
 import { PROJECTS } from "@/features/portfolio/data/projects"
 import { localizePath } from "@/i18n/config"
 import { getI18n } from "@/i18n/request"
 
 import type { JournalEntry } from "../data/entries"
 import { entryPath } from "../lib/timeline-href"
+import { JournalEntryLink } from "./journal-entry-link"
 
 export async function EntryList({
   entries,
   projectFilter,
+  timelineHref,
 }: {
   entries: JournalEntry[]
   projectFilter?: string
+  timelineHref?: string
 }) {
   const { locale, t } = await getI18n()
   return (
@@ -38,15 +39,15 @@ export async function EntryList({
               </span>
             </p>
             <h2 className="text-xl font-semibold">
-              <Link
-                className="hover:underline"
+              <JournalEntryLink
+                timelineHref={timelineHref}
                 href={localizePath(
                   entryPath(entry.slug, projectFilter),
                   locale
                 )}
               >
                 {entry.metadata.title}
-              </Link>
+              </JournalEntryLink>
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               {entry.metadata.description}

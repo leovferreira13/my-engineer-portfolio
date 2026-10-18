@@ -9,6 +9,7 @@ import { JournalBack } from "@/features/journal/components/journal-back"
 import { getJournalEntry } from "@/features/journal/data/entries"
 import { journalAbout } from "@/features/journal/lib/journal-about"
 import {
+  entryPath,
   journalListPath,
   readProjectFilter,
 } from "@/features/journal/lib/timeline-href"
@@ -76,6 +77,8 @@ export default async function JournalEntryPage({
         }}
       />
       <JournalBack
+        key={localizePath(entryPath(entry.slug, filter), locale)}
+        entryHref={localizePath(entryPath(entry.slug, filter), locale)}
         href={localizePath(journalListPath(filter), locale)}
         label={t.backToJournal}
       />

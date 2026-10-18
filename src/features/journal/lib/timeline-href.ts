@@ -1,3 +1,8 @@
+export type TimelineNavigation = {
+  timelineHref: string
+  entryHref: string
+}
+
 export function readProjectFilter(value: string | string[] | undefined) {
   const raw = Array.isArray(value) ? value[0] : value
   if (raw === undefined || raw.trim() === "") return undefined
@@ -15,6 +20,14 @@ export function entryPath(slug: string, filter: string | undefined) {
   return `${path}?project=${encodeURIComponent(filter)}`
 }
 
-export function shouldUseHistoryBack(stored: string | null, href: string) {
-  return stored !== null && stored === href
+export function shouldUseHistoryBack(
+  navigation: TimelineNavigation | null,
+  href: string,
+  entryHref: string
+) {
+  return (
+    navigation !== null &&
+    navigation.timelineHref === href &&
+    navigation.entryHref === entryHref
+  )
 }

@@ -3,7 +3,6 @@ import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { EntryList } from "@/features/journal/components/entry-list"
-import { JournalTimelineMarker } from "@/features/journal/components/journal-timeline-marker"
 import {
   entryListsProject,
   getJournalEntries,
@@ -33,9 +32,6 @@ export default async function JournalPage({
   )
   return (
     <div className="mx-auto max-w-3xl py-10 sm:py-14">
-      <JournalTimelineMarker
-        href={localizePath(journalListPath(projectId), locale)}
-      />
       <p className="mb-3 font-mono text-xs tracking-widest text-muted-foreground uppercase">
         {t.decisionEyebrow}
       </p>
@@ -66,7 +62,11 @@ export default async function JournalPage({
         ))}
       </nav>
       {entries.length ? (
-        <EntryList entries={entries} projectFilter={projectId} />
+        <EntryList
+          entries={entries}
+          projectFilter={projectId}
+          timelineHref={localizePath(journalListPath(projectId), locale)}
+        />
       ) : (
         <section className="rounded-xl border border-dashed border-line p-8 sm:p-10">
           <p className="mb-4 font-mono text-xs text-muted-foreground">
