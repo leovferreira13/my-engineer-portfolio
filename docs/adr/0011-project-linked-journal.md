@@ -2,8 +2,9 @@
 type: ADR
 id: "0011"
 title: "Project-linked journal"
-status: active
+status: superseded
 date: 2026-10-17
+superseded_by: "0016"
 ---
 
 ## Context

@@ -5,7 +5,9 @@ category: "journal"
 status: "draft"
 createdAt: "2026-10-17"
 updatedAt: "2026-10-17"
-projectId: "sports-data-visualizer"
+# [] means this post references no project.
+projectIds:
+  - "sports-data-visualizer"
 entryType: "decision"
 tags: ["modeling", "product"]
 references: []
