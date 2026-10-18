@@ -14,7 +14,7 @@ export const EXPERIENCES: Experience[] = [
         employmentPeriod: {
           start: "11.2025",
         },
-        employmentType: "Contract",
+        employmentType: "Full-time",
         icon: <CodeXmlIcon />,
         description: `- Engineer **Python/FastAPI APIs and event-driven messaging flows** for a multi-tenant SaaS platform processing **20M+ SMS and emails monthly**, with **99.9% delivery reliability**. The system connects AWS SQS, Lambda, API Gateway, Aurora/RDS, MongoDB, Redis, and messaging providers.
 - Improved queue processing and introduced **Redis-backed idempotency**, reducing duplicate-send risk and supporting **50x peak throughput capacity**.
