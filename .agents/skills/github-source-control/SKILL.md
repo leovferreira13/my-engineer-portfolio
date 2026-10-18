@@ -94,6 +94,6 @@ Prefer **`gh pr create`** when GitHub CLI is available and authenticated; otherw
 
 - Branch from `main` and open the pull request against `main`
 - Branch name matches `feat/` / `fix/` / `chore/` (+ issue prefix if applicable)
-- No direct pushes to `main`.
+- No direct pushes to `main`
 - Conventional commit message, brief
 - PR opened with documented feature/fix; **maintainer added as assignee**; no approval workflow handled by the agent
