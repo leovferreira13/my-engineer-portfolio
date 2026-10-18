@@ -36,7 +36,7 @@
     "upgrade:tailwind": "npx @tailwindcss/upgrade@latest",
     "prepare": "husky",
     "dev:portless": "portless leovferreira next dev",
-    "test:content": "node --import tsx --test scripts/check-content.test.ts scripts/check-i18n.test.ts scripts/set-public-url.test.mjs",
+    "test:content": "node --import tsx --test scripts/check-content.test.ts scripts/check-journal-back.test.ts scripts/check-i18n.test.ts scripts/set-public-url.test.mjs",
     "site:url": "node scripts/set-public-url.mjs",
     "capture:portfolio": "node scripts/capture-portfolio.mjs"
   },

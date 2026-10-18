@@ -45,7 +45,7 @@ The list below is the **living summary of decisions still in force**. Update it 
 - **[0008](./adr/0008-portfolio-section-cards.md)** — Homepage sections as discrete cards; shared border treatment.
 
 - **[0010](./adr/0010-public-project-catalog.md)** — Growing public project catalog with source/demo links; supersedes 0007.
-- **[0011](./adr/0011-project-linked-journal.md)** — Explicit MDX publication, project links, chronology, evidence, RSS, and honest empty state.
+- **[0016](./adr/0016-journal-entries-several-projects.md)** — A journal entry lists zero or more catalog projects. An empty list is a post with no project. Back returns to the timeline filter. No older/newer notes. Supersedes 0011.
 
 - **[0012](./adr/0012-multilingual-portfolio.md)** — Five explicit locale URLs and server-rendered translations; English default.
 - **[0013](./adr/0013-journal-navigation.md)** — Journal navigation and optional machine exports; supersedes 0009.

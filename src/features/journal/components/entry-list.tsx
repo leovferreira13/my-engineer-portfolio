@@ -1,19 +1,27 @@
-import Link from "next/link"
-
 import { PROJECTS } from "@/features/portfolio/data/projects"
 import { localizePath } from "@/i18n/config"
 import { getI18n } from "@/i18n/request"
 
 import type { JournalEntry } from "../data/entries"
+import { entryPath } from "../lib/timeline-href"
+import { JournalEntryLink } from "./journal-entry-link"
 
-export async function EntryList({ entries }: { entries: JournalEntry[] }) {
+export async function EntryList({
+  entries,
+  projectFilter,
+  timelineHref,
+}: {
+  entries: JournalEntry[]
+  projectFilter?: string
+  timelineHref?: string
+}) {
   const { locale, t } = await getI18n()
   return (
     <div className="space-y-4">
       {entries.map((entry) => {
-        const project = PROJECTS.find(
-          (project) => project.id === entry.metadata.projectId
-        )!
+        const projects = entry.metadata.projectIds.map(
+          (id) => PROJECTS.find((project) => project.id === id)!
+        )
         return (
           <article
             key={entry.slug}
@@ -24,16 +32,22 @@ export async function EntryList({ entries }: { entries: JournalEntry[] }) {
                 {entry.metadata.createdAt}
               </time>
               <span>
-                · {t[entry.metadata.entryType]} · {project.title}
+                · {t[entry.metadata.entryType]}
+                {projects.length > 0
+                  ? ` · ${projects.map((project) => project.title).join(" · ")}`
+                  : null}
               </span>
             </p>
             <h2 className="text-xl font-semibold">
-              <Link
-                className="hover:underline"
-                href={localizePath(`/journal/${entry.slug}`, locale)}
+              <JournalEntryLink
+                timelineHref={timelineHref}
+                href={localizePath(
+                  entryPath(entry.slug, projectFilter),
+                  locale
+                )}
               >
                 {entry.metadata.title}
-              </Link>
+              </JournalEntryLink>
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               {entry.metadata.description}

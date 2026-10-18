@@ -1,6 +1,6 @@
 export type DocMetadata = {
   status?: "draft" | "published"
-  projectId?: string
+  projectIds?: string[]
   entryType?: "decision" | "release" | "experiment" | "retrospective"
   tags?: string[]
   references?: { label: string; url: string }[]

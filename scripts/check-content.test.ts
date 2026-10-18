@@ -6,7 +6,10 @@ import { after, beforeEach, test } from "node:test"
 
 import { GET as rss } from "../src/app/(app)/journal/rss/route"
 import { getAllDocs } from "../src/features/doc/data/documents"
-import { getJournalEntries } from "../src/features/journal/data/entries"
+import {
+  entryListsProject,
+  getJournalEntries,
+} from "../src/features/journal/data/entries"
 
 const previous = process.cwd()
 const fixtureRoot = mkdtempSync(join(tmpdir(), "portfolio-content-"))
@@ -22,16 +25,22 @@ after(() => {
 })
 
 function entry(slug: string, overrides: Record<string, unknown> = {}) {
-  const data = {
+  const data: Record<string, unknown> = {
     title: `Entry ${slug}`,
     description: "Evidence and decisions",
     category: "journal",
     status: "published",
     createdAt: "2026-01-10",
     updatedAt: "2026-01-10",
-    projectId: "sports-data-visualizer",
+    projectIds: ["sports-data-visualizer"],
     entryType: "decision",
     ...overrides,
+  }
+  if (
+    ("projectId" in overrides && !("projectIds" in overrides)) ||
+    ("projectIds" in overrides && overrides.projectIds === undefined)
+  ) {
+    delete data.projectIds
   }
   const frontmatter = Object.entries(data)
     .map(([key, value]) => `${key}: ${JSON.stringify(value)}`)
@@ -72,8 +81,147 @@ test("entries sort by actual date, with deterministic slug order for ties", () =
   )
 })
 test("a published entry must reference an existing project", () => {
-  entry("bad-project", { projectId: "not-in-catalog" })
-  assert.throws(() => getJournalEntries(), /Unknown projectId/)
+  entry("bad-project", { projectIds: ["not-in-catalog"] })
+  assert.throws(
+    () => getJournalEntries(),
+    /Unknown project id \\"not-in-catalog\\": add the project to PROJECTS first/
+  )
+})
+test("two project ids are counted once under each project", () => {
+  entry("both", {
+    projectIds: [" sports-data-visualizer ", "fixture-second-project"],
+  })
+  assert.throws(
+    () => getJournalEntries(),
+    /Unknown project id \\"fixture-second-project\\": add the project to PROJECTS first/
+  )
+  const catalog = [
+    { id: "sports-data-visualizer" },
+    { id: "fixture-second-project" },
+  ]
+  const entries = getJournalEntries(catalog)
+  const both = entries.find((item) => item.slug === "both")
+  assert.ok(both)
+  assert.deepEqual(both.metadata.projectIds, [
+    "sports-data-visualizer",
+    "fixture-second-project",
+  ])
+  for (const id of ["sports-data-visualizer", "fixture-second-project"]) {
+    const matched = entries.filter((item) =>
+      entryListsProject(item.metadata.projectIds, id)
+    )
+    assert.deepEqual(
+      matched.map((item) => item.slug),
+      ["both"]
+    )
+  }
+})
+test("a YAML block sequence of one project id is accepted", () => {
+  writeFileSync(
+    join(contentDir, "block.mdx"),
+    `---
+title: "Block"
+description: "Evidence and decisions"
+category: "journal"
+status: "published"
+createdAt: "2026-01-10"
+updatedAt: "2026-01-10"
+projectIds:
+  - "sports-data-visualizer"
+entryType: "decision"
+---
+
+## Context
+
+A real project decision.
+`
+  )
+  assert.deepEqual(getJournalEntries()[0]?.metadata.projectIds, [
+    "sports-data-visualizer",
+  ])
+})
+test("an empty projectIds list is valid and matches no project", () => {
+  entry("no-project", { projectIds: [] })
+  entry("only-first")
+  const entries = getJournalEntries()
+  const empty = entries.find((item) => item.slug === "no-project")
+  assert.ok(empty)
+  assert.deepEqual(empty.metadata.projectIds, [])
+  assert.equal(
+    entryListsProject(empty.metadata.projectIds, "sports-data-visualizer"),
+    false
+  )
+  assert.equal(
+    entries
+      .filter((item) =>
+        entryListsProject(item.metadata.projectIds, "sports-data-visualizer")
+      )
+      .some((item) => item.slug === "no-project"),
+    false
+  )
+  assert.equal(
+    entries.some((item) => item.slug === "no-project"),
+    true
+  )
+})
+test("a missing projectIds key is rejected", () => {
+  entry("missing", { projectIds: undefined })
+  assert.throws(
+    () => getJournalEntries(),
+    /projectIds is required\. Use \[\] when the entry has no project/
+  )
+})
+test("projectIds rejects duplicates, blanks, non-strings, and a non-list", () => {
+  entry("duplicate", {
+    projectIds: ["sports-data-visualizer", "sports-data-visualizer"],
+  })
+  assert.throws(
+    () => getJournalEntries(),
+    /Duplicate project id \\"sports-data-visualizer\\"/
+  )
+  rmSync(join(contentDir, "duplicate.mdx"))
+  entry("blank", { projectIds: [" "] })
+  assert.throws(
+    () => getJournalEntries(),
+    /Project id must be a non-empty string/
+  )
+  rmSync(join(contentDir, "blank.mdx"))
+  entry("number", { projectIds: [12] })
+  assert.throws(
+    () => getJournalEntries(),
+    /Project id must be a non-empty string/
+  )
+  rmSync(join(contentDir, "number.mdx"))
+  entry("text", { projectIds: "sports-data-visualizer" })
+  assert.throws(
+    () => getJournalEntries(),
+    /projectIds must be a list of project ids/
+  )
+})
+test("the old projectId key is rejected", () => {
+  entry("old", { projectId: "sports-data-visualizer" })
+  assert.throws(
+    () => getJournalEntries(),
+    (error: unknown) => {
+      const message = String(error)
+      assert.match(message, /projectId field is no longer accepted/)
+      assert.match(
+        message,
+        /projectIds is required\. Use \[\] when the entry has no project/
+      )
+      assert.doesNotMatch(message, /at least one/)
+      return true
+    }
+  )
+  rmSync(join(contentDir, "old.mdx"))
+  entry("old-and-empty", {
+    projectId: "sports-data-visualizer",
+    projectIds: [],
+  })
+  assert.throws(
+    () => getJournalEntries(),
+    /projectId field is no longer accepted/
+  )
 })
 test("a published entry rejects impossible dates and backwards updates", () => {
   entry("bad-date", { createdAt: "2026-02-30", updatedAt: "2026-03-01" })
