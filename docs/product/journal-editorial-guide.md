@@ -2,6 +2,12 @@
 
 This is the living editorial map for writing Journal posts. Use it with [JOURNAL.md](../JOURNAL.md), which owns metadata, routes, visibility and publication checks, and [resume directives](resume-directives.md), which cover the portfolio's professional narrative. Update this guide through normal review as the author's preferences evolve; do not treat one article's outline as a mandatory template for every entry type.
 
+## Authorship and authority
+
+The author defined and validated these editorial rules while reviewing the Journal’s first article. This guide records those decisions as an author-approved standard so subsequent writing routines, including AI-assisted workflows, apply them consistently. Editorial automation serves the author’s stated intent, voice and review decisions.
+
+Read and apply this guide on every Journal assignment. The author may revise it as the writing evolves; update the recorded rules when a change is agreed. Length targets and suggested outlines retain the flexibility stated below, while evidence, public-source boundaries and approval requirements remain applicable to every post. Record substantive revisions with their date and author approval so the current guidance remains traceable.
+
 ## Purpose and audience
 
 Explain how a real problem became a product, decision or experiment. Help readers understand the author's motivation, reasoning, alternatives and learning. Technologies support that story; a list of tools or completed tasks is not the story itself.
@@ -28,6 +34,14 @@ For decisions and experiments, adapt that arc to the problem, alternatives, prot
 - Connect paragraphs through the work's actual dependencies and reasoning. Avoid disconnected mini summaries, generic transitions and unsupported causal claims.
 - Give most stages one concise paragraph. Include a second only when it materially helps the narrative.
 - Summarize technical choices and their tradeoffs. Move exhaustive configuration, score tables, test inventories and implementation details into linked evidence unless they are the central subject of the post.
+
+## Images, animation and explanatory context
+
+Use screenshots, diagrams or short animations when they help readers understand the objective, interaction or specific point being discussed. Choose the format for its explanatory value: a screenshot can show the interface and related inputs; a short animation can show a meaningful change over time. Visuals are optional and should earn their place rather than serve as decoration or merely break up text.
+
+Introduce or explain each visual in the surrounding prose or a descriptive caption, close to the relevant paragraph. It supplements the narrative and evidence; it must not carry an essential explanation on its own. Keep the text understandable without the image, provide meaningful alternative text, and distinguish illustrative scenes from measured evidence. Explain what a reader should notice instead of leaving an unexplained image or GIF between paragraphs.
+
+Prefer accurate captures of the actual product over generated interface mockups. Use public-safe assets with appropriate source credit and reuse rights, avoiding private data. Check readability and layout on desktop and mobile. For animation, keep file size and motion modest, provide a static alternative or reduced-motion behavior, and never require playback to understand the point. Agree new visuals as part of the article’s editorial review.
 
 ## Evidence and contextual links
 
@@ -64,4 +78,7 @@ Record adverse findings and limitations that affect the reader's interpretation.
 
 Keep this guide reusable and public-safe. Do not copy chat transcripts, private support correspondence, internal source maps or project-specific experiment dumps into it. Capture a newly agreed editorial preference here and keep linked instructions consistent. Technical publication behavior remains owned by JOURNAL.md; architectural changes still follow the ADR process.
 
-Initial editorial baseline: 2026-10-22, established while reviewing the first Football, Visualized retrospective.
+## Approved editorial revisions
+
+- **2026-10-22:** the author validated the initial baseline during review of the first Football, Visualized retrospective: motivation, connected narrative, conclusion, introductory length target and specific evidence links.
+- **2026-10-22:** the author requested an explicit record of that ownership and consistent application, and approved using contextual images or animation when they help explain the article. Visuals supplement the prose and need explanatory context.

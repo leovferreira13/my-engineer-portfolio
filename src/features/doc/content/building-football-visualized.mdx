@@ -2,7 +2,7 @@
 title: "Building Football, Visualized: Making Sports Metrics Easier to Understand"
 description: "Why I built an interactive xG playground, how its data and model became a public product, and where I want to take Sports Data Visualizer."
 category: "journal"
-status: "draft"
+status: "published"
 createdAt: "2026-10-22"
 updatedAt: "2026-10-22"
 projectIds:
@@ -31,6 +31,10 @@ That became Football, Visualized. I started with xG because football is part of 
 ## From the idea to a working product
 
 I began with the interactive pitch, before connecting real predictions. This gave me a way to develop the experience while the modeling questions were still open. Using Next.js, React and TypeScript, I built editable scenarios where visitors can move the shooter, goalkeeper and defenders, try presets, and use mouse, touch or keyboard controls. Field coordinates stay in meters, so resizing the interface preserves the underlying geometry.
+
+![Football, Visualized Playground showing a shooter, goalkeeper, two defenders, the xG estimate and eight positional inputs](/projects/football-visualized.png)
+
+_An illustrative scene in the Playground: player positions, the model’s inputs and its estimate appear together for exploration._
 
 Once that interaction existed, I needed evidence behind its estimates. I audited StatsBomb Open Data and narrowed the population to about 35,000 men’s open-play foot shots. Partial player observations shaped the eight positional inputs and their limitations. I also documented attribution and the conditions for the free, non-commercial portfolio, keeping source records out of the public repository. The [data audit](https://github.com/leovferreira13/sports-data-visualizer/blob/main/docs/reports/xg-data-audit.md) explains the population and exclusions.
 
