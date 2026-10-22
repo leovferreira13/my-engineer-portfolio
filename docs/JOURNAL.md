@@ -2,6 +2,8 @@
 
 The journal is a dated record of product and engineering work. It starts empty; publishing a real entry is an editorial action, not a prerequisite for launching the portfolio.
 
+For narrative, voice, length, contextual evidence links and the author-review workflow, read the [Journal editorial guide](product/journal-editorial-guide.md) before writing. That living guide complements the content and publication contract below.
+
 ## Content contract
 
 Entries live in `src/features/doc/content/<slug>.mdx`. Start from [the template](templates/journal-entry.mdx.example).

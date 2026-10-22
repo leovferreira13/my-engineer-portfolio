@@ -1,0 +1,51 @@
+---
+title: "Building Football, Visualized: Making Sports Metrics Easier to Understand"
+description: "Why I built an interactive xG playground, how its data and model became a public product, and where I want to take Sports Data Visualizer."
+category: "journal"
+status: "draft"
+createdAt: "2026-10-22"
+updatedAt: "2026-10-22"
+projectIds:
+  - "sports-data-visualizer"
+entryType: "retrospective"
+tags: ["product-engineering", "sports-analytics", "applied-ml"]
+references:
+  - label: "StatsBomb data audit"
+    url: "https://github.com/leovferreira13/sports-data-visualizer/blob/main/docs/reports/xg-data-audit.md"
+  - label: "Evaluation results"
+    url: "https://sports-data.leoferreira.dev.br/en#scores"
+  - label: "Methodology and limitations"
+    url: "https://sports-data.leoferreira.dev.br/en#methodology"
+  - label: "Current versus monotonic model comparison"
+    url: "https://github.com/leovferreira13/sports-data-visualizer/pull/44"
+---
+
+I love football and sports, and data is increasingly part of how I follow them. But having more sophisticated numbers available does not necessarily make them easier to understand. I often see expected goals (xG) discussed without a clear sense of what the estimate describes or how it can help someone interpret a match.
+
+A difficult shot goes in, or a team creates chances and still loses, and the conversation becomes whether xG was “right.” Those are useful starting points for a different question: what was the metric intended to tell us? An estimate of chance quality needs to leave room for unlikely outcomes. Understanding that distinction helps us use the number alongside what happened on the pitch.
+
+I wanted to make those questions easier to explore. What changes when a shot comes from a tighter angle? How does goalkeeper positioning enter an estimate? Which details does a model leave out? My idea was to let someone manipulate a recognizable situation and inspect the response, with enough explanation to understand its limits.
+
+That became Football, Visualized. I started with xG because football is part of my everyday life and I regularly encounter confusion around it. The first goal was to build an experience where someone could explore the inputs behind an estimate and find an explanation when the response raised questions.
+
+## From the idea to a working product
+
+I began with the interactive pitch, before connecting real predictions. This gave me a way to develop the experience while the modeling questions were still open. Using Next.js, React and TypeScript, I built editable scenarios where visitors can move the shooter, goalkeeper and defenders, try presets, and use mouse, touch or keyboard controls. Field coordinates stay in meters, so resizing the interface preserves the underlying geometry.
+
+Once that interaction existed, I needed evidence behind its estimates. I audited StatsBomb Open Data and narrowed the population to about 35,000 men’s open-play foot shots. Partial player observations shaped the eight positional inputs and their limitations. I also documented attribution and the conditions for the free, non-commercial portfolio, keeping source records out of the public repository. The [data audit](https://github.com/leovferreira13/sports-data-visualizer/blob/main/docs/reports/xg-data-audit.md) explains the population and exclusions.
+
+With those inputs defined, I compared logistic regression baselines and a shallow XGBoost candidate. Whole matches were separated across training, calibration, selection and final testing. The frozen XGBoost achieved better average probability scores than the references on the held-out cohort. Reproducible runs and versioned artifacts made the comparison inspectable, while sparse scenarios and limits on generalization remained explicit. The product’s [evaluation results](https://sports-data.leoferreira.dev.br/en#scores) present the scores and uncertainty.
+
+The next step was connecting the Python training pipeline to the browser. I implemented the same feature definitions in TypeScript, exported the fitted model, and checked prediction parity and artifact integrity. Inference runs locally in the browser. The interface shows the eight inputs alongside the estimate, with [methodology and limitations](https://sports-data.leoferreira.dev.br/en#methodology) below the pitch. Penalties use a separately labeled fixed convention.
+
+Using the integrated Playground then raised questions the aggregate scores had not answered. Some movements produced counterintuitive changes; others left the estimate unchanged. I investigated a monotonic alternative, separating changes to individual inputs from physical movements that alter several inputs together. I retained the current model because the comparison had not demonstrated a perceptible interaction improvement. The [comparison and decision](https://github.com/leovferreira13/sports-data-visualizer/pull/44) record that tradeoff. Predictive quality and interactive behavior needed separate checks.
+
+Finally, I expanded the interface to five languages, preserved scenarios across language changes, and prepared the documentation, attribution and deployment for a public release. The result is a working Playground where visitors can explore the model and inspect how it was built. Whether it improves their understanding still needs feedback; a guided Learn mode remains future work.
+
+## Where I want to take it
+
+This first release is a starting point for the broader Sports Data Visualizer idea: making complex sports metrics approachable through interaction. Basketball and composite player ratings are possible future subjects. Each would need an experience suited to what the metric actually measures, supported by its own data and explanation.
+
+For now, I want to learn from what people find helpful or confusing in the football Playground. That feedback can guide better explanations and future experiments before expanding the scope. Building the first module showed me how the interface and the model can inform each other: interaction exposes questions, and a documented pipeline gives me a way to investigate them.
+
+The longer-term aim is to help people understand why a metric is useful, how to interpret it, and when to question it. [Try Football, Visualized](https://sports-data.leoferreira.dev.br/en) and explore the situations behind the numbers.
