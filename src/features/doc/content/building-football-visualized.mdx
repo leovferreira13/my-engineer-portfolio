@@ -26,15 +26,54 @@ A difficult shot goes in, or a team creates chances and still loses, and the con
 
 I wanted to make those questions easier to explore. What changes when a shot comes from a tighter angle? How does goalkeeper positioning enter an estimate? Which details does a model leave out? My idea was to let someone manipulate a recognizable situation and inspect the response, with enough explanation to understand its limits.
 
+<figure className="not-prose my-8 space-y-3">
+  <video
+    controls
+    playsInline
+    muted
+    preload="none"
+    poster="/journal-assets/football-visualized/shot-geometry-poster.png"
+    width={1200}
+    height={800}
+    aria-label="Shot geometry: same distance, different angle"
+    aria-describedby="shot-geometry-caption"
+    className="w-full rounded-xl"
+  >
+    <source
+      src="/journal-assets/football-visualized/shot-geometry.webm"
+      type="video/webm"
+    />
+    <a href="/journal-assets/football-visualized/shot-geometry-comparison.png">
+      View the static comparison.
+    </a>
+  </video>
+  <details>
+    <summary className="cursor-pointer text-sm">
+      <span>View the static comparison</span>
+    </summary>
+    <FramedImage
+      src="/journal-assets/football-visualized/shot-geometry-comparison.png"
+      alt="Two shots 20 metres from the goal centre: the central position has a 20.7-degree goal opening, while the wider position has a 10.7-degree opening."
+      width={1200}
+      height={1010}
+    />
+  </details>
+  <figcaption
+    id="shot-geometry-caption"
+    className="text-sm text-muted-foreground"
+  >
+    The shooter stays 20 metres from the centre of the goal, but the opening
+    between the posts changes. This illustrates shot geometry, one part of the
+    model’s inputs, rather than a scoring probability. Play the animation or
+    compare the two positions in the static image.
+  </figcaption>
+</figure>
+
 That became Football, Visualized. I started with xG because football is part of my everyday life and I regularly encounter confusion around it. The first goal was to build an experience where someone could explore the inputs behind an estimate and find an explanation when the response raised questions.
 
 ## From the idea to a working product
 
 I began with the interactive pitch, before connecting real predictions. This gave me a way to develop the experience while the modeling questions were still open. Using Next.js, React and TypeScript, I built editable scenarios where visitors can move the shooter, goalkeeper and defenders, try presets, and use mouse, touch or keyboard controls. Field coordinates stay in meters, so resizing the interface preserves the underlying geometry.
-
-![Football, Visualized Playground showing a shooter, goalkeeper, two defenders, the xG estimate and eight positional inputs](/projects/football-visualized.png)
-
-_An illustrative scene in the Playground: player positions, the model’s inputs and its estimate appear together for exploration._
 
 Once that interaction existed, I needed evidence behind its estimates. I audited StatsBomb Open Data and narrowed the population to about 35,000 men’s open-play foot shots. Partial player observations shaped the eight positional inputs and their limitations. I also documented attribution and the conditions for the free, non-commercial portfolio, keeping source records out of the public repository. The [data audit](https://github.com/leovferreira13/sports-data-visualizer/blob/main/docs/reports/xg-data-audit.md) explains the population and exclusions.
 
