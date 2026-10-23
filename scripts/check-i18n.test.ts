@@ -128,10 +128,14 @@ test("stack icons use curated slugs", () => {
     "nginx",
   ])
   assert.equal(slugs.has("aws-lambda-sqs-api-gateway"), false)
-  assert.equal(keys.length, 20)
+  assert.equal(slugs.has("langgraph"), true)
+  assert.equal(slugs.has("langsmith"), true)
+  assert.equal("langgraph" in TECH_STACK_ICONS, false)
+  assert.equal("langsmith" in TECH_STACK_ICONS, false)
+  assert.equal(keys.length, 18)
   for (const key of keys) assert.ok(slugs.has(key))
   assert.equal(TECH_STACK.length, 27)
-  assert.equal(TECH_STACK.length - keys.length, 7)
+  assert.equal(TECH_STACK.length - keys.length, 9)
 })
 
 test("english stack export keeps group prose and every curated link", () => {
