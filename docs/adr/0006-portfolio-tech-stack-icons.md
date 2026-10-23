@@ -2,7 +2,8 @@
 type: ADR
 id: "0006"
 title: "Portfolio tech stack data and icon resolution"
-status: active
+status: superseded
+superseded_by: "0017"
 date: 2026-04-17
 ---
 

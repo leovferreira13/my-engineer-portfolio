@@ -48,12 +48,12 @@ export default async function Page() {
         <Overview />
         <SocialLinks />
         <About />
-        <Experiences />
-        <Projects />
         <TechStack />
+        <Experiences />
+        <JournalPreview />
+        <Projects />
         <Education />
         <Awards />
-        <JournalPreview />
       </div>
     </>
   )

@@ -17,7 +17,7 @@
     "experience": "Berufserfahrung",
     "education": "Ausbildung",
     "publications": "Publikationen",
-    "capabilities": "Kompetenzen und Tools",
+    "stack": "Stack",
     "selectedWork": "Ausgewählte Projekte",
     "allProjects": "Alle Projekte",
     "exploreWork": "Meine Arbeit ansehen",
@@ -85,6 +85,7 @@
   },
   "publication": "Untersuchung algorithmischer Handlungsmöglichkeiten in der psychischen Gesundheitsversorgung, mit einem Klassifikationsrahmen für beobachtete und latente Variablen.",
   "skills": {
+    "Language": "Sprache",
     "Product & delivery": "Produkt und Umsetzung",
     "Backend & cloud": "Backend und Cloud",
     "Data engineering": "Data Engineering",
@@ -136,10 +137,11 @@
     }
   },
   "capabilityDescriptions": {
-    "Product & delivery": "Ich verbinde Interviews und Nutzungsdaten mit Prozessgestaltung, Priorisierung und technischer Eingrenzung. Bei Guiavet passte ich ein Veterinärprodukt an verschiedene B2B-Segmente an und leitete fünf Engineers bei der Umsetzung.",
-    "Backend & cloud": "Python ist meine wichtigste Backendsprache. Ich nutze FastAPI für APIs, Django für domänenreiche Produkte, PostgreSQL und MongoDB zur Speicherung sowie Redis und AWS-Warteschlangen für asynchrone Verarbeitung und Idempotenz.",
+    "Language": "Python ist die Sprache, die ich für Backends, Datenarbeit und angewandte KI verwende. TypeScript ist die Sprache, die ich für Oberflächen verwende, einschließlich React und Next.js in Football, Visualized.",
+    "Backend & cloud": "Ich nutze FastAPI für APIs und Django für domänenreiche Produkte. PostgreSQL und MongoDB speichern Daten, Redis und serverlose AWS-Warteschlangen übernehmen asynchrone Verarbeitung und Idempotenz, Docker paketiert die Dienste in Containern und Nginx übernimmt Reverse Proxy und Routing am Rand.",
+    "Applied AI": "Ich nutze LangGraph zur Agentenorchestrierung, OpenAI Tool Calling für API-Aktionen und RAG für Geschäftswissen. Claude und AWS Bedrock gehören zu dieser Modellebene. Verhaltensevaluationen, Guardrails, LangSmith-Traces und Audit-Logs helfen, Verhalten und Fehler zu untersuchen.",
     "Data engineering": "Ich baue ETL-Pipelines und Datenmodelle, die operative Systeme mit Berichten und ML verbinden. In der Beratung integrierte ich Datenbanken, APIs und SFTP-Quellen mit Azure Data Factory, Databricks und PySpark.",
-    "Applied AI": "Ich nutze LangGraph zur Agentenorchestrierung, OpenAI Tool Calling für API-Aktionen und RAG für Geschäftswissen. Verhaltensevaluationen, Guardrails, LangSmith-Traces und Audit-Logs helfen, Verhalten und Fehler zu untersuchen.",
-    "Frontend": "Bei Bedarf arbeite ich auch an der Oberfläche: Vue.js im Veterinär-SaaS und React, Next.js und TypeScript in Football, Visualized. Ziel ist, Backend- und Modellverhalten für Nutzer verständlich zu machen."
+    "Frontend": "Bei Bedarf arbeite ich auch an der Oberfläche: Vue.js im Veterinär-SaaS und React und Next.js in Football, Visualized. Ziel ist, Backend- und Modellverhalten für Nutzer verständlich zu machen.",
+    "Product & delivery": "Ich verbinde Interviews und Nutzungsdaten mit Prozessgestaltung, Priorisierung und technischer Eingrenzung. Bei Guiavet passte ich ein Veterinärprodukt an verschiedene B2B-Segmente an und leitete fünf Engineers bei der Umsetzung."
   }
 }

@@ -93,8 +93,9 @@ export function CommandMenu({
             {(
               [
                 ["about", t.about],
+                ["stack", t.stack],
                 ["experience", t.experience],
-                ["stack", t.capabilities],
+                ["journal", t.journal],
                 ["education", t.education],
                 ["awards", t.publications],
               ] as const

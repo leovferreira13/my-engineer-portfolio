@@ -1,15 +1,14 @@
 export type TechStackSkillGroup =
-  | "Product & delivery"
+  | "Language"
   | "Backend & cloud"
-  | "Data engineering"
   | "Applied AI"
+  | "Data engineering"
   | "Frontend"
+  | "Product & delivery"
 export type TechStack = {
   key: string
   title: string
   href: string
   skillGroup: TechStackSkillGroup
-  categories: string[]
-  theme?: boolean
-  useLocalAsset?: boolean
+  categories: readonly string[]
 }
