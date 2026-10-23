@@ -1,5 +1,7 @@
 import type { JSX } from "react"
 
+import type { TechStackKey } from "../data/tech-stack"
+
 function PythonIcon() {
   return (
     <svg
@@ -168,7 +170,9 @@ function VueJsIcon() {
     </svg>
   )
 }
-export const TECH_STACK_ICONS: Record<string, () => JSX.Element> = {
+export const TECH_STACK_ICONS: Partial<
+  Record<TechStackKey, () => JSX.Element>
+> = {
   python: PythonIcon,
   fastapi: FastApiIcon,
   django: DjangoIcon,

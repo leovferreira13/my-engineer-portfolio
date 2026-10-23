@@ -3,6 +3,7 @@ import { test } from "node:test"
 
 import { GET as llmsIndex } from "../src/app/(llms)/llms.txt/route"
 import { GET as vcard } from "../src/app/vcard/route"
+import { TECH_STACK_ICONS } from "../src/features/portfolio/components/tech-stack-icons"
 import {
   formatTechStackForMarkdown,
   TECH_STACK,
@@ -108,6 +109,13 @@ test("capability explanations cover each group in every language", () => {
     assert.doesNotMatch(content.user.about, /^#{1,6}\s/m)
     assert.doesNotMatch(content.user.about, /Guiavet|Reach\.ai|QDOIS/i)
   }
+})
+
+test("stack icons use twelve curated slugs", () => {
+  const slugs = new Set(TECH_STACK.map((item) => item.key))
+  const keys = Object.keys(TECH_STACK_ICONS)
+  assert.equal(keys.length, 12)
+  for (const key of keys) assert.ok(slugs.has(key))
 })
 
 test("english stack export keeps group prose and every curated link", () => {

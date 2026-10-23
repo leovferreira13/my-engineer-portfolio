@@ -9,5 +9,5 @@ export type TechStack = {
   title: string
   href: string
   skillGroup: TechStackSkillGroup
-  categories: string[]
+  categories: readonly string[]
 }

@@ -8,7 +8,7 @@ export const TECH_STACK_GROUP_ORDER: readonly TechStackSkillGroup[] = [
   "Applied AI",
   "Frontend",
 ]
-export const TECH_STACK: TechStack[] = [
+export const TECH_STACK = [
   {
     key: "user-discovery",
     title: "User discovery",
@@ -170,7 +170,8 @@ export const TECH_STACK: TechStack[] = [
     skillGroup: "Frontend",
     categories: [],
   },
-]
+] as const satisfies readonly TechStack[]
+export type TechStackKey = (typeof TECH_STACK)[number]["key"]
 export const TECH_STACK_GROUPS = TECH_STACK_GROUP_ORDER.map((title) => ({
   title,
   items: TECH_STACK.filter((item) => item.skillGroup === title),
