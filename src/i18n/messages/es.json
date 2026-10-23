@@ -138,10 +138,10 @@
   },
   "capabilityDescriptions": {
     "Language": "Python es el lenguaje que uso en backends, datos e IA aplicada. TypeScript es el lenguaje que uso en interfaces, incluido React y Next.js en Football, Visualized.",
-    "Backend & cloud": "Python es mi principal lenguaje de backend. Uso FastAPI para APIs, Django para productos con reglas de dominio, PostgreSQL y MongoDB para persistencia, y Redis y colas de AWS para procesamiento asíncrono e idempotencia.",
-    "Applied AI": "Uso LangGraph para orquestar agentes, tool calling de OpenAI para actuar mediante APIs y RAG para recuperar conocimiento del negocio. Evaluaciones, guardrails, trazas de LangSmith y registros permiten investigar comportamiento y fallos.",
+    "Backend & cloud": "Uso FastAPI para APIs y Django para productos con reglas de dominio. PostgreSQL y MongoDB guardan los datos, Redis y colas serverless de AWS cubren el procesamiento asíncrono y la idempotencia, Docker empaqueta los servicios en contenedores y Nginx hace de proxy inverso y enruta el tráfico en el borde.",
+    "Applied AI": "Uso LangGraph para orquestar agentes, tool calling de OpenAI para actuar mediante APIs y RAG para recuperar conocimiento del negocio. Claude y AWS Bedrock forman parte de esa capa de modelos. Evaluaciones, guardrails, trazas de LangSmith y registros permiten investigar comportamiento y fallos.",
     "Data engineering": "Construyo pipelines ETL y modelos que conectan sistemas operativos con informes y ML. En consultoría, integré bases de datos, APIs y fuentes SFTP con Azure Data Factory, Databricks y PySpark.",
-    "Frontend": "También trabajo en la interfaz cuando el producto lo requiere: Vue.js en SaaS veterinario y React, Next.js y TypeScript en Football, Visualized. El objetivo es hacer comprensible el comportamiento del backend y de los modelos.",
+    "Frontend": "También trabajo en la interfaz cuando el producto lo requiere: Vue.js en SaaS veterinario y React y Next.js en Football, Visualized. El objetivo es hacer comprensible el comportamiento del backend y de los modelos.",
     "Product & delivery": "Conecto entrevistas y datos de uso con el diseño de flujos, la priorización y el alcance técnico. En Guiavet, adapté un producto veterinario a distintos segmentos B2B y lideré a cinco ingenieros en las entregas."
   }
 }
