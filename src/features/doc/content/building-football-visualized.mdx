@@ -26,6 +26,12 @@ A difficult shot goes in, or a team creates chances and still loses, and the con
 
 I wanted to make those questions easier to explore. What changes when a shot comes from a tighter angle? How does goalkeeper positioning enter an estimate? Which details does a model leave out? My idea was to let someone manipulate a recognizable situation and inspect the response, with enough explanation to understand its limits.
 
+That became Football, Visualized. I started with xG because football is part of my everyday life and I regularly encounter confusion around it. The first goal was to build an experience where someone could explore the inputs behind an estimate and find an explanation when the response raised questions.
+
+## From the idea to a working product
+
+I began with the interactive pitch, before connecting real predictions. This gave me a way to develop the experience while the modeling questions were still open. Using Next.js, React and TypeScript, I built editable scenarios where visitors can move the shooter, goalkeeper and defenders, try presets, and use mouse, touch or keyboard controls. Field coordinates stay in meters, so resizing the interface preserves the underlying geometry.
+
 <figure className="not-prose my-8 space-y-3">
   <JournalAnimation
     src="/journal-assets/football-visualized/shot-geometry.webm"
@@ -54,12 +60,6 @@ I wanted to make those questions easier to explore. What changes when a shot com
     the playback controls or compare the two positions in the static image.
   </figcaption>
 </figure>
-
-That became Football, Visualized. I started with xG because football is part of my everyday life and I regularly encounter confusion around it. The first goal was to build an experience where someone could explore the inputs behind an estimate and find an explanation when the response raised questions.
-
-## From the idea to a working product
-
-I began with the interactive pitch, before connecting real predictions. This gave me a way to develop the experience while the modeling questions were still open. Using Next.js, React and TypeScript, I built editable scenarios where visitors can move the shooter, goalkeeper and defenders, try presets, and use mouse, touch or keyboard controls. Field coordinates stay in meters, so resizing the interface preserves the underlying geometry.
 
 Once that interaction existed, I needed evidence behind its estimates. I audited StatsBomb Open Data and narrowed the population to about 35,000 men’s open-play foot shots. Partial player observations shaped the eight positional inputs and their limitations. I also documented attribution and the conditions for the free, non-commercial portfolio, keeping source records out of the public repository. The [data audit](https://github.com/leovferreira13/sports-data-visualizer/blob/main/docs/reports/xg-data-audit.md) explains the population and exclusions.
 

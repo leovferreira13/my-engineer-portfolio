@@ -1,6 +1,6 @@
 # Football, Visualized article illustration
 
-Author-approved original editorial illustration, 2026-10-22. Assets live in `public/journal-assets/football-visualized/` and illustrate the introductory questions in `building-football-visualized.mdx`.
+Author-approved original editorial illustration, 2026-10-22. Assets live in `public/journal-assets/football-visualized/` and follow the first implementation paragraph in `building-football-visualized.mdx`.
 
 The graphic uses the Sports Data Visualizer field convention (105 × 68 m and 7.32 m goal) and its goal-opening geometry, from [`lib/scenario.ts`](https://github.com/leovferreira13/sports-data-visualizer/blob/main/lib/scenario.ts) and [`lib/geometry.ts`](https://github.com/leovferreira13/sports-data-visualizer/blob/main/lib/geometry.ts). A shooter follows a 20 m radius around the goal centre, from a central position to a 60-degree lateral offset and back. Distance and opening angle match the project functions at the central, intermediate and offset positions: 20 m throughout; openings 20.740758°, 17.032964° (36-degree offset) and 10.721511° (60-degree offset).
 
