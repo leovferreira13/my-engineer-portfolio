@@ -3,7 +3,11 @@ import { test } from "node:test"
 
 import { GET as llmsIndex } from "../src/app/(llms)/llms.txt/route"
 import { GET as vcard } from "../src/app/vcard/route"
-import { TECH_STACK_GROUP_ORDER } from "../src/features/portfolio/data/tech-stack"
+import {
+  formatTechStackForMarkdown,
+  TECH_STACK,
+  TECH_STACK_GROUP_ORDER,
+} from "../src/features/portfolio/data/tech-stack"
 import {
   employmentMonths,
   formatEmploymentDuration,
@@ -94,6 +98,7 @@ test("vCard embeds the local portrait and canonical contact email", async () => 
 test("capability explanations cover each group in every language", () => {
   for (const locale of locales) {
     const content = localizedContent(locale)
+    assert.equal(getDictionary(locale).ui.stack, "Stack")
     assert.deepEqual(
       Object.keys(content.capabilityDescriptions),
       TECH_STACK_GROUP_ORDER
@@ -103,6 +108,19 @@ test("capability explanations cover each group in every language", () => {
     assert.doesNotMatch(content.user.about, /^#{1,6}\s/m)
     assert.doesNotMatch(content.user.about, /Guiavet|Reach\.ai|QDOIS/i)
   }
+})
+
+test("english stack export keeps group prose and every curated link", () => {
+  const markdown = formatTechStackForMarkdown()
+  const descriptions = getDictionary("en").capabilityDescriptions
+  assert.equal(TECH_STACK.length, 23)
+  for (const group of TECH_STACK_GROUP_ORDER) {
+    assert.ok(markdown.includes(`### ${group}\n\n${descriptions[group]}`))
+  }
+  for (const item of TECH_STACK) {
+    assert.ok(markdown.includes(`- [${item.title}](${item.href})`))
+  }
+  assert.doesNotMatch(markdown, /assets\.chanhdai\.com/)
 })
 
 test("machine index is inline UTF-8 text with real Markdown lines and current links", async () => {
