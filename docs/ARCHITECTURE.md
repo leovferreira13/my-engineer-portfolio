@@ -51,6 +51,7 @@ The list below is the **living summary of decisions still in force**. Update it 
 - **[0013](./adr/0013-journal-navigation.md)** — Journal navigation and optional machine exports; supersedes 0009.
 
 - **[0015](./adr/0015-concise-profile-about.md)** — Concise profile-centered About, with detailed experience and multilingual capability explanations reused by English exports; supersedes 0014.
+- **[0018](./adr/0018-homepage-section-order.md)** — After About, the profile order is Stack, Experience, Journal, Selected work, Education, and Awards.
 
 ## Portfolio and Journal
 
