@@ -2,6 +2,8 @@
 
 The journal is a dated record of product and engineering work. It starts empty; publishing a real entry is an editorial action, not a prerequisite for launching the portfolio.
 
+For narrative, voice, length, contextual evidence links and the author-review workflow, read the [Journal editorial guide](product/journal-editorial-guide.md) before writing. That living guide complements the content and publication contract below.
+
 ## Content contract
 
 Entries live in `src/features/doc/content/<slug>.mdx`. Start from [the template](templates/journal-entry.mdx.example).
@@ -14,7 +16,7 @@ Entries live in `src/features/doc/content/<slug>.mdx`. Start from [the template]
 | `createdAt`, `updatedAt` | Quoted, real `YYYY-MM-DD` dates; updated date cannot precede publication date                                                                                                                                                         |
 | `projectIds`             | Required ordered list of stable ids from `PROJECTS`. `[]` is valid and means the post references no project. Each id must match a project. The same id cannot repeat. Blank items are invalid. The single `projectId` key is invalid. |
 | `entryType`              | `"decision"`, `"release"`, `"experiment"`, or `"retrospective"`                                                                                                                                                                       |
-| `tags`                   | Optional list of relevant topics                                                                                                                                                                                                      |
+| `tags`                   | Optional list of human-readable topic labels (for example, `"Product Engineering"` and `"Applied ML"`), displayed as tags                                                                                                             |
 | `references`             | Optional `{ label, url }` items; HTTPS links to a PR, commit, release, result, or source                                                                                                                                              |
 
 The slug is the filename and is the permanent address: `/<locale>/journal/<slug>`. Avoid renaming a published file without adding a redirect. Keep project IDs stable for the same reason.

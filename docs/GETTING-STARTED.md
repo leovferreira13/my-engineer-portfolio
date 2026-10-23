@@ -10,6 +10,14 @@ Run `pnpm check-types`, `pnpm lint`, `pnpm test:content`, and `pnpm build` for i
 
 The inherited registry build requires Bun; run it only when changing registry source. The pre-commit hook uses lint-staged to format/lint staged changes. No registry rebuild is needed for professional data or journal entries.
 
+## Check first-page loading
+
+A first visit with `pnpm dev` can include on-demand route compilation. Later visits reuse the development compilation, so those timings are not directly comparable. Check the terminal's compile and render timings when investigating a slow first local visit.
+
+To preview production behavior, run `pnpm build`, then `pnpm start`. The production server uses the compiled build. If your development server is already on port 3000, use `pnpm start --port 3001` and open the production preview on that port. Finish the build before starting the production server; restart it after a new build.
+
+Measure the first request and subsequent requests separately. Do not add application caching solely to hide development compilation: locale, project-filter navigation, draft visibility and publication dates still need to behave correctly.
+
 ## Keep README captures current
 
 For every portfolio revision, run a fresh production build and serve that revision locally before `pnpm capture:portfolio`. Set `PORTFOLIO_BASE_URL` if the local server uses another origin. The script explicitly loads `/en` for the desktop and `/br` for mobile, sets dark mode independently of saved preferences, and waits for fonts and images. It rejects HTTP errors, a different profile, or horizontal overflow. Inspect both screenshots and commit them with the implementation, even when the desktop crop happens to look unchanged. The mandatory rule is in `AGENTS.md`.

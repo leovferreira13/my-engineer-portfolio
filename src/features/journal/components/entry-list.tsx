@@ -5,6 +5,7 @@ import { getI18n } from "@/i18n/request"
 import type { JournalEntry } from "../data/entries"
 import { entryPath } from "../lib/timeline-href"
 import { JournalEntryLink } from "./journal-entry-link"
+import { JournalTags } from "./journal-tags"
 
 export async function EntryList({
   entries,
@@ -52,11 +53,7 @@ export async function EntryList({
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               {entry.metadata.description}
             </p>
-            {entry.metadata.tags.length > 0 && (
-              <p className="mt-3 text-xs text-muted-foreground">
-                {entry.metadata.tags.join(" · ")}
-              </p>
-            )}
+            <JournalTags tags={entry.metadata.tags} className="mt-3" />
           </article>
         )
       })}

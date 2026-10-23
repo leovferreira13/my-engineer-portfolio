@@ -50,9 +50,10 @@ Use that project for priorities, milestones, and copy or UX tasks that are not y
 
 These files define **what to say**, **how to prioritize**, and **which constraints** apply when editing portfolio-facing content or derived materials. They are the canonical product layer **below** vision and **above** implementation details in `src/`.
 
-| Document                                                 | Role                                                                                                                                                                                                                                   |
-| -------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`resume-directives.md`](./product/resume-directives.md) | **Directives:** resume-as-landing-page principles, four reader personas (ATS, recruiter, interviewer, hiring manager), structure, tone, impact language, links, and anti-patterns—applied consistently to the site, blog, and exports. |
+| Document                                                             | Role                                                                                                                                                                                                                                   |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`resume-directives.md`](./product/resume-directives.md)             | **Directives:** resume-as-landing-page principles, four reader personas (ATS, recruiter, interviewer, hiring manager), structure, tone, impact language, links, and anti-patterns—applied consistently to the site, blog, and exports. |
+| [`journal-editorial-guide.md`](./product/journal-editorial-guide.md) | **Editorial map:** motivation, connected narrative, default length, evidence links, author review and reusable Journal writing workflow.                                                                                               |
 
 **Future product docs:** add new files under `docs/product/` (e.g. messaging, IA, or content calendars) and **link them from this table** so vision, Linear, and repo-local directives stay discoverable from one place.
 
