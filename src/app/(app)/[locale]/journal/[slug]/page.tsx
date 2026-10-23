@@ -6,6 +6,7 @@ import { MDX } from "@/components/mdx"
 import { Prose } from "@/components/ui/typography"
 import { SITE_INFO } from "@/config/site"
 import { JournalBack } from "@/features/journal/components/journal-back"
+import { JournalTags } from "@/features/journal/components/journal-tags"
 import { getJournalEntry } from "@/features/journal/data/entries"
 import { journalAbout } from "@/features/journal/lib/journal-about"
 import {
@@ -129,11 +130,7 @@ export default async function JournalEntryPage({
             ))}
           </div>
         )}
-        {entry.metadata.tags.length > 0 && (
-          <p className="text-xs text-muted-foreground">
-            {entry.metadata.tags.join(" · ")}
-          </p>
-        )}
+        <JournalTags tags={entry.metadata.tags} />
       </header>
       {locale !== "en" && (
         <p className="mb-6 text-sm text-muted-foreground">

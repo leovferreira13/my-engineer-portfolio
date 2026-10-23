@@ -41,7 +41,7 @@ Use screenshots, diagrams or short animations when they help readers understand 
 
 Introduce or explain each visual in the surrounding prose or a descriptive caption, close to the relevant paragraph. It supplements the narrative and evidence; it must not carry an essential explanation on its own. Keep the text understandable without the image, provide meaningful alternative text, and distinguish illustrative scenes from measured evidence. Explain what a reader should notice instead of leaving an unexplained image or GIF between paragraphs.
 
-Prefer accurate captures of the actual product over generated interface mockups. Use public-safe assets with appropriate source credit and reuse rights, avoiding private data. Check readability and layout on desktop and mobile. For animation, keep file size and motion modest, provide a static alternative or reduced-motion behavior, and never require playback to understand the point. Agree new visuals as part of the article’s editorial review.
+Prefer accurate captures of the actual product over generated interface mockups. Use public-safe assets with appropriate source credit and reuse rights, avoiding private data. Check readability and layout on desktop and mobile. For animation, keep file size and motion modest, provide a static alternative or reduced-motion behavior, and never require playback to understand the point. When autoplay is appropriate, use muted inline playback, keep pause controls visible, and respect reduced-motion preferences by showing a still image until the reader explicitly starts playback. Agree new visuals as part of the article’s editorial review.
 
 ## Evidence and contextual links
 
@@ -82,3 +82,4 @@ Keep this guide reusable and public-safe. Do not copy chat transcripts, private 
 
 - **2026-10-22:** the author validated the initial baseline during review of the first Football, Visualized retrospective: motivation, connected narrative, conclusion, introductory length target and specific evidence links.
 - **2026-10-22:** the author requested an explicit record of that ownership and consistent application, and approved using contextual images or animation when they help explain the article. Visuals supplement the prose and need explanatory context.
+- **2026-10-22:** the author requested muted, looping autoplay for the shot-geometry illustration, with pause controls and a static initial view for reduced-motion preferences. Topic labels should be human-readable and displayed as neutral tag badges.

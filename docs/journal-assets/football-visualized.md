@@ -8,8 +8,8 @@ The angle is `atan2(abs(cross(post1 - shooter, post2 - shooter)), dot(post1 - sh
 
 This is an explanatory geometry scene, not an observed shot, model evaluation or xG probability. A real drag also changes other model inputs. No source shot records, external photographs or third-party diagram assets are included. Labels were rasterized with Noto Sans; no font files are distributed.
 
-- `shot-geometry.webm`: silent animation, shown with native playback controls, without autoplay or looping.
-- `shot-geometry-poster.png`: the intermediate frame displayed before playback, including for readers who prefer reduced motion.
+- `shot-geometry.webm`: silent animation with muted, inline, looping autoplay and native pause/play controls. Reduced-motion readers initially see the poster with explicit playback available; a live preference change pauses the animation.
+- `shot-geometry-poster.png`: the intermediate frame displayed before playback, including for readers who prefer reduced motion or browsers that decline autoplay.
 - `shot-geometry-comparison.png`: central and lateral positions side by side, available in a disclosure with image zoom.
 
 The adjacent caption explains the point independently of playback. The static comparison remains available even when video playback is unsupported. Editorial usage and future revisions follow the [Journal editorial guide](../product/journal-editorial-guide.md).

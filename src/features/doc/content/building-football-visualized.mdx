@@ -8,7 +8,7 @@ updatedAt: "2026-10-22"
 projectIds:
   - "sports-data-visualizer"
 entryType: "retrospective"
-tags: ["product-engineering", "sports-analytics", "applied-ml"]
+tags: ["Product Engineering", "Sports Analytics", "Applied ML"]
 references:
   - label: "StatsBomb data audit"
     url: "https://github.com/leovferreira13/sports-data-visualizer/blob/main/docs/reports/xg-data-audit.md"
@@ -27,26 +27,12 @@ A difficult shot goes in, or a team creates chances and still loses, and the con
 I wanted to make those questions easier to explore. What changes when a shot comes from a tighter angle? How does goalkeeper positioning enter an estimate? Which details does a model leave out? My idea was to let someone manipulate a recognizable situation and inspect the response, with enough explanation to understand its limits.
 
 <figure className="not-prose my-8 space-y-3">
-  <video
-    controls
-    playsInline
-    muted
-    preload="none"
+  <JournalAnimation
+    src="/journal-assets/football-visualized/shot-geometry.webm"
     poster="/journal-assets/football-visualized/shot-geometry-poster.png"
-    width={1200}
-    height={800}
-    aria-label="Shot geometry: same distance, different angle"
-    aria-describedby="shot-geometry-caption"
-    className="w-full rounded-xl"
-  >
-    <source
-      src="/journal-assets/football-visualized/shot-geometry.webm"
-      type="video/webm"
-    />
-    <a href="/journal-assets/football-visualized/shot-geometry-comparison.png">
-      View the static comparison.
-    </a>
-  </video>
+    label="Shot geometry: same distance, different angle"
+    describedBy="shot-geometry-caption"
+  />
   <details>
     <summary className="cursor-pointer text-sm">
       <span>View the static comparison</span>
@@ -64,8 +50,8 @@ I wanted to make those questions easier to explore. What changes when a shot com
   >
     The shooter stays 20 metres from the centre of the goal, but the opening
     between the posts changes. This illustrates shot geometry, one part of the
-    model’s inputs, rather than a scoring probability. Play the animation or
-    compare the two positions in the static image.
+    model’s inputs, rather than a scoring probability. Pause the animation with
+    the playback controls or compare the two positions in the static image.
   </figcaption>
 </figure>
 
