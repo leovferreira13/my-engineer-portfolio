@@ -107,14 +107,7 @@
     "Mathematics": "Matemática",
     "Mechatronics": "Mecatrônica",
     "Robotics": "Robótica",
-    "Version Control": "Controle de versão",
-    "RAG & Hybrid Search": "RAG e busca híbrida",
-    "Data Lakes & Warehouses": "Data lakes e warehouses",
-    "ETL, Scraping & Orchestration": "ETL, scraping e orquestração",
-    "System Design": "Design de sistemas",
-    "Technical Product Strategy": "Estratégia técnica de produto",
-    "Project & Delivery Management": "Gestão de projeto e entrega",
-    "AI-Assisted Engineering": "Engenharia assistida por IA"
+    "Version Control": "Controle de versão"
   },
   "employment": {
     "Contract": "Prestação de serviços",
@@ -144,11 +137,11 @@
     }
   },
   "capabilityDescriptions": {
-    "Language": "Python e TypeScript são as linguagens que uso em serviços de backend, pipelines de dados, fluxos de IA e aplicações web, inclusive nas interfaces do Football, Visualized.",
-    "Backend & cloud": "Entrego APIs com FastAPI e Node.js, guardo estado em PostgreSQL e Redis e publico serviços em contêineres com Docker. O Nginx faz o proxy reverso e o roteamento na borda, e a AWS é a nuvem em que essa entrega roda.",
-    "Applied AI": "Uso LangGraph e LangSmith para construir e inspecionar agentes, a API da OpenAI, o Claude e o AWS Bedrock como provedores de modelos, e RAG com busca híbrida para recuperar conhecimento do negócio.",
-    "Data engineering": "Orquestro pipelines com Apache Airflow, processo dados com Apache Spark e os armazeno no Snowflake. Esse trabalho cobre data lakes e warehouses, além de ETL, scraping e orquestração entre sistemas operacionais e relatórios.",
-    "Frontend": "Construo interfaces com Vue.js no SaaS veterinário e com React, Next.js e Tailwind CSS no Football, Visualized. O objetivo é tornar o comportamento do backend e dos modelos compreensível para o usuário.",
-    "Product & delivery": "Uso design de sistemas e estratégia técnica de produto para definir o escopo, e gestão de projeto e entrega para colocar isso em produção. Engenharia assistida por IA faz parte de como implemento esse trabalho, inclusive na liderança de cinco engenheiros na Guiavet."
+    "Language": "Python é a linguagem que uso em backends, dados e IA aplicada. TypeScript é a linguagem que uso em interfaces, inclusive React e Next.js no Football, Visualized.",
+    "Backend & cloud": "Uso FastAPI para APIs e Django para produtos com regras de domínio. PostgreSQL e MongoDB guardam os dados, Redis e filas serverless da AWS tratam o processamento assíncrono e a idempotência, o Docker empacota os serviços em contêineres e o Nginx faz o proxy reverso e o roteamento na borda.",
+    "Applied AI": "Uso LangGraph na orquestração de agentes, tool calling da OpenAI para executar ações por APIs e RAG para recuperar conhecimento do negócio. Claude e AWS Bedrock entram nessa camada de modelos. Avaliações comportamentais, guardrails, traces no LangSmith e logs ajudam a investigar comportamento e falhas.",
+    "Data engineering": "Construo pipelines ETL e modelos que conectam sistemas operacionais a relatórios e ML. Na consultoria, usei Azure Data Factory, Databricks e PySpark para integrar bancos, APIs e fontes SFTP.",
+    "Frontend": "Trabalho também na interface quando o produto exige: Vue.js no SaaS veterinário e React e Next.js no Football, Visualized. O objetivo é tornar o comportamento do backend e dos modelos compreensível para o usuário.",
+    "Product & delivery": "Conecto entrevistas e dados de uso ao desenho de fluxos, priorização e escopo técnico. Na Guiavet, isso incluiu adaptar um produto veterinário a diferentes segmentos B2B e liderar cinco engenheiros nas entregas."
   }
 }

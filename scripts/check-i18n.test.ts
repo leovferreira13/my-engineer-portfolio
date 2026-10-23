@@ -119,23 +119,25 @@ test("stack icons use curated slugs", () => {
   ).map((item) => item.key)
   assert.deepEqual(backend, [
     "fastapi",
-    "nodejs",
+    "django",
     "postgresql",
+    "mongodb",
     "redis",
+    "aws",
     "docker",
     "nginx",
-    "aws",
   ])
   assert.equal(slugs.has("aws-lambda-sqs-api-gateway"), false)
-  assert.equal(keys.length, 21)
+  assert.equal(keys.length, 20)
   for (const key of keys) assert.ok(slugs.has(key))
+  assert.equal(TECH_STACK.length, 27)
   assert.equal(TECH_STACK.length - keys.length, 7)
 })
 
 test("english stack export keeps group prose and every curated link", () => {
   const markdown = formatTechStackForMarkdown()
   const descriptions = getDictionary("en").capabilityDescriptions
-  assert.equal(TECH_STACK.length, 28)
+  assert.equal(TECH_STACK.length, 27)
   for (const group of TECH_STACK_GROUP_ORDER) {
     assert.ok(markdown.includes(`### ${group}\n\n${descriptions[group]}`))
   }
