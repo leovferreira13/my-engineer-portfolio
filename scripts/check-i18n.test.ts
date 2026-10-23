@@ -111,17 +111,17 @@ test("capability explanations cover each group in every language", () => {
   }
 })
 
-test("stack icons use twelve curated slugs", () => {
+test("stack icons use curated slugs", () => {
   const slugs = new Set(TECH_STACK.map((item) => item.key))
   const keys = Object.keys(TECH_STACK_ICONS)
-  assert.equal(keys.length, 12)
+  assert.equal(keys.length, 19)
   for (const key of keys) assert.ok(slugs.has(key))
 })
 
 test("english stack export keeps group prose and every curated link", () => {
   const markdown = formatTechStackForMarkdown()
   const descriptions = getDictionary("en").capabilityDescriptions
-  assert.equal(TECH_STACK.length, 23)
+  assert.equal(TECH_STACK.length, 27)
   for (const group of TECH_STACK_GROUP_ORDER) {
     assert.ok(markdown.includes(`### ${group}\n\n${descriptions[group]}`))
   }

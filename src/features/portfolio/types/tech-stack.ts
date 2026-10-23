@@ -1,9 +1,10 @@
 export type TechStackSkillGroup =
-  | "Product & delivery"
+  | "Language"
   | "Backend & cloud"
-  | "Data engineering"
   | "Applied AI"
+  | "Data engineering"
   | "Frontend"
+  | "Product & delivery"
 export type TechStack = {
   key: string
   title: string

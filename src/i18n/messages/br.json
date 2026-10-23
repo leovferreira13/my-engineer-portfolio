@@ -85,6 +85,7 @@
   },
   "publication": "Pesquisa sobre recourse algorítmico em saúde mental, incluindo um framework de classificação com variáveis observadas e latentes.",
   "skills": {
+    "Language": "Linguagem",
     "Product & delivery": "Produto e entrega",
     "Backend & cloud": "Backend e cloud",
     "Data engineering": "Engenharia de dados",
@@ -136,10 +137,11 @@
     }
   },
   "capabilityDescriptions": {
-    "Product & delivery": "Conecto entrevistas e dados de uso ao desenho de fluxos, priorização e escopo técnico. Na Guiavet, isso incluiu adaptar um produto veterinário a diferentes segmentos B2B e liderar cinco engenheiros nas entregas.",
+    "Language": "Python é a linguagem que uso em backends, dados e IA aplicada. TypeScript é a linguagem que uso em interfaces, inclusive React e Next.js no Football, Visualized.",
     "Backend & cloud": "Python é minha principal linguagem de backend. Uso FastAPI para APIs, Django para produtos com regras de domínio, PostgreSQL e MongoDB para persistência, e Redis e filas da AWS para processamento assíncrono e idempotência.",
-    "Data engineering": "Construo pipelines ETL e modelos que conectam sistemas operacionais a relatórios e ML. Na consultoria, usei Azure Data Factory, Databricks e PySpark para integrar bancos, APIs e fontes SFTP.",
     "Applied AI": "Uso LangGraph na orquestração de agentes, tool calling da OpenAI para executar ações por APIs e RAG para recuperar conhecimento do negócio. Avaliações comportamentais, guardrails, traces no LangSmith e logs ajudam a investigar comportamento e falhas.",
-    "Frontend": "Trabalho também na interface quando o produto exige: Vue.js no SaaS veterinário e React, Next.js e TypeScript no Football, Visualized. O objetivo é tornar o comportamento do backend e dos modelos compreensível para o usuário."
+    "Data engineering": "Construo pipelines ETL e modelos que conectam sistemas operacionais a relatórios e ML. Na consultoria, usei Azure Data Factory, Databricks e PySpark para integrar bancos, APIs e fontes SFTP.",
+    "Frontend": "Trabalho também na interface quando o produto exige: Vue.js no SaaS veterinário e React, Next.js e TypeScript no Football, Visualized. O objetivo é tornar o comportamento do backend e dos modelos compreensível para o usuário.",
+    "Product & delivery": "Conecto entrevistas e dados de uso ao desenho de fluxos, priorização e escopo técnico. Na Guiavet, isso incluiu adaptar um produto veterinário a diferentes segmentos B2B e liderar cinco engenheiros nas entregas."
   }
 }

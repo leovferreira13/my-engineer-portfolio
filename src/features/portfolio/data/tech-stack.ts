@@ -2,11 +2,12 @@ import en from "@/i18n/messages/en.json"
 
 import type { TechStack, TechStackSkillGroup } from "../types/tech-stack"
 export const TECH_STACK_GROUP_ORDER: readonly TechStackSkillGroup[] = [
-  "Product & delivery",
+  "Language",
   "Backend & cloud",
-  "Data engineering",
   "Applied AI",
+  "Data engineering",
   "Frontend",
+  "Product & delivery",
 ]
 export const TECH_STACK = [
   {
@@ -34,7 +35,7 @@ export const TECH_STACK = [
     key: "python",
     title: "Python",
     href: "https://www.python.org/",
-    skillGroup: "Backend & cloud",
+    skillGroup: "Language",
     categories: [],
   },
   {
@@ -76,6 +77,20 @@ export const TECH_STACK = [
     key: "aws-lambda-sqs-api-gateway",
     title: "AWS Lambda, SQS & API Gateway",
     href: "https://aws.amazon.com/",
+    skillGroup: "Backend & cloud",
+    categories: [],
+  },
+  {
+    key: "docker",
+    title: "Docker",
+    href: "https://www.docker.com/",
+    skillGroup: "Backend & cloud",
+    categories: [],
+  },
+  {
+    key: "nginx",
+    title: "Nginx",
+    href: "https://nginx.org/",
     skillGroup: "Backend & cloud",
     categories: [],
   },
@@ -143,6 +158,20 @@ export const TECH_STACK = [
     categories: [],
   },
   {
+    key: "claude",
+    title: "Claude",
+    href: "https://www.anthropic.com/claude",
+    skillGroup: "Applied AI",
+    categories: [],
+  },
+  {
+    key: "aws-bedrock",
+    title: "AWS Bedrock",
+    href: "https://aws.amazon.com/bedrock/",
+    skillGroup: "Applied AI",
+    categories: [],
+  },
+  {
     key: "react",
     title: "React",
     href: "https://react.dev/",
@@ -160,7 +189,7 @@ export const TECH_STACK = [
     key: "typescript",
     title: "TypeScript",
     href: "https://www.typescriptlang.org/",
-    skillGroup: "Frontend",
+    skillGroup: "Language",
     categories: [],
   },
   {

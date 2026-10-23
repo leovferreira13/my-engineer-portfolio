@@ -8,11 +8,11 @@ date: 2026-10-23
 
 ## Context
 
-The profile listed curated tools as text pills under capability headings. The reference site now shows numbered rows of badges: a small monochrome icon where the product has a mark, and the name always visible. This repository already keeps 23 items in five skill groups, translations for those group labels, and an English markdown export. Copying the reference repository would replace that list. The older image-row approach loaded 32px files from a remote host or from `public/tech-stack-icons/`, and several current labels have no brand mark. This supersedes that image-resolution decision.
+The profile listed curated tools as text pills under capability headings. The reference site now shows numbered rows of badges: a small monochrome icon where the product has a mark, and the name always visible. This repository keeps 27 items in six skill groups, translations for those group labels, and an English markdown export. Copying the reference repository would replace that list. The older image-row approach loaded 32px files from a remote host or from `public/tech-stack-icons/`, and several labels have no brand mark. This supersedes that image-resolution decision.
 
 ## Decision
 
-**The Stack panel is an in-repo numbered badge list of the five curated skill groups.** All 23 titles, links, and groups stay. A badge includes an inline `currentColor` icon only for Python, FastAPI, Django, PostgreSQL, MongoDB, Redis, Databricks, PySpark, React, Next.js, TypeScript, and Vue.js. The other eleven items are text badges. Capability paragraphs stay in every dictionary and in the English markdown export, and they are not rendered in the panel. The UI does not sync the reference repository and does not request a remote icon host.
+**The Stack panel is an in-repo numbered badge list of six curated skill groups: Language, Backend & cloud, Applied AI, Data engineering, Frontend, and Product & delivery.** All 27 titles and links stay in that group order. A badge includes an inline `currentColor` icon for Python, TypeScript, FastAPI, Django, PostgreSQL, MongoDB, Redis, Docker, Nginx, LangGraph, LangSmith, OpenAI tool calling, Claude, AWS Bedrock, Databricks, PySpark, React, Next.js, and Vue.js. The other eight items are text badges. Capability paragraphs stay in every dictionary and in the English markdown export, and they are not rendered in the panel. The UI does not sync the reference repository and does not request a remote icon host.
 
 ## Options considered
 

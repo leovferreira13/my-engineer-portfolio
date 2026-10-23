@@ -85,6 +85,7 @@
   },
   "publication": "Onderzoek naar algoritmische handelingsopties in de geestelijke gezondheidszorg, met een classificatiekader met geobserveerde en latente variabelen.",
   "skills": {
+    "Language": "Taal",
     "Product & delivery": "Product en levering",
     "Backend & cloud": "Backend en cloud",
     "Data engineering": "Data-engineering",
@@ -136,10 +137,11 @@
     }
   },
   "capabilityDescriptions": {
-    "Product & delivery": "Ik verbind interviews en gebruiksdata met procesontwerp, prioriteiten en technische scope. Bij Guiavet paste ik een veterinair product aan verschillende B2B-segmenten aan en leidde ik vijf engineers bij de uitvoering.",
+    "Language": "Python is de taal die ik gebruik voor backends, datawerk en toegepaste AI. TypeScript is de taal die ik gebruik voor interfaces, waaronder React en Next.js in Football, Visualized.",
     "Backend & cloud": "Python is mijn belangrijkste backendtaal. Ik gebruik FastAPI voor API's, Django voor domeinrijke producten, PostgreSQL en MongoDB voor opslag, en Redis en AWS-wachtrijen voor asynchrone verwerking en idempotentie.",
-    "Data engineering": "Ik bouw ETL-pipelines en datamodellen die operationele systemen verbinden met rapportages en ML. In consultancy integreerde ik databases, API's en SFTP-bronnen met Azure Data Factory, Databricks en PySpark.",
     "Applied AI": "Ik gebruik LangGraph voor agentorkestratie, OpenAI tool calling voor acties via API's en RAG voor bedrijfskennis. Gedragsevaluaties, beveiligingen, LangSmith-traces en auditlogs helpen gedrag en fouten te onderzoeken.",
-    "Frontend": "Ik werk ook aan de interface wanneer het product dat vraagt: Vue.js in veterinaire SaaS en React, Next.js en TypeScript in Football, Visualized. Zo wordt backend- en modelgedrag begrijpelijk voor gebruikers."
+    "Data engineering": "Ik bouw ETL-pipelines en datamodellen die operationele systemen verbinden met rapportages en ML. In consultancy integreerde ik databases, API's en SFTP-bronnen met Azure Data Factory, Databricks en PySpark.",
+    "Frontend": "Ik werk ook aan de interface wanneer het product dat vraagt: Vue.js in veterinaire SaaS en React, Next.js en TypeScript in Football, Visualized. Zo wordt backend- en modelgedrag begrijpelijk voor gebruikers.",
+    "Product & delivery": "Ik verbind interviews en gebruiksdata met procesontwerp, prioriteiten en technische scope. Bij Guiavet paste ik een veterinair product aan verschillende B2B-segmenten aan en leidde ik vijf engineers bij de uitvoering."
   }
 }
