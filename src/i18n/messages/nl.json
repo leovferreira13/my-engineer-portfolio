@@ -107,7 +107,14 @@
     "Mathematics": "Wiskunde",
     "Mechatronics": "Mechatronica",
     "Robotics": "Robotica",
-    "Version Control": "Versiebeheer"
+    "Version Control": "Versiebeheer",
+    "RAG & Hybrid Search": "RAG en hybride zoeken",
+    "Data Lakes & Warehouses": "Data lakes en warehouses",
+    "ETL, Scraping & Orchestration": "ETL, scraping en orkestratie",
+    "System Design": "Systeemontwerp",
+    "Technical Product Strategy": "Technische productstrategie",
+    "Project & Delivery Management": "Project- en deliverybeheer",
+    "AI-Assisted Engineering": "AI-ondersteunde engineering"
   },
   "employment": {
     "Contract": "Op contractbasis",
@@ -137,11 +144,11 @@
     }
   },
   "capabilityDescriptions": {
-    "Language": "Python is de taal die ik gebruik voor backends, datawerk en toegepaste AI. TypeScript is de taal die ik gebruik voor interfaces, waaronder React en Next.js in Football, Visualized.",
-    "Backend & cloud": "Ik gebruik FastAPI voor API's en Django voor domeinrijke producten. PostgreSQL en MongoDB bewaren gegevens, Redis en serverloze AWS-wachtrijen verzorgen asynchrone verwerking en idempotentie, Docker verpakt de services in containers en Nginx verzorgt de reverse proxy en de routing aan de rand.",
-    "Applied AI": "Ik gebruik LangGraph voor agentorkestratie, OpenAI tool calling voor acties via API's en RAG voor bedrijfskennis. Claude en AWS Bedrock horen bij die modellaag. Gedragsevaluaties, beveiligingen, LangSmith-traces en auditlogs helpen gedrag en fouten te onderzoeken.",
-    "Data engineering": "Ik bouw ETL-pipelines en datamodellen die operationele systemen verbinden met rapportages en ML. In consultancy integreerde ik databases, API's en SFTP-bronnen met Azure Data Factory, Databricks en PySpark.",
-    "Frontend": "Ik werk ook aan de interface wanneer het product dat vraagt: Vue.js in veterinaire SaaS en React en Next.js in Football, Visualized. Zo wordt backend- en modelgedrag begrijpelijk voor gebruikers.",
-    "Product & delivery": "Ik verbind interviews en gebruiksdata met procesontwerp, prioriteiten en technische scope. Bij Guiavet paste ik een veterinair product aan verschillende B2B-segmenten aan en leidde ik vijf engineers bij de uitvoering."
+    "Language": "Python en TypeScript zijn de talen die ik gebruik voor backendservices, datapijplijnen, AI-workflows en webapplicaties, waaronder de interfaces in Football, Visualized.",
+    "Backend & cloud": "Ik lever API's met FastAPI en Node.js, bewaar toestand in PostgreSQL en Redis en publiceer services in containers met Docker. Nginx verzorgt de reverse proxy en de routing aan de rand, en AWS is de cloud waarop die levering draait.",
+    "Applied AI": "Ik gebruik LangGraph en LangSmith om agents te bouwen en te inspecteren, de OpenAI API, Claude en AWS Bedrock als modelaanbieders, en RAG met hybride zoeken om bedrijfskennis op te halen.",
+    "Data engineering": "Ik orkestreer pijplijnen met Apache Airflow, verwerk data met Apache Spark en sla die op in Snowflake. Dat werk omvat data lakes en warehouses, plus ETL, scraping en orkestratie tussen operationele systemen en rapportages.",
+    "Frontend": "Ik bouw interfaces met Vue.js in veterinaire SaaS en met React, Next.js en Tailwind CSS in Football, Visualized. Zo wordt backend- en modelgedrag begrijpelijk voor gebruikers.",
+    "Product & delivery": "Ik gebruik systeemontwerp en technische productstrategie om de scope te bepalen, en project- en deliverybeheer om het te leveren. AI-ondersteunde engineering hoort bij hoe ik dat werk uitvoer, inclusief het leiden van vijf engineers bij Guiavet."
   }
 }

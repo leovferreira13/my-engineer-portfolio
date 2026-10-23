@@ -114,14 +114,28 @@ test("capability explanations cover each group in every language", () => {
 test("stack icons use curated slugs", () => {
   const slugs = new Set(TECH_STACK.map((item) => item.key))
   const keys = Object.keys(TECH_STACK_ICONS)
-  assert.equal(keys.length, 19)
+  const backend = TECH_STACK.filter(
+    (item) => item.skillGroup === "Backend & cloud"
+  ).map((item) => item.key)
+  assert.deepEqual(backend, [
+    "fastapi",
+    "nodejs",
+    "postgresql",
+    "redis",
+    "docker",
+    "nginx",
+    "aws",
+  ])
+  assert.equal(slugs.has("aws-lambda-sqs-api-gateway"), false)
+  assert.equal(keys.length, 21)
   for (const key of keys) assert.ok(slugs.has(key))
+  assert.equal(TECH_STACK.length - keys.length, 7)
 })
 
 test("english stack export keeps group prose and every curated link", () => {
   const markdown = formatTechStackForMarkdown()
   const descriptions = getDictionary("en").capabilityDescriptions
-  assert.equal(TECH_STACK.length, 27)
+  assert.equal(TECH_STACK.length, 28)
   for (const group of TECH_STACK_GROUP_ORDER) {
     assert.ok(markdown.includes(`### ${group}\n\n${descriptions[group]}`))
   }
