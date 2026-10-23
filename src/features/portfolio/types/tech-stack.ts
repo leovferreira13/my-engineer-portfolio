@@ -10,6 +10,4 @@ export type TechStack = {
   href: string
   skillGroup: TechStackSkillGroup
   categories: string[]
-  theme?: boolean
-  useLocalAsset?: boolean
 }
