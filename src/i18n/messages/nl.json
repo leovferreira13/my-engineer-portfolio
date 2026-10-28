@@ -67,7 +67,7 @@
     "close": "Sluiten",
     "loading": "Taal wordt gewijzigd…",
     "navigation": "Hoofdnavigatie",
-    "downloadResume": "CV downloaden (Engels)",
+    "downloadResume": "Bekijk mijn CV",
     "localTime": "Lokale tijd",
     "sameTime": "Dezelfde tijd als bij jou",
     "timeAhead": "voor op jou",
@@ -138,7 +138,7 @@
     },
     "qdois:1": {
       "title": "Data-engineer",
-      "description": "- Begon als stagiair data-analyse en ging verder als data-engineer in hetzelfde team.\n- Bouwde ETL-processen met Azure Data Factory, Databricks en PySpark om relationele databases, SFTP en API’s samen te brengen in een data lake.\n- Ondersteunde digitale transformatie, kostenverlaging en de basis voor BI, analytics en ML.\n- Richtte CI/CD in met Azure DevOps en Git en vertaalde bedrijfsbehoeften naar datamodellen en pipelines."
+      "description": "- Bouwde ETL-processen met Azure Data Factory, Databricks en PySpark om relationele databases, SFTP en API’s samen te brengen in een data lake.\n- Ondersteunde digitale transformatie, kostenverlaging en de basis voor BI, analytics en ML.\n- Richtte CI/CD in met Azure DevOps en Git en vertaalde bedrijfsbehoeften naar datamodellen en pipelines."
     }
   },
   "capabilityDescriptions": {

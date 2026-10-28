@@ -37,12 +37,31 @@ try {
       "#experience"
     )
     assert.equal(
-      await page.$eval(
-        `section a[href="/${locale}/projects"]`,
-        (node) => node.target
+      await page.$$eval(
+        `section[aria-labelledby="profile-title"] a[href="/${locale}/projects"]`,
+        (nodes) => nodes.length
       ),
-      "_blank"
+      0
     )
+    assert.equal(
+      await page.$eval("#experience-qdois-1 button[aria-expanded]", (node) =>
+        node.getAttribute("aria-expanded")
+      ),
+      "true"
+    )
+    await page.setViewport({ width: 1440, height: 1080 })
+    const alignment = await page.evaluate(() => {
+      const clock = document.querySelector(
+        "[data-location-time] > div:nth-child(2)"
+      )
+      const github = document.querySelector(
+        'a[href^="https://github.com/leovferreira13?"]'
+      )
+      return Math.abs(
+        clock.getBoundingClientRect().left - github.getBoundingClientRect().left
+      )
+    })
+    assert.ok(alignment < 1, `${locale}: clock/GitHub differ by ${alignment}px`)
     assert.deepEqual(
       await page.$$eval("#experience-guiavet ol li", (nodes) =>
         nodes.map((node) => ({

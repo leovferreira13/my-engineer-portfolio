@@ -67,7 +67,7 @@
     "close": "Schließen",
     "loading": "Sprache wird geändert…",
     "navigation": "Hauptnavigation",
-    "downloadResume": "CV herunterladen (Englisch)",
+    "downloadResume": "Mein CV ansehen",
     "localTime": "Ortszeit",
     "sameTime": "Deine Ortszeit",
     "timeAhead": "vor deiner Zeit",
@@ -138,7 +138,7 @@
     },
     "qdois:1": {
       "title": "Dateningenieur",
-      "description": "- Begann als Praktikant in der Datenanalyse und arbeitete anschließend als Dateningenieur im selben Team.\n- Entwickelte ETL-Prozesse mit Azure Data Factory, Databricks und PySpark und führte relationale Datenbanken, SFTP und APIs in einem Data Lake zusammen.\n- Unterstützte digitale Transformation, Kostensenkung und die Grundlage für BI, Analytics und ML.\n- Etablierte CI/CD mit Azure DevOps und Git und übersetzte Geschäftsanforderungen in Datenmodelle und Pipelines."
+      "description": "- Entwickelte ETL-Prozesse mit Azure Data Factory, Databricks und PySpark und führte relationale Datenbanken, SFTP und APIs in einem Data Lake zusammen.\n- Unterstützte digitale Transformation, Kostensenkung und die Grundlage für BI, Analytics und ML.\n- Etablierte CI/CD mit Azure DevOps und Git und übersetzte Geschäftsanforderungen in Datenmodelle und Pipelines."
     }
   },
   "capabilityDescriptions": {

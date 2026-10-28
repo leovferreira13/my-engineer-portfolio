@@ -1,12 +1,11 @@
 import Link from "next/link"
 
 import { USER } from "@/features/portfolio/data/user"
-import { localizePath } from "@/i18n/config"
 import { getI18n } from "@/i18n/request"
 import { decodeEmail } from "@/utils/string"
 
 export async function ProfileHeader() {
-  const { locale, dictionary, t } = await getI18n()
+  const { dictionary, t } = await getI18n()
   return (
     <section
       aria-labelledby="profile-title"
@@ -41,15 +40,6 @@ export async function ProfileHeader() {
               className="rounded-lg bg-foreground px-4 py-2 text-background transition-opacity hover:opacity-80"
             >
               {t.exploreWork} <span aria-hidden>↗</span>
-            </Link>
-            <Link
-              href={localizePath("/projects", locale)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-lg border border-line px-4 py-2 transition-colors hover:bg-accent"
-              aria-label={`${t.projects} — ${t.newTab}`}
-            >
-              {t.projects} <span aria-hidden>↗</span>
             </Link>
             <a
               href="/resume/leonardo-ferreira-product-engineer-en.pdf"

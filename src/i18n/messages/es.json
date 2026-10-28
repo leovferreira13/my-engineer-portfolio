@@ -67,7 +67,7 @@
     "close": "Cerrar",
     "loading": "Cambiando idioma…",
     "navigation": "Navegación principal",
-    "downloadResume": "Descargar CV (inglés)",
+    "downloadResume": "Obtén mi CV",
     "localTime": "Hora local",
     "sameTime": "Tu misma hora",
     "timeAhead": "por delante de ti",
@@ -138,7 +138,7 @@
     },
     "qdois:1": {
       "title": "Ingeniero de Datos",
-      "description": "- Empecé como becario de análisis de datos y continué como ingeniero de datos en el mismo equipo.\n- Construí ETLs con Azure Data Factory, Databricks y PySpark, integrando bases relacionales, SFTP y APIs en un data lake.\n- Apoyé la transformación digital, la reducción de costes y la base para BI, analítica y ML.\n- Implementé CI/CD con Azure DevOps y Git y traduje necesidades de negocio en modelos y pipelines de datos."
+      "description": "- Construí ETLs con Azure Data Factory, Databricks y PySpark, integrando bases relacionales, SFTP y APIs en un data lake.\n- Apoyé la transformación digital, la reducción de costes y la base para BI, analítica y ML.\n- Implementé CI/CD con Azure DevOps y Git y traduje necesidades de negocio en modelos y pipelines de datos."
     }
   },
   "capabilityDescriptions": {

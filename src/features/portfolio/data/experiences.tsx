@@ -97,8 +97,7 @@ export const EXPERIENCES: Experience[] = [
         },
         employmentType: "Internship and full-time",
         icon: <BarChart3Icon />,
-        description: `- Started in a data analytics internship implementing Azure-based ETL and data pipelines, then continued as a full-time data engineer on the same team.
-- Built ETL pipelines and data workflows on Azure Data Factory and Azure Databricks (PySpark), consolidating relational DBs, SFTP, and APIs into a modern data lake architecture.
+        description: `- Built ETL pipelines and data workflows on Azure Data Factory and Azure Databricks (PySpark), consolidating relational DBs, SFTP, and APIs into a modern data lake architecture.
 - Supported digital transformation by reducing infrastructure costs and enabling future BI, analytics, and ML initiatives.
 - Established CI/CD with Azure DevOps and Git for automated deployments and environment consistency.
 - Partnered with business stakeholders to translate requirements into scalable data models and pipelines.`,
@@ -110,7 +109,7 @@ export const EXPERIENCES: Experience[] = [
           "Azure DevOps",
           "Git",
         ],
-        isExpanded: false,
+        isExpanded: true,
       },
     ],
   },

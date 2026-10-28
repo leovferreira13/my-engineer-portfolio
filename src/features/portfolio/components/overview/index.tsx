@@ -23,7 +23,10 @@ export async function Overview() {
           />
         ))}
         {USER.email && <EmailItem email={USER.email} />}
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+        <div
+          data-location-time
+          className="grid grid-cols-1 items-start gap-2 sm:grid-cols-2"
+        >
           <IntroItem>
             <IntroItemIcon>
               <MapPinIcon aria-hidden="true" />

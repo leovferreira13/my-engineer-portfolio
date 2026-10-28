@@ -67,7 +67,7 @@
     "close": "Fechar",
     "loading": "Alterando idioma…",
     "navigation": "Navegação principal",
-    "downloadResume": "Baixar CV (inglês)",
+    "downloadResume": "Tenha meu CV",
     "localTime": "Hora local",
     "sameTime": "Mesmo horário que você",
     "timeAhead": "à sua frente",
@@ -138,7 +138,7 @@
     },
     "qdois:1": {
       "title": "Engenheiro de Dados",
-      "description": "- Comecei como estagiário em análise de dados e continuei como engenheiro de dados na mesma equipe.\n- Construí ETLs com Azure Data Factory, Databricks e PySpark, consolidando bancos relacionais, SFTP e APIs em um data lake.\n- Apoiei a transformação digital, a redução de custos e a base para BI, analytics e ML.\n- Implementei CI/CD com Azure DevOps e Git e traduzi necessidades de negócio em modelos e pipelines de dados."
+      "description": "- Construí ETLs com Azure Data Factory, Databricks e PySpark, consolidando bancos relacionais, SFTP e APIs em um data lake.\n- Apoiei a transformação digital, a redução de custos e a base para BI, analytics e ML.\n- Implementei CI/CD com Azure DevOps e Git e traduzi necessidades de negócio em modelos e pipelines de dados."
     }
   },
   "capabilityDescriptions": {
