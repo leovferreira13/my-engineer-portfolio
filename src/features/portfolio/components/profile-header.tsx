@@ -24,7 +24,7 @@ export async function ProfileHeader() {
         />
         <div className="min-w-0 flex-1">
           <p className="mb-3 font-mono text-xs tracking-widest text-muted-foreground uppercase">
-            Product Engineer · {dictionary.profile.location}
+            Product Engineer | SaaS, Applied AI &amp; Backend Systems
           </p>
           <h1
             id="profile-title"
@@ -33,18 +33,31 @@ export async function ProfileHeader() {
             {USER.displayName}
           </h1>
           <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
-            {dictionary.profile.tagline}
-          </p>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
             {dictionary.profile.subtitle}
           </p>
           <div className="mt-6 flex flex-wrap gap-3 text-sm font-medium">
             <Link
-              href={localizePath("/projects", locale)}
+              href="#experience"
               className="rounded-lg bg-foreground px-4 py-2 text-background transition-opacity hover:opacity-80"
             >
               {t.exploreWork} <span aria-hidden>↗</span>
             </Link>
+            <Link
+              href={localizePath("/projects", locale)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg border border-line px-4 py-2 transition-colors hover:bg-accent"
+              aria-label={`${t.projects} — ${t.newTab}`}
+            >
+              {t.projects} <span aria-hidden>↗</span>
+            </Link>
+            <a
+              href="/resume/leonardo-ferreira-product-engineer-en.pdf"
+              download
+              className="rounded-lg border border-line px-4 py-2 transition-colors hover:bg-accent"
+            >
+              {t.downloadResume}
+            </a>
             <a
               href={
                 USER.email ? `mailto:${decodeEmail(USER.email)}` : undefined

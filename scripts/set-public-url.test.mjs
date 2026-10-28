@@ -21,12 +21,14 @@ const previousOrigin = new URL(
 ).origin
 const nextOrigin = "https://portfolio.example.org"
 
-test("domain changes update all ten current portfolio links and preserve README wording", () => {
-  assert.equal(readme.split(previousOrigin).length - 1, 10)
+test("domain changes update all current portfolio links and preserve README wording", () => {
   const result = updateReadmeOrigin(readme, nextOrigin + "/")
   assert.equal(result, readme.split(previousOrigin).join(nextOrigin))
   assert.ok(result.includes("**[Explore my portfolio](" + nextOrigin + ")**"))
   assert.ok(result.includes("https://sports-data.leoferreira.dev.br/en"))
+  assert.ok(
+    result.includes(`${nextOrigin}/en/journal/building-football-visualized`)
+  )
   assert.equal(updateReadmeOrigin(result, nextOrigin), result)
 })
 

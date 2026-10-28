@@ -17,7 +17,8 @@ export async function ProjectCard({ project }: { project: Project }) {
   return (
     <article
       id={project.id}
-      className="overflow-hidden rounded-xl border border-line bg-background"
+      tabIndex={-1}
+      className="scroll-mt-22 overflow-hidden rounded-xl border border-line bg-background"
     >
       {project.image && (
         <img

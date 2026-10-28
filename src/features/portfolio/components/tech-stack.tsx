@@ -1,7 +1,8 @@
 import { localizedContent } from "@/i18n/content"
 import { getI18n } from "@/i18n/request"
 
-import { TECH_STACK_GROUPS } from "../data/tech-stack"
+import { TECH_STACK_EVIDENCE, TECH_STACK_GROUPS } from "../data/tech-stack"
+import { EvidenceLink, EvidenceNavigation } from "./evidence-link"
 import { Panel, PanelHeader, PanelTitle } from "./panel"
 import { TECH_STACK_ICONS } from "./tech-stack-icons"
 
@@ -10,6 +11,7 @@ export async function TechStack() {
   const content = localizedContent(locale)
   return (
     <Panel id="stack">
+      <EvidenceNavigation />
       <PanelHeader>
         <PanelTitle>{t.stack}</PanelTitle>
       </PanelHeader>
@@ -41,15 +43,20 @@ export async function TechStack() {
                   const Icon = TECH_STACK_ICONS[item.key]
                   return (
                     <li key={item.key} className="flex">
-                      <a
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener"
-                        className="inline-flex h-6 items-center gap-1.5 rounded-full border border-line px-2 text-xs text-foreground"
-                      >
-                        {Icon ? <Icon /> : null}
-                        {content.skill(item.title)}
-                      </a>
+                      {TECH_STACK_EVIDENCE[item.key] ? (
+                        <EvidenceLink
+                          href={`#${TECH_STACK_EVIDENCE[item.key]}`}
+                          className="inline-flex h-6 items-center gap-1.5 rounded-full border border-line px-2 text-xs text-foreground hover:bg-accent focus-visible:outline-2 focus-visible:outline-ring"
+                        >
+                          {Icon ? <Icon /> : null}
+                          {content.skill(item.title)}
+                        </EvidenceLink>
+                      ) : (
+                        <span className="inline-flex h-6 items-center gap-1.5 rounded-full border border-line px-2 text-xs text-foreground">
+                          {Icon ? <Icon /> : null}
+                          {content.skill(item.title)}
+                        </span>
+                      )}
                     </li>
                   )
                 })}

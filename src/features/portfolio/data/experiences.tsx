@@ -16,11 +16,11 @@ export const EXPERIENCES: Experience[] = [
         },
         employmentType: "Full-time",
         icon: <CodeXmlIcon />,
-        description: `- Engineer **Python/FastAPI APIs and event-driven messaging flows** for a multi-tenant SaaS platform processing **20M+ SMS and emails monthly**, with **99.9% delivery reliability**. The system connects AWS SQS, Lambda, API Gateway, Aurora/RDS, MongoDB, Redis, and messaging providers.
-- Improved queue processing and introduced **Redis-backed idempotency**, reducing duplicate-send risk and supporting **50x peak throughput capacity**.
-- Building a **multi-turn voice and SMS appointment agent** with Python, LangGraph, ReAct-style orchestration, OpenAI tool calling, and RAG over business knowledge. Integrate scheduling APIs for availability, booking, rescheduling, and cancellation.
+        description: `- Develop **Python/FastAPI APIs and event-driven messaging flows** for a multi-tenant SaaS platform processing **20M+ SMS and emails monthly across all customers**. The system connects AWS SQS, Lambda, API Gateway, Aurora/RDS, MongoDB, Redis, and messaging providers.
+- Implemented **Redis-backed idempotency across all customer accounts** to address duplicate-send issues in the platform's messaging workflows, alongside queue-processing improvements.
+- Building a **multi-turn voice and SMS appointment agent** with Python, LangGraph, OpenAI tool calling, RAG, Claude, and AWS Bedrock. Integrate scheduling APIs for availability, booking, rescheduling, and cancellation.
 - Designed behavioral evaluations, guardrails against unsupported responses, and observability through **LangSmith and internal audit logs**, so conversation behavior and tool calls can be inspected and improved.
-- Optimized median voice response latency to **approximately 2 seconds in internal tests**. The agent is **in prelaunch testing**; customer adoption and operational outcomes have not yet been measured.`,
+- Achieved **approximately 2 seconds from the end of the customer's speech to the start of the agent's audio response in internal tests**. The agent is **in prelaunch testing**; customer adoption and operational outcomes have not yet been measured.`,
         skills: [
           "Python",
           "FastAPI",
@@ -41,6 +41,7 @@ export const EXPERIENCES: Experience[] = [
     id: "guiavet",
     companyName: "Guiavet",
     companyWebsite: "https://pro.guia.vet",
+    isConsolidated: true,
     positions: [
       {
         id: "1",
@@ -51,21 +52,8 @@ export const EXPERIENCES: Experience[] = [
         },
         employmentType: "Full-time",
         icon: <CodeXmlIcon />,
-        description: `- Led five engineers, owning prioritization, technical decisions, and delivery as the B2B veterinary SaaS product matured.
-- Owned technical continuity of the platform while reducing infrastructure and operational costs through automation and lean delivery.
-- Led major improvements to the Health Records module: integrated drug reference data, built a pharmacy dispensing portal with external validation, customizable prescription templates (faster daily record creation), and customizable document workflows.
-- Re-architected multi-page PDF generation and asynchronous processing at Guiavet, reducing generation time from **approximately 90 to 15 seconds** (about **83%**), improving a document workflow used by veterinary teams.
-- Delivered end-to-end product changes across backend (Python/Django), frontend (Vue.js), and AWS operations while coordinating with senior engineers under Agile practices.`,
-        skills: [
-          "Python",
-          "Django",
-          "PostgreSQL",
-          "AWS",
-          "Vue.js",
-          "SaaS",
-          "PDF generation",
-          "Agile",
-        ],
+        description: `- **Led five engineers**, owning prioritization, technical decisions, and delivery while remaining hands-on in implementation.`,
+        skills: ["Python", "Django", "Vue.js", "AWS"],
         isExpanded: true,
       },
       {
@@ -77,21 +65,9 @@ export const EXPERIENCES: Experience[] = [
         },
         employmentType: "Full-time",
         icon: <LayoutTemplateIcon />,
-        description: `- Owned the product roadmap for Guiavet PRO, aligning stakeholders, leadership, design, and engineering under Agile practices.
-- Ran competitive benchmarks, analytics, and customer interviews to inform product decisions.
-- Used research and usage data to redesign clinic workflows, reducing time for some critical operations by **up to 80%** and **usability-related churn indicators by up to 95%** within one month after launch.
-- Expanded the product beyond solo practitioners to veterinarians serving other clinics and to clinics, adapting packaging and workflows to each B2B segment.
-- Expanded the customer base with new B2B-ready entities integrated with scheduling, health, and billing modules.
-- Launched a professional website platform for veterinarians with SEO-oriented improvements (sitemaps, metadata, load-time improvements).
-- Managed team capacity and delivery alignment across priorities and deadlines.`,
-        skills: [
-          "Product management",
-          "Roadmapping",
-          "UX",
-          "B2B",
-          "SEO",
-          "Agile",
-        ],
+        description: `- Turned **user research and usage data into redesigned clinic workflows**, simplifying consultation tasks and vaccination recording for multiple pets belonging to the same owner. Customers described a faster, more intuitive experience; usability-related reasons for cancellation became less frequent in exit interviews after the redesign.
+- Expanded the product beyond solo practitioners to veterinarians serving other clinics and to clinics, adapting packaging and workflows to each B2B segment.`,
+        skills: ["User discovery", "Workflow design", "Product management"],
       },
       {
         id: "3",
@@ -102,24 +78,9 @@ export const EXPERIENCES: Experience[] = [
         },
         employmentType: "Full-time",
         icon: <CodeXmlIcon />,
-        description: `- Built and scaled core modules of Guiavet PRO using Django, PostgreSQL, and AWS.
-- Led database modeling and domain-driven design discussions, balancing delivery speed and long-term maintainability.
-- Built ETL pipelines and interactive dashboards with SQL for finance, adoption, and user behavior insights.
-- Mentored junior engineers on backend and data engineering practices.
-- Architected asynchronous workers (Django APScheduler + AWS SQS) for heavy workloads and cron-style jobs.
-- Designed a dedicated microservice for scalable PDF generation integrated with health records.
-- Improved scalability with nginx tuning and database-level caching for patient health metrics.`,
-        skills: [
-          "Python",
-          "Django",
-          "PostgreSQL",
-          "AWS",
-          "SQS",
-          "ETL",
-          "SQL",
-          "nginx",
-          "DDD",
-        ],
+        description: `- Built the **Python/Django monolithic backend foundation** with **Nginx and Docker**, separating **API and worker processes** to serve requests and run background workloads. This foundation supported the company from its founding through the period after product-market fit.
+- Delivered core scheduling, medical records, prescription, and pharmacy workflows from technical scoping through launch and iteration, connecting product decisions to implementation.`,
+        skills: ["Python", "Django", "PostgreSQL", "AWS", "Docker", "nginx"],
       },
     ],
   },

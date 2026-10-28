@@ -2,7 +2,8 @@
 type: ADR
 id: "0017"
 title: "In-repo Stack badges"
-status: active
+status: superseded
+superseded_by: "0019"
 date: 2026-10-23
 ---
 

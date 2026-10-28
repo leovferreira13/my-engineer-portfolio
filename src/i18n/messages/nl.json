@@ -66,14 +66,20 @@
     "overview": "Contact en huidig werk",
     "close": "Sluiten",
     "loading": "Taal wordt gewijzigd…",
-    "navigation": "Hoofdnavigatie"
+    "navigation": "Hoofdnavigatie",
+    "downloadResume": "CV downloaden (Engels)",
+    "localTime": "Lokale tijd",
+    "sameTime": "Dezelfde tijd als bij jou",
+    "timeAhead": "voor op jou",
+    "timeBehind": "achter op jou",
+    "newTab": "Opent in een nieuw tabblad"
   },
   "profile": {
-    "tagline": "Ik vertaal gebruikersproblemen naar software, van de eerste vraag tot productie.",
-    "subtitle": "Meer dan 5 jaar ervaring met B2B SaaS, backend, data-engineering, productleiderschap en toegepaste AI.",
+    "tagline": "Python-backendengineer die B2B SaaS en toegepaste AI-systemen bouwt, met meer dan 5 jaar ervaring in engineering, product en technisch leiderschap.",
+    "subtitle": "Python-backendengineer die B2B SaaS en toegepaste AI-systemen bouwt, met meer dan 5 jaar ervaring in engineering, product en technisch leiderschap.",
     "location": "Rio de Janeiro, Brazilië"
   },
-  "about": "Ik ben **Product Engineer** met **meer dan 5 jaar** ervaring in backend- en data-engineering, productmanagement en technisch leiderschap. Ik verbind gebruikers- en bedrijfsbehoeften met praktische software en begeleid problemen van discovery via technische keuzes en implementatie tot lancering en iteratie.\n\n**Aanpassingsvermogen is de rode draad in mijn werk.** Ik leer graag een onbekend domein kennen, luister naar de mensen die het begrijpen en zoek in onduidelijke situaties uit wat zinvol is om te bouwen. Ik beweeg tussen klantgesprekken, productafwegingen en de technische details die een oplossing in de praktijk laten werken.\n\nIk combineer een stevige **backendbasis** met productoordeel, met ervaring in API's, datapipelines, integraties en gebeurtenisgestuurde systemen. Meer recent pas ik die achtergrond toe op **AI-agenten**, met aandacht voor hun aansluiting op echte werkprocessen, betrouwbaarheid, evaluatie en verbetering. Ik werk het best dicht bij het probleem, met verantwoordelijkheid voor zowel de techniek als de ervaring die deze mogelijk maakt.",
+  "about": "Mijn specialiteit is **Python-backendengineering** voor B2B SaaS: API’s, integraties, datamodellen en asynchrone workflows met Django, FastAPI, PostgreSQL en AWS.\n\nMijn huidige richting is **zelf software bouwen als individual contributor**. Mijn achtergrond in productmanagement en het leiden van vijf engineers helpt me gebruikersonderzoek te vertalen naar technische scope, afwegingen bij oplevering te maken en implementatiebeslissingen te verbinden met de workflows waarop mensen vertrouwen.\n\nIk bouw ook **toegepaste AI-systemen**, waaronder agents met meerdere gespreksbeurten, toolaanroepen, agenda-integraties, gedragsevaluaties en observability. Daarbij richt ik me op duidelijk systeemgedrag, expliciete foutafhandeling en bewijs dat een oplossing werkt.",
   "project": [
     "Een interactieve voetbalanalyse-app die expected goals tastbaar maakt: verplaats een schot, bekijk de kenmerken en onderzoek het model achter de voorspelling.",
     "Op het interactieve veld kunnen bezoekers schotomstandigheden aanpassen en acht modelkenmerken bekijken naast een expected-goals-schatting. Ik koppelde een reproduceerbare StatsBomb Open Data-pipeline aan XGBoost-training en -evaluatie en bracht inferentie naar de browser met Next.js/React.\n\nDe playground is beschikbaar in vijf talen en bevat methodologie en evaluatieresultaten. Het project verbindt data, toegepaste ML, integratie met de interface en productwerk: bezoekers onderzoeken het modelgedrag en de repository toont hoe het resultaat is gebouwd.",
@@ -98,7 +104,6 @@
     "Behavioral evaluations & guardrails": "Gedragsevaluaties en guardrails",
     "RAG & vector search": "RAG en vectorzoeken",
     "Evaluations": "Evaluaties",
-    "PDF generation": "PDF-generatie",
     "Product management": "Productmanagement",
     "Roadmapping": "Roadmaps",
     "Control systems": "Regelsystemen",
@@ -117,19 +122,19 @@
   "positions": {
     "reach-ai:1": {
       "title": "Senior Software Engineer",
-      "description": "- Bouw **Python/FastAPI-API's en gebeurtenisgestuurde berichtenstromen** voor een multitenant-SaaS-platform met **meer dan 20 miljoen sms'jes en e-mails per maand** en **99,9% afleverbetrouwbaarheid**. Het systeem verbindt AWS SQS, Lambda, API Gateway, Aurora/RDS, MongoDB, Redis en berichtenproviders.\n- Verbeterde wachtrijverwerking en introduceerde **idempotentie met Redis**, met minder risico op dubbele verzending en **50 keer hogere piekcapaciteit**.\n- Bouw een **afsprakenagent voor gesprekken met meerdere beurten via spraak en sms**, met Python, LangGraph, ReAct-orkestratie, OpenAI tool calling en RAG over bedrijfskennis. Integreer API's voor beschikbaarheid, boeken, verplaatsen en annuleren.\n- Ontwierp gedragsevaluaties, beveiligingen tegen ongefundeerde antwoorden en observability met **LangSmith en interne auditlogs**, om gesprekken en tool calls te onderzoeken en verbeteren.\n- Optimaliseerde de mediane spraakresponstijd tot **ongeveer 2 seconden in interne tests**. De agent zit **in tests vóór de lancering**; klantadoptie en operationele resultaten zijn nog niet gemeten."
+      "description": "- Ontwikkel **Python/FastAPI-API's en gebeurtenisgestuurde berichtenstromen** voor een multitenant-SaaS-platform dat **meer dan 20 miljoen sms'jes en e-mails per maand over alle klanten samen verwerkt**. Het systeem verbindt AWS SQS, Lambda, API Gateway, Aurora/RDS, MongoDB, Redis en berichtenproviders.\n- Implementeerde **Redis-gebaseerde idempotentie voor alle klantaccounts** om dubbele verzending in de berichtenworkflows van het platform aan te pakken, naast verbeteringen in wachtrijverwerking.\n- Bouw een **afsprakenagent voor spraak en sms met meerdere gespreksbeurten**, met Python, LangGraph, OpenAI tool calling, RAG, Claude en AWS Bedrock. Integreer API's voor beschikbaarheid, boeken, verplaatsen en annuleren.\n- Ontwierp gedragsevaluaties, beveiligingen tegen ongefundeerde antwoorden en observability met **LangSmith en interne auditlogs**, om gesprekken en tool calls te onderzoeken en verbeteren.\n- Bereikte **ongeveer 2 seconden vanaf het einde van de spraak van de klant tot het begin van de audiorespons van de agent in interne tests**. De agent zit **in tests vóór de lancering**; klantadoptie en operationele resultaten zijn nog niet gemeten."
     },
     "guiavet:1": {
       "title": "Hoofd Engineering en Product Lead",
-      "description": "- Leidde vijf engineers en was verantwoordelijk voor prioritering, technische keuzes en levering tijdens de groei van het veterinaire B2B-SaaS-product.\n- Borgde de technische continuïteit en verlaagde infrastructuur- en operationele kosten door automatisering.\n- Leidde belangrijke verbeteringen aan de module Medische Dossiers: integreerde medicijnreferentiedata, bouwde een apotheekportaal met externe validatie, aanpasbare receptsjablonen (snellere dagelijkse registratie) en aanpasbare documentworkflows.\n- Herontwierp meerbladige PDF-generatie en asynchrone verwerking bij Guiavet, waardoor de generatietijd daalde van **ongeveer 90 naar 15 seconden** (circa **83%**) voor documentprocessen van veterinaire teams.\n- Leverde end-to-end productwijzigingen in Python/Django, Vue.js en AWS en coördineerde met senior engineers volgens agile werkwijzen."
+      "description": "- **Leidde vijf engineers**, met verantwoordelijkheid voor prioritering, technische beslissingen en oplevering, en bleef zelf aan de implementatie werken."
     },
     "guiavet:2": {
       "title": "Product Manager",
-      "description": "- Beheerde de roadmap van Guiavet PRO en bracht stakeholders, directie, ontwerp en engineering op één lijn.\n- Gebruikte interviews, concurrentieanalyse en gebruiksdata om kliniekprocessen te verbeteren: **maximaal 80% minder tijd** voor sommige kritieke handelingen en **maximaal 95% lagere uitvalindicatoren gerelateerd aan gebruiksgemak**, binnen een maand na de lancering.\n- Breidde het product uit naar dierenartsen die andere klinieken bedienen en naar klinieken zelf, met aangepaste pakketten en processen voor planning, zorg en facturatie.\n- Lanceerde een platform voor professionele dierenartswebsites met SEO- en prestatieverbeteringen en stemde teamcapaciteit, prioriteiten en deadlines af."
+      "description": "- Vertaalde **gebruikersonderzoek en gebruiksgegevens naar vernieuwde kliniekworkflows**, met eenvoudigere consultatietaken en vaccinatieregistratie voor meerdere huisdieren van dezelfde eigenaar. Klanten beschreven een snellere, intuïtievere ervaring; gebruiksproblemen werden na het herontwerp minder vaak genoemd als reden voor opzegging in exitgesprekken.\n- Breidde het product uit van zelfstandige dierenartsen naar dierenartsen die andere klinieken bedienen en naar klinieken, met aangepast aanbod en workflows per B2B-segment."
     },
     "guiavet:3": {
       "title": "Software- en data-engineer",
-      "description": "- Bouwde en schaalde kernmodules van Guiavet PRO met Django, PostgreSQL en AWS.\n- Leidde datamodellering en domeinbesprekingen met oog voor snelheid en onderhoud; bouwde ETL-processen en SQL-dashboards voor financiën, adoptie en gebruik.\n- Begeleidde junior backend- en data-engineers.\n- Ontwierp asynchrone workers met Django APScheduler en SQS, een PDF-microservice en schaalverbeteringen met nginx en caching van gezondheidsgegevens."
+      "description": "- Bouwde de **basis van de monolithische Python/Django-backend** met **Nginx en Docker**, met gescheiden **API- en workerprocessen** voor verzoeken en achtergrondtaken. Deze basis ondersteunde het bedrijf vanaf de oprichting tot in de periode na product-market fit.\n- Leverde kernworkflows voor afspraken, medische dossiers, recepten en apotheekactiviteiten, van technische scope tot lancering en iteratie, met een verbinding tussen productbeslissingen en implementatie."
     },
     "qdois:1": {
       "title": "Data-engineer",

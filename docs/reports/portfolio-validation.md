@@ -56,7 +56,7 @@ No source deployment, merge, or repository visibility change is included. The ex
 
 ## Expanded positioning and controls (2026-10-17)
 
-Reviewed the four role-specific CVs (Product Engineer, Forward Deployed Engineer, Backend, Applied AI), the Product/FDE/Applied AI cover letters, and the evidence bank. Expanded About with scannable customer, backend, and applied AI subsections; added tool-use explanations in every language; expanded Reach.ai details and public project context; qualified the prelaunch agent and internal latency result; added the approximate 90-to-15-second PDF-generation improvement. ADR 0014 records this content pattern.
+Reviewed the four role-specific CVs (Product Engineer, Forward Deployed Engineer, Backend, Applied AI), the Product/FDE/Applied AI cover letters, and the evidence bank. Expanded About with scannable customer, backend, and applied AI subsections; added tool-use explanations in every language; expanded Reach.ai details and public project context; qualified the prelaunch agent and internal latency result. ADR 0014 records this content pattern.
 
 The language control uses the theme tooltip design, displays Shift+L, and opens from that shortcut. G → L continues to navigate to Journal. Explore the journal uses the shared outline Button.
 

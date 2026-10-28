@@ -211,3 +211,33 @@ export function formatTechStackForMarkdown(): string {
       `### ${group.title}\n\n${en.capabilityDescriptions[group.title]}\n\n${group.items.map((item) => `- [${item.title}](${item.href})`).join("\n")}`
   ).join("\n\n")
 }
+
+export const TECH_STACK_EVIDENCE: Record<TechStackKey, string> = {
+  python: "experience-reach-ai-1",
+  fastapi: "experience-reach-ai-1",
+  django: "experience-guiavet-3",
+  postgresql: "experience-guiavet-3",
+  mongodb: "experience-reach-ai-1",
+  redis: "experience-reach-ai-1",
+  aws: "experience-reach-ai-1",
+  docker: "experience-guiavet-3",
+  claude: "experience-reach-ai-1",
+  "aws-bedrock": "experience-reach-ai-1",
+  nginx: "experience-guiavet-3",
+  databricks: "experience-qdois-1",
+  pyspark: "experience-qdois-1",
+  "azure-data-factory": "experience-qdois-1",
+  "etl-and-data-modeling": "experience-qdois-1",
+  langgraph: "experience-reach-ai-1",
+  "openai-tool-calling": "experience-reach-ai-1",
+  "rag-and-vector-search": "experience-reach-ai-1",
+  "behavioral-evaluations-and-guardrails": "experience-reach-ai-1",
+  langsmith: "experience-reach-ai-1",
+  react: "sports-data-visualizer",
+  nextjs: "sports-data-visualizer",
+  typescript: "sports-data-visualizer",
+  vuejs: "experience-guiavet-1",
+  "user-discovery": "experience-guiavet-2",
+  "workflow-design": "experience-guiavet-2",
+  "prioritization-and-technical-scoping": "experience-guiavet-1",
+}
