@@ -17,9 +17,9 @@ export const EXPERIENCES: Experience[] = [
         employmentType: "Full-time",
         icon: <CodeXmlIcon />,
         description: `- Develop **Python/FastAPI APIs and event-driven messaging flows** for a multi-tenant SaaS platform processing **20M+ SMS and emails monthly across all customers**. The system connects AWS SQS, Lambda, API Gateway, Aurora/RDS, MongoDB, Redis, and messaging providers.
-- Implemented **Redis-backed idempotency across all customer accounts** to address duplicate-send issues in the platform's messaging workflows, alongside queue-processing improvements.
-- Building a **multi-turn voice and SMS appointment agent** with Python, LangGraph, OpenAI tool calling, RAG, Claude, and AWS Bedrock. Integrate scheduling APIs for availability, booking, rescheduling, and cancellation.
-- Designed behavioral evaluations, guardrails against unsupported responses, and observability through **LangSmith and internal audit logs**, so conversation behavior and tool calls can be inspected and improved.
+- Implemented **Redis-backed idempotency across all customer accounts**, eliminating the recurring duplicate-email issues observed before rollout.
+- Built a **multi-turn voice and SMS appointment agent** using Python, LangGraph, OpenAI tool calling, RAG, Claude, AWS Bedrock, and scheduling APIs to support availability checks, booking, rescheduling, and cancellation.
+- Designed **behavioral evaluations, response guardrails, and observability for the appointment agent**, using LangSmith and internal audit logs to inspect conversations, tool calls, and failures.
 - Achieved **approximately 2 seconds from the end of the customer's speech to the start of the agent's audio response in internal tests**. The agent is **in prelaunch testing**; customer adoption and operational outcomes have not yet been measured.`,
         skills: [
           "Python",
@@ -98,9 +98,8 @@ export const EXPERIENCES: Experience[] = [
         employmentType: "Internship and full-time",
         icon: <BarChart3Icon />,
         description: `- Built ETL pipelines and data workflows on Azure Data Factory and Azure Databricks (PySpark), consolidating relational DBs, SFTP, and APIs into a modern data lake architecture.
-- Supported digital transformation by reducing infrastructure costs and enabling future BI, analytics, and ML initiatives.
-- Established CI/CD with Azure DevOps and Git for automated deployments and environment consistency.
-- Partnered with business stakeholders to translate requirements into scalable data models and pipelines.`,
+- Supported **digital transformation for a construction-sector client** by migrating databases across critical business areas, working with stakeholders to align data models and pipelines with business needs and enable future BI, analytics, and ML initiatives.
+- Established CI/CD with Azure DevOps and Git for automated deployments and environment consistency.`,
         skills: [
           "Azure Data Factory",
           "Azure Databricks",
