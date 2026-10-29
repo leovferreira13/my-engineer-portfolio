@@ -2,7 +2,8 @@
 type: ADR
 id: "0004"
 title: "Curate professional experience for narrative focus"
-status: active
+status: superseded
+superseded_by: "0021"
 date: 2026-04-17
 ---
 

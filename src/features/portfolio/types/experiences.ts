@@ -32,4 +32,6 @@ export type Experience = {
   positions: ExperiencePosition[]
   /** Marks the company as the current employer for highlighting. */
   isCurrentEmployer?: boolean
+  /** One company narrative with dated progression and always-visible evidence. */
+  isConsolidated?: boolean
 }

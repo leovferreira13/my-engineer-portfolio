@@ -66,14 +66,20 @@
     "overview": "Kontakt und aktuelle Arbeit",
     "close": "Schließen",
     "loading": "Sprache wird geändert…",
-    "navigation": "Hauptnavigation"
+    "navigation": "Hauptnavigation",
+    "downloadResume": "Mein CV ansehen",
+    "localTime": "Ortszeit",
+    "sameTime": "Deine Ortszeit",
+    "timeAhead": "vor deiner Zeit",
+    "timeBehind": "hinter deiner Zeit",
+    "newTab": "Öffnet in einem neuen Tab"
   },
   "profile": {
-    "tagline": "Ich mache aus Nutzerproblemen Software, von der ersten Frage bis zum Produktiveinsatz.",
-    "subtitle": "Mehr als 5 Jahre Erfahrung mit B2B-SaaS, Backend, Data Engineering, Produktverantwortung und angewandter KI.",
+    "tagline": "Python-Backend-Engineer für B2B-SaaS und angewandte KI-Systeme, mit mehr als 5 Jahren Erfahrung in Engineering, Produktarbeit und technischer Führung.",
+    "subtitle": "Python-Backend-Engineer für B2B-SaaS und angewandte KI-Systeme, mit mehr als 5 Jahren Erfahrung in Engineering, Produktarbeit und technischer Führung.",
     "location": "Rio de Janeiro, Brasilien"
   },
-  "about": "Ich bin **Product Engineer** mit **mehr als 5 Jahren** Erfahrung in Backend- und Data Engineering, Produktmanagement und technischer Führung. Ich verbinde Nutzer- und Geschäftsbedürfnisse mit praktischer Software und begleite Probleme von der Discovery über technische Entscheidungen und Implementierung bis zum Launch und zur Weiterentwicklung.\n\n**Anpassungsfähigkeit ist der rote Faden meiner Arbeit.** Ich lerne gern eine neue Domäne kennen, höre den Menschen mit Fachwissen zu und finde in unklaren Situationen heraus, was sinnvoll zu bauen ist. Dabei bewege ich mich zwischen Kundengesprächen, Produktabwägungen und den technischen Details, die eine Lösung in der Praxis tragen.\n\nIch verbinde solide **Backendgrundlagen** mit Produkturteil und Erfahrung in APIs, Datenpipelines, Integrationen und ereignisgesteuerten Systemen. Inzwischen wende ich diesen Hintergrund auch auf **KI-Agenten** an: ihre Einbindung in reale Arbeitsabläufe, Zuverlässigkeit, Evaluation und Verbesserung. Ich arbeite am besten nah am Problem, mit Verantwortung für die Technik und die Erfahrung, die sie ermöglicht.",
+  "about": "Mein Schwerpunkt ist **Python-Backend-Engineering** für B2B-SaaS: APIs, Integrationen, Datenmodelle und asynchrone Workflows mit Django, FastAPI, PostgreSQL und AWS.\n\nMeine aktuelle Ausrichtung ist **praktische Entwicklungsarbeit als Individual Contributor**. Meine Erfahrung im Produktmanagement und in der Führung von fünf Engineers hilft mir, Nutzerforschung in technischen Umfang zu übersetzen, Lieferentscheidungen abzuwägen und Implementierung mit den Arbeitsabläufen der Nutzer zu verbinden.\n\nIch entwickle auch **angewandte KI-Systeme**, darunter mehrstufige Agenten mit Tool-Aufrufen, Terminbuchungsintegrationen, Verhaltensevaluationen und Observability. Dabei stehen klares Systemverhalten, explizite Fehlerbehandlung und überprüfbare Ergebnisse im Mittelpunkt.",
   "project": [
     "Eine interaktive Fußballanalyse-App, die Expected Goals greifbar macht: Schüsse verschieben, Merkmale untersuchen und das Modell hinter der Schätzung erkunden.",
     "Auf dem interaktiven Spielfeld können Besucher Schussbedingungen verändern und acht Modellmerkmale neben einer Expected-Goals-Schätzung untersuchen. Ich verband eine reproduzierbare StatsBomb-Open-Data-Pipeline mit XGBoost-Training und -Evaluierung und brachte die Inferenz mit Next.js/React in den Browser.\n\nDer Playground ist in fünf Sprachen verfügbar und enthält Methodik und Evaluationsergebnisse. Das Projekt verbindet Daten, angewandtes ML, die Integration mit der Oberfläche und Produktarbeit: Besucher erkunden das Modellverhalten, das Repository zeigt die Umsetzung.",
@@ -98,7 +104,6 @@
     "Behavioral evaluations & guardrails": "Verhaltensevaluierungen und Guardrails",
     "RAG & vector search": "RAG und Vektorsuche",
     "Evaluations": "Evaluierungen",
-    "PDF generation": "PDF-Generierung",
     "Product management": "Produktmanagement",
     "Roadmapping": "Roadmap-Planung",
     "Control systems": "Regelungssysteme",
@@ -117,23 +122,23 @@
   "positions": {
     "reach-ai:1": {
       "title": "Senior Software Engineer",
-      "description": "- Entwickle **Python/FastAPI-APIs und ereignisgesteuerte Nachrichtenflüsse** für eine mandantenfähige SaaS-Plattform mit **mehr als 20 Millionen SMS und E-Mails pro Monat** und **99,9% Zustellzuverlässigkeit**. Das System verbindet AWS SQS, Lambda, API Gateway, Aurora/RDS, MongoDB, Redis und Nachrichtenanbieter.\n- Verbesserte die Warteschlangenverarbeitung und führte **Redis-basierte Idempotenz** ein, um doppelte Sendungen zu vermeiden und **50-fache Spitzenkapazität** zu unterstützen.\n- Baue einen **Terminagenten für mehrstufige Sprach- und SMS-Gespräche** mit Python, LangGraph, ReAct-Orchestrierung, OpenAI Tool Calling und RAG über Geschäftswissen. Integriere APIs für Verfügbarkeit, Buchung, Umbuchung und Stornierung.\n- Entwickelte Verhaltensevaluationen, Guardrails gegen unbelegte Antworten und Observability mit **LangSmith und internen Audit-Logs**, um Gespräche und Tool-Aufrufe zu untersuchen und zu verbessern.\n- Optimierte die mediane Sprachantwortlatenz auf **ungefähr 2 Sekunden in internen Tests**. Der Agent befindet sich **in Tests vor dem Launch**; Kundenakzeptanz und operative Kundenergebnisse wurden noch nicht gemessen."
+      "description": "- Entwickle **Python/FastAPI-APIs und ereignisgesteuerte Nachrichtenflüsse** für eine mandantenfähige SaaS-Plattform mit **mehr als 20 Millionen SMS und E-Mails pro Monat über alle Kunden hinweg**. Das System verbindet AWS SQS, Lambda, API Gateway, Aurora/RDS, MongoDB, Redis und Nachrichtenanbieter.\n- Implementierte **Redis-basierte Idempotenz für alle Kundenkonten**, um ein wiederkehrendes Problem mit doppelten E-Mails zu lösen, das die Plattform damals betraf.\n- Entwickelte einen **Terminagenten für mehrstufige Sprach- und SMS-Gespräche** mit Python, LangGraph, OpenAI Tool Calling, RAG, Claude, AWS Bedrock und Termin-APIs für Verfügbarkeitsprüfungen, Buchungen, Umbuchungen und Stornierungen.\n- Konzipierte **Verhaltensevaluationen, Antwort-Guardrails und Observability für den Terminagenten**, mit LangSmith und internen Audit-Logs zur Untersuchung von Gesprächen, Tool-Aufrufen und Fehlern.\n- Erreichte **ungefähr 2 Sekunden vom Ende der Kundensprache bis zum Beginn der Audioantwort des Agenten in internen Tests**. Der Agent befindet sich **in Tests vor dem Launch**; Kundenakzeptanz und operative Kundenergebnisse wurden noch nicht gemessen."
     },
     "guiavet:1": {
       "title": "Leiter Engineering und Product Lead",
-      "description": "- Leitete fünf Engineers und verantwortete Prioritäten, technische Entscheidungen und Umsetzung während der Weiterentwicklung des veterinärmedizinischen B2B-SaaS-Produkts.\n- Sicherte die technische Kontinuität und senkte Infrastruktur- und Betriebskosten durch Automatisierung.\n- Leitete wesentliche Verbesserungen am Patientenakten-Modul: integrierte Arzneimittelreferenzdaten, baute ein Apotheken-Abgabeportal mit externer Validierung, anpassbare Rezeptvorlagen (schnellere tägliche Dokumentation) und anpassbare Dokumenten-Workflows.\n- Gestaltete mehrseitige PDF-Generierung und asynchrone Verarbeitung bei Guiavet neu und reduzierte die Erstellungszeit von **ungefähr 90 auf 15 Sekunden** (rund **83%**) für Dokumentenabläufe veterinärmedizinischer Teams.\n- Setzte End-to-End-Produktänderungen in Python/Django, Vue.js und AWS um und koordinierte mit Senior Engineers in agilen Arbeitsweisen."
+      "description": "- **Leitete fünf Engineers**, verantwortete Priorisierung, technische Entscheidungen und Auslieferung und arbeitete weiterhin selbst an der Umsetzung."
     },
     "guiavet:2": {
       "title": "Produktmanager",
-      "description": "- Verantwortete die Roadmap von Guiavet PRO und koordinierte Stakeholder, Führung, Design und Engineering.\n- Nutzte Interviews, Wettbewerbsanalysen und Nutzungsdaten zur Verbesserung klinischer Abläufe: **bis zu 80% weniger Zeitaufwand** bei einigen kritischen Vorgängen und **bis zu 95% niedrigere abwanderungsbezogene Usability-Indikatoren**, innerhalb eines Monats nach dem Launch.\n- Erweiterte das Produkt auf Tierärzte, die andere Kliniken betreuen, sowie auf Kliniken selbst, mit angepassten Paketen und Abläufen für Terminplanung, Versorgung und Abrechnung.\n- Startete eine Plattform für professionelle Tierarzt-Websites mit SEO- und Leistungsverbesserungen und koordinierte Teamkapazität, Prioritäten und Fristen."
+      "description": "- Übersetzte **Nutzerforschung und Nutzungsdaten in neugestaltete Klinikabläufe**, mit einfacheren Konsultationsaufgaben und Impfdokumentation für mehrere Tiere desselben Halters. Kunden beschrieben eine schnellere, intuitivere Nutzung; Bedienungsprobleme wurden nach der Neugestaltung in Austrittsgesprächen seltener als Kündigungsgrund genannt.\n- Erweiterte das Produkt von selbstständigen Tierärzten auf Tierärzte, die andere Kliniken betreuen, sowie auf Kliniken, mit angepasstem Angebot und Abläufen pro B2B-Segment."
     },
     "guiavet:3": {
       "title": "Software- und Dateningenieur",
-      "description": "- Entwickelte und skalierte Kernmodule von Guiavet PRO mit Django, PostgreSQL und AWS.\n- Leitete Datenmodellierung und Domänendiskussionen mit Blick auf Umsetzungsgeschwindigkeit und Wartbarkeit; baute ETL-Prozesse und SQL-Dashboards für Finanzen, Nutzung und Produktakzeptanz.\n- Betreute Junior Engineers in Backend und Datenverarbeitung.\n- Entwarf asynchrone Worker mit Django APScheduler und SQS, einen PDF-Microservice sowie Skalierungsverbesserungen mit nginx und Caching von Gesundheitsmetriken."
+      "description": "- Entwickelte die **Grundlage des monolithischen Python/Django-Backends** mit **Nginx und Docker**, mit getrennten **API- und Worker-Prozessen** für Anfragen und Hintergrundaufgaben. Diese Grundlage unterstützte das Unternehmen von der Gründung bis in die Zeit nach dem Product-Market Fit.\n- Realisierte zentrale Abläufe für Terminplanung, Patientenakten, Rezepte und Apothekenprozesse vom technischen Umfang bis zu Einführung und Iteration und verband Produktentscheidungen mit der Umsetzung."
     },
     "qdois:1": {
       "title": "Dateningenieur",
-      "description": "- Begann als Praktikant in der Datenanalyse und arbeitete anschließend als Dateningenieur im selben Team.\n- Entwickelte ETL-Prozesse mit Azure Data Factory, Databricks und PySpark und führte relationale Datenbanken, SFTP und APIs in einem Data Lake zusammen.\n- Unterstützte digitale Transformation, Kostensenkung und die Grundlage für BI, Analytics und ML.\n- Etablierte CI/CD mit Azure DevOps und Git und übersetzte Geschäftsanforderungen in Datenmodelle und Pipelines."
+      "description": "- Entwickelte ETL-Prozesse mit Azure Data Factory, Databricks und PySpark und führte relationale Datenbanken, SFTP und APIs in einem Data Lake zusammen.\n- Unterstützte die **digitale Transformation eines Kunden aus der Baubranche**, migrierte Datenbanken kritischer Geschäftsbereiche und stimmte mit Stakeholdern Datenmodelle und Pipelines auf Geschäftsanforderungen ab, um künftige BI-, Analytics- und ML-Initiativen zu ermöglichen.\n- Etablierte CI/CD mit Azure DevOps und Git für automatisierte Deployments und konsistente Umgebungen."
     }
   },
   "capabilityDescriptions": {

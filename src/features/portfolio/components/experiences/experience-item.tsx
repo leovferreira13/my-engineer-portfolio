@@ -1,6 +1,7 @@
 import Image from "next/image"
 
 import { UTM_PARAMS } from "@/config/site"
+import { formatPeriod } from "@/i18n/config"
 import { getI18n } from "@/i18n/request"
 import { addQueryParams } from "@/utils/url"
 
@@ -9,6 +10,7 @@ import {
   formatEmploymentDuration,
 } from "../../lib/employment-duration"
 import type { Experience } from "../../types/experiences"
+import { ConsolidatedExperience } from "./consolidated-experience"
 import { ExperiencePositionItem } from "./experience-position-item"
 
 export async function ExperienceItem({
@@ -74,6 +76,21 @@ export async function ExperienceItem({
           )}
         </div>
 
+        {experience.isConsolidated && (
+          <p className="pl-9 text-sm text-muted-foreground">
+            {formatPeriod(
+              experience.positions.at(-1)!.employmentPeriod.start,
+              locale
+            )}{" "}
+            —{" "}
+            {experience.positions[0].employmentPeriod.end
+              ? formatPeriod(
+                  experience.positions[0].employmentPeriod.end,
+                  locale
+                )
+              : t.present}
+          </p>
+        )}
         {months !== undefined && (
           <div className="flex flex-wrap items-center gap-x-2 gap-y-1 pl-9 text-sm text-muted-foreground">
             {sharedEmploymentType && (
@@ -93,15 +110,23 @@ export async function ExperienceItem({
         )}
       </div>
 
-      <div className="relative space-y-4 before:absolute before:left-3 before:h-full before:w-px before:bg-border">
-        {experience.positions.map((position) => (
-          <ExperiencePositionItem
-            key={position.id}
-            position={position}
-            showEmploymentType={!sharedEmploymentType || months === undefined}
-          />
-        ))}
-      </div>
+      {experience.isConsolidated ? (
+        <ConsolidatedExperience
+          positions={experience.positions}
+          anchorPrefix={`${anchorPrefixId}-${experience.id}`}
+        />
+      ) : (
+        <div className="relative space-y-4 before:absolute before:left-3 before:h-full before:w-px before:bg-border">
+          {experience.positions.map((position) => (
+            <ExperiencePositionItem
+              key={position.id}
+              position={position}
+              anchorId={`${anchorPrefixId}-${experience.id}-${position.id}`}
+              showEmploymentType={!sharedEmploymentType || months === undefined}
+            />
+          ))}
+        </div>
+      )}
     </div>
   )
 }

@@ -66,11 +66,17 @@
     "overview": "Contact and current work",
     "close": "Close",
     "loading": "Changing language…",
-    "navigation": "Main navigation"
+    "navigation": "Main navigation",
+    "downloadResume": "Get my CV",
+    "localTime": "Local time",
+    "sameTime": "Same time as you",
+    "timeAhead": "ahead of you",
+    "timeBehind": "behind you",
+    "newTab": "Opens in a new tab"
   },
   "profile": {
-    "tagline": "I turn user problems into software, from the first question to production.",
-    "subtitle": "5+ years across B2B SaaS, backend, data engineering, product leadership, and applied AI.",
+    "tagline": "Python backend engineer building B2B SaaS and applied AI systems, with 5+ years across engineering, product, and technical leadership.",
+    "subtitle": "Python backend engineer building B2B SaaS and applied AI systems, with 5+ years across engineering, product, and technical leadership.",
     "location": "Rio de Janeiro, Brazil"
   },
   "about": "",
@@ -91,7 +97,6 @@
     "Behavioral evaluations & guardrails": "Behavioral evaluations & guardrails",
     "RAG & vector search": "RAG & vector search",
     "Evaluations": "Evaluations",
-    "PDF generation": "PDF generation",
     "Product management": "Product management",
     "Roadmapping": "Roadmapping",
     "Control systems": "Control systems",

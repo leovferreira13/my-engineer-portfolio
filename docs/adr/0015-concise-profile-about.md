@@ -2,7 +2,8 @@
 type: ADR
 id: "0015"
 title: "Concise profile-centered About"
-status: active
+status: superseded
+superseded_by: "0020"
 date: 2026-10-17
 ---
 

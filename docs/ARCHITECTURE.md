@@ -39,9 +39,8 @@ The list below is the **living summary of decisions still in force**. Update it 
 
 - **[0001](./adr/0001-portfolio-mvp-content-and-sections.md)** — Portfolio MVP scope; optional registry sections via env; publications panel.
 - **[0003](./adr/0003-hero-without-cover-banner.md)** — Hero without cover banner; scroll anchor on avatar.
-- **[0004](./adr/0004-experience-section-narrative-curation.md)** — Experience list curated for narrative focus.
+- **[0021](./adr/0021-consolidated-company-narrative.md)** — Consolidated company achievements with dated career progression and stable evidence anchors; supersedes 0004.
 - **[0005](./adr/0005-education-section-separate-from-experience.md)** — Education as a first-class section and exports, separate from employers.
-- **[0017](./adr/0017-in-repo-stack-badges.md)** — In-repo Stack badges for the curated groups; no upstream fork or remote icon host. Supersedes 0006.
 - **[0008](./adr/0008-portfolio-section-cards.md)** — Homepage sections as discrete cards; shared border treatment.
 
 - **[0010](./adr/0010-public-project-catalog.md)** — Growing public project catalog with source/demo links; supersedes 0007.
@@ -50,8 +49,9 @@ The list below is the **living summary of decisions still in force**. Update it 
 - **[0012](./adr/0012-multilingual-portfolio.md)** — Five explicit locale URLs and server-rendered translations; English default.
 - **[0013](./adr/0013-journal-navigation.md)** — Journal navigation and optional machine exports; supersedes 0009.
 
-- **[0015](./adr/0015-concise-profile-about.md)** — Concise profile-centered About, with detailed experience and multilingual capability explanations reused by English exports; supersedes 0014.
 - **[0018](./adr/0018-homepage-section-order.md)** — After About, the profile order is Stack, Experience, Journal, Selected work, Education, and Awards.
+- **[0019](./adr/0019-stack-evidence-navigation.md)** — Stack badges navigate to roles or projects; primary work CTA targets experience, with secondary project and English CV actions. Supersedes 0017.
+- **[0020](./adr/0020-backend-focused-profile-copy.md)** — Python backend specialty and individual contributor direction in concise multilingual profile copy; supersedes 0015.
 
 ## Portfolio and Journal
 

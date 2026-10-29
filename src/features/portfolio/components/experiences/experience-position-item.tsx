@@ -35,6 +35,7 @@ export async function ExperiencePositionItem({
   return (
     <Collapsible
       id={anchorId}
+      tabIndex={-1}
       className={cn(
         "relative last:before:absolute last:before:h-full last:before:w-4 last:before:bg-background",
         anchorId && "scroll-mt-14"

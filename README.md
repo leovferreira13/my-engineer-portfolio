@@ -1,6 +1,6 @@
 # Leonardo Ferreira · Product Engineer
 
-I turn user problems into software, from the first question to production.
+Python backend engineer building B2B SaaS and applied AI systems, with 5+ years across engineering, product, and technical leadership.
 
 <!-- deployment-url:start -->
 
@@ -14,11 +14,11 @@ I turn user problems into software, from the first question to production.
 
 ## About me
 
-I am a **Product Engineer** with **5+ years** across backend and data engineering, product management, and technical leadership. I connect user and business needs to practical software, taking problems from discovery through technical decisions, implementation, launch, and iteration.
+I specialize in **Python backend engineering** for B2B SaaS: APIs, integrations, data models, and asynchronous workflows built with Django, FastAPI, PostgreSQL, and AWS.
 
-**Adaptability is the thread through my work.** I enjoy learning an unfamiliar domain, listening to the people who know it, and working through ambiguity to understand what is useful to build. I am comfortable moving between customer conversations, product trade-offs, and the technical details that make a solution work in practice.
+My current direction is **hands-on engineering as an individual contributor**. My background in product management and leading five engineers helps me turn user research into technical scope, weigh delivery trade-offs, and connect implementation decisions to the workflows people rely on.
 
-I bring strong **backend foundations** and product judgment to that process, with experience in APIs, data pipelines, integrations, and event-driven systems. More recently, I have been applying that background to **AI agents**, focusing on how they connect to real workflows, behave reliably, and can be evaluated and improved. I work best close to the problem, with ownership of both the engineering and the experience it creates.
+I am also building **applied AI systems**, including multi-turn agents with tool calling, scheduling integrations, behavioral evaluations, and observability. I bring the same focus to this work: clear system behavior, explicit failure handling, and evidence that a solution works.
 
 ## What I bring
 
@@ -40,7 +40,7 @@ This is my first public project. [The project catalog](https://leoferreira.dev.b
 
 ## The thinking behind the work
 
-The **[Journal](https://leoferreira.dev.br/en/journal)** is where I'll document engineering decisions, releases, experiments, and what I learn while building. Entries connect to projects and the evidence behind each choice. It currently has no published entries.
+The **[Journal](https://leoferreira.dev.br/en/journal)** is where I'll document engineering decisions, releases, experiments, and what I learn while building. Entries connect to projects and the evidence behind each choice. Read the first published entry: [Building Football, Visualized](https://leoferreira.dev.br/en/journal/building-football-visualized).
 
 ## Read in your language
 
