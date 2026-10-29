@@ -75,6 +75,22 @@ try {
         { id: "3", icon: true },
       ]
     )
+    const bulletGaps = await page.$$eval(
+      '#experience-guiavet [data-slot="prose"] li',
+      (nodes) =>
+        nodes
+          .slice(1)
+          .map(
+            (node, index) =>
+              node.getBoundingClientRect().top -
+              nodes[index].getBoundingClientRect().bottom
+          )
+    )
+    assert.equal(bulletGaps.length, 4)
+    assert.ok(
+      bulletGaps.every((gap) => Math.abs(gap - 8) < 1),
+      `${locale}: uneven Guiavet bullet gaps ${bulletGaps}`
+    )
     const experienceText = await page.$eval(
       "#experience",
       (node) => node.textContent

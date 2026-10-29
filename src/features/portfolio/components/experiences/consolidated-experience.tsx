@@ -47,7 +47,7 @@ export async function ConsolidatedExperience({
           </li>
         ))}
       </ol>
-      <div className="space-y-3">
+      <div className="space-y-2">
         {achievements.map((position) => (
           <div
             key={position.id}
@@ -56,7 +56,7 @@ export async function ConsolidatedExperience({
             className="scroll-mt-22 rounded-md"
             aria-label={position.title}
           >
-            <ProseMono>
+            <ProseMono className="[&_li]:my-0 [&_li+li]:mt-2 [&_li>p]:my-0 [&_ul]:my-0">
               <Markdown>{position.description ?? ""}</Markdown>
             </ProseMono>
           </div>

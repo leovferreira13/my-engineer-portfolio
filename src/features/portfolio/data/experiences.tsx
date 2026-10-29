@@ -17,7 +17,7 @@ export const EXPERIENCES: Experience[] = [
         employmentType: "Full-time",
         icon: <CodeXmlIcon />,
         description: `- Develop **Python/FastAPI APIs and event-driven messaging flows** for a multi-tenant SaaS platform processing **20M+ SMS and emails monthly across all customers**. The system connects AWS SQS, Lambda, API Gateway, Aurora/RDS, MongoDB, Redis, and messaging providers.
-- Implemented **Redis-backed idempotency across all customer accounts**, eliminating the recurring duplicate-email issues observed before rollout.
+- Implemented **Redis-backed idempotency across all customer accounts** to resolve a recurring duplicate-email problem affecting the platform at the time.
 - Built a **multi-turn voice and SMS appointment agent** using Python, LangGraph, OpenAI tool calling, RAG, Claude, AWS Bedrock, and scheduling APIs to support availability checks, booking, rescheduling, and cancellation.
 - Designed **behavioral evaluations, response guardrails, and observability for the appointment agent**, using LangSmith and internal audit logs to inspect conversations, tool calls, and failures.
 - Achieved **approximately 2 seconds from the end of the customer's speech to the start of the agent's audio response in internal tests**. The agent is **in prelaunch testing**; customer adoption and operational outcomes have not yet been measured.`,
