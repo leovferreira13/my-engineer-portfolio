@@ -75,8 +75,8 @@
     "newTab": "Öffnet in einem neuen Tab"
   },
   "profile": {
-    "tagline": "Python-Backend-Engineer für B2B-SaaS und angewandte KI-Systeme, mit mehr als 5 Jahren Erfahrung in Engineering, Produktarbeit und technischer Führung.",
-    "subtitle": "Python-Backend-Engineer für B2B-SaaS und angewandte KI-Systeme, mit mehr als 5 Jahren Erfahrung in Engineering, Produktarbeit und technischer Führung.",
+    "tagline": "Product Engineer, der B2B-SaaS und angewandte KI-Systeme entwickelt, mit mehr als 6 Jahren Erfahrung in Engineering, Produktarbeit und technischer Führung.",
+    "subtitle": "Product Engineer, der B2B-SaaS und angewandte KI-Systeme entwickelt, mit mehr als 6 Jahren Erfahrung in Engineering, Produktarbeit und technischer Führung.",
     "location": "Rio de Janeiro, Brasilien"
   },
   "about": "Mein Schwerpunkt ist **Python-Backend-Engineering** für B2B-SaaS: APIs, Integrationen, Datenmodelle und asynchrone Workflows mit Django, FastAPI, PostgreSQL und AWS.\n\nMeine aktuelle Ausrichtung ist **praktische Entwicklungsarbeit als Individual Contributor**. Meine Erfahrung im Produktmanagement und in der Führung von fünf Engineers hilft mir, Nutzerforschung in technischen Umfang zu übersetzen, Lieferentscheidungen abzuwägen und Implementierung mit den Arbeitsabläufen der Nutzer zu verbinden.\n\nIch entwickle auch **angewandte KI-Systeme**, darunter mehrstufige Agenten mit Tool-Aufrufen, Terminbuchungsintegrationen, Verhaltensevaluationen und Observability. Dabei stehen klares Systemverhalten, explizite Fehlerbehandlung und überprüfbare Ergebnisse im Mittelpunkt.",

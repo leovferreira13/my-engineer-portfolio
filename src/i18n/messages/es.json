@@ -75,8 +75,8 @@
     "newTab": "Se abre en otra pestaña"
   },
   "profile": {
-    "tagline": "Ingeniero backend Python que desarrolla sistemas SaaS B2B e IA aplicada, con más de 5 años en ingeniería, producto y liderazgo técnico.",
-    "subtitle": "Ingeniero backend Python que desarrolla sistemas SaaS B2B e IA aplicada, con más de 5 años en ingeniería, producto y liderazgo técnico.",
+    "tagline": "Ingeniero de producto que desarrolla sistemas SaaS B2B e IA aplicada, con más de 6 años de experiencia en ingeniería, producto y liderazgo técnico.",
+    "subtitle": "Ingeniero de producto que desarrolla sistemas SaaS B2B e IA aplicada, con más de 6 años de experiencia en ingeniería, producto y liderazgo técnico.",
     "location": "Río de Janeiro, Brasil"
   },
   "about": "Mi especialidad es la **ingeniería backend con Python** para SaaS B2B: APIs, integraciones, modelos de datos y flujos asíncronos con Django, FastAPI, PostgreSQL y AWS.\n\nMi dirección actual es **trabajar directamente en ingeniería como contribuidor individual**. Mi experiencia en gestión de producto y liderando a cinco ingenieros me ayuda a traducir la investigación con usuarios en alcance técnico, evaluar decisiones de entrega y conectar la implementación con los flujos que utilizan las personas.\n\nTambién desarrollo **sistemas de IA aplicada**, incluidos agentes de varios turnos con llamadas a herramientas, integraciones de agenda, evaluaciones de comportamiento y observabilidad. Mantengo el mismo enfoque: comportamiento claro, gestión explícita de fallos y evidencia de que la solución funciona.",
