@@ -23,7 +23,7 @@ export async function ProfileHeader() {
         />
         <div className="min-w-0 flex-1">
           <p className="mb-3 font-mono text-xs tracking-widest text-muted-foreground uppercase">
-            Product Engineer | SaaS, Applied AI &amp; Backend Systems
+            Product Engineer | Software Engineer | Python &amp; Backend
           </p>
           <h1
             id="profile-title"
