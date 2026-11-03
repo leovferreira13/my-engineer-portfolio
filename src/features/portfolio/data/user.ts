@@ -8,7 +8,7 @@ export const USER: User = {
   username: "leovferreira13",
   gender: "male",
   pronouns: "he/him",
-  bio: "Product Engineer specializing in Python backend systems for B2B SaaS and applied AI, with 5+ years across engineering, product, and technical leadership.",
+  bio: "Product engineer building B2B SaaS and applied AI systems, with 6+ years across engineering, product, and technical leadership.",
   flipSentences: ["Product Engineer", "Backend, data & applied AI"],
   address: "Rio de Janeiro, Brazil",
   email: "bGVvdmllaXJhZi41OTlAZ21haWwuY29t",
